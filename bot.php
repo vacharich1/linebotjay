@@ -21,18 +21,19 @@ if (!is_null($events['events'])) {
 				{
 					'type' => 'text',
 					'text' => $text
-				},
-				{
-					'type' => 'text',
-					'text' => 'hello'
 				}
+				
+				$messages3 = ['type' => 'text','text' => $hoonname];
+					
+				$messages1 = ['type' => 'text','text' => $llll];
+								
+				$messages2 = ['type' => 'image',
+								'originalContentUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg',
+								'previewImageUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg'
+							];
 
 				
 			];
-
-			
-			
-
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
