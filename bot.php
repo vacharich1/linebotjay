@@ -23,8 +23,8 @@ if (!is_null($events['events'])) {
 			];
 			
 			$messages2 = ['type' => 'image',
-						'originalContentUrl' => 'http://www.investorz.com/chart',
-						'previewImageUrl' => 'http://www.investorz.com/chart'
+						'originalContentUrl' => 'https://photos.google.com/photo/AF1QipOiPjRtFHpDzq2fJ_-U3xoCanqxxstT00zJ4Ror',
+						'previewImageUrl' => 'https://photos.google.com/photo/AF1QipOiPjRtFHpDzq2fJ_-U3xoCanqxxstT00zJ4Ror'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
