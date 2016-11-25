@@ -23,8 +23,8 @@ if (!is_null($events['events'])) {
 			];
 			
 			$messages2 = ['type' => 'image',
-						'originalContentUrl' => 'https://www.dropbox.com/s/qru9m24ylz1g82z/UNIQ.png',
-						'previewImageUrl' => 'https://www.dropbox.com/s/qru9m24ylz1g82z/UNIQ.png'
+						'originalContentUrl' => 'http://www.investorz.com/chart',
+						'previewImageUrl' => 'http://www.investorz.com/chart'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
