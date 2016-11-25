@@ -17,15 +17,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$messages = [
-				{
-					'type' => 'text',
-					'text' => $text
-				}
-				
-				$messages3 = ['type' => 'text','text' => $hoonname];
-					
-				$messages1 = ['type' => 'text','text' => $llll];
+				$messages3 = ['type' => 'text','text' => $text];
 								
 				$messages2 = ['type' => 'image',
 								'originalContentUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg',
@@ -38,7 +30,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages]
+				'messages' => [$messages3]
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
