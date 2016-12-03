@@ -39,6 +39,7 @@ if (!is_null($events['events'])) {
 								
 								$textcut = explode(" ", $text);
 								$result = count($textcut);
+								$room = "1";
 								if($result <= 2)
 								{
 										$count_text_cut = strlen($textcut[0]);
