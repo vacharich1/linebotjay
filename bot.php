@@ -46,15 +46,15 @@ if (!is_null($events['events'])) {
 										$arr1 = str_split($textcut[0]);
 										if($arr1[0] == "@")
 										{
-											$check = substr($textcut[0], 1); // cut@
+											$hoonname = substr($textcut[0], 1); // cut@
 										}
 										
 										if($result == 2)
-											$countgpu = $textcut[1];
+											$timeframe = $textcut[1];
 										else
-											$countgpu ="1";
+											$timeframe ="1";
 								}
-								
+								$check ="check1";
 								$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
 								VALUES ('', '$hoonname', '$timeframe',$room)";
 								
