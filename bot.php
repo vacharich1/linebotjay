@@ -1,4 +1,23 @@
 ﻿<?php
+
+echo "aaaaa";
+    $host= "sql6.freemysqlhosting.net";
+	$db = "sql6144521";
+	$CHAR_SET = "charset=utf8"; 
+ 
+	$username = "sql6144521";    
+	$password = "IAC4FPTQV2";   
+	
+
+	$link = mysqli_connect($host, $username, $password, $db);
+	if (!$link) {
+    		die('Could not connect: ' . mysqli_connect_errno());
+	}
+	else
+	{
+		echo "connect";
+	}
+
 $access_token = 'J81JqjhEqIJMF6okb9jTNt3HWNZiE1zhZrmhbS3WZ/KTQovd6HzM5B+iQYnlFt7wz1S+UJyFzmGnd/AivBF0v1Lz9jaKAnxNsWxBlLSNWmkn1otG8tlzONrbEx5BOXysEwFX46Zk/AmD7JyKsxy3EQdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
@@ -12,6 +31,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
+			
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -22,6 +42,8 @@ if (!is_null($events['events'])) {
 				'text' => $text
 			];
 			
+			$messages55 = ['type' => 'text','text' => $event['source']['userId']];
+			
 			$messages2 = ['type' => 'image',
 						'originalContentUrl' => 'https://photos.google.com/photo/AF1QipOiPjRtFHpDzq2fJ_-U3xoCanqxxstT00zJ4Ror',
 						'previewImageUrl' => 'https://photos.google.com/photo/AF1QipOiPjRtFHpDzq2fJ_-U3xoCanqxxstT00zJ4Ror'
@@ -31,7 +53,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages]
+				'messages' => [$messages55]
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
