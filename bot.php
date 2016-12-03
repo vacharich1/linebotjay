@@ -2,11 +2,11 @@
 
 echo "aaaaa";
     $host= "sql6.freemysqlhosting.net";
-	$db = "sql6144521";
+	$db = "sql6147630";
 	$CHAR_SET = "charset=utf8"; 
  
-	$username = "sql6144521";    
-	$password = "IAC4FPTQV2";   
+	$username = "sql6147630";    
+	$password = "4RfrLrXWSH";   
 	
 
 	$link = mysqli_connect($host, $username, $password, $db);
@@ -36,8 +36,65 @@ if (!is_null($events['events'])) {
 								// Get text sent
 								
 								$text = $event['message']['text'];
+								
+								$textcut = explode(" ", $text);
+								$result = count($textcut);
+								if($result <= 2)
+								{
+										$count_text_cut = strlen($textcut[0]);
+										$x=0;
+										$arr1 = str_split($textcut[0]);
+										if($arr1[0] == "@")
+										{
+											$check = substr($textcut[0], 1); // cut@
+										}
+										
+										if($result == 2)
+											$countgpu = $textcut[1];
+										else
+											$countgpu ="1";
+								}
+								
+								$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
+								VALUES ('', '$hoonname', '$timeframe',$room)";
+								
+								if (mysqli_query($link, $sql)) {
+										echo "New record created successfully";
+								} 
+								else {
+										echo "Error: " . $sql . "<br>" . mysqli_error($link);
+								}
+								sleep(0.3);
+								$check ="check1";
+								#echo "work code";
+								$sql = "INSERT INTO `check_capture`(`id`, `check1`) VALUES ('','$check')";
+								if (mysqli_query($link, $sql)) {
+										echo "New record created successfully";
+								} 
+								else {
+										echo "Error: " . $sql . "<br>" . mysqli_error($link);
+								}
+								
+								
 								// Get replyToken
 								$replyToken = $event['replyToken'];
+								
+								sleep(6);
+								
+								$sql = "SELECT id, word FROM data";
+								$result = mysqli_query($link, $sql);
+								
+								$message_res='check id correct'
+								
+								if (mysqli_num_rows($result) > 0) {
+									// output data of each row
+								while($row = mysqli_fetch_assoc($result)) {
+										#echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+										$message_res=$row["word"]
+								}
+								} else {
+									echo "0 results";
+								}
 					
 								// Build message to reply back
 								$messages = [
@@ -48,7 +105,7 @@ if (!is_null($events['events'])) {
 								{
 									$messages = [
 									'type' => 'text',
-									'text' => 'check id correct'
+									'text' => $message_res
 								];
 									
 								}
