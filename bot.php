@@ -1543,7 +1543,7 @@ if (!is_null($events['events'])) {
 								$messages4 = ['type' => 'text','text' => $event['source']['type']];
 								
 								$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
-								sleep(5.5);
+								sleep(15);
 								
 								
 								$text_recieve="aaaaa";
@@ -1554,7 +1554,7 @@ if (!is_null($events['events'])) {
 								if ($result->num_rows > 0) {
 									// output data of each row
 									while($row = $result->fetch_assoc()) {
-										#$text_recieve=$row["word"];
+										$text_recieve=$row["word"];
 										
 									}
 								} else {
