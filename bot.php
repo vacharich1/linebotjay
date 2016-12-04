@@ -1561,7 +1561,17 @@ if (!is_null($events['events'])) {
 									echo "0 results";
 								}
 								$link->close();
-								sleep(0.3);
+								sleep(0.5);
+								
+								$sql = "DELETE FROM `data` WHERE 1";
+
+								if ($link->query($sql) === TRUE) {
+									echo "Record deleted successfully";
+								} else {
+									echo "Error deleting record: " . $link->error;
+								}
+								
+								$link->close();
 								
 								
 								//$llll ='SORRY, OUT OF SERVICE';
@@ -1592,15 +1602,7 @@ if (!is_null($events['events'])) {
 								$result = curl_exec($ch);
 								curl_close($ch);
 								
-								$sql = "DELETE FROM `data` WHERE 1";
-
-								if ($link->query($sql) === TRUE) {
-									echo "Record deleted successfully";
-								} else {
-									echo "Error deleting record: " . $link->error;
-								}
 								
-								$link->close();
 								
 								
 								
@@ -1634,10 +1636,13 @@ if (!is_null($events['events'])) {
 							}
 							else
 							{
-								if($text == 'เป็นกราฟเปล่าครับ' || $text == 'เปนกราฟเปล่าคับ' || $text == 'เปนกราฟเปล่าๆคับ' || $text == 'เป็นกราฟเปล่าๆครับ' || $text == 'เป็นกราฟเปล่าคับ' || $text == 'เป็นกราฟเปล่าๆคับ' || $text == 'กราฟเปล่าๆคับ' || $text == 'กราฟเปล่า' || $text == 'กราฟเปล่า' || $text == 'กราฟเปล่าคับ' || $text == 'กราฟไม่ขึ้น')
+								if($text == 'เเสดงคำสั่งทั้งหมด' || $text == 'เปนกราฟเปล่าคับ' || $text == 'เปนกราฟเปล่าๆคับ' || $text == 'เป็นกราฟเปล่าๆครับ' || $text == 'เป็นกราฟเปล่าคับ' || $text == 'เป็นกราฟเปล่าๆคับ' || $text == 'กราฟเปล่าๆคับ' || $text == 'กราฟเปล่า' || $text == 'กราฟเปล่า' || $text == 'กราฟเปล่าคับ' || $text == 'กราฟไม่ขึ้น')
 								{
 									$replyToken = $event['replyToken'];
-									$messages55 = ['type' => 'text','text' => "รบกวนส่งใหม่ครับ กราฟไม่สมบูรณ์"];
+									$messages55 = ['type' => 'text','text' => "@checkgpu จำนวนการ์ด 
+																			   @checkgpu 1 คือ การ์ดที่ 1 
+																			   @checkgpu 2 คือ การ์ดที่ 2
+																			   @checkgpu all คือ การ์ดทุกใบ"];
 									// Make a POST Request to Messaging API to reply to sender
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
