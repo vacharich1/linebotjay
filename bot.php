@@ -1546,12 +1546,12 @@ if (!is_null($events['events'])) {
 								sleep(5.5);
 								
 								$sql = "SELECT * FROM `data` WHERE 1";
-								$text_recieve="";
+								$text_recieve="aaaaa";
 								$result = $conn->query($sql);
 								if ($result->num_rows > 0) {
 									// output data of each row
 									while($row = $result->fetch_assoc()) {
-										$text_recieve=$row["word"];
+										#$text_recieve=$row["word"];
 										
 									}
 								} else {
