@@ -1545,9 +1545,12 @@ if (!is_null($events['events'])) {
 								$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
 								sleep(5.5);
 								
-								$sql = "SELECT * FROM `data` WHERE 1";
+								
 								$text_recieve="aaaaa";
-								$result = $conn->query($sql);
+								
+								
+								$sql = "SELECT * FROM `data` WHERE 1";
+								$result = $link->query($sql);
 								if ($result->num_rows > 0) {
 									// output data of each row
 									while($row = $result->fetch_assoc()) {
@@ -1557,8 +1560,9 @@ if (!is_null($events['events'])) {
 								} else {
 									echo "0 results";
 								}
-								$conn->close();
+								$link->close();
 								sleep(0.3);
+								
 								
 								//$llll ='SORRY, OUT OF SERVICE';
 								$messages3 = ['type' => 'text','text' => $text_recieve];
