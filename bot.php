@@ -1636,10 +1636,10 @@ if (!is_null($events['events'])) {
 							}
 							else
 							{
-								if($text == 'เเสดงคำสั่งทั้งหมด' || $text == 'คำสั่ง' || $text == 'เปนกราฟเปล่าๆคับ' || $text == 'เป็นกราฟเปล่าๆครับ' || $text == 'เป็นกราฟเปล่าคับ' || $text == 'เป็นกราฟเปล่าๆคับ' || $text == 'กราฟเปล่าๆคับ' || $text == 'กราฟเปล่า' || $text == 'กราฟเปล่า' || $text == 'กราฟเปล่าคับ' || $text == 'กราฟไม่ขึ้น')
+								if($text == 'เเสดงคำสั่งทั้งหมด' || $text == 'คำสั่ง' )
 								{
 									$replyToken = $event['replyToken'];
-									$messages55 = ['type' => 'text','text' => "@checkgpu จำนวนการ์ด ---- @checkgpu 1 คือ การ์ดที่ 1 ----  @checkgpu 2 คือ การ์ดที่ 2 ---- @checkgpu all คือ การ์ดทุกใบ"];
+									$messages55 = ['type' => 'text','text' => "@checkgpu จำนวนการ์ด"];
 									// Make a POST Request to Messaging API to reply to sender
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
