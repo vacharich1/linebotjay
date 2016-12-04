@@ -1639,8 +1639,10 @@ if (!is_null($events['events'])) {
 								if($text == 'เเสดงคำสั่งทั้งหมด' || $text == 'คำสั่ง' )
 								{
 									$replyToken = $event['replyToken'];
-									$messages55 = ['type' => 'text','text' => "@checkgpu จำนวนการ์ด"];
-									// Make a POST Request to Messaging API to reply to sender
+									$messages55 = ['type' => 'text','text' => "@checkgpu 1 เเสดงข้อมูลการ์ใบที่1 
+																				@checkgpu 2 เเสดงข้อมูลการ์ดใบที่ 2 
+																				@checkgpu all เเสดงการ์ดจอทุกใบที่มี"];
+									// Make a POST Request to Messaging API to reply to sende
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
 												'replyToken' => $replyToken,
