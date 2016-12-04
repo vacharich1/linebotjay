@@ -1592,6 +1592,16 @@ if (!is_null($events['events'])) {
 								$result = curl_exec($ch);
 								curl_close($ch);
 								
+								$sql = "DELETE FROM `data` WHERE 1";
+
+								if ($link->query($sql) === TRUE) {
+									echo "Record deleted successfully";
+								} else {
+									echo "Error deleting record: " . $link->error;
+								}
+								
+								$link->close();
+								
 								
 								
 								#echo "check1";
