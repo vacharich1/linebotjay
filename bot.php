@@ -1543,7 +1543,7 @@ if (!is_null($events['events'])) {
 								$messages4 = ['type' => 'text','text' => $event['source']['type']];
 								
 								$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
-								sleep(6);
+								sleep(10);
 								
 								
 								$text_recieve="aaaaa";
