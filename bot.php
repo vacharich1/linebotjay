@@ -1544,8 +1544,24 @@ if (!is_null($events['events'])) {
 								
 								$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
 								sleep(5.5);
+								
+								$sql = "SELECT * FROM `data` WHERE 1";
+								$text_recieve="";
+								$result = $conn->query($sql);
+								if ($result->num_rows > 0) {
+									// output data of each row
+									while($row = $result->fetch_assoc()) {
+										$text_recieve=$row["word"];
+										
+									}
+								} else {
+									echo "0 results";
+								}
+								$conn->close();
+								sleep(0.3);
+								
 								//$llll ='SORRY, OUT OF SERVICE';
-								$messages3 = ['type' => 'text','text' => $hoonname];
+								$messages3 = ['type' => 'text','text' => $text_recieve];
 					
 								$messages1 = ['type' => 'text','text' => $llll];
 								
