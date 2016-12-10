@@ -124,7 +124,7 @@ if (!is_null($events['events'])) {
 								$room='1';
 								
 								$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
-								VALUES ('', '$hoonname', '$timeframe',$room)";
+								VALUES ('', '$hoonname', '$timeframe',$replyToken)";
 								
 								if (mysqli_query($link, $sql)) {
 										echo "New record created successfully";
