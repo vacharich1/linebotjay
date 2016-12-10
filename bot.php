@@ -75,7 +75,7 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['groupId'] =='Cc5000f2d47fa9df8096c866a6f4402e9')
 		{
-				$msg = "aaaa";
+				$msg = "test push";
 				$USERID = "Ub5f45b12f0f8f8a3a08e5b52ebbcc96b";
 				$format_text = [
 					"type" => "text",
