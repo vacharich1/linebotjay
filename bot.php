@@ -119,7 +119,7 @@ if (!is_null($events['events'])) {
 								if($result == 2)
 									$timeframe = $textcut[1];
 								else
-									$timeframe ="d";
+									$timeframe ="all";
 								#echo $hoonname;
 								$room='1';
 								
