@@ -1,55 +1,35 @@
-<body>
-<form action="index.php" method="POST" enctype="multipart/form-data">
-	<input type="file" name="image" /><input type="submit" name="submit" value="upload" />
-	
-</form>
 <?php
 
+$access_token = 'J81JqjhEqIJMF6okb9jTNt3HWNZiE1zhZrmhbS3WZ/KTQovd6HzM5B+iQYnlFt7wz1S+UJyFzmGnd/AivBF0v1Lz9jaKAnxNsWxBlLSNWmkn1otG8tlzONrbEx5BOXysEwFX46Zk/AmD7JyKsxy3EQdB04t89/1O/w1cDnyilFU=';
 
-if(isset($_POST['submit']))
-{
-	
-	//mysql_connect("sql6.freemysqlhosting.net","sql6141179","2VSm3JEfdX");
-	$host= "sql6.freemysqlhosting.net";
-	$db = "sql6141179";
-	$CHAR_SET = "charset=utf8"; 
- 
-	$username = "sql6141179";    
-	$password = "2VSm3JEfdX";   
-	
-	//mysqli_connect($host, $username, $password)or die('failed');
-	//mysqli_query('set names utf8');
-	//mysqli_select_db($db)or die('select filae');
-	
-		$link = mysqli_connect($host, $username, $password, $db);
-		if (!$link) {
-    			die('Could not connect: ' . mysqli_connect_errno());
-		}
+// Get POST body content
+$content = file_get_contents('php://input');
 
-	//mysql_select_db("test");	
-	
-	$imageName = mysqli_real_escape_string($link, $_FILES["image"]["name"]);
-	$imageData = mysqli_real_escape_string($link, file_get_contents($_FILES["image"]["tmp_name"]));
-	$imageType = mysqli_real_escape_string($link, $_FILES["image"]["type"]);
-	
-	if(substr($imageType,0,5) == "image")
-	{
-		
-		$sql = "INSERT INTO images (id, name, image)
-				VALUES ('', '$imageName', '$imageData')";
+echo "aaaaa";
 
-		if (mysqli_query($link, $sql)) {
-    			echo "New record created successfully";
-		} else {
-    			echo "Error: " . $sql . "<br>" . mysqli_error($link);
-		}
-		echo "work code";	
-	}
-	else
-	{
-		echo"Only images are allowed";	
-	}
-}
+// Parse JSON
+$events = json_decode($content, true);
+$msg = "test push";
+				$USERID = "Ub5f45b12f0f8f8a3a08e5b52ebbcc96b";
+				$format_text = [
+					"type" => "text",
+					"text" => $msg
+				];
+		 
+				$post_data = [
+					"to" => $USERID,
+					"messages" => [$format_text]
+				];
+				
+				$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+		 
+				$ch = curl_init('https://api.line.me/v2/bot/message/push');
+				curl_setopt($ch, CURLOPT_POST, true);
+				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
+				curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+		 
+				$result = curl_exec($ch);
+				curl_close($ch);
 ?>
-
-</body>
