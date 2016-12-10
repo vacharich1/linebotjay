@@ -1,5 +1,34 @@
 ﻿<?php
 
+
+public function pushMessage($USERID, $msg)
+    {
+        $format_text = [
+            "type" => "text",
+            "text" => $msg
+        ];
+ 
+        $post_data = [
+            "to" => $USERID,
+            "messages" => [$format_text]
+        ];
+ 
+        $header = array(
+            'Content-Type: application/json',
+            'Authorization: Bearer ' . $this->CHANNEL_ACCESS_TOKEN
+        );
+ 
+        $ch = curl_init('https://api.line.me/v2/bot/message/push');
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+ 
+        $result = curl_exec($ch);
+        curl_close($ch);
+    }
+
 echo "aaaaa";
     $host= "sql6.freemysqlhosting.net";
 	$db = "sql6147630";
@@ -75,29 +104,9 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['groupId'] =='Cc5000f2d47fa9df8096c866a6f4402e9')
 		{
-				$msg = "test push";
-				$USERID = "Ub5f45b12f0f8f8a3a08e5b52ebbcc96b";
-				$format_text = [
-					"type" => "text",
-					"text" => $msg
-				];
-		 
-				$post_data = [
-					"to" => $USERID,
-					"messages" => [$format_text]
-				];
+			
+			pushMessage("Ub5f45b12f0f8f8a3a08e5b52ebbcc96b", "test push");
 				
-				$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-		 
-				$ch = curl_init('https://api.line.me/v2/bot/message/push');
-				curl_setopt($ch, CURLOPT_POST, true);
-				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-				curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
-				curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-		 
-				$result = curl_exec($ch);
-				curl_close($ch);
 			// Reply only when message sent is in 'text' format
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 				// Get text sent
