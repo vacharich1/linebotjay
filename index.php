@@ -9,7 +9,7 @@ echo "aaaaa";
 
 // Parse JSON
 $events = json_decode($content, true);
-$msg = "test push";
+				$msg = "GPU TEMP OVER";
 				$USERID = "Ub5f45b12f0f8f8a3a08e5b52ebbcc96b";
 				$format_text = [
 					"type" => "text",

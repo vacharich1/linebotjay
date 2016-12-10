@@ -1,34 +1,5 @@
 ﻿<?php
 
-
-public function pushMessage($USERID, $msg)
-    {
-        $format_text = [
-            "type" => "text",
-            "text" => $msg
-        ];
- 
-        $post_data = [
-            "to" => $USERID,
-            "messages" => [$format_text]
-        ];
- 
-        $header = array(
-            'Content-Type: application/json',
-            'Authorization: Bearer ' . $this->CHANNEL_ACCESS_TOKEN
-        );
- 
-        $ch = curl_init('https://api.line.me/v2/bot/message/push');
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
- 
-        $result = curl_exec($ch);
-        curl_close($ch);
-    }
-
 echo "aaaaa";
     $host= "sql6.freemysqlhosting.net";
 	$db = "sql6147630";
