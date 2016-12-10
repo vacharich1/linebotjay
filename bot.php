@@ -107,7 +107,7 @@ if (!is_null($events['events'])) {
 		if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['groupId'] =='Cc5000f2d47fa9df8096c866a6f4402e9')
 		{
 			
-			 $yows->pushMessage("Ub5f45b12f0f8f8a3a08e5b52ebbcc96b", "test push");
+			 $yows->pushMessage($yows->"Ub5f45b12f0f8f8a3a08e5b52ebbcc96b", "test push");
 				
 			// Reply only when message sent is in 'text' format
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
