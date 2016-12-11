@@ -1,33 +1,39 @@
 <?php
 
+$access_token = 'J81JqjhEqIJMF6okb9jTNt3HWNZiE1zhZrmhbS3WZ/KTQovd6HzM5B+iQYnlFt7wz1S+UJyFzmGnd/AivBF0v1Lz9jaKAnxNsWxBlLSNWmkn1otG8tlzONrbEx5BOXysEwFX46Zk/AmD7JyKsxy3EQdB04t89/1O/w1cDnyilFU=';
 
-	
-	//mysql_connect("localhost","admin","");
-	$host= "sql6.freemysqlhosting.net";
-	$db = "sql6141179";
-	$CHAR_SET = "charset=utf8"; 
- 
-	$username = "sql6141179";    
-	$password = "2VSm3JEfdX";   
-	
-	//mysqli_connect($host, $username, $password)or die('failed');
-	//mysqli_query('set names utf8');
-	//mysqli_select_db($db)or die('select filae');
-	
-	$link = mysqli_connect($host, $username, $password, $db);
-	if (!$link) {
-    		die('Could not connect: ' . mysqli_connect_errno());
-	}
+// Get POST body content
+$content = file_get_contents('php://input');
 
-	$sql = "SELECT `image` FROM `images` WHERE `id` = 1";
-	echo $sql;
-	$sth = $link->query($sql);
-	$result=mysqli_fetch_array($sth);
-	echo '<img src="data:image/jpeg;base64,'.base64_encode( $result['image'] ).'"/>';
-	
-	
+echo "aaaaa";
 
+// Parse JSON
+$events = json_decode($content, true);
+				$msg = "GPU TEMP UNDER";
+				$USERID = "Ub5f45b12f0f8f8a3a08e5b52ebbcc96b";
+				$format_text = [
+					"type" => "text",
+					"text" => $msg
+				];
+		 
+				$post_data = [
+					"to" => $USERID,
+					"messages" => [$format_text]
+				];
+				
+				$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+		 
+				$ch = curl_init('https://api.line.me/v2/bot/message/push');
+				curl_setopt($ch, CURLOPT_POST, true);
+				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
+				curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+		 
+				$result = curl_exec($ch);
+				curl_close($ch);
 ?>
+
 
 
 
