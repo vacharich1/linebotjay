@@ -2,11 +2,11 @@
 
 echo "aaaaa";
     $host= "sql6.freemysqlhosting.net";
-	$db = "sql6147630";
+	$db = "sql6149931";
 	$CHAR_SET = "charset=utf8"; 
  
-	$username = "sql6147630";    
-	$password = "4RfrLrXWSH";   
+	$username = "sql6149931";    
+	$password = "pX4ZAGfVd6";   
 	
 
 	$link = mysqli_connect($host, $username, $password, $db);
@@ -120,7 +120,7 @@ if (!is_null($events['events'])) {
 								if($result == 2)
 									$timeframe = $textcut[1];
 								else
-									$timeframe ="all";
+									$timeframe ="assets";
 								#echo $hoonname;
 								$room='1';
 								
@@ -185,7 +185,9 @@ if (!is_null($events['events'])) {
 								}
 								
 								$link->close();
+								
 								$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe.".jpg";
+								
 								
 								//$llll ='SORRY, OUT OF SERVICE';
 								$messages3 = ['type' => 'text','text' => $text_recieve];
