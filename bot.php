@@ -73,7 +73,7 @@ if (!is_null($events['events'])) {
 	//9:member2 C328035648eddea983ff6b6a3fc7622ec
 	
 	foreach ($events['events'] as $event) {
-		if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['groupId'] =='Cc5000f2d47fa9df8096c866a6f4402e9')
+		if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['groupId'] =='Cc5000f2d47fa9df8096c866a6f4402e9' || $event['source']['groupId'] =='C85404b458e7caaa96629fa66941c9d93')
 		{
 				
 			// Reply only when message sent is in 'text' format
@@ -194,7 +194,7 @@ if (!is_null($events['events'])) {
 								$messages3 = ['type' => 'text','text' => $text_recieve];
 					
 								$messages1 = ['type' => 'text','text' => "Please wait 8s"];
-								sleep(3);
+								sleep(2);
 								$messages2 = ['type' => 'image',
 										 'originalContentUrl' => $link_pic,
 										 'previewImageUrl' => $link_pic
