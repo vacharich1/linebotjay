@@ -185,23 +185,23 @@ if (!is_null($events['events'])) {
 								}
 								
 								$link->close();
-								
+								$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe.".jpg";
 								
 								//$llll ='SORRY, OUT OF SERVICE';
 								$messages3 = ['type' => 'text','text' => $text_recieve];
 					
 								$messages1 = ['type' => 'text','text' => $llll];
-								
+								sleep(10);
 								$messages2 = ['type' => 'image',
-										 'originalContentUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg',
-										 'previewImageUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg'
+										 'originalContentUrl' => $link_pic,
+										 'previewImageUrl' => $link_pic
 								];
 								
 								// Make a POST Request to Messaging API to reply to sender
 								$url = 'https://api.line.me/v2/bot/message/reply';
 								$data = [
 									'replyToken' => $replyToken,
-									'messages' => [$messages3]
+									'messages' => [$messages2]
 								];
 								
 								if($hoonname=="checkgpu")
