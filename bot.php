@@ -143,6 +143,8 @@ if (!is_null($events['events'])) {
 								else {
 										echo "Error: " . $sql . "<br>" . mysqli_error($link);
 								}
+								
+								$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe.".jpg";
 									#echo "work code";
 								// Get replyToken
 								$replyToken = $event['replyToken'];
@@ -186,24 +188,24 @@ if (!is_null($events['events'])) {
 								
 								$link->close();
 								
-								$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe.".jpg";
+								//$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe.".jpg";
 								$link_pic1 ='https://www.botbottest.club/aoteps.jpg'
 								
 								//$llll ='SORRY, OUT OF SERVICE';
 								$messages3 = ['type' => 'text','text' => $text_recieve];
 					
-								$messages1 = ['type' => 'text','text' => $llll];
+								$messages1 = ['type' => 'text','text' => $link_pic];
 								sleep(10);
 								$messages2 = ['type' => 'image',
-										 'originalContentUrl' => $link_pic1,
-										 'previewImageUrl' => $link_pic1
+										 'originalContentUrl' => $link_pic,
+										 'previewImageUrl' => $link_pic
 								];
 								
 								// Make a POST Request to Messaging API to reply to sender
 								$url = 'https://api.line.me/v2/bot/message/reply';
 								$data = [
 									'replyToken' => $replyToken,
-									'messages' => [$messages2]
+									'messages' => [$messages1,$messages2]
 								];
 								
 								if($hoonname=="checkgpu")
