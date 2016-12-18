@@ -187,7 +187,7 @@ if (!is_null($events['events'])) {
 								$link->close();
 								
 								$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe.".jpg";
-								
+								$link_pic1 ='https://www.botbottest.club/aoteps.jpg'
 								
 								//$llll ='SORRY, OUT OF SERVICE';
 								$messages3 = ['type' => 'text','text' => $text_recieve];
@@ -195,8 +195,8 @@ if (!is_null($events['events'])) {
 								$messages1 = ['type' => 'text','text' => $llll];
 								sleep(10);
 								$messages2 = ['type' => 'image',
-										 'originalContentUrl' => $link_pic,
-										 'previewImageUrl' => $link_pic
+										 'originalContentUrl' => $link_pic1,
+										 'previewImageUrl' => $link_pic1
 								];
 								
 								// Make a POST Request to Messaging API to reply to sender
