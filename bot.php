@@ -207,8 +207,7 @@ if (!is_null($events['events'])) {
 									'messages' => [$messages1,$messages2]
 								];
 								
-								if($hoonname=="checkgpu")
-								{
+
 									$post = json_encode($data);
 									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 						
@@ -221,7 +220,7 @@ if (!is_null($events['events'])) {
 									$result = curl_exec($ch);
 									curl_close($ch);
 								
-								}
+						
 								
 								
 								
