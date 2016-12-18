@@ -193,7 +193,7 @@ if (!is_null($events['events'])) {
 								//$llll ='SORRY, OUT OF SERVICE';
 								$messages3 = ['type' => 'text','text' => $text_recieve];
 					
-								$messages1 = ['type' => 'text','text' => $link_pic];
+								$messages1 = ['type' => 'text','text' => "Please wait 8s"];
 								sleep(10);
 								$messages2 = ['type' => 'image',
 										 'originalContentUrl' => $link_pic,
