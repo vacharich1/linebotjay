@@ -144,7 +144,7 @@ if (!is_null($events['events'])) {
 										echo "Error: " . $sql . "<br>" . mysqli_error($link);
 								}
 								
-								$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe.".jpg";
+								$link_pic ="https://www.botbottest.club/".$hoonname."".$timeframe.".jpg";
 									#echo "work code";
 								// Get replyToken
 								$replyToken = $event['replyToken'];
@@ -189,7 +189,6 @@ if (!is_null($events['events'])) {
 								$link->close();
 								
 								//$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe.".jpg";
-								$link_pic1 ='https://www.botbottest.club/aoteps.jpg'
 								
 								//$llll ='SORRY, OUT OF SERVICE';
 								$messages3 = ['type' => 'text','text' => $text_recieve];
