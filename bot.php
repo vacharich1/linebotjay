@@ -121,112 +121,139 @@ if (!is_null($events['events'])) {
 									$timeframe = $textcut[1];
 								else
 									$timeframe ="assets";
-								#echo $hoonname;
 								$room='1';
-								
-								$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
-								VALUES ('', '$hoonname', '$timeframe','$replyToken')";
-								
-								if (mysqli_query($link, $sql)) {
-										echo "New record created successfully";
-								} 
-								else {
-										echo "Error: " . $sql . "<br>" . mysqli_error($link);
+								if($timeframe !="asserts" || $timeframe !="libilities" $timeframe !="equity")
+								{
+									$messages3 = ['type' => 'text','text' => "คำสั่งทั้งหมด 
+																			  @hoonname asserts 
+																			  @hoonname libilities
+																			  @hoonname equity"];
+						
+									$url = 'https://api.line.me/v2/bot/message/reply';
+									$data = [
+										'replyToken' => $replyToken,
+										'messages' => [$messages3]
+									];
+									
+	
+										$post = json_encode($data);
+										$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+							
+										$ch = curl_init($url);
+										curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+										curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+										curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+										curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+										curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+										$result = curl_exec($ch);
+										curl_close($ch);
 								}
-								sleep(0.3);
-								$check ="check1";
-								#echo "work code";
-								$sql = "INSERT INTO `check_capture`(`id`, `check1`) VALUES ('','$check')";
-								if (mysqli_query($link, $sql)) {
-										echo "New record created successfully";
-								} 
-								else {
-										echo "Error: " . $sql . "<br>" . mysqli_error($link);
-								}
-								
-								$link_pic ="https://www.botbottest.club/".$hoonname."".$timeframe.".jpg";
-									#echo "work code";
-								// Get replyToken
-								$replyToken = $event['replyToken'];
-								$hoonname1 = strtoupper($hoonname);
-								if($hoonname1 == '2S')
-									$llll = "https://www.dropbox.com/s/cov1jrkmhe8q81n/2S.png";																																		
 								else
-									$llll = "https://www.dropbox.com/s/j09fwo3536hdkib/pic.png?dl=0";
-								// Build message to reply back
-								#$messages = ['type' => 'text','text' => $event['source']['roomid']];
-								$messages4 = ['type' => 'text','text' => $event['source']['type']];
-								
-								$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
-								sleep(4);
-								
-								
-								$text_recieve="aaaaa";
-								
-								
-								$sql = "SELECT * FROM `data` WHERE 1";
-								$result = $link->query($sql);
-								if ($result->num_rows > 0) {
-									// output data of each row
-									while($row = $result->fetch_assoc()) {
-										$text_recieve=$row["word"];
-										
+								{
+									$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
+									VALUES ('', '$hoonname', '$timeframe','$replyToken')";
+									
+									if (mysqli_query($link, $sql)) {
+											echo "New record created successfully";
+									} 
+									else {
+											echo "Error: " . $sql . "<br>" . mysqli_error($link);
 									}
-								} else {
-									echo "0 results";
-								}
-								$link->close();
-								sleep(0.5);
-								
-								$sql = "DELETE FROM `data` WHERE 1";
-
-								if ($link->query($sql) === TRUE) {
-									echo "Record deleted successfully";
-								} else {
-									echo "Error deleting record: " . $link->error;
-								}
-								
-								$link->close();
-								
-								//$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe.".jpg";
-								
-								//$llll ='SORRY, OUT OF SERVICE';
-								$messages3 = ['type' => 'text','text' => $text_recieve];
-					
-								$messages1 = ['type' => 'text','text' => "Please wait 8s"];
-								sleep(1);
-								$messages2 = ['type' => 'image',
-										 'originalContentUrl' => $link_pic,
-										 'previewImageUrl' => $link_pic
-								];
-								
-								// Make a POST Request to Messaging API to reply to sender
-								$url = 'https://api.line.me/v2/bot/message/reply';
-								$data = [
-									'replyToken' => $replyToken,
-									'messages' => [$messages2]
-								];
-								
-
-									$post = json_encode($data);
-									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+									sleep(0.3);
+									$check ="check1";
+									#echo "work code";
+									$sql = "INSERT INTO `check_capture`(`id`, `check1`) VALUES ('','$check')";
+									if (mysqli_query($link, $sql)) {
+											echo "New record created successfully";
+									} 
+									else {
+											echo "Error: " . $sql . "<br>" . mysqli_error($link);
+									}
+									
+									$link_pic ="https://www.botbottest.club/".$hoonname."".$timeframe.".jpg";
+										#echo "work code";
+									// Get replyToken
+									$replyToken = $event['replyToken'];
+									$hoonname1 = strtoupper($hoonname);
+									if($hoonname1 == '2S')
+										$llll = "https://www.dropbox.com/s/cov1jrkmhe8q81n/2S.png";																																		
+									else
+										$llll = "https://www.dropbox.com/s/j09fwo3536hdkib/pic.png?dl=0";
+									// Build message to reply back
+									#$messages = ['type' => 'text','text' => $event['source']['roomid']];
+									$messages4 = ['type' => 'text','text' => $event['source']['type']];
+									
+									$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
+									sleep(4);
+									
+									
+									$text_recieve="aaaaa";
+									
+									
+									$sql = "SELECT * FROM `data` WHERE 1";
+									$result = $link->query($sql);
+									if ($result->num_rows > 0) {
+										// output data of each row
+										while($row = $result->fetch_assoc()) {
+											$text_recieve=$row["word"];
+											
+										}
+									} else {
+										echo "0 results";
+									}
+									$link->close();
+									sleep(0.5);
+									
+									$sql = "DELETE FROM `data` WHERE 1";
+	
+									if ($link->query($sql) === TRUE) {
+										echo "Record deleted successfully";
+									} else {
+										echo "Error deleting record: " . $link->error;
+									}
+									
+									$link->close();
+									
+									//$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe.".jpg";
+									
+									//$llll ='SORRY, OUT OF SERVICE';
+									$messages3 = ['type' => 'text','text' => $text_recieve];
 						
-									$ch = curl_init($url);
-									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-									curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-									curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-									curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-									curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-									$result = curl_exec($ch);
-									curl_close($ch);
-								
-						
-								
-								
-								
-								#echo "check1";
-								#sleep(10);
-								#echo $result . "\r\n";
+									$messages1 = ['type' => 'text','text' => "Please wait 8s"];
+									sleep(1);
+									$messages2 = ['type' => 'image',
+											 'originalContentUrl' => $link_pic,
+											 'previewImageUrl' => $link_pic
+									];
+									
+									// Make a POST Request to Messaging API to reply to sender
+									$url = 'https://api.line.me/v2/bot/message/reply';
+									$data = [
+										'replyToken' => $replyToken,
+										'messages' => [$messages2]
+									];
+									
+	
+										$post = json_encode($data);
+										$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+							
+										$ch = curl_init($url);
+										curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+										curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+										curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+										curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+										curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+										$result = curl_exec($ch);
+										curl_close($ch);
+									
+							
+									
+									
+									
+									#echo "check1";
+									#sleep(10);
+									#echo $result . "\r\n";
+								}#elseloop
 							}
 						}
 						else
