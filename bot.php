@@ -126,10 +126,10 @@ if (!is_null($events['events'])) {
 								$room='1';
 								$timeframe = strtolower($timeframe2);
 								sleep(0.1);
-								if($timeframe !="assets" || $timeframe !="libilities" || $timeframe !="equity"|| $timeframe !="revenve" || $timeframe !="eps" 
-								|| $timeframe !="expenses" || $timeframe !="gprofit" || $timeframe !="gmargin" || $timeframe !="nprofit" || $timeframe !="nmp")
+								if($timeframe !="assets" or $timeframe !="libilities" or $timeframe !="equity"or $timeframe !="revenve" or $timeframe !="eps" 
+								|| $timeframe !="expenses" or $timeframe !="gprofit" or $timeframe !="gmargin" or $timeframe !="nprofit" or $timeframe !="nmp")
 								{
-									$messages3 = ['type' => 'text','text' => "คำสั่งทั้งหมด @hoonname asserts       @hoonname libilities      @hoonname equity"];
+									$messages3 = ['type' => 'text','text' => "คำสั่งทั้งหมด @hoonname asserts       @hoonname libilities      @hoonname equity    @hoonname revenve       @hoonname eps @hoonname expenses       @hoonname gprofit        @hoonname gmargin        @hoonname nprofit         @hoonname nmp"];
 						
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
