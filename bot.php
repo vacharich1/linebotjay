@@ -126,11 +126,11 @@ if (!is_null($events['events'])) {
 								$room='1';
 								$timeframe = strtolower($timeframe2);
 								sleep(0.1);
-								if($timeframe !="assets" and $timeframe !="libilities" and $timeframe !="equity" and $timeframe !="revenve"  and $timeframe !="eps" 
+								if($timeframe !="assets" and $timeframe !="libilities" and $timeframe !="equity" and $timeframe !="revenue"  and $timeframe !="eps" 
 								and $timeframe !="expenses" and $timeframe !="gprofit" and $timeframe !="gmargin" and $timeframe !="nprofit" and $timeframe !="nmp"
 								and $timeframe !="as" and $timeframe !="lb" and $timeframe !="eq" and $timeframe !="rv" and $timeframe !="ex" and $timeframe !="gp" and $timeframe !="gm" and $timeframe !="np" )
 								{
-									$messages3 = ['type' => 'text','text' => "คำสั่งทั้งหมด @hoon assets/as       @hoon libilities/lb        @hoon equity/eq        @hoon revenve/rv       @hoon eps     @hoon expenses/ex       @hoon gprofit/gp        @hoon gmargin/gm        @hoon nprofit/np         @hoon nmp       EX @hoon assert/as ----> @aot assets or @aot as"];
+									$messages3 = ['type' => 'text','text' => "คำสั่งทั้งหมด @hoon assets/as       @hoon libilities/lb        @hoon equity/eq        @hoon revenue/rv       @hoon eps     @hoon expenses/ex       @hoon gprofit/gp        @hoon gmargin/gm        @hoon nprofit/np         @hoon nmp       EX @hoon assert/as ----> @aot assets or @aot as"];
 						
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
@@ -153,6 +153,23 @@ if (!is_null($events['events'])) {
 								}
 								else
 								{
+									if($timeframe =="as")
+										$timeframe ="assets"
+									else if($timeframe =="lb")
+										$timeframe ="libilities"
+									else if($timeframe =="eq")
+										$timeframe ="equity"
+									else if($timeframe =="rv")
+										$timeframe ="revenue"
+									else if($timeframe =="ex")
+										$timeframe ="expenses"
+									else if($timeframe =="gp")
+										$timeframe ="gprofit"
+									else if($timeframe =="gm")
+										$timeframe ="gmargin"
+									else if($timeframe =="np")
+										$timeframe ="nprofit"
+										
 									$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
 									VALUES ('', '$hoonname', '$timeframe','$replyToken')";
 									
