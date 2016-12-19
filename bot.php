@@ -117,14 +117,15 @@ if (!is_null($events['events'])) {
 							{
 								//echo $count_text_cut;
 								$replyToken = $event['replyToken'];
+								$timeframe2="";
 								if($result == 2)
 									$timeframe2 = $textcut[1];
 								else
 									$timeframe2 ="assets";
 									
 								$room='1';
-								$timeframe = mb_convert_case($timeframe2, MB_CASE_LOWER, "UTF-8");
-								sleep(0.1)
+								$timeframe = strtolower($timeframe2);
+								sleep(0.1);
 								if($timeframe !="assets" || $timeframe !="libilities" || $timeframe !="equity"|| $timeframe !="revenve" || $timeframe !="eps" 
 								|| $timeframe !="expenses" || $timeframe !="gprofit" || $timeframe !="gmargin" || $timeframe !="nprofit" || $timeframe !="nmp")
 								{
