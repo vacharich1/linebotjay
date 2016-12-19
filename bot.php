@@ -73,7 +73,7 @@ if (!is_null($events['events'])) {
 	//9:member2 C328035648eddea983ff6b6a3fc7622ec
 	
 	foreach ($events['events'] as $event) {
-		if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['groupId'] =='Cc5000f2d47fa9df8096c866a6f4402e9' || $event['source']['groupId'] =='C85404b458e7caaa96629fa66941c9d93')
+		if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['groupId'] =='Cc5000f2d47fa9df8096c866a6f4402e9' || $event['source']['groupId'] =='C85404b458e7caaa96629fa66941c9d93' || $event['source']['groupId'] =='C0773ad778af7cec264763eb058303c53')
 		{
 				
 			// Reply only when message sent is in 'text' format
