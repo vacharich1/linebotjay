@@ -130,7 +130,7 @@ if (!is_null($events['events'])) {
 								{
 									$messages3 = ['type' => 'text','text' => "คำสั่งทั้งหมด             @hoon assets/as       @hoon libilities/lb        @hoon equity/eq        @hoon revenue/rv       @hoon eps     @hoon expenses/ex       @hoon gprofit/gp        @hoon gmargin/gm        @hoon nprofit/np           @hoon nmp                                       
 									
-									EX   @hoon assert/as ----> @aot assets                 or @aot as"];
+		EX   @hoon assert/as                                      ----> @aot assets                     or @aot as"];
 						
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
