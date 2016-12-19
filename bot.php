@@ -154,21 +154,23 @@ if (!is_null($events['events'])) {
 								else
 								{
 									if($timeframe =="as")
-										$timeframe ="assets"
+									{
+										$timeframe ="assets";
+									}
 									else if($timeframe =="lb")
-										$timeframe ="libilities"
+										$timeframe ="libilities";
 									else if($timeframe =="eq")
-										$timeframe ="equity"
+										$timeframe ="equity";
 									else if($timeframe =="rv")
-										$timeframe ="revenue"
+										$timeframe ="revenue";
 									else if($timeframe =="ex")
-										$timeframe ="expenses"
+										$timeframe ="expenses";
 									else if($timeframe =="gp")
-										$timeframe ="gprofit"
+										$timeframe ="gprofit";
 									else if($timeframe =="gm")
-										$timeframe ="gmargin"
+										$timeframe ="gmargin";
 									else if($timeframe =="np")
-										$timeframe ="nprofit"
+										$timeframe ="nprofit";
 										
 									$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
 									VALUES ('', '$hoonname', '$timeframe','$replyToken')";
