@@ -118,16 +118,17 @@ if (!is_null($events['events'])) {
 								//echo $count_text_cut;
 								$replyToken = $event['replyToken'];
 								if($result == 2)
-									$timeframe = $textcut[1];
+									$timeframe2 = $textcut[1];
 								else
-									$timeframe ="assets";
+									$timeframe2 ="assets";
+									
 								$room='1';
-								if($timeframe !="equity")
+								$timeframe = mb_convert_case($timeframe2, MB_CASE_LOWER, "UTF-8");
+								sleep(0.1)
+								if($timeframe !="assets" || $timeframe !="libilities" || $timeframe !="equity"|| $timeframe !="revenve" || $timeframe !="eps" 
+								|| $timeframe !="expenses" || $timeframe !="gprofit" || $timeframe !="gmargin" || $timeframe !="nprofit" || $timeframe !="nmp")
 								{
-									$messages3 = ['type' => 'text','text' => "คำสั่งทั้งหมด 
-																			  @hoonname asserts 
-																			  @hoonname libilities
-																			  @hoonname equity"];
+									$messages3 = ['type' => 'text','text' => "คำสั่งทั้งหมด @hoonname asserts       @hoonname libilities      @hoonname equity"];
 						
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
@@ -184,7 +185,7 @@ if (!is_null($events['events'])) {
 									$messages4 = ['type' => 'text','text' => $event['source']['type']];
 									
 									$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
-									sleep(4);
+									sleep(1);
 									
 									
 									$text_recieve="aaaaa";
