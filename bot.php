@@ -116,13 +116,13 @@ if (!is_null($events['events'])) {
 							else
 							{
 								//echo $count_text_cut;
-								
+								$replyToken = $event['replyToken'];
 								if($result == 2)
 									$timeframe = $textcut[1];
 								else
 									$timeframe ="assets";
 								$room='1';
-								if($timeframe !="asserts" || $timeframe !="libilities" $timeframe !="equity")
+								if($timeframe !="equity")
 								{
 									$messages3 = ['type' => 'text','text' => "คำสั่งทั้งหมด 
 																			  @hoonname asserts 
@@ -173,7 +173,7 @@ if (!is_null($events['events'])) {
 									$link_pic ="https://www.botbottest.club/".$hoonname."".$timeframe.".jpg";
 										#echo "work code";
 									// Get replyToken
-									$replyToken = $event['replyToken'];
+									
 									$hoonname1 = strtoupper($hoonname);
 									if($hoonname1 == '2S')
 										$llll = "https://www.dropbox.com/s/cov1jrkmhe8q81n/2S.png";																																		
