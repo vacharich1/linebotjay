@@ -249,7 +249,7 @@ EX   @hoon assert/as                                      ----> @aot assets     
 									sleep(1);
 									$messages2 = ['type' => 'image',
 											 'originalContentUrl' => $link_pic,
-											 'previewImageUrl' => $link_pic
+											 'previewImageUrl' => 'https://www.botbottest.club/Capture.JPG'
 									];
 									
 									// Make a POST Request to Messaging API to reply to sender
