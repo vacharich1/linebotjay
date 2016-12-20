@@ -196,7 +196,7 @@ EX   @hoon assert/as                                      ----> @aot assets     
 											echo "Error: " . $sql . "<br>" . mysqli_error($link);
 									}
 									
-									$link_pic ="https://www.botbottest.club/".$hoonname."".$timeframe.".jpeg";
+									$link_pic ="https://www.botbottest.club/".$hoonname."".$timeframe.".jpg";
 										#echo "work code";
 									// Get replyToken
 									
