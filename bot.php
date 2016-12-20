@@ -126,7 +126,7 @@ if (!is_null($events['events'])) {
 								$room='1';
 								$timeframe = strtolower($timeframe2);
 								sleep(0.1);
-								if($timeframe !="assets" and $timeframe !="liabilities" and $timeframe !="equity" and $timeframe !="revenue" and $timeframe !="eps"and $timeframe !="expenses" and $timeframe !="gprofit" and $timeframe !="gpmargin" and $timeframe !="nprofit" and $timeframe !="npm" and $timeframe !="as" and $timeframe !="lb" and $timeframe !="eq" and $timeframe !="rv" and $timeframe !="ex" and $timeframe !="gp" and $timeframe !="gpm" and $timeframe !="np" )
+								if($timeframe !="roa" and $timeframe !="assets" and $timeframe !="liabilities" and $timeframe !="equity" and $timeframe !="revenue" and $timeframe !="eps"and $timeframe !="expenses" and $timeframe !="gprofit" and $timeframe !="gpmargin" and $timeframe !="nprofit" and $timeframe !="npm" and $timeframe !="as" and $timeframe !="lb" and $timeframe !="eq" and $timeframe !="rv" and $timeframe !="ex" and $timeframe !="gp" and $timeframe !="gpm" and $timeframe !="np" )
 								{
 									$messages3 = ['type' => 'text','text' => "คำสั่งทั้งหมด             @hoon assets/as       @hoon libilities/lb        @hoon equity/eq        @hoon revenue/rv       @hoon eps                  @hoon expenses/ex       @hoon gprofit/gp        @hoon gpmargin/gpm        @hoon nprofit/np           @hoon npm     
 									
