@@ -126,9 +126,9 @@ if (!is_null($events['events'])) {
 								$room='1';
 								$timeframe = strtolower($timeframe2);
 								sleep(0.1);
-								if($timeframe !="pe" and $timeframe !="roe" and $timeframe !="roa" and $timeframe !="assets" and $timeframe !="liabilities" and $timeframe !="equity" and $timeframe !="revenue" and $timeframe !="eps"and $timeframe !="expenses" and $timeframe !="gprofit" and $timeframe !="gpmargin" and $timeframe !="nprofit" and $timeframe !="npm" and $timeframe !="as" and $timeframe !="lb" and $timeframe !="eq" and $timeframe !="rv" and $timeframe !="ex" and $timeframe !="gp" and $timeframe !="gpm" and $timeframe !="np" )
+								if($timeframe !="dy" and $timeframe !="yield" and $timeframe !="pe" and $timeframe !="roe" and $timeframe !="roa" and $timeframe !="assets" and $timeframe !="liabilities" and $timeframe !="equity" and $timeframe !="revenue" and $timeframe !="eps"and $timeframe !="expenses" and $timeframe !="gprofit" and $timeframe !="gpmargin" and $timeframe !="nprofit" and $timeframe !="npm" and $timeframe !="as" and $timeframe !="lb" and $timeframe !="eq" and $timeframe !="rv" and $timeframe !="ex" and $timeframe !="gp" and $timeframe !="gpm" and $timeframe !="np" )
 								{
-									$messages3 = ['type' => 'text','text' => "คำสั่งทั้งหมด             @hoon assets/as       @hoon libilities/lb        @hoon equity/eq        @hoon revenue/rv       @hoon eps                  @hoon expenses/ex       @hoon gprofit/gp        @hoon gpmargin/gpm        @hoon nprofit/np           @hoon npm     
+									$messages3 = ['type' => 'text','text' => "คำสั่งทั้งหมด             @hoon assets/as       @hoon libilities/lb        @hoon equity/eq        @hoon revenue/rv       @hoon eps                  @hoon expenses/ex       @hoon gprofit/gp        @hoon gpmargin/gpm        @hoon nprofit/np           @hoon npm              @hoon roa               @hoon roe             @hoon pe         @hoon pbv             @hoon yield/dy
 									
 					
 									                                  
@@ -173,6 +173,8 @@ EX   @hoon assert/as                                      ----> @aot assets     
 										$timeframe ="gpm";
 									else if($timeframe =="np")
 										$timeframe ="nprofit";
+									else if($timeframe =="dy")
+										$timeframe ="yield";
 										
 									$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
 									VALUES ('', '$hoonname', '$timeframe','$replyToken')";
@@ -308,9 +310,11 @@ EX   @hoon assert/as                                      ----> @aot assets     
 								if($text == 'เเสดงคำสั่งทั้งหมด' || $text == 'คำสั่ง' )
 								{
 									$replyToken = $event['replyToken'];
-									$messages55 = ['type' => 'text','text' => "@checkgpu 1 เเสดงข้อมูลการ์ใบที่1 
-																				@checkgpu 2 เเสดงข้อมูลการ์ดใบที่ 2 
-																				@checkgpu all เเสดงการ์ดจอทุกใบที่มี"];
+									$messages55 = ['type' => 'text','text' => "คำสั่งทั้งหมด             @hoon assets/as       @hoon libilities/lb        @hoon equity/eq        @hoon revenue/rv       @hoon eps                  @hoon expenses/ex       @hoon gprofit/gp        @hoon gpmargin/gpm        @hoon nprofit/np           @hoon npm              @hoon roa               @hoon roe             @hoon pe         @hoon pbv             @hoon yield/dy
+									
+					
+									                                  
+EX   @hoon assert/as                                      ----> @aot assets                     or @aot as"];
 									// Make a POST Request to Messaging API to reply to sende
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
