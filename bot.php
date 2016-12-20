@@ -169,8 +169,8 @@ EX   @hoon assert/as                                      ----> @aot assets     
 										$timeframe ="expenses";
 									else if($timeframe =="gp")
 										$timeframe ="gprofit";
-									else if($timeframe =="gm")
-										$timeframe ="gmargin";
+									else if($timeframe =="gpmargin")
+										$timeframe ="gpm";
 									else if($timeframe =="np")
 										$timeframe ="nprofit";
 										
