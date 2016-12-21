@@ -248,8 +248,8 @@ EX   @hoon assert/as                                      ----> @aot assets     
 									$messages1 = ['type' => 'text','text' => "Please wait 8s"];
 									sleep(1);
 									$messages2 = ['type' => 'image',
-											 'originalContentUrl' => $link_pic,
-											 'previewImageUrl' => $link_pic
+											 'originalContentUrl' => 'https://www.botbottest.club/testtest.jpg',
+											 'previewImageUrl' => 'https://www.botbottest.club/testtest.jpg'
 									];
 									
 									// Make a POST Request to Messaging API to reply to sender
