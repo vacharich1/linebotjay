@@ -367,6 +367,8 @@ EX   @hoon assert/as                                      ----> @aot assets     
 													 'altText' => 'test',
 													 'template' => [	'type' => 'buttons', 
 																		'thumbnailImageUrl'=> "https://www.botbottest.club/aoteps.jpg",
+																		'title' => 'Menu',
+																		'text'  => 'Please select',
 																		'actions' => [
 																				[
 																					'type'=> 'uri',
