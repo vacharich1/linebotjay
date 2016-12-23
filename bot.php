@@ -371,7 +371,7 @@ EX   @hoon assert/as                                      ----> @aot assets     
 																		'text'  => 'Please select',
 																		'actions' => [
 																				[
-																					'type'=> 'message',
+																					'type'=> 'uri',
 																					'label'=> 'View detail',
 																					'uri'=> 'https://www.botbottest.club/aoteps.jpg'
 																				]
