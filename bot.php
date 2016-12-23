@@ -341,8 +341,8 @@ EX   @hoon assert/as                                      ----> @aot assets     
 									
 									$replyToken = $event['replyToken'];
 									$messages55 = ['type' => 'image',
-											 'originalContentUrl' => 'https://www.botbottest.club/testtest.jpg',
-											 'previewImageUrl' => 'https://www.botbottest.club/testtest.jpg'];
+											 'originalContentUrl' => 'https://www.botbottest.club/testtest.png',
+											 'previewImageUrl' => 'https://www.botbottest.club/testtest.png'];
 											 
 
 									// Make a POST Request to Messaging API to reply to sender
