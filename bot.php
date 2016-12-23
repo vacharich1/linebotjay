@@ -362,6 +362,25 @@ EX   @hoon assert/as                                      ----> @aot assets     
 															          ]
 											 
 											 ];
+											 
+									$messages33 = [	 'type' => 'template',
+													 'altText' => 'test',
+													 'template' => [	'type' => 'buttons', 
+																		'thumbnailImageUrl'=> "https://www.botbottest.club/aoteps.jpg",
+																		'title' => 'Menu',
+																		'text'  => 'Please select',
+																		'actions' => [
+																				[
+																					'type'=> 'message',
+																					'label'=> 'View detail',
+																					'uri'=> 'https://www.botbottest.club/aoteps.jpg'
+																				]
+																				
+																         ]
+															
+															          ]
+											 
+											 ];
 
 									$messages55 = ['type' => 'image',
 											 'originalContentUrl' => 'https://www.botbottest.club/aoteps.jpg',
@@ -374,7 +393,7 @@ EX   @hoon assert/as                                      ----> @aot assets     
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
 										'replyToken' => $replyToken,
-										'messages' => [$messages44]
+										'messages' => [$messages33]
 									];
 									$post = json_encode($data);
 									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
