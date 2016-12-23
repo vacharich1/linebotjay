@@ -309,7 +309,6 @@ EX   @hoon assert/as                                      ----> @aot assets     
 							{
 								if($text == 'ทดสอบ' )
 								{
-									
 									$messages55 = ['type' => 'image',
 											 'originalContentUrl' => 'https://www.botbottest.club/testtest.jpg',
 											 'previewImageUrl' => 'https://www.botbottest.club/testtest.jpg'
@@ -333,6 +332,7 @@ EX   @hoon assert/as                                      ----> @aot assets     
 									$result = curl_exec($ch);
 									curl_close($ch);
 								}
+								
 								if($text == 'เเสดงคำสั่งทั้งหมด' || $text == 'คำสั่ง' )
 								{
 									$replyToken = $event['replyToken'];
