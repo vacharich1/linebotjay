@@ -347,14 +347,14 @@ EX   @hoon assert/as                                      ----> @aot assets     
 																		'text'=> "Are you sure?",
 																		'actions' => [
 																				[
-																					'type': 'message',
-																					'label': 'Yes',
-																					'text': 'yes'
+																					'type'=> 'message',
+																					'label'=> 'Yes',
+																					'text'=> 'yes'
 																				],
 																				[
-																					'type': 'message',
-																					'label': 'No',
-																					'text': 'No'
+																					'type'=> 'message',
+																					'label'=> 'No',
+																					'text'=> 'No'
 																				]
 																				
 																         ]
