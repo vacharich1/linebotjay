@@ -286,9 +286,9 @@ EX   @hoon assert/as                                      ----> @aot assets     
 						{
 							if(preg_match("/^[a-zA-Z]+$/", $text[0]) == 1) {
 								$replyToken = $event['replyToken'];
-								$messages55 = ['type' => 'text','text' => "ลืม @ นะจ๊ะ "];
-								// Make a POST Request to Messaging API to reply to sender
-								$url = 'https://api.line.me/v2/bot/message/reply';
+								$messages55 = ['type' => 'image',
+											 'originalContentUrl' => 'https://www.botbottest.club/testtest.jpg',
+											 'previewImageUrl' => 'https://www.botbottest.club/testtest.jpg'
 								$data = [
 									'replyToken' => $replyToken,
 									'messages' => [$messages55]
@@ -307,6 +307,26 @@ EX   @hoon assert/as                                      ----> @aot assets     
 							}
 							else
 							{
+								if($text == 'ทดสอบ' )
+								{
+									$url = 'https://api.line.me/v2/bot/message/reply';
+									$data = [
+												'replyToken' => $replyToken,
+												'messages' => [$messages55]
+											];
+									$post = json_encode($data);
+									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+											
+									$ch = curl_init($url);
+									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+									curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+									curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+									curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+									curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+									$result = curl_exec($ch);
+									curl_close($ch);
+									
+								}
 								if($text == 'เเสดงคำสั่งทั้งหมด' || $text == 'คำสั่ง' )
 								{
 									$replyToken = $event['replyToken'];
