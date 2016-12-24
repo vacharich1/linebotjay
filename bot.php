@@ -88,7 +88,7 @@ if (!is_null($events['events'])) {
 				if($result > 2)
 				{
 						$replyToken = $event['replyToken'];
-						$messages556 = ['type' => 'text','text' => "alert"];
+						$messages556 = ['type' => 'text','text' => $textcut[0]."  :  ".$textcut[1]];
 						// Make a POST Request to Messaging API to reply to sender
 						$url = 'https://api.line.me/v2/bot/message/reply';
 						$data = [
