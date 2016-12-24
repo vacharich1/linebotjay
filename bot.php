@@ -275,7 +275,7 @@ EX   @hoon assert/as                                      ----> @aot assets     
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
 										'replyToken' => $replyToken,
-										'messages' => [$messages2, $messages33]
+										'messages' => [$messages33]
 									];
 									
 	
