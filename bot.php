@@ -83,11 +83,8 @@ if (!is_null($events['events'])) {
 				
 				$textcut = explode(" ", $text);
 				$result = count($textcut);
-				if($result >2)
+				if($result > 2)
 				{
-					
-					if($textcut[0] == "@al")
-					{
 						$replyToken = $event['replyToken'];
 						$messages556 = ['type' => 'text','text' => "alert";
 						// Make a POST Request to Messaging API to reply to sender
@@ -107,7 +104,6 @@ if (!is_null($events['events'])) {
 						curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 						$result = curl_exec($ch);
 						curl_close($ch);	
-					}
 				}
 				if($result <= 2)
 				{
