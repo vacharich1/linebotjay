@@ -81,6 +81,8 @@ if (!is_null($events['events'])) {
 				// Get text sent
 				$text = $event['message']['text'];
 				
+				$replyToken = $event['replyToken'];
+				
 				$textcut = explode(" ", $text);
 				$result = count($textcut);
 				if($result > 2)
@@ -138,7 +140,7 @@ if (!is_null($events['events'])) {
 							else
 							{
 								//echo $count_text_cut;
-								$replyToken = $event['replyToken'];
+								
 								$timeframe2="";
 								if($result == 2)
 									$timeframe2 = $textcut[1];
