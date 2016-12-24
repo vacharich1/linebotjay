@@ -87,10 +87,37 @@ if (!is_null($events['events'])) {
 				$result = count($textcut);
 				if($result > 2)
 				{
-					if($textcut[0]=="@al")
+					if($textcut[0]=="@alh" || $textcut[0]=="@all")
 					{
 						$replyToken = $event['replyToken'];
 						$messages556 = ['type' => 'text','text' => $textcut[0]."  :  ".$textcut[1]];
+						if($textcut[0]=="@alh")
+							$type="h";
+						else
+							$type='l';
+						$userid = $event['source']['userId'];	
+						$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
+									VALUES ('', '$textcut[0]', '$textcut[1]','$replyToken' ,'$userid', '$type')";
+									
+						if (mysqli_query($link, $sql)) {
+									echo "New record created successfully";
+						} 
+						else {
+									echo "Error: " . $sql . "<br>" . mysqli_error($link);
+						}
+						sleep(0.3);
+						
+						$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','check1')";
+						if (mysqli_query($link, $sql)) {
+									echo "New record created successfully";
+						} 
+						else {
+									echo "Error: " . $sql . "<br>" . mysqli_error($link);
+						}
+									
+									
+									
+									
 						// Make a POST Request to Messaging API to reply to sender
 						$url = 'https://api.line.me/v2/bot/message/reply';
 						$data = [
