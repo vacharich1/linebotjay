@@ -252,11 +252,30 @@ EX   @hoon assert/as                                      ----> @aot assets     
 											 'previewImageUrl' => $link_pic
 									];
 									
+									$messages33 = [	 'type' => 'template',
+													 'altText' => 'test',
+													 'template' => [	'type' => 'buttons', 
+																		'thumbnailImageUrl'=> $link_pic,
+																		'title' => $hoonname,
+																		'text'  => $timeframe,
+																		'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> $link_pic
+																				]
+																				
+																         ]
+															
+															          ]
+											 
+											 ];
+									
 									// Make a POST Request to Messaging API to reply to sender
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
 										'replyToken' => $replyToken,
-										'messages' => [$messages2]
+										'messages' => [$messages2, $messages33]
 									];
 									
 	
