@@ -91,7 +91,7 @@ if (!is_null($events['events'])) {
 					if($arr1[0] == "@al")
 					{
 						$replyToken = $event['replyToken'];
-						$messages556 = ['type' => 'text','text' => $arr1[1]+$arr1[2]];
+						$messages556 = ['type' => 'text','text' => $arr1[1]+$arr1[2];
 						// Make a POST Request to Messaging API to reply to sender
 						$url = 'https://api.line.me/v2/bot/message/reply';
 						$data = [
