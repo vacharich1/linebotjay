@@ -85,10 +85,8 @@ if (!is_null($events['events'])) {
 				$result = count($textcut);
 				if($result >2)
 				{
-					$count_text_cut = strlen($textcut[0]);
-					$x=0;
-					$arr1 = str_split($textcut[0]);
-					if($arr1[0] == "@al")
+					
+					if($result[0] == "@al")
 					{
 						$replyToken = $event['replyToken'];
 						$messages556 = ['type' => 'text','text' => "alert";
