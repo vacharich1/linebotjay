@@ -87,14 +87,20 @@ if (!is_null($events['events'])) {
 				$result = count($textcut);
 				if($result > 2)
 				{
-					if($textcut[0]=="@alh" || $textcut[0]=="@all")
+					if($textcut[0]=="@>" || $textcut[0]=="@<")
 					{
 						$replyToken = $event['replyToken'];
-						$messages556 = ['type' => 'text','text' => $textcut[0]."  :  ".$textcut[1]];
-						if($textcut[0]=="@alh")
+						
+						if($textcut[0]=="@>")
+						{
+							$messages556 = ['type' => 'text','text' => "Alert hoon  :  ".$textcut[1]." >= ".$textcut[2]];
 							$type="h";
+						}
 						else
+						{
+							$messages556 = ['type' => 'text','text' => "Alert hoon  :  ".$textcut[1]." <= ".$textcut[2]];
 							$type='l';
+						}
 						$userid = $event['source']['userId'];	
 						$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
 									VALUES ('', '$textcut[1]', '$textcut[2]','$replyToken' ,'$userid', '$type')";
