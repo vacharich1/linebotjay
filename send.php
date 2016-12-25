@@ -44,6 +44,11 @@ if ($result->num_rows > 0) {
 			$text_alert = "[alert] : ". $row["hoonname"]." [ Current Price ] : " . $row["price_current"]. "  > = [ Alert Price ] : " . $row["price_alert"]. "<br>";
 			$USERID =$row["uid"];
 		}
+		else if($row["type"]=='same')
+		{
+			$text_alert = "[same price] : ". $row["hoonname"]." [ Current Price ] : " . $row["price_current"]. "  == [ Alert Price ] : " . $row["price_alert"]." please sent new alert";
+			$USERID =$row["uid"];
+		}
 		else
 		{
 			$text_alert = "[alert] : ". $row["hoonname"]." [ Current Price ] : " . $row["price_current"]. "  < =  [ Alert Price ] : " . $row["price_alert"]. "<br>";
