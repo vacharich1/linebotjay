@@ -145,6 +145,9 @@ if (!is_null($events['events'])) {
 				}
 				if($result <= 2)
 				{
+						$count_text_cut = strlen($textcut[0]);
+						$x=0;
+						$arr1 = str_split($textcut[0]);
 						if($textcut[0]=="@show" || $textcut[0]=="@de")
 						{
 							
@@ -174,10 +177,7 @@ if (!is_null($events['events'])) {
 								}
 							
 						}
-						$count_text_cut = strlen($textcut[0]);
-						$x=0;
-						$arr1 = str_split($textcut[0]);
-						if($arr1[0] == "@")
+						else if($arr1[0] == "@")
 						{
 							$hoonname = substr($textcut[0], 1); // cut@
 							if(preg_match("/^[a-zA-Z]+$/", $hoonname[0]) != 1) 
