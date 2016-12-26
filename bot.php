@@ -145,6 +145,35 @@ if (!is_null($events['events'])) {
 				}
 				if($result <= 2)
 				{
+						if($textcut[0]=="@show" || $textcut[0]=="@de")
+						{
+							
+							$replyToken = $event['replyToken'];
+							if($textcut[1]=="alert" )
+							{
+								$type=$textcut[0];
+								$userid = $event['source']['userId'];	
+								$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
+											VALUES ('', '$textcut[1]', '$type','$replyToken' ,'$userid', '$type')";
+											
+								if (mysqli_query($link, $sql)) {
+												echo "New record created successfully";
+									} 
+									else {
+												echo "Error: " . $sql . "<br>" . mysqli_error($link);
+									}
+									sleep(0.3);
+									
+									$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','check1')";
+									if (mysqli_query($link, $sql)) {
+												echo "New record created successfully";
+									} 
+									else {
+												echo "Error: " . $sql . "<br>" . mysqli_error($link);
+									}
+								}
+							
+						}
 						$count_text_cut = strlen($textcut[0]);
 						$x=0;
 						$arr1 = str_split($textcut[0]);
