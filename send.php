@@ -39,12 +39,12 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
 		echo "[alert] : ". $row["hoonname"]." [ Current Price ] : " . $row["price_current"]. "  > = [ Alert Price ] : " . $row["price_alert"].$row["uid"]."<br>";
-		if($row["type"]=='h')
+		if($row["type"]=='H')
 		{
 			$text_alert = "[alert] : ". $row["hoonname"]." [ Current Price ] : " . $row["price_current"]. "  > = [ Alert Price ] : " . $row["price_alert"]. "<br>";
 			$USERID =$row["uid"];
 		}
-		else if($row["type"]=='same')
+		else if($row["type"]=='SAME')
 		{
 			$text_alert = "[same price] : ". $row["hoonname"]." [ Current Price ] : " . $row["price_current"]. "  == [ Alert Price ] : " . $row["price_alert"]." please sent new alert";
 			$USERID =$row["uid"];
