@@ -105,9 +105,9 @@ if (!is_null($events['events'])) {
 							$userid = $event['source']['userId'];	
 						else
 							$userid = $event['source']['groupId'];	
-						
+						$hoon_low = strtolower($textcut[1]);
 						$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
-									VALUES ('', '$textcut[1]', '$textcut[2]','$replyToken' ,'$userid', '$type')";
+									VALUES ('', '$hoon_low', '$textcut[2]','$replyToken' ,'$userid', '$type')";
 									
 						if (mysqli_query($link, $sql)) {
 									echo "New record created successfully";
