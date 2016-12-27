@@ -101,7 +101,10 @@ if (!is_null($events['events'])) {
 							$messages556 = ['type' => 'text','text' => "Alert hoon  :  ".$textcut[1]." <= ".$textcut[2]];
 							$type='l';
 						}
-						$userid = $event['source']['userId'];	
+						if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')
+							$userid = $event['source']['userId'];	
+						else
+							$userid = $event['source']['groupId'];	
 						
 						$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
 									VALUES ('', '$textcut[1]', '$textcut[2]','$replyToken' ,'$userid', '$type')";
