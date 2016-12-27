@@ -94,12 +94,12 @@ if (!is_null($events['events'])) {
 						if($textcut[0]=="@>")
 						{
 							$messages556 = ['type' => 'text','text' => "Alert hoon  :  ".$textcut[1]." >= ".$textcut[2]];
-							$type="H";
+							$type="h";
 						}
 						else
 						{
 							$messages556 = ['type' => 'text','text' => "Alert hoon  :  ".$textcut[1]." <= ".$textcut[2]];
-							$type='L';
+							$type='l';
 						}
 						$userid = $event['source']['userId'];	
 						
