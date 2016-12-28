@@ -50,6 +50,11 @@ if ($result->num_rows > 0) {
 			$text_alert = "[same price] : ".$hoonname1." [ Current Price ] : " . $row["price_current"]. "  == [ Alert Price ] : " . $row["price_alert"]." please sent new alert";
 			$USERID =$row["uid"];
 		}
+		else if($row["type"]=='show')
+		{
+			$text_alert = $hoonname1;
+			$USERID =$row["uid"];
+		}
 		else
 		{
 			$text_alert = "[alert] : ".$hoonname1." [ Current Price ] : " . $row["price_current"]. "  < =  [ Alert Price ] : " . $row["price_alert"]. "<br>";
