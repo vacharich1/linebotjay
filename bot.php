@@ -116,7 +116,7 @@ if (!is_null($events['events'])) {
 									echo "Error: " . $sql . "<br>" . mysqli_error($link);
 						}
 						sleep(0.3);
-						
+						$text_alert="test"
 						$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','check1')";
 						if (mysqli_query($link, $sql)) {
 									echo "New record created successfully";
@@ -124,15 +124,32 @@ if (!is_null($events['events'])) {
 						else {
 									echo "Error: " . $sql . "<br>" . mysqli_error($link);
 						}
-									
-									
+						sleep(10);			
+						$sql1 = "SELECT * FROM send_alert ORDER BY `hoonname` ASC";
+						$result = $link->query($sql1);
+						
+						if ($result->num_rows > 0) {
+							// output data of each row
+							while($row = $result->fetch_assoc()) {
+								$hoonname1 = strtoupper($row["hoonname"]);
+								echo "[alert] : ".$hoonname1." [ Current Price ] : " .$row["price_current"]. "  > = [ Alert Price ] : " . $row["price_alert"].$row["uid"]."<br>";
+								if($row["type"]=='alert')
+								{
+									$text_alert = "[alert] : ".$hoonname1;
+									$USERID =$row["uid"];
+								}
+								
+							}
+						} else {
+							echo "0 results";
+						}			
 									
 									
 						// Make a POST Request to Messaging API to reply to sender
 						$url = 'https://api.line.me/v2/bot/message/reply';
 						$data = [
 									'replyToken' => $replyToken,
-									'messages' => [$messages556]
+									'messages' => [$text_alert]
 								];
 						$post = json_encode($data);
 						$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -155,7 +172,7 @@ if (!is_null($events['events'])) {
 						if($textcut[0]=="@show" || $textcut[0]=="@de")
 						{
 							$replyToken = $event['replyToken'];
-							if($textcut[1]=="ALERT" )
+							if($textcut[1]=="alert" )
 							{
 								$type=$textcut[0];
 								$userid = $event['source']['userId'];	
@@ -177,7 +194,29 @@ if (!is_null($events['events'])) {
 									else {
 												echo "Error: " . $sql . "<br>" . mysqli_error($link);
 									}
-								}
+									
+									
+									
+									
+									$url = 'https://api.line.me/v2/bot/message/reply';
+									$data = [
+										'replyToken' => $replyToken,
+										'messages' => [$messages3]
+									];
+									
+	
+										$post = json_encode($data);
+										$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+							
+										$ch = curl_init($url);
+										curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+										curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+										curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+										curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+										curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+										$result = curl_exec($ch);
+										curl_close($ch);
+							}
 							
 						}
 						else if($arr1[0] == "@")
