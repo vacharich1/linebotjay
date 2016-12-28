@@ -116,6 +116,14 @@ if (!is_null($events['events'])) {
 						else {
 									echo "Error: " . $sql . "<br>" . mysqli_error($link);
 						}
+						
+						$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
+						if (mysqli_query($link, $sql)) {
+								echo "New record created successfully";
+						} 
+						else {
+								echo "Error: " . $sql . "<br>" . mysqli_error($link);
+						}
 						sleep(0.3);
 									
 						// Make a POST Request to Messaging API to reply to sender
