@@ -116,40 +116,12 @@ if (!is_null($events['events'])) {
 									echo "Error: " . $sql . "<br>" . mysqli_error($link);
 						}
 						sleep(0.3);
-						$text_alert="test"
-						$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','check1')";
-						if (mysqli_query($link, $sql)) {
-									echo "New record created successfully";
-						} 
-						else {
-									echo "Error: " . $sql . "<br>" . mysqli_error($link);
-						}
-						sleep(10);			
-						$sql1 = "SELECT * FROM send_alert ORDER BY `hoonname` ASC";
-						$result = $link->query($sql1);
-						
-						if ($result->num_rows > 0) {
-							// output data of each row
-							while($row = $result->fetch_assoc()) {
-								$hoonname1 = strtoupper($row["hoonname"]);
-								echo "[alert] : ".$hoonname1." [ Current Price ] : " .$row["price_current"]. "  > = [ Alert Price ] : " . $row["price_alert"].$row["uid"]."<br>";
-								if($row["type"]=='alert')
-								{
-									$text_alert = "[alert] : ".$hoonname1;
-									$USERID =$row["uid"];
-								}
-								
-							}
-						} else {
-							echo "0 results";
-						}			
-									
 									
 						// Make a POST Request to Messaging API to reply to sender
 						$url = 'https://api.line.me/v2/bot/message/reply';
 						$data = [
 									'replyToken' => $replyToken,
-									'messages' => [$text_alert]
+									'messages' => [$messages556]
 								];
 						$post = json_encode($data);
 						$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -196,7 +168,7 @@ if (!is_null($events['events'])) {
 									}
 									
 									
-									
+									$messages3 = ['type' => 'text','text' => "show hoon  :  "];
 									
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
