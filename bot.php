@@ -159,7 +159,14 @@ if (!is_null($events['events'])) {
 								$check ="check1";	
 								$userid = $event['source']['userId'];	
 								$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
-											VALUES ('', '$textcut[1]', '$type','$replyToken' ,'$userid', '$type')";
+									VALUES ('', '$textcut[1]', '$textcut[2]','$replyToken' ,'$userid', '$type')";
+									
+								if (mysqli_query($link, $sql)) {
+											echo "New record created successfully";
+								} 
+								else {
+											echo "Error: " . $sql . "<br>" . mysqli_error($link);
+								}
 								
 								$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
 								if (mysqli_query($link, $sql)) {
@@ -168,24 +175,8 @@ if (!is_null($events['events'])) {
 								else {
 										echo "Error: " . $sql . "<br>" . mysqli_error($link);
 								}
-								sleep(0.3);			
-								
-								if (mysqli_query($link, $sql)) {
-												echo "New record created successfully";
-									} 
-									else {
-												echo "Error: " . $sql . "<br>" . mysqli_error($link);
-									}
-									sleep(0.3);
-									
-									$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','check1')";
-									if (mysqli_query($link, $sql)) {
-												echo "New record created successfully";
-									} 
-									else {
-												echo "Error: " . $sql . "<br>" . mysqli_error($link);
-									}
-									
+								sleep(0.3);
+											
 							}
 							
 						}
