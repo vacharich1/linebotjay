@@ -117,7 +117,7 @@ if (!is_null($events['events'])) {
 									echo "Error: " . $sql . "<br>" . mysqli_error($link);
 						}
 						
-						$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
+						$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check1')";
 						if (mysqli_query($link, $sql)) {
 								echo "New record created successfully";
 						} 
