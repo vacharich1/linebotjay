@@ -105,7 +105,7 @@ if (!is_null($events['events'])) {
 							$userid = $event['source']['userId'];	
 						else
 							$userid = $event['source']['groupId'];	
-							
+						$check ="check1";	
 						$hoon_low = strtolower($textcut[1]);
 						$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
 									VALUES ('', '$hoon_low', '$textcut[2]','$replyToken' ,'$userid', '$type')";
@@ -117,7 +117,7 @@ if (!is_null($events['events'])) {
 									echo "Error: " . $sql . "<br>" . mysqli_error($link);
 						}
 						
-						$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check1')";
+						$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
 						if (mysqli_query($link, $sql)) {
 								echo "New record created successfully";
 						} 
