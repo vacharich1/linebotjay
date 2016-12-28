@@ -105,6 +105,7 @@ if (!is_null($events['events'])) {
 							$userid = $event['source']['userId'];	
 						else
 							$userid = $event['source']['groupId'];	
+							
 						$hoon_low = strtolower($textcut[1]);
 						$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
 									VALUES ('', '$hoon_low', '$textcut[2]','$replyToken' ,'$userid', '$type')";
@@ -167,27 +168,6 @@ if (!is_null($events['events'])) {
 												echo "Error: " . $sql . "<br>" . mysqli_error($link);
 									}
 									
-									
-									$messages3 = ['type' => 'text','text' => "show hoon  :  "];
-									
-									$url = 'https://api.line.me/v2/bot/message/reply';
-									$data = [
-										'replyToken' => $replyToken,
-										'messages' => [$messages3]
-									];
-									
-	
-										$post = json_encode($data);
-										$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-							
-										$ch = curl_init($url);
-										curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-										curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-										curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-										curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-										curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-										$result = curl_exec($ch);
-										curl_close($ch);
 							}
 							
 						}
