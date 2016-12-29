@@ -50,6 +50,11 @@ if ($result->num_rows > 0) {
 			$text_alert = "[ SAME PRICE ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... = .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] " .$row["price_alert"]." รบกวนพิมพ์ใหม่อีกครั้ง ";
 			$USERID =$row["uid"];
 		}
+		else if($row["type"]=='sameprice')
+		{
+			$text_alert = "[ SAME PRICE ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... = .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] " .$row["price_alert"];
+			$USERID =$row["uid"];
+		}
 		else if($row["type"]=='show')
 		{
 			$text_alert = $hoonname1;
