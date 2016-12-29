@@ -93,17 +93,17 @@ if (!is_null($events['events'])) {
 						
 						if($textcut[0]=="@>")
 						{
-							$messages556 = ['type' => 'text','text' => ".....[ ALERT HOON ].....\n ".$textcut[1]." > ".$textcut[2]];
+							$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." > ".$textcut[2]];
 							$type="h";
 						}
 						else if($textcut[0]=="@=")
 						{
-							$messages556 = ['type' => 'text','text' => ".....[ ALERT HOON ].....\n ".$textcut[1]." = ".$textcut[2]];
+							$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." = ".$textcut[2]];
 							$type="sameprice";
 						}
 						else
 						{
-							$messages556 = ['type' => 'text','text' => ".....[ ALERT HOON ].....\n ".$textcut[1]." < ".$textcut[2]];
+							$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." < ".$textcut[2]];
 							$type='l';
 						}
 						if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')
