@@ -67,7 +67,7 @@ if ($result->num_rows > 0) {
 		}
 		else if($row["type"]=='hoonsame')
 		{
-			$text_alert = "มีการเเจ้งเตือน".$hoonname1." อยู่เเล้ว";
+			$text_alert = "..มีการเเจ้งเตือน..\n".$hoonname1." อยู่เเล้ว";
 			$USERID =$row["uid"];
 		}
 		else
