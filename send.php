@@ -55,6 +55,11 @@ if ($result->num_rows > 0) {
 			$text_alert = "[ SAME PRICE ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... = .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] " .$row["price_alert"];
 			$USERID =$row["uid"];
 		}
+		else if($row["type"]=='notfound')
+		{
+			$text_alert = "Symbol Not Found";
+			$USERID =$row["uid"];
+		}
 		else if($row["type"]=='show')
 		{
 			$text_alert = $hoonname1;
