@@ -87,7 +87,7 @@ if (!is_null($events['events'])) {
 				$result = count($textcut);
 				if($result > 2)
 				{
-					if($textcut[0]=="@>" || $textcut[0]=="@<")
+					if($textcut[0]=="@>" || $textcut[0]=="@<" || $textcut[0]=="@=")
 					{
 						$replyToken = $event['replyToken'];
 						
