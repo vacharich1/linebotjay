@@ -96,7 +96,7 @@ if (!is_null($events['events'])) {
 							$messages556 = ['type' => 'text','text' => ".....Alert hoon.....\n ".$textcut[1]." > ".$textcut[2]];
 							$type="h";
 						}
-						if($textcut[0]=="@=")
+						else if($textcut[0]=="@=")
 						{
 							$messages556 = ['type' => 'text','text' => ".....Alert hoon.....\n ".$textcut[1]." = ".$textcut[2]];
 							$type="sameprice";
