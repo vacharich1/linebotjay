@@ -453,7 +453,29 @@ EX   @hoon assert/as                                      ----> @aot assets     
 									curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 									$result = curl_exec($ch);
 									curl_close($ch);
-								}	
+								}
+								if($text == 'คำสั่งเเจ้งเตือน' )
+								{
+									$replyToken = $event['replyToken'];
+									$messages55 = ['type' => 'text','text' => "@> hoonname price\n Ex @> aot 400\n\n@< hoonname price\nEx @< aot 400\n\n@= hoonname price\nEx @= aot 400\n\n@show alert\n เเสดงข้อมูลที่เเจ้งเตือนไว้"];
+									// Make a POST Request to Messaging API to reply to sende
+									$url = 'https://api.line.me/v2/bot/message/reply';
+									$data = [
+												'replyToken' => $replyToken,
+												'messages' => [$messages55]
+											];
+									$post = json_encode($data);
+									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+											
+									$ch = curl_init($url);
+									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+									curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+									curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+									curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+									curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+									$result = curl_exec($ch);
+									curl_close($ch);
+								}
 								
 								if($text == 'ทดสอบ')
 								{
