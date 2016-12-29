@@ -39,15 +39,15 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
 		$hoonname1 = strtoupper($row["hoonname"]);
-		echo "[alert] : ".$hoonname1." [ Current Price ] : " .$row["price_current"]. "  > = [ Alert Price ] : " . $row["price_alert"].$row["uid"]."<br>";
+		echo "[ ALERT ] ".$hoonname1." [ Current Price ] : " .$row["price_current"]. "  > = [ Alert Price ] : " . $row["price_alert"].$row["uid"]."<br>";
 		if($row["type"]=='H')
 		{
-			$text_alert = "[alert] ".$hoonname1."\n[ราคาปัจจุบัน] ". $row["price_current"]."\n"."......... > .........\n"."[ราคาทีตั้งเเจ้งเตือน] ". $row["price_alert"];
+			$text_alert = "[alert] ".$hoonname1."\n[ ราคาปัจจุบัน]  ". $row["price_current"]."\n"."......... > .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] ". $row["price_alert"];
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='SAME')
 		{
-			$text_alert = "[same price] : ".$hoonname1."\n[ราคาปัจจุบัน] ". $row["price_current"]."\n"."......... = .........\n"."[ราคาทีตั้งเเจ้งเตือน] " .$row["price_alert"]." รบกวนพิมพ์ใหม่อีกครั้ง ";
+			$text_alert = "[ SAME PRICE ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... = .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] " .$row["price_alert"]." รบกวนพิมพ์ใหม่อีกครั้ง ";
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='show')
@@ -67,7 +67,7 @@ if ($result->num_rows > 0) {
 		}
 		else
 		{
-			$text_alert = "[alert] ".$hoonname1."\n[ราคาปัจจุบัน] ". $row["price_current"]."\n"."......... < .........\n"."[ราคาทีตั้งเเจ้งเตือน] ". $row["price_alert"];
+			$text_alert = "[ ALERT ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... < .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] ". $row["price_alert"];
 			$USERID =$row["uid"];
 		}
     }
