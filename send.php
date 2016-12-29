@@ -42,12 +42,12 @@ if ($result->num_rows > 0) {
 		echo "[alert] : ".$hoonname1." [ Current Price ] : " .$row["price_current"]. "  > = [ Alert Price ] : " . $row["price_alert"].$row["uid"]."<br>";
 		if($row["type"]=='H')
 		{
-			$text_alert = "[alert] : ".$hoonname1." [ Current Price ] : " . $row["price_current"]. "  > = [ Alert Price ] : " . $row["price_alert"]. "<br>";
+			$text_alert = "[alert] : ".$hoonname1."\n ราคาปัจจุบัน " . $row["price_current"]. "        > =      \n"." ราคาที่ตั้งไว้ ". $row["price_alert"]. "<br>";
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='SAME')
 		{
-			$text_alert = "[same price] : ".$hoonname1." [ Current Price ] : " . $row["price_current"]. "  == [ Alert Price ] : " . $row["price_alert"]." please sent new alert";
+			$text_alert = "[same price] : ".$hoonname1."\n ราคาปัจจุบัน ". $row["price_current"]. "       ==     \n"."ราคาที่ตั้งไว้ " .$row["price_alert"]." รบกวนพิมพ์ใหม่อีกครั้ง ";
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='show')
@@ -55,9 +55,19 @@ if ($result->num_rows > 0) {
 			$text_alert = $hoonname1;
 			$USERID =$row["uid"];
 		}
+		else if($row["type"]=='pricert')
+		{
+			$text_alert = $hoonname1;
+			$USERID =$row["uid"];
+		}
+		else if($row["type"]=='hoonsame')
+		{
+			$text_alert = $hoonname1;
+			$USERID =$row["uid"];
+		}
 		else
 		{
-			$text_alert = "[alert] : ".$hoonname1." [ Current Price ] : " . $row["price_current"]. "  < =  [ Alert Price ] : " . $row["price_alert"]. "<br>";
+			$text_alert = "[alert] : ".$hoonname1."\n ราคาปัจจุบัน " . $row["price_current"]. "        < =      \n"." ราคาที่ตั้งไว้ ". $row["price_alert"]. "<br>";
 			$USERID =$row["uid"];
 		}
     }
