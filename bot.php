@@ -120,6 +120,8 @@ if (!is_null($events['events'])) {
 							$userid = $event['source']['groupId'];	
 						$check ="check1";	
 						$hoon_low = strtolower($textcut[1]);
+						
+						
 						$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
 									VALUES ('', '$hoon_low', '$textcut[2]','$replyToken' ,'$userid', '$type')";
 									
