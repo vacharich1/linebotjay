@@ -160,11 +160,12 @@ if (!is_null($events['events'])) {
 						$count_text_cut = strlen($textcut[0]);
 						$x=0;
 						$arr1 = str_split($textcut[0]);
-						if($textcut[0]=="@show")
+						if($textcut[0]=="@show" || $textcut[0]=="@de")
 						{
 							$replyToken = $event['replyToken'];
-							$aaaaaaa="alert";
-							//if($textcut[1]=="alert")
+							if($textcut[1]=="alllt")
+								$aaaaaaa="alert";
+							if($aaaaaaa=="alert")
 							{
 								$type=$textcut[0];
 								$check ="check1";	
