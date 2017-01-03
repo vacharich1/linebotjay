@@ -158,7 +158,7 @@ if (!is_null($events['events'])) {
 						if($textcut[0]=="@show" || $textcut[0]=="@de")
 						{
 							$replyToken = $event['replyToken'];
-							if($textcut[1]=="alert" )
+							//if($textcut[1]=="alert")
 							{
 								$type=$textcut[0];
 								$check ="check1";	
@@ -166,6 +166,7 @@ if (!is_null($events['events'])) {
 									$userid = $event['source']['userId'];	
 								else
 									$userid = $event['source']['groupId'];		
+									
 								$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
 									VALUES ('', '$textcut[1]', '$textcut[2]','$replyToken' ,'$userid', '$type')";
 									

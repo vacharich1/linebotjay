@@ -60,6 +60,11 @@ if ($result->num_rows > 0) {
 			$text_alert = "Symbol Not Found";
 			$USERID =$row["uid"];
 		}
+		else if($row["type"]=='de')
+		{
+			$text_alert = "[ Delete ] ".$row["price_current"]." [ ราคาที่ตั้งเเจ้งเตือน ] ".$row["price_alert"]."\n"."Alert Hoon\n".$hoonname1;
+			$USERID =$row["uid"];
+		}
 		else if($row["type"]=='show')
 		{
 			$text_alert = $hoonname1;
