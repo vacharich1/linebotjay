@@ -72,7 +72,7 @@ if ($result->num_rows > 0) {
 		}
 		else if($row["type"]=='dataover')
 		{
-			$text_alert = "ขออภัยสำหรับ user ฟรี สามารถตั้งเเจ้งเตือนได้เเค่ 2 ตัวเท่านั้น สนใจตั้งเพิ่มเติ่มรบกวนติดต่อ\n line : vacharich";
+			$text_alert = "ขออภัยสำหรับ user ฟรี สามารถตั้งเเจ้งเตือนได้เเค่ 3 ตัวเท่านั้น สนใจตั้งเพิ่มเติ่มรบกวนติดต่อ\n line : vacharich";
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='shownot')
