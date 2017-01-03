@@ -65,6 +65,16 @@ if ($result->num_rows > 0) {
 			$text_alert = "[ Delete SUCCESS ] \n".$hoonname1;
 			$USERID =$row["uid"];
 		}
+		else if($row["type"]=='denot')
+		{
+			$text_alert = "เกิดข้อมผิดพลาด ข้อมูลไม่ตรงกับฐานข้อมูล\n".$hoonname1."". $row["price_alert"];
+			$USERID =$row["uid"];
+		}
+		else if($row["type"]=='shownot')
+		{
+			$text_alert = "ไม่พบข้อมูลการเเจ้งเตือนราคาหุ้น";
+			$USERID =$row["uid"];
+		}
 		else if($row["type"]=='show')
 		{
 			$text_alert = $hoonname1;
