@@ -70,6 +70,11 @@ if ($result->num_rows > 0) {
 			$text_alert = "เกิดข้อมผิดพลาด ข้อมูลไม่ตรงกับฐานข้อมูล\n".$hoonname1." ราคา ". $row["price_alert"]."\n\n ข้อมูลตั้งเเจ้งเตือน";
 			$USERID =$row["uid"];
 		}
+		else if($row["type"]=='dataover')
+		{
+			$text_alert = "ขออภัยสำหรับ user ฟรี สามารถตั้งเเจ้งเตือนได้เเค่ 2 ตัวเท่านั้น สนใจตั้งเพิ่มเติ่มรบกวนติดต่อ\n line : vacharich";
+			$USERID =$row["uid"];
+		}
 		else if($row["type"]=='shownot')
 		{
 			$text_alert = "ไม่พบข้อมูลการเเจ้งเตือนราคาหุ้น";
