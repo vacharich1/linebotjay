@@ -163,7 +163,7 @@ if (!is_null($events['events'])) {
 						if($textcut[0]=="@show" || $textcut[0]=="@de")
 						{
 							$replyToken = $event['replyToken'];
-							if($textcut[1]=="alllt")
+							if($textcut[1]=="all")
 								$aaaaaaa="alert";
 							if($aaaaaaa=="alert")
 							{
