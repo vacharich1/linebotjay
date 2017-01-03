@@ -67,7 +67,7 @@ if ($result->num_rows > 0) {
 		}
 		else if($row["type"]=='denot')
 		{
-			$text_alert = "เกิดข้อมผิดพลาด ข้อมูลไม่ตรงกับฐานข้อมูล\n".$hoonname1." ราคา ". $row["price_alert"];
+			$text_alert = "เกิดข้อมผิดพลาด ข้อมูลไม่ตรงกับฐานข้อมูล\n".$hoonname1." ราคา ". $row["price_alert"]."\n ข้อมูลที่มีการตั้งเเจ้งเตือนไว้";
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='shownot')
