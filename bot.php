@@ -163,7 +163,7 @@ if (!is_null($events['events'])) {
 						if($textcut[0]=="@show" || $textcut[0]=="@de")
 						{
 							$replyToken = $event['replyToken'];
-							if($textcut[1]=="alert")
+							//if($textcut[1]=="alert")
 							{
 								$type=$textcut[0];
 								$check ="check1";	
