@@ -160,7 +160,7 @@ if (!is_null($events['events'])) {
 						$count_text_cut = strlen($textcut[0]);
 						$x=0;
 						$arr1 = str_split($textcut[0]);
-						if($textcut[0]=="@show" || $textcut[0]=="@de")
+						if($textcut[0]=="@show")
 						{
 							$replyToken = $event['replyToken'];
 							$aaaaaaa="alert";
