@@ -87,7 +87,7 @@ if (!is_null($events['events'])) {
 				$result = count($textcut);
 				if($result > 2)
 				{
-					if($textcut[0]=="@>" || $textcut[0]=="@<" || $textcut[0]=="@=")
+					if($textcut[0]=="@>" || $textcut[0]=="@<" || $textcut[0]=="@=" || $textcut[0]=="@de")
 					{
 						$replyToken = $event['replyToken'];
 						
@@ -100,6 +100,11 @@ if (!is_null($events['events'])) {
 						{
 							$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." = ".$textcut[2]];
 							$type="sameprice";
+						}
+						else if($textcut[0]=="@de")
+						{
+							$messages556 = ['type' => 'text','text' => "[processing delete]\n".$textcut[1]." = ".$textcut[2]];
+							$type="@de";
 						}
 						else
 						{
@@ -158,7 +163,7 @@ if (!is_null($events['events'])) {
 						if($textcut[0]=="@show" || $textcut[0]=="@de")
 						{
 							$replyToken = $event['replyToken'];
-							//if($textcut[1]=="alert")
+							if($textcut[1]=="alert")
 							{
 								$type=$textcut[0];
 								$check ="check1";	
