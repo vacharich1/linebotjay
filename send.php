@@ -62,7 +62,7 @@ if ($result->num_rows > 0) {
 		}
 		else if($row["type"]=='de')
 		{
-			$text_alert = "[ Delete ] ".$row["price_current"]." [ ราคาที่ตั้งเเจ้งเตือน ] ".$row["price_alert"]."\n"."Alert Hoon\n".$hoonname1;
+			$text_alert = "[ Delete SUCCESS ] \n".$hoonname1;
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='show')

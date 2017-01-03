@@ -103,7 +103,7 @@ if (!is_null($events['events'])) {
 						}
 						else if($textcut[0]=="@de")
 						{
-							$messages556 = ['type' => 'text','text' => "[processing delete]\n".$textcut[1]." = ".$textcut[2]];
+							$messages556 = ['type' => 'text','text' => "[PROCESSING DELETE]"];
 							$type="@de";
 						}
 						else
