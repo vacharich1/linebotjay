@@ -578,7 +578,7 @@ EX   @hoon assert/as                                      ----> @aot assets     
 					if($text == '@@addgroupbyjay_botroom')
 					{
 							$replyToken = $event['replyToken'];
-							$messages55 = ['type' => 'text','text' => $event['source']['userId']];
+							$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
 							// Make a POST Request to Messaging API to reply to sender
 							$url = 'https://api.line.me/v2/bot/message/reply';
 							$data = [
