@@ -165,37 +165,39 @@ if (!is_null($events['events'])) {
 						$count_text_cut = strlen($textcut[0]);
 						$x=0;
 						$arr1 = str_split($textcut[0]);
-						if($textcut[0]=="@p")
-						{
+						
+						if($textcut[0]=="@show" || $textcut[0]=="@de" || $textcut[0]=="@p")
+						{	
 							$replyToken = $event['replyToken'];
-							$check ="check1";
-							if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')
-								$userid = $event['source']['userId'];	
-							else
-								$userid = $event['source']['groupId'];		
+							
+							if($textcut[0]=="@p")
+							{
+								$check ="check1";
+								if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')
+									$userid = $event['source']['userId'];	
+								else
+									$userid = $event['source']['groupId'];		
+										
+								$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
+										VALUES ('', '$textcut[1]', 'not','$replyToken' ,'$userid', '@p')";
+										
+								if (mysqli_query($link, $sql)) {
+											echo "New record created successfully";
+								} 
+								else {
+											echo "Error: " . $sql . "<br>" . mysqli_error($link);
+								}
 									
-							$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
-									VALUES ('', '$textcut[1]', 'not','$replyToken' ,'$userid', '@p')";
-									
-							if (mysqli_query($link, $sql)) {
+								$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
+								if (mysqli_query($link, $sql)) {
 										echo "New record created successfully";
-							} 
-							else {
+								} 
+								else {
 										echo "Error: " . $sql . "<br>" . mysqli_error($link);
+								}
+								sleep(0.3);	
 							}
-								
-							$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
-							if (mysqli_query($link, $sql)) {
-									echo "New record created successfully";
-							} 
-							else {
-									echo "Error: " . $sql . "<br>" . mysqli_error($link);
-							}
-							sleep(0.3);	
-						}
-						if($textcut[0]=="@show" || $textcut[0]=="@de")
-						{
-							$replyToken = $event['replyToken'];
+							
 							if($textcut[1]=="all")
 								$aaaaaaa="alert";
 							if($aaaaaaa=="alert")
