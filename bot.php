@@ -480,6 +480,8 @@ EX   @hoon assert/as                                      ----> @aot assets     
 									                                  
 EX   @hoon assert/as                                      ----> @aot assets                     or @aot as"];
 									// Make a POST Request to Messaging API to reply to sende
+									
+									$messages66 = ['type' => 'text','text' => "คำสั่งทั้งหมด \n @show all \n@de all\n@de aot 400 คือการลบข้อมูลหุ้น aot ที่ตั้งเเจ้งเตือนไว้ที่ราคา 400 บาท \n @> aot 400\n@< aot400\n@= aot 400\n@p aot คือ เช็คราคาปัจจุบัน"];
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
 												'replyToken' => $replyToken,
