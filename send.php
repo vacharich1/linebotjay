@@ -42,17 +42,17 @@ if ($result->num_rows > 0) {
 		echo "[ ALERT ] ".$hoonname1." [ Current Price ] : " .$row["price_current"]. "  > = [ Alert Price ] : " . $row["price_alert"].$row["uid"]."<br>";
 		if($row["type"]=='H')
 		{
-			$text_alert = "[alert] ".$hoonname1."\n[ ราคาปัจจุบัน]  ". $row["price_current"]."\n"."......... > .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] ". $row["price_alert"];
+			$text_alert = "[alert] ".$hoonname1."\n[ ราคาปัจจุบัน]  ". $row["price_current"]."\n"."......... > .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] ". $row["price_alert"]."\n CR : JFOURTWINS";
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='SAME')
 		{
-			$text_alert = "[ SAME PRICE ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... = .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] " .$row["price_alert"]." รบกวนพิมพ์ใหม่อีกครั้ง ";
+			$text_alert = "[ SAME PRICE ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... = .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] " .$row["price_alert"]." รบกวนพิมพ์ใหม่อีกครั้ง "."\n CR : JFOURTWINS";
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='sameprice')
 		{
-			$text_alert = "[ SAME PRICE ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... = .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] " .$row["price_alert"];
+			$text_alert = "[ SAME PRICE ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... = .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] " .$row["price_alert"]."\n CR : JFOURTWINS";
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='notfound')
@@ -72,12 +72,13 @@ if ($result->num_rows > 0) {
 		}
 		else if($row["type"]=='@p')
 		{
-			$text_alert = "".$hoonname1." ราคาปัจจุบัน ". $row["price_current"];
+			$text_alert = "".$hoonname1." ราคาปัจจุบัน ". $row["price_current"]."\n CR : JFOURTWINS";
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='dataover')
 		{
-			$text_alert = "ขออภัยสำหรับ user ฟรี สามารถตั้งเเจ้งเตือนได้เเค่ 3 ตัวเท่านั้น สนใจตั้งเพิ่มเติ่มรบกวนติดต่อ\n line : vacharich";
+			//$text_alert = "ขออภัยสำหรับ user ฟรี สามารถตั้งเเจ้งเตือนได้เเค่ 3 ตัวเท่านั้น สนใจตั้งเพิ่มเติ่มรบกวนติดต่อ\n line : vacharich";
+		    $text_alert = "ขออภัยตั้งเเจ้งเตือนได้ เพียง 200 ตัวเท่านั้น";
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='shownot')
