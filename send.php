@@ -52,7 +52,7 @@ if ($result->num_rows > 0) {
 		}
 		else if($row["type"]=='sameprice')
 		{
-			$text_alert = "[ SAME PRICE ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... = .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] " .$row["price_alert"]."\n CR : JFOURTWINS";
+			$text_alert = "[ SAME PRICE ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... = .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] " .$row["price_alert"];
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='notfound')
@@ -103,7 +103,7 @@ if ($result->num_rows > 0) {
 		}
 		else
 		{
-			$text_alert = "[ ALERT ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... < .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] ". $row["price_alert"];
+			$text_alert = "[ ALERT ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... < .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] ". $row["price_alert"]."\n CR : JFOURTWINS";
 			$USERID =$row["uid"];
 		}
     }
