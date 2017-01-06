@@ -474,18 +474,14 @@ EX   @hoon assert/as                                      ----> @aot assets     
 								if($text == 'เเสดงคำสั่งทั้งหมด' || $text == 'คำสั่ง' )
 								{
 									$replyToken = $event['replyToken'];
-									$messages55 = ['type' => 'text','text' => "คำสั่งทั้งหมด             @hoon assets/as       @hoon libilities/lb        @hoon equity/eq        @hoon revenue/rv       @hoon eps                  @hoon expenses/ex       @hoon gprofit/gp        @hoon gpmargin/gpm        @hoon nprofit/np           @hoon npm              @hoon roa               @hoon roe             @hoon pe         @hoon pbv             @hoon yield/dy
-									
-					
-									                                  
-EX   @hoon assert/as                                      ----> @aot assets                     or @aot as"];
+									$messages55 = ['type' => 'text','text' => "คำสั่งทั้งหมด\n@hoon assets/as\n @hoon libilities/lb \n @hoon equity/eq \n @hoon revenue/rv \n @hoon eps \n @hoon expenses/ex       @hoon gprofit/gp \n@hoon gpmargin/gpm\n@hoon nprofit/np\n@hoon npm\n@hoon roa\n@hoon roe\n@hoon pe\n@hoon pbv\n@hoon yield/dy\nEX   @hoon assert/as----> @aot assets or @aot as"];
 									// Make a POST Request to Messaging API to reply to sende
 									
 									$messages66 = ['type' => 'text','text' => "คำสั่งทั้งหมด \n @show all \n@de all\n@de aot 400 คือการลบข้อมูลหุ้น aot ที่ตั้งเเจ้งเตือนไว้ที่ราคา 400 บาท \n @> aot 400\n@< aot400\n@= aot 400\n@p aot คือ เช็คราคาปัจจุบัน"];
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
 												'replyToken' => $replyToken,
-												'messages' => [$messages55]
+												'messages' => [$messages55,$messages66]
 											];
 									$post = json_encode($data);
 									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -502,7 +498,7 @@ EX   @hoon assert/as                                      ----> @aot assets     
 								if($text == 'คำสั่งเเจ้งเตือน' )
 								{
 									$replyToken = $event['replyToken'];
-									$messages55 = ['type' => 'text','text' => "@> hoonname price\n Ex @> aot 400\n\n@< hoonname price\nEx @< aot 400\n\n@= hoonname price\nEx @= aot 400\n\n@show alert\n เเสดงข้อมูลที่เเจ้งเตือนไว้"];
+									$messages66 = ['type' => 'text','text' => "คำสั่งทั้งหมด \n @show all \n@de all\n@de aot 400 คือการลบข้อมูลหุ้น aot ที่ตั้งเเจ้งเตือนไว้ที่ราคา 400 บาท \n @> aot 400\n@< aot400\n@= aot 400\n@p aot คือ เช็คราคาปัจจุบัน"];
 									// Make a POST Request to Messaging API to reply to sende
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
