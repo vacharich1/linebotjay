@@ -42,12 +42,12 @@ if ($result->num_rows > 0) {
 		echo "[ ALERT ] ".$hoonname1." [ Current Price ] : " .$row["price_current"]. "  > = [ Alert Price ] : " . $row["price_alert"].$row["uid"]."<br>";
 		if($row["type"]=='H')
 		{
-			$text_alert = "[alert] ".$hoonname1."\n[ ราคาปัจจุบัน]  ". $row["price_current"]."\n"."......... > .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] ". $row["price_alert"]."\n CR : JFOURTWINS";
+			$text_alert = "[alert] ".$hoonname1."\n[ ราคาปัจจุบัน]  ". $row["price_current"]."\n"."......... > .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] ". $row["price_alert"]."\n BY : JFOURTWINS";
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='SAME')
 		{
-			$text_alert = "[ SAME PRICE ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... = .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] " .$row["price_alert"]." รบกวนพิมพ์ใหม่อีกครั้ง "."\n CR : JFOURTWINS";
+			$text_alert = "[ SAME PRICE ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... = .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] " .$row["price_alert"]." รบกวนพิมพ์ใหม่อีกครั้ง "."\n BY : JFOURTWINS";
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='sameprice')
@@ -103,7 +103,7 @@ if ($result->num_rows > 0) {
 		}
 		else
 		{
-			$text_alert = "[ ALERT ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... < .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] ". $row["price_alert"]."\n CR : JFOURTWINS";
+			$text_alert = "[ ALERT ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... < .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] ". $row["price_alert"]."\n BY : JFOURTWINS";
 			$USERID =$row["uid"];
 		}
     }
@@ -126,10 +126,16 @@ $events = json_decode($content, true);
 					"type" => "text",
 					"text" => $msg
 				];
-		 
+				
+				$messages55 = ['type' => 'image',
+								'originalContentUrl' => 'https://www.botbottest.club/testtest.jpg',
+								'previewImageUrl' => 'https://www.botbottest.club/testtest.jpg'
+											 
+				];
+		 		//$USERID
 				$post_data = [
-					"to" => $USERID,
-					"messages" => [$format_text]
+					"to" => 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b',
+					"messages" => [$messages55]
 				];
 				
 				$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
