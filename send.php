@@ -128,8 +128,8 @@ $events = json_decode($content, true);
 				];
 				
 				$messages55 = ['type' => 'image',
-								'originalContentUrl' => 'https://www.rigstatus.com/assets/cp/img/avatars/male.png',
-								'previewImageUrl' => 'https://www.rigstatus.com/assets/cp/img/avatars/male.png'
+								'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Ambox_padlock_green.svg/120px-Ambox_padlock_green.svg.png',
+								'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Ambox_padlock_green.svg/120px-Ambox_padlock_green.svg.png'
 											 
 				];
 		 		//$USERID
