@@ -128,8 +128,8 @@ $events = json_decode($content, true);
 				];
 				
 				$messages55 = ['type' => 'image',
-								'originalContentUrl' => 'https://www.botbottest.club/testtest.jpg',
-								'previewImageUrl' => 'https://www.botbottest.club/testtest.jpg'
+								'originalContentUrl' => 'https://www.botbottest.club/testtest.png',
+								'previewImageUrl' => 'https://www.botbottest.club/testtest.png'
 											 
 				];
 		 		//$USERID
