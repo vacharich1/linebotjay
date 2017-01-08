@@ -72,7 +72,12 @@ if ($result->num_rows > 0) {
 		}
 		else if($row["type"]=='@p')
 		{
-			$text_alert = "".$hoonname1." ราคาปัจจุบัน ". $row["price_current"]."\n CR : JFOURTWINS";
+			$text_alert = "".$hoonname1." ราคาปัจจุบัน ". $row["price_current"]."\n By : JFOURTWINS";
+			$USERID =$row["uid"];
+		}
+		else if($row["type"]=='@p_not')
+		{
+			$text_alert = "".$hoonname1." ไม่ตรงกับฐานข้อมูล โปรดพิมอีกครั้ง\n"." By : JFOURTWINS";
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='dataover')
