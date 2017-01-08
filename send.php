@@ -127,15 +127,10 @@ $events = json_decode($content, true);
 					"text" => $msg
 				];
 				
-				$messages55 = ['type' => 'image',
-								'originalContentUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Ambox_padlock_green.svg/120px-Ambox_padlock_green.svg.png',
-								'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Ambox_padlock_green.svg/120px-Ambox_padlock_green.svg.png'
-											 
-				];
 		 		//$USERID
 				$post_data = [
-					"to" => 'C8dbd04186e455a1b3af3f9384405dc20',
-					"messages" => [$messages55]
+					"to" => $USERID,
+					"messages" => [$format_text]
 				];
 				
 				$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
