@@ -57,7 +57,7 @@ if ($result->num_rows > 0) {
 		}
 		else if($row["type"]=='notfound')
 		{
-			$text_alert = "Symbol Not Found";
+			$text_alert = "Symbol Not Found, Please try again";
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='de')
