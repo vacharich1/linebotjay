@@ -1,6 +1,8 @@
 ﻿<?php
 
 echo "aaaaa";
+echo "bbbbb";
+echo "bbbbb";
     $host= "sql6.freemysqlhosting.net";
 	//$db = "sql6150739";
 	$db = "sql6153306";
