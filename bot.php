@@ -20,6 +20,27 @@ echo "aaaaa";
 	{
 		echo "connect";
 	}
+	
+	
+	$host22= "sql6.freemysqlhosting.net";
+	//$db = "sql6150739";
+	$db22 = "sql6153666";
+	$CHAR_SET = "charset=utf8"; 
+ 
+	//$username = "sql6150739";    
+	//$password = "xiGjqcGnZb";   
+	$username22 = "sql6153666";    
+	$password22 = "m3N4qElyC7"; 
+	
+
+	$link22 = mysqli_connect($host22, $username22, $password22, $db22);
+	if (!$link22) {
+    		die('Could not connect: ' . mysqli_connect_errno());
+	}
+	else
+	{
+		echo "connect";
+	}
  
 	/*try {
 		
@@ -322,21 +343,21 @@ EX   @hoon assert/as                                      ----> @aot assets     
 									$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
 									VALUES ('', '$hoonname', '$timeframe','$replyToken')";
 									
-									if (mysqli_query($link, $sql)) {
+									if (mysqli_query($link22, $sql)) {
 											echo "New record created successfully";
 									} 
 									else {
-											echo "Error: " . $sql . "<br>" . mysqli_error($link);
+											echo "Error: " . $sql . "<br>" . mysqli_error($link22);
 									}
 									sleep(0.3);
 									$check ="check1";
 									#echo "work code";
 									$sql = "INSERT INTO `check_capture`(`id`, `check1`) VALUES ('','$check')";
-									if (mysqli_query($link, $sql)) {
+									if (mysqli_query($link22, $sql)) {
 											echo "New record created successfully";
 									} 
 									else {
-											echo "Error: " . $sql . "<br>" . mysqli_error($link);
+											echo "Error: " . $sql . "<br>" . mysqli_error($link22);
 									}
 									
 									$link_pic ="https://www.botbottest.club/".$hoonname."".$timeframe.".jpg";
@@ -359,29 +380,38 @@ EX   @hoon assert/as                                      ----> @aot assets     
 									$text_recieve="aaaaa";
 									
 									
-									$sql = "SELECT * FROM `data` WHERE 1";
-									$result = $link->query($sql);
-									if ($result->num_rows > 0) {
+									
+									
+									#$sql = "SELECT * FROM `data` WHERE 1";
+									#$result = $link22->query($sql);
+									#if ($result->num_rows > 0) {
 										// output data of each row
-										while($row = $result->fetch_assoc()) {
-											$text_recieve=$row["word"];
+									#	while($row = $result->fetch_assoc()) {
+								#			$text_recieve=$row["word"];
 											
-										}
-									} else {
-										echo "0 results";
-									}
-									$link->close();
-									sleep(0.5);
+									#	}
+									#} else {
+									#	echo "0 results";
+									#}
+									#$link22->close();
+									#sleep(0.5);
 									
-									$sql = "DELETE FROM `data` WHERE 1";
+									#$sql = "DELETE FROM `data` WHERE 1";
 	
-									if ($link->query($sql) === TRUE) {
-										echo "Record deleted successfully";
-									} else {
-										echo "Error deleting record: " . $link->error;
-									}
+									#if ($link22->query($sql) === TRUE) {
+									#	echo "Record deleted successfully";
+									#} else {
+									#	echo "Error deleting record: " . $link->error;
+									#}
 									
-									$link->close();
+									#$link22->close();
+									
+									
+									
+									
+									
+									
+									
 									
 									//$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe.".jpg";
 									
