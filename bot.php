@@ -366,20 +366,20 @@ EX   @hoon assert/as                                      ----> @aot assets     
 										#echo "work code";
 									// Get replyToken
 									
-									$hoonname1 = strtoupper($hoonname);
-									if($hoonname1 == '2S')
-										$llll = "https://www.dropbox.com/s/cov1jrkmhe8q81n/2S.png";																																		
-									else
-										$llll = "https://www.dropbox.com/s/j09fwo3536hdkib/pic.png?dl=0";
+									#$hoonname1 = strtoupper($hoonname);
+									#if($hoonname1 == '2S')
+									#	$llll = "https://www.dropbox.com/s/cov1jrkmhe8q81n/2S.png";																																		
+									#else
+									#	$llll = "https://www.dropbox.com/s/j09fwo3536hdkib/pic.png?dl=0";
 									// Build message to reply back
 									#$messages = ['type' => 'text','text' => $event['source']['roomid']];
-									$messages4 = ['type' => 'text','text' => $event['source']['type']];
+									#$messages4 = ['type' => 'text','text' => $event['source']['type']];
+									#
+									#$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
+									#sleep(1);
 									
-									$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
-									sleep(1);
 									
-									
-									$text_recieve="aaaaa";
+									#$text_recieve="aaaaa";
 									
 									
 									
