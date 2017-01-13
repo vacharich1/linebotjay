@@ -21,7 +21,7 @@ echo "aaaaa";
 		echo "connect";
 	}
 	
-	
+echo "bbbbb";	
 	$host22= "sql6.freemysqlhosting.net";
 	//$db = "sql6150739";
 	$db22 = "sql6153666";
