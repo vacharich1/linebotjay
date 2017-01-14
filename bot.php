@@ -427,6 +427,8 @@ EX   @hoon assert/as                                      ----> @aot assets     
 											 'previewImageUrl' => $link_pic
 									];
 									
+									$messages3 = ['type' => 'text','text' => $link_pic];
+									
 									$messages33 = [	 'type' => 'template',
 													 'altText' => 'test',
 													 'template' => [	'type' => 'buttons', 
@@ -450,7 +452,7 @@ EX   @hoon assert/as                                      ----> @aot assets     
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
 										'replyToken' => $replyToken,
-										'messages' => [$messages33]
+										'messages' => [$messages33,$messages3]
 									];
 									
 	
