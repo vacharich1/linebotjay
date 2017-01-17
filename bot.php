@@ -156,7 +156,7 @@ if (!is_null($events['events'])) {
 						$replyToken = $event['replyToken'];
 						$arr1 = str_split($textcut[2]);
 						foreach ($arr1 as $text1) {
-							if(preg_match("/^[0-9]+$/", $text1) == 1)
+							if(preg_match("/^[a-zA-Z]+$/", $text1) == 1)
 							{
 								$count_check_check=-1;
 							}
