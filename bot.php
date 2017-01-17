@@ -106,12 +106,45 @@ if (!is_null($events['events'])) {
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 				// Get text sent
 				$text = $event['message']['text'];
+				$text11=$text;
+				$arr1 = str_split($text11);
+				print_r($arr1);
+				$data1="";
+				$count=0;
+				$text22="";
+				foreach ($arr1 as $text1) {
+					if(preg_match("/^[a-zA-Z0-9]+$/", $text1) == 1)
+					{
+						$data1=$data1.$text1;
+					}
+					if($text1==">" || $text1=="=" || $text1=="<")
+					{
+						if($text1==">")
+							$text22=$text22."@> ";
+						if($text1=="<")
+							$text22=$text22."@< ";	
+						if($text1=="=")
+							$text22=$text22."@= ";	
+						$data2=$text1;
+						$data1=$data1." ";
+						$count=$count+1;
+					}
+				}
+				$text22=$text22.$data1;
+				if($count!=1)
+				{
+					echo "not alert";	
+				}
+				else
+				{
+					$text=$text22;
+				}
 				
 				$replyToken = $event['replyToken'];
 				
 				$textcut = explode(" ", $text);
 				$result = count($textcut);
-				if($result > 2)
+				if($count==1)
 				{
 					if($textcut[0]=="@>" || $textcut[0]=="@<" || $textcut[0]=="@=" || $textcut[0]=="@de")
 					{
