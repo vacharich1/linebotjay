@@ -111,8 +111,13 @@ if (!is_null($events['events'])) {
 				print_r($arr1);
 				$data1="";
 				$count=0;
+				$count_check_check=0;
 				$text22="";
 				foreach ($arr1 as $text1) {
+					if(preg_match("/^[a-zA-Z]+$/", $text1) == 1)
+					{
+						$count_check_check=$count_check_check+1;
+					}
 					if(preg_match("/^[a-zA-Z0-9]+$/", $text1) == 1)
 					{
 						$data1=$data1.$text1;
@@ -149,54 +154,59 @@ if (!is_null($events['events'])) {
 					if($textcut[0]=="@>" || $textcut[0]=="@<" || $textcut[0]=="@=" || $textcut[0]=="@de")
 					{
 						$replyToken = $event['replyToken'];
-						
-						if($textcut[0]=="@>")
+						if($count_check_check>0)
 						{
-							$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." > ".$textcut[2]];
-							$type="h";
-						}
-						else if($textcut[0]=="@=")
-						{
-							$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." = ".$textcut[2]];
-							$type="sameprice";
-						}
-						else if($textcut[0]=="@de")
-						{
-							$messages556 = ['type' => 'text','text' => "[PROCESSING DELETE]"];
-							$type="@de";
-						}
-						else
-						{
-							$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." < ".$textcut[2]];
-							$type='l';
-						}
-						if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f')
-							$userid = $event['source']['userId'];	
-						else
-							$userid = $event['source']['groupId'];	
-						$check ="check1";	
-						$hoon_low = strtolower($textcut[1]);
-						
-						
-						$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
-									VALUES ('', '$hoon_low', '$textcut[2]','$replyToken' ,'$userid', '$type')";
-									
-						if (mysqli_query($link, $sql)) {
+							if($textcut[0]=="@>")
+							{
+								$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." > ".$textcut[2]];
+								$type="h";
+							}
+							else if($textcut[0]=="@=")
+							{
+								$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." = ".$textcut[2]];
+								$type="sameprice";
+							}
+							else if($textcut[0]=="@de")
+							{
+								$messages556 = ['type' => 'text','text' => "[PROCESSING DELETE]"];
+								$type="@de";
+							}
+							else
+							{
+								$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." < ".$textcut[2]];
+								$type='l';
+							}
+							if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f')
+								$userid = $event['source']['userId'];	
+							else
+								$userid = $event['source']['groupId'];	
+							$check ="check1";	
+							$hoon_low = strtolower($textcut[1]);
+							
+							
+							$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
+										VALUES ('', '$hoon_low', '$textcut[2]','$replyToken' ,'$userid', '$type')";
+										
+							if (mysqli_query($link, $sql)) {
+										echo "New record created successfully";
+							} 
+							else {
+										echo "Error: " . $sql . "<br>" . mysqli_error($link);
+							}
+							
+							$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
+							if (mysqli_query($link, $sql)) {
 									echo "New record created successfully";
-						} 
-						else {
+							} 
+							else {
 									echo "Error: " . $sql . "<br>" . mysqli_error($link);
+							}
+							sleep(0.3);
 						}
-						
-						$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
-						if (mysqli_query($link, $sql)) {
-								echo "New record created successfully";
-						} 
-						else {
-								echo "Error: " . $sql . "<br>" . mysqli_error($link);
+						else
+						{
+							$messages556 = ['type' => 'text','text' => "Please try agian, hoonname ---> @aot>xxx hoonname cannot only number"];
 						}
-						sleep(0.3);
-									
 						// Make a POST Request to Messaging API to reply to sender
 						$url = 'https://api.line.me/v2/bot/message/reply';
 						$data = [
