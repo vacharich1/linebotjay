@@ -111,7 +111,7 @@ if ($result->num_rows > 0) {
 		}
 		else if($row["type"]=='feedindex')
 		{
-			$text_alert = "..มีการเเจ้งเตือน..\n".$hoonname1." อยู่เเล้ว";
+			$text_alert = $hoonname1;
 			$USERID =$row["uid"];
 		}
 		else
