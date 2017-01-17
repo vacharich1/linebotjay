@@ -106,7 +106,7 @@ if ($result->num_rows > 0) {
 		}
 		else if($row["type"]=='hoonsame')
 		{
-			$text_alert = $row["hoonname"].$row["price_current"].$row["price_alert"];
+			$text_alert = "มีการเเจ้งเตือน :".$row["hoonname"].$row["price_current"].$row["price_alert"]." อยู่เเล้ว";
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='feedindex')
