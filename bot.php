@@ -154,6 +154,13 @@ if (!is_null($events['events'])) {
 					if($textcut[0]=="@>" || $textcut[0]=="@<" || $textcut[0]=="@=" || $textcut[0]=="@de")
 					{
 						$replyToken = $event['replyToken'];
+						$arr1 = str_split($textcut[2]);
+						foreach ($arr1 as $text1) {
+							if(preg_match("/^[0-9]+$/", $text1) == 1)
+							{
+								$count_check_check=-1;
+							}
+						}
 						if($count_check_check>0)
 						{
 							if($textcut[0]=="@>")
@@ -202,6 +209,10 @@ if (!is_null($events['events'])) {
 									echo "Error: " . $sql . "<br>" . mysqli_error($link);
 							}
 							sleep(0.3);
+						}
+						else if($count_check_check==-1)
+						{
+							$messages556 = ['type' => 'text','text' => "Please try agian, \n@aot>xxx ---> hoon price can type only number"];
 						}
 						else
 						{
