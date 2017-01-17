@@ -212,7 +212,7 @@ if (!is_null($events['events'])) {
 						}
 						else if($count_check_check==-1)
 						{
-							$messages556 = ['type' => 'text','text' => "Please try agian, \n@aot>xxx ---> hoon price can type only number"];
+							$messages556 = ['type' => 'text','text' => "Please try agian, \nprice can type only number\n@aot>xxx -> @aot>400 "];
 						}
 						else
 						{
