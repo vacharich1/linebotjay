@@ -212,11 +212,11 @@ if (!is_null($events['events'])) {
 						}
 						else if($count_check_check==-1)
 						{
-							$messages556 = ['type' => 'text','text' => "Please try agian, \nprice can type only number\n@aot>xxx -> @aot>400 "];
+							$messages556 = ['type' => 'text','text' => "โปรดพิมใหม่อีกครั้ง, \nราคาต้องเป็นตัวเลขเท่่านั้น\n@aot>xxx -> @aot>400 "];
 						}
 						else
 						{
-							$messages556 = ['type' => 'text','text' => "Please try agian, hoonname ---> @aot>xxx hoonname cannot only number"];
+							$messages556 = ['type' => 'text','text' => "โปรดพิมใหม่อีกครั้ง, hoonname ---> @aot>xxx hoonไม่สามารถเป็นเเค่ตัวเลขได้"];
 						}
 						// Make a POST Request to Messaging API to reply to sender
 						$url = 'https://api.line.me/v2/bot/message/reply';
