@@ -149,7 +149,7 @@ if (!is_null($events['events'])) {
 				
 				$textcut = explode(" ", $text);
 				$result = count($textcut);
-				if($count==1)
+				if($count==1 || $result >2)
 				{
 					if($textcut[0]=="@>" || $textcut[0]=="@<" || $textcut[0]=="@=" || $textcut[0]=="@de")
 					{
