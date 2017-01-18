@@ -114,6 +114,11 @@ if ($result->num_rows > 0) {
 			$text_alert = $hoonname1;
 			$USERID =$row["uid"];
 		}
+		else if($row["type"]=='rsi')
+		{
+			$text_alert = $row["hoonname"].$row["price_current"].$row["price_alert"];
+			$USERID =$row["uid"];
+		}
 		else
 		{
 			$text_alert = "[ ALERT ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... < .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] ". $row["price_alert"]."\n BY : JFOURTWINS";
