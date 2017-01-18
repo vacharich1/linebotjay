@@ -118,7 +118,7 @@ if (!is_null($events['events'])) {
 					{
 						$count_check_check=$count_check_check+1;
 					}
-					if(preg_match("/^[a-zA-Z0-9]+$/", $text1) == 1)
+					if(preg_match("/^[a-zA-Z0-9.]+$/", $text1) == 1)
 					{
 						$data1=$data1.$text1;
 					}
