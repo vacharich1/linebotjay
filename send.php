@@ -109,9 +109,14 @@ if ($result->num_rows > 0) {
 			$text_alert = "มีการเเจ้งเตือน :".$row["hoonname"].$row["price_current"].$row["price_alert"]." อยู่เเล้ว";
 			$USERID =$row["uid"];
 		}
+		else if($row["type"]=='feedindextfex')
+		{
+			$text_alert = "สรุปยอดชื้อขาย\n   TFEX   \n\n".$row["price_current"];
+			$USERID =$row["uid"];
+		}
 		else if($row["type"]=='feedindex')
 		{
-			$text_alert = "สรุปยอดชื้อขาย\n\n".$row["hoonname"]."\n\n\nสรุปยอดชื้อขาย\n   TFEX   \n\n".$row["price_current"];
+			$text_alert = "สรุปยอดชื้อขาย\n\n".$row["hoonname"];
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='rsi')
