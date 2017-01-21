@@ -187,7 +187,7 @@ echo "aaaaa";
 																			[
 																				'type'=> 'uri',
 																				'label'=> 'View detail',
-																				'uri'=> 'http://linebotjay.herokuapp.com/rsi30.php'
+																				'uri'=> 'https://linebotjay.herokuapp.com/rsi30.php'
 																			]
 																											
 																	]
@@ -200,7 +200,7 @@ echo "aaaaa";
 																			[
 																				'type'=> 'uri',
 																				'label'=> 'View detail',
-																				'uri'=> 'http://linebotjay.herokuapp.com/rsielse.php'
+																				'uri'=> 'https://linebotjay.herokuapp.com/rsielse.php'
 																			]
 																											
 																	]
@@ -213,7 +213,7 @@ echo "aaaaa";
 																			[
 																				'type'=> 'uri',
 																				'label'=> 'View detail',
-																				'uri'=> 'http://linebotjay.herokuapp.com/rsi70.php'
+																				'uri'=> 'https://linebotjay.herokuapp.com/rsi70.php'
 																			]
 																											
 																	]
