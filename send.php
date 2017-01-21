@@ -167,7 +167,7 @@ echo "aaaaa";
 													  [
 														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
 														'title'=> 'rsi?',
-														'text'=> 'RSI เป็นเครื่องมือที่นำมาใช้วัดการแกว่งตัวของราคาหุ้น สำหรับการลงทุนในช่วงหนึ่ง อ่านต่อ คลิก view detail ',
+														'text'=> 'aaaa',
 														'actions' => [
 																			[
 																				'type'=> 'uri',
@@ -180,7 +180,7 @@ echo "aaaaa";
 													  [
 														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
 														'title'=> 'rsi<30',
-														'text'=> 'rsi<30 เข้าเขต oversold',
+														'text'=> 'aaaa',
 														'actions' => [
 																			[
 																				'type'=> 'uri',
@@ -193,7 +193,7 @@ echo "aaaaa";
 													  [
 														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi3035.jpg',
 														'title'=> '35>rsi>30',
-														'text'=> 'rsi<35 กำลังเข้าเขต oversold',
+														'text'=> 'aaa',
 														'actions' => [
 																			[
 																				'type'=> 'uri',
