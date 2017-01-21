@@ -189,32 +189,6 @@ echo "aaaaa";
 																				]
 																												
 																		]
-														  ],
-														  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi3035.jpg',
-															'title'=> '35>rsi>30',
-															'text'=> 'หุ้นที่มี rsi น้อยกว่า 35 เเต่มากกว่า 30',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'View detail',
-																					'uri'=> 'https://www.botbottest.club/rsi30.jpg'
-																				]
-																												
-																		]
-														  ],
-														  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
-															'title'=> 'rsi>70',
-															'text'=> 'หุ้นที่มี rsi>70',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'View detail',
-																					'uri'=> 'https://www.botbottest.club/rsi30.jpg'
-																				]
-																												
-																		]
 														  ]
 													]
 												]
