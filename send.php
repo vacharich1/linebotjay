@@ -187,7 +187,7 @@ echo "aaaaa";
 																			[
 																				'type'=> 'uri',
 																				'label'=> 'View detail',
-																				'uri'=> 'https://www.botbottest.club/rsi30.jpg'
+																				'uri'=> 'http://linebotjay.herokuapp.com/rsi30.php'
 																			]
 																											
 																	]
@@ -200,7 +200,7 @@ echo "aaaaa";
 																			[
 																				'type'=> 'uri',
 																				'label'=> 'View detail',
-																				'uri'=> 'https://www.botbottest.club/rsi30.jpg'
+																				'uri'=> 'http://linebotjay.herokuapp.com//rsielse.php'
 																			]
 																											
 																	]
@@ -213,7 +213,7 @@ echo "aaaaa";
 																			[
 																				'type'=> 'uri',
 																				'label'=> 'View detail',
-																				'uri'=> 'https://www.botbottest.club/rsi30.jpg'
+																				'uri'=> 'http://linebotjay.herokuapp.com//rsi70.php'
 																			]
 																											
 																	]
