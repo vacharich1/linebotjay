@@ -167,67 +167,40 @@ echo "aaaaa";
                             "thumbnailImageUrl"=> "https://www.botbottest.club/rsi.jpg",
                             "title"=> "this is menu",
                             "text"=> "description",
-                            "actions"=>[
-                                [
-                                    "type"=> "postback",
-                                    "label"=> "Buy",
-                                    "data"=> "action=buy&itemid=111"
-                                ],
-                                [
-                                    "type"=> "postback",
-                                    "label"=> "Add to cart",
-                                    "data"=> "action=add&itemid=111"
-                                ],
-                                [
-                                    "type"=> "uri",
-                                    "label"=> "View detail",
-                                    "uri"=> "http://example.com/page/111"
-                                ]
-                            ]
+                            'actions' => [
+												[
+													'type'=> 'uri',
+													'label'=> 'View detail',
+													'uri'=> 'http://www.botbottest.club/rsi30.jpg'
+												]
+																				
+										]
                           ],
                           [
                             "thumbnailImageUrl"=> "https://www.botbottest.club/rsi30.jpg",
                             "title"=> "this is menu",
                             "text"=> "description",
-                            "actions"=> [
-                                [
-                                    "type"=> "postback",
-                                    "label"=> "Buy",
-                                    "data"=> "action=buy&itemid=222"
-                                ],
-                                [
-                                    "type"=> "postback",
-                                    "label"=> "Add to cart",
-                                    "data"=> "action=add&itemid=222"
-                                ],
-                                [
-                                    "type"=> "uri",
-                                    "label"=> "View detail",
-                                    "uri"=> "http://example.com/page/222"
-                                ]
-                            ]
+                            'actions' => [
+												[
+													'type'=> 'uri',
+													'label'=> 'View detail',
+													'uri'=> 'http://www.botbottest.club/rsi30.jpg'
+												]
+																				
+										]
                           ],
                           [
                             "thumbnailImageUrl"=> "https://www.botbottest.club/rsi70.jpg",
                             "title"=> "this is menu",
                             "text"=> "description",
-                            "actions"=> [
-                                [
-                                    "type"=> "postback",
-                                    "label"=> "Buy",
-                                    "data"=> "action=buy&itemid=222"
-                                ],
-                                [
-                                    "type"=> "postback",
-                                    "label"=> "Add to cart",
-                                    "data"=> "action=add&itemid=222"
-                                ],
-                                [
-                                    "type"=> "uri",
-                                    "label"=> "View detail",
-                                    "uri"=> "http://example.com/page/222"
-                                ]
-                            ]
+                            'actions' => [
+												[
+													'type'=> 'uri',
+													'label'=> 'View detail',
+													'uri'=> 'http://www.botbottest.club/rsi30.jpg'
+												]
+																				
+										]
                           ]
                       ]
                   }
