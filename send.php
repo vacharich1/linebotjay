@@ -188,19 +188,6 @@ echo "aaaaa";
 																]
 																								
 														]
-										  ],
-										  [
-											'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
-											'title'=> 'this is menu',
-											'text'=> 'description',
-											'actions' => [
-																[
-																	'type'=> 'uri',
-																	'label'=> 'View detail',
-																	'uri'=> 'https://www.botbottest.club/rsi30.jpg'
-																]
-																								
-														]
 										  ]
 									  ]
 								  }
