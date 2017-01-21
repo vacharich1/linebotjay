@@ -166,52 +166,54 @@ if (!is_null($events['events'])) {
 						}
 						if($count_check_check>0)
 						{
-							if($textcut[0]=="@>")
+							if($textcut[1]!="rsi")
 							{
-								$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." > ".$textcut[2]];
-								$type="h";
-							}
-							else if($textcut[0]=="@=")
-							{
-								$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." = ".$textcut[2]];
-								$type="sameprice";
-							}
-							else if($textcut[0]=="@de")
-							{
-								$messages556 = ['type' => 'text','text' => "[PROCESSING DELETE]"];
-								$type="@de";
-							}
-							else
-							{
-								$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." < ".$textcut[2]];
-								$type='l';
-							}
-							if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f')
-								$userid = $event['source']['userId'];	
-							else
-								$userid = $event['source']['groupId'];	
-							$check ="check1";	
-							$hoon_low = strtolower($textcut[1]);
+								if($textcut[0]=="@>")
+								{
+									$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." > ".$textcut[2]];
+									$type="h";
+								}
+								else if($textcut[0]=="@=")
+								{
+									$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." = ".$textcut[2]];
+									$type="sameprice";
+								}
+								else if($textcut[0]=="@de")
+								{
+									$messages556 = ['type' => 'text','text' => "[PROCESSING DELETE]"];
+									$type="@de";
+								}
+								else
+								{
+									$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." < ".$textcut[2]];
+									$type='l';
+								}
+								if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f')
+									$userid = $event['source']['userId'];	
+								else
+									$userid = $event['source']['groupId'];	
+								$check ="check1";	
+								$hoon_low = strtolower($textcut[1]);
 							
-							
-							$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
-										VALUES ('', '$hoon_low', '$textcut[2]','$replyToken' ,'$userid', '$type')";
-										
-							if (mysqli_query($link, $sql)) {
+								$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
+											VALUES ('', '$hoon_low', '$textcut[2]','$replyToken' ,'$userid', '$type')";
+											
+								if (mysqli_query($link, $sql)) {
+											echo "New record created successfully";
+								} 
+								else {
+											echo "Error: " . $sql . "<br>" . mysqli_error($link);
+								}
+								
+								$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
+								if (mysqli_query($link, $sql)) {
 										echo "New record created successfully";
-							} 
-							else {
+								} 
+								else {
 										echo "Error: " . $sql . "<br>" . mysqli_error($link);
+								}
+								sleep(0.3);
 							}
-							
-							$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
-							if (mysqli_query($link, $sql)) {
-									echo "New record created successfully";
-							} 
-							else {
-									echo "Error: " . $sql . "<br>" . mysqli_error($link);
-							}
-							sleep(0.3);
 						}
 						else if($count_check_check==-1)
 						{
