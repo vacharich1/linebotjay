@@ -38,6 +38,7 @@ else
 $sql1 = "SELECT * FROM send_alert ORDER BY `hoonname` ASC";
 $result = $link->query($sql1);
 $check_rsi_send="";
+
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
@@ -157,9 +158,10 @@ echo "aaaaa";
 					"type" => "text",
 					"text" => $msg
 				];
+				
 				if($check_rsi_send=='rsi_check')
 				{
-						$messages33 =['type'=> 'template',
+					$messages33 =['type'=> 'template',
 								  'altText'=> 'this is a carousel template',
 								  'template'=> [
 									  'type'=> 'carousel',
@@ -167,7 +169,7 @@ echo "aaaaa";
 													  [
 														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
 														'title'=> 'rsi?',
-														'text'=> 'aaaa',
+														'text'=> 'RSI เป็นเครื่องมือที่นำมาใช้วัดการแกว่งตัวของราคาหุ้น สำหรับการลงทุนในช่วงหนึ่ง อ่านต่อ คลิก view detail ',
 														'actions' => [
 																			[
 																				'type'=> 'uri',
@@ -180,7 +182,7 @@ echo "aaaaa";
 													  [
 														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
 														'title'=> 'rsi<30',
-														'text'=> 'aaaa',
+														'text'=> 'rsi<30 เข้าเขต oversold',
 														'actions' => [
 																			[
 																				'type'=> 'uri',
@@ -193,7 +195,7 @@ echo "aaaaa";
 													  [
 														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi3035.jpg',
 														'title'=> '35>rsi>30',
-														'text'=> 'aaa',
+														'text'=> 'rsi<35 กำลังเข้าเขต oversold',
 														'actions' => [
 																			[
 																				'type'=> 'uri',
@@ -220,10 +222,6 @@ echo "aaaaa";
 								  			]
 							];
 				}
-				
-				
-				
-				
 				
 		 		//$USERID
 				if($check_rsi_send=='rsi_check')
