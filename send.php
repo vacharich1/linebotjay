@@ -159,52 +159,52 @@ echo "aaaaa";
 				
 				
 				$messages33 =[	  "type"=> "template",
-                  "altText"=> "this is a carousel template",
-                  "template"=> {
-                      "type"=> "carousel",
-                      "columns"=> [
-                          [
-                            "thumbnailImageUrl"=> "https://www.botbottest.club/rsi.jpg",
-                            "title"=> "this is menu",
-                            "text"=> "description",
-                            'actions' => [
-												[
-													'type'=> 'uri',
-													'label'=> 'View detail',
-													'uri'=> 'http://www.botbottest.club/rsi30.jpg'
-												]
-																				
-										]
-                          ],
-                          [
-                            "thumbnailImageUrl"=> "https://www.botbottest.club/rsi30.jpg",
-                            "title"=> "this is menu",
-                            "text"=> "description",
-                            'actions' => [
-												[
-													'type'=> 'uri',
-													'label'=> 'View detail',
-													'uri'=> 'http://www.botbottest.club/rsi30.jpg'
-												]
-																				
-										]
-                          ],
-                          [
-                            "thumbnailImageUrl"=> "https://www.botbottest.club/rsi70.jpg",
-                            "title"=> "this is menu",
-                            "text"=> "description",
-                            'actions' => [
-												[
-													'type'=> 'uri',
-													'label'=> 'View detail',
-													'uri'=> 'http://www.botbottest.club/rsi30.jpg'
-												]
-																				
-										]
-                          ]
-                      ]
-                  }
-			];
+								  "altText"=> "this is a carousel template",
+								  "template"=> {
+									  "type"=> "carousel",
+									  "columns"=> [
+										  [
+											"thumbnailImageUrl"=> "https://www.botbottest.club/rsi.jpg",
+											"title"=> "this is menu",
+											"text"=> "description",
+											'actions' => [
+																[
+																	'type'=> 'uri',
+																	'label'=> 'View detail',
+																	'uri'=> 'http://www.botbottest.club/rsi30.jpg'
+																]
+																								
+														]
+										  ],
+										  [
+											"thumbnailImageUrl"=> "https://www.botbottest.club/rsi30.jpg",
+											"title"=> "this is menu",
+											"text"=> "description",
+											'actions' => [
+																[
+																	'type'=> 'uri',
+																	'label'=> 'View detail',
+																	'uri'=> 'http://www.botbottest.club/rsi30.jpg'
+																]
+																								
+														]
+										  ],
+										  [
+											"thumbnailImageUrl"=> "https://www.botbottest.club/rsi70.jpg",
+											"title"=> "this is menu",
+											"text"=> "description",
+											'actions' => [
+																[
+																	'type'=> 'uri',
+																	'label'=> 'View detail',
+																	'uri'=> 'http://www.botbottest.club/rsi30.jpg'
+																]
+																								
+														]
+										  ]
+									  ]
+								  }
+							];
 				
 		 		//$USERID
 				$post_data = [
