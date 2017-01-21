@@ -341,7 +341,7 @@ echo "aaaaa";
 				
 				
 		 		//$USERID
-				if($check_rsi_send=='rsi_check' || $check_rsi_send=='rsi')
+				if($check_rsi_send=='rsi_check')
 				{
 					$post_data = [
 						'to' => $USERID,
