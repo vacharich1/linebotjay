@@ -37,6 +37,7 @@ else
 
 $sql1 = "SELECT * FROM send_alert ORDER BY `hoonname` ASC";
 $result = $link->query($sql1);
+$check_rsi_send="";
 
 if ($result->num_rows > 0) {
     // output data of each row
@@ -126,6 +127,7 @@ if ($result->num_rows > 0) {
 		}
 		else if($row["type"]=='rsi_check')
 		{
+			$check_rsi_send='rsi_check';
 			$text_alert = $row["hoonname"].$row["price_current"].$row["price_alert"].$row["room"];
 			$USERID =$row["uid"];
 		}
@@ -157,7 +159,7 @@ echo "aaaaa";
 					"text" => $msg
 				];
 				
-				if($row["type"]=='rsi_check')
+				if($check_rsi_send=='rsi_check')
 				{
 					$messages33 =[	  'type'=> 'template',
 								  'altText'=> 'this is a carousel template',
@@ -222,7 +224,7 @@ echo "aaaaa";
 				}
 				
 		 		//$USERID
-				if($row["type"]=='rsi_check')
+				if($check_rsi_send=='rsi_check')
 				{
 					$post_data = [
 						'to' => $USERID,
