@@ -158,15 +158,15 @@ echo "aaaaa";
 				];
 				
 				
-				$messages33 =[	  "type"=> "template",
-								  "altText"=> "this is a carousel template",
-								  "template"=> {
-									  "type"=> "carousel",
-									  "columns"=> [
+				$messages33 =[	  'type'=> 'template',
+								  'altText'=> 'this is a carousel template',
+								  'template'=> {
+									  'type'=> 'carousel',
+									  'columns'=> [
 										  [
-											"thumbnailImageUrl"=> "https://www.botbottest.club/rsi.jpg",
-											"title"=> "this is menu",
-											"text"=> "description",
+											'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
+											'title'=> 'this is menu',
+											'text'=> 'description',
 											'actions' => [
 																[
 																	'type'=> 'uri',
@@ -177,9 +177,9 @@ echo "aaaaa";
 														]
 										  ],
 										  [
-											"thumbnailImageUrl"=> "https://www.botbottest.club/rsi30.jpg",
-											"title"=> "this is menu",
-											"text"=> "description",
+											'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
+											'title'=> 'this is menu',
+											'text'=> 'description',
 											'actions' => [
 																[
 																	'type'=> 'uri',
@@ -190,9 +190,9 @@ echo "aaaaa";
 														]
 										  ],
 										  [
-											"thumbnailImageUrl"=> "https://www.botbottest.club/rsi70.jpg",
-											"title"=> "this is menu",
-											"text"=> "description",
+											'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
+											'title'=> 'this is menu',
+											'text'=> 'description',
 											'actions' => [
 																[
 																	'type'=> 'uri',
@@ -208,8 +208,8 @@ echo "aaaaa";
 				
 		 		//$USERID
 				$post_data = [
-					"to" => $USERID,
-					"messages" => [$messages33]
+					'to' => $USERID,
+					'messages' => [$messages33]
 				];
 				
 				$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
