@@ -166,8 +166,6 @@ if (!is_null($events['events'])) {
 						}
 						if($count_check_check>0)
 						{
-							if($textcut[1]!="rsi")
-							{
 								if($textcut[0]=="@>")
 								{
 									$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." > ".$textcut[2]];
@@ -213,11 +211,7 @@ if (!is_null($events['events'])) {
 										echo "Error: " . $sql . "<br>" . mysqli_error($link);
 								}
 								sleep(0.3);
-							}
-							else
-							{
-								$check ="check1";	
-							}
+							
 						}
 						else if($count_check_check==-1)
 						{
