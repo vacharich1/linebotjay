@@ -157,8 +157,9 @@ echo "aaaaa";
 					"text" => $msg
 				];
 				
-				
-				$messages33 =[	  'type'=> 'template',
+				if($row["type"]=='rsi_check')
+				{
+					$messages33 =[	  'type'=> 'template',
 								  'altText'=> 'this is a carousel template',
 								  'template'=> [
 									  'type'=> 'carousel',
@@ -191,7 +192,7 @@ echo "aaaaa";
 													  ],
 													  [
 														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi3035.jpg',
-														'title'=> 'rsi>70',
+														'title'=> '35>rsi>30',
 														'text'=> 'description',
 														'actions' => [
 																			[
@@ -218,12 +219,23 @@ echo "aaaaa";
 									  			]
 								  			]
 							];
+				}
 				
 		 		//$USERID
-				$post_data = [
-					'to' => $USERID,
-					'messages' => [$messages33]
-				];
+				if($row["type"]=='rsi_check')
+				{
+					$post_data = [
+						'to' => $USERID,
+						'messages' => [$messages33]
+					];
+				}
+				else
+				{
+					$post_data = [
+						'to' => $USERID,
+						'messages' => [$format_text]
+					];
+				}
 				
 				$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				
