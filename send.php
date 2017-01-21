@@ -38,7 +38,6 @@ else
 $sql1 = "SELECT * FROM send_alert ORDER BY `hoonname` ASC";
 $result = $link->query($sql1);
 $check_rsi_send="";
-$check_rsi_rsi="";
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
@@ -128,7 +127,6 @@ if ($result->num_rows > 0) {
 		else if($row["type"]=='rsi_check')
 		{
 			$check_rsi_send='rsi_check';
-			$check_rsi_rsi='30';
 			$text_alert = $row["hoonname"].$row["price_current"].$row["price_alert"].$row["room"];
 			$USERID =$row["uid"];
 		}
