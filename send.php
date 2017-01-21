@@ -159,7 +159,7 @@ echo "aaaaa";
 					"type" => "text",
 					"text" => $msg
 				];
-				if($check_rsi_send=='rsi')
+				if($check_rsi_send=='rsi_check')
 				{
 						$messages33 =['type'=> 'template',
 								  'altText'=> 'this is a carousel template',
@@ -224,44 +224,7 @@ echo "aaaaa";
 				}
 				
 				
-				if($check_rsi_send=='rsi_check')
-				{
-						$messages33 =['type'=> 'template',
-								  'altText'=> 'this is a carousel template',
-								  'template'=> [
-									  'type'=> 'carousel',
-									  'columns'=> [
-													  [
-														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
-														'title'=> 'rsi?',
-														'text'=> 'RSI เป็นเครื่องมือที่นำมาใช้วัดการแกว่งตัวของราคาหุ้น สำหรับการลงทุนในช่วงหนึ่ง อ่านต่อ คลิก view detail ',
-														'actions' => [
-																			[
-																				'type'=> 'uri',
-																				'label'=> 'View detail',
-																				'uri'=> 'https://www.botbottest.club/rsiis.jpg'
-																			]
-																											
-																	]
-													  ],
-													  [
-														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
-														'title'=> 'rsi<30',
-														'text'=> 'rsi<30 เข้าเขต oversold',
-														'actions' => [
-																			[
-																				'type'=> 'uri',
-																				'label'=> 'View detail',
-																				'uri'=> 'https://www.botbottest.club/rsi30.jpg'
-																			]
-																											
-																	]
-													  ]
-									  			]
-								  			]
-							];	
 				
-				}
 				
 				
 		 		//$USERID
