@@ -171,7 +171,7 @@ echo "aaaaa";
 																[
 																	'type'=> 'uri',
 																	'label'=> 'View detail',
-																	'uri'=> 'http://www.botbottest.club/rsi30.jpg'
+																	'uri'=> 'https://www.botbottest.club/rsi30.jpg'
 																]
 																								
 														]
@@ -184,7 +184,7 @@ echo "aaaaa";
 																[
 																	'type'=> 'uri',
 																	'label'=> 'View detail',
-																	'uri'=> 'http://www.botbottest.club/rsi30.jpg'
+																	'uri'=> 'https://www.botbottest.club/rsi30.jpg'
 																]
 																								
 														]
@@ -197,7 +197,7 @@ echo "aaaaa";
 																[
 																	'type'=> 'uri',
 																	'label'=> 'View detail',
-																	'uri'=> 'http://www.botbottest.club/rsi30.jpg'
+																	'uri'=> 'https://www.botbottest.club/rsi30.jpg'
 																]
 																								
 														]
