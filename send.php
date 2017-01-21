@@ -38,7 +38,7 @@ else
 $sql1 = "SELECT * FROM send_alert ORDER BY `hoonname` ASC";
 $result = $link->query($sql1);
 $check_rsi_send="";
-
+$check_rsi_rsi="";
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
@@ -128,6 +128,7 @@ if ($result->num_rows > 0) {
 		else if($row["type"]=='rsi_check')
 		{
 			$check_rsi_send='rsi_check';
+			$check_rsi_rsi=(string)$row["room"];
 			$text_alert = $row["hoonname"].$row["price_current"].$row["price_alert"].$row["room"];
 			$USERID =$row["uid"];
 		}
@@ -158,10 +159,9 @@ echo "aaaaa";
 					"type" => "text",
 					"text" => $msg
 				];
-				
-				if($check_rsi_send=='rsi_check')
+				if($check_rsi_send=='rsi')
 				{
-					$messages33 =[	  'type'=> 'template',
+						$messages33 =['type'=> 'template',
 								  'altText'=> 'this is a carousel template',
 								  'template'=> [
 									  'type'=> 'carousel',
@@ -169,12 +169,12 @@ echo "aaaaa";
 													  [
 														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
 														'title'=> 'rsi?',
-														'text'=> 'description',
+														'text'=> 'RSI เป็นเครื่องมือที่นำมาใช้วัดการแกว่งตัวของราคาหุ้น สำหรับการลงทุนในช่วงหนึ่ง อ่านต่อ คลิก view detail ',
 														'actions' => [
 																			[
 																				'type'=> 'uri',
 																				'label'=> 'View detail',
-																				'uri'=> 'https://www.botbottest.club/rsi30.jpg'
+																				'uri'=> 'https://www.botbottest.club/rsiis.jpg'
 																			]
 																											
 																	]
@@ -182,7 +182,7 @@ echo "aaaaa";
 													  [
 														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
 														'title'=> 'rsi<30',
-														'text'=> 'description',
+														'text'=> 'rsi<30 เข้าเขต oversold',
 														'actions' => [
 																			[
 																				'type'=> 'uri',
@@ -195,7 +195,7 @@ echo "aaaaa";
 													  [
 														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi3035.jpg',
 														'title'=> '35>rsi>30',
-														'text'=> 'description',
+														'text'=> 'rsi<35 กำลังเข้าเขต oversold',
 														'actions' => [
 																			[
 																				'type'=> 'uri',
@@ -208,7 +208,7 @@ echo "aaaaa";
 													  [
 														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
 														'title'=> 'rsi>70',
-														'text'=> 'description',
+														'text'=> 'rsi>70 เข้าเขต overbought',
 														'actions' => [
 																			[
 																				'type'=> 'uri',
@@ -223,8 +223,125 @@ echo "aaaaa";
 							];
 				}
 				
-		 		//$USERID
+				
 				if($check_rsi_send=='rsi_check')
+				{
+					if($check_rsi_rsi=='30')
+					{
+						$messages33 =['type'=> 'template',
+								  'altText'=> 'this is a carousel template',
+								  'template'=> [
+									  'type'=> 'carousel',
+									  'columns'=> [
+													  [
+														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
+														'title'=> 'rsi?',
+														'text'=> 'RSI เป็นเครื่องมือที่นำมาใช้วัดการแกว่งตัวของราคาหุ้น สำหรับการลงทุนในช่วงหนึ่ง อ่านต่อ คลิก view detail ',
+														'actions' => [
+																			[
+																				'type'=> 'uri',
+																				'label'=> 'View detail',
+																				'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																			]
+																											
+																	]
+													  ],
+													  [
+														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
+														'title'=> 'rsi<30',
+														'text'=> 'rsi<30 เข้าเขต oversold',
+														'actions' => [
+																			[
+																				'type'=> 'uri',
+																				'label'=> 'View detail',
+																				'uri'=> 'https://www.botbottest.club/rsi30.jpg'
+																			]
+																											
+																	]
+													  ]
+									  			]
+								  			]
+							];	
+					}
+					else if($check_rsi_rsi=='70')
+					{
+						$messages33 =['type'=> 'template',
+								  'altText'=> 'this is a carousel template',
+								  'template'=> [
+									  'type'=> 'carousel',
+									  'columns'=> [
+													  [
+														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
+														'title'=> 'rsi?',
+														'text'=> 'RSI เป็นเครื่องมือที่นำมาใช้วัดการแกว่งตัวของราคาหุ้น สำหรับการลงทุนในช่วงหนึ่ง อ่านต่อ คลิก view detail ',
+														'actions' => [
+																			[
+																				'type'=> 'uri',
+																				'label'=> 'View detail',
+																				'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																			]
+																											
+																	]
+													  ],
+													  [
+														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
+														'title'=> 'rsi<30',
+														'text'=> 'rsi<30 เข้าเขต oversold',
+														'actions' => [
+																			[
+																				'type'=> 'uri',
+																				'label'=> 'View detail',
+																				'uri'=> 'https://www.botbottest.club/rsi70.php'
+																			]
+																											
+																	]
+													  ]
+									  			]
+								  			]
+							];	
+					}
+					else
+					{
+						$messages33 =['type'=> 'template',
+								  'altText'=> 'this is a carousel template',
+								  'template'=> [
+									  'type'=> 'carousel',
+									  'columns'=> [
+													  [
+														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
+														'title'=> 'rsi?',
+														'text'=> 'RSI เป็นเครื่องมือที่นำมาใช้วัดการแกว่งตัวของราคาหุ้น สำหรับการลงทุนในช่วงหนึ่ง อ่านต่อ คลิก view detail ',
+														'actions' => [
+																			[
+																				'type'=> 'uri',
+																				'label'=> 'View detail',
+																				'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																			]
+																											
+																	]
+													  ],
+													  [
+														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsielse.jpg',
+														'title'=> 'rsi',
+														'text'=> 'rsi',
+														'actions' => [
+																			[
+																				'type'=> 'uri',
+																				'label'=> 'View detail',
+																				'uri'=> 'https://www.botbottest.club/rsielse.php'
+																			]
+																											
+																	]
+													  ]
+									  			]
+								  			]
+							];
+					}
+				}
+				
+				
+		 		//$USERID
+				if($check_rsi_send=='rsi_check' || $check_rsi_send=='rsi')
 				{
 					$post_data = [
 						'to' => $USERID,
