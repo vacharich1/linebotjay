@@ -214,6 +214,10 @@ if (!is_null($events['events'])) {
 								}
 								sleep(0.3);
 							}
+							else
+							{
+								$check ="check1";	
+							}
 						}
 						else if($count_check_check==-1)
 						{
