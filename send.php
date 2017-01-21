@@ -157,47 +157,82 @@ echo "aaaaa";
 					"text" => $msg
 				];
 				
-				
-				$messages33 =[	  'type'=> 'template',
-								  'altText'=> 'this is a carousel template',
-								  'template'=> [
-									  'type'=> 'carousel',
-									  'columns'=> [
-													  [
-														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
-														'title'=> 'this is menu',
-														'text'=> 'description',
-														'actions' => [
-																			[
-																				'type'=> 'uri',
-																				'label'=> 'View detail',
-																				'uri'=> 'https://www.botbottest.club/rsi30.jpg'
-																			]
-																											
-																	]
-													  ],
-													  [
-														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
-														'title'=> 'this is menu',
-														'text'=> 'description',
-														'actions' => [
-																			[
-																				'type'=> 'uri',
-																				'label'=> 'View detail',
-																				'uri'=> 'https://www.botbottest.club/rsi30.jpg'
-																			]
-																											
-																	]
-													  ]
-									  			]
-								  			]
-							];
-				
-		 		//$USERID
-				$post_data = [
-					'to' => $USERID,
-					'messages' => [$messages33]
-				];
+				if($row["type"]=='rsi_check')
+				{
+					$messages33 =[	  'type'=> 'template',
+									  'altText'=> 'this is a carousel template',
+									  'template'=> [
+										  'type'=> 'carousel',
+										  'columns'=> [
+														  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
+															'title'=> 'rsi?',
+															'text'=> 'RSI เป็นเครื่องมือที่นำมาใช้วัดการแกว่งตัวของราคาหุ้น สำหรับการลงทุนในช่วงหนึ่ง คลิก view detail',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'https://www.botbottest.club/rsi30.jpg'
+																				]
+																												
+																		]
+														  ],
+														  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
+															'title'=> 'rsi<30',
+															'text'=> 'หุ้นที่มี rsi <30',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'https://www.botbottest.club/rsi30.jpg'
+																				]
+																												
+																		]
+														  ],
+														  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi3035.jpg',
+															'title'=> '35>rsi>30',
+															'text'=> 'หุ้นที่มี rsi น้อยกว่า 35 เเต่มากกว่า 30',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'https://www.botbottest.club/rsi30.jpg'
+																				]
+																												
+																		]
+														  ],
+														  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
+															'title'=> 'rsi>70',
+															'text'=> 'หุ้นที่มี rsi>70',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'https://www.botbottest.club/rsi30.jpg'
+																				]
+																												
+																		]
+														  ]
+													]
+												]
+								];
+								
+						$post_data = [
+							'to' => $USERID,
+							'messages' => [$messages33]
+						];
+				}
+				else
+				{
+					//$USERID
+					$post_data = [
+						'to' => $USERID,
+						'messages' => [$messages33]
+					];
+				}
 				
 				$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				
