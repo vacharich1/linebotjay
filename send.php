@@ -128,7 +128,7 @@ if ($result->num_rows > 0) {
 		else if($row["type"]=='rsi_check')
 		{
 			$check_rsi_send='rsi_check';
-			$check_rsi_rsi=(string)$row["room"];
+			$check_rsi_rsi='30';
 			$text_alert = $row["hoonname"].$row["price_current"].$row["price_alert"].$row["room"];
 			$USERID =$row["uid"];
 		}
