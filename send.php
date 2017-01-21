@@ -291,7 +291,7 @@ echo "aaaaa";
 																			[
 																				'type'=> 'uri',
 																				'label'=> 'View detail',
-																				'uri'=> 'https://www.botbottest.club/rsi70.php'
+																				'uri'=> 'https://www.botbottest.club/rsi70.jpg'
 																			]
 																											
 																	]
@@ -328,7 +328,7 @@ echo "aaaaa";
 																			[
 																				'type'=> 'uri',
 																				'label'=> 'View detail',
-																				'uri'=> 'https://www.botbottest.club/rsielse.php'
+																				'uri'=> 'https://www.botbottest.club/rsiis.jpg'
 																			]
 																											
 																	]
