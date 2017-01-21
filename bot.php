@@ -113,26 +113,29 @@ if (!is_null($events['events'])) {
 				$count=0;
 				$count_check_check=0;
 				$text22="";
-				foreach ($arr1 as $text1) {
-					if(preg_match("/^[a-zA-Z]+$/", $text1) == 1)
-					{
-						$count_check_check=$count_check_check+1;
-					}
-					if(preg_match("/^[a-zA-Z0-9.]+$/", $text1) == 1)
-					{
-						$data1=$data1.$text1;
-					}
-					if($text1==">" || $text1=="=" || $text1=="<")
-					{
-						if($text1==">")
-							$text22=$text22."@> ";
-						if($text1=="<")
-							$text22=$text22."@< ";	
-						if($text1=="=")
-							$text22=$text22."@= ";	
-						$data2=$text1;
-						$data1=$data1." ";
-						$count=$count+1;
+				if(preg_match("/^[a-zA-Z0-9.]+$/", $text1) != 1)
+				{
+					foreach ($arr1 as $text1) {
+						if(preg_match("/^[a-zA-Z]+$/", $text1) == 1)
+						{
+							$count_check_check=$count_check_check+1;
+						}
+						if(preg_match("/^[a-zA-Z0-9.]+$/", $text1) == 1)
+						{
+							$data1=$data1.$text1;
+						}
+						if($text1==">" || $text1=="=" || $text1=="<")
+						{
+							if($text1==">")
+								$text22=$text22."@> ";
+							if($text1=="<")
+								$text22=$text22."@< ";	
+							if($text1=="=")
+								$text22=$text22."@= ";	
+							$data2=$text1;
+							$data1=$data1." ";
+							$count=$count+1;
+						}
 					}
 				}
 				$text22=$text22.$data1;
