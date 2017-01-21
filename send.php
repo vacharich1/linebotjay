@@ -160,37 +160,37 @@ echo "aaaaa";
 				
 				$messages33 =[	  'type'=> 'template',
 								  'altText'=> 'this is a carousel template',
-								  'template'=> {
+								  'template'=> [
 									  'type'=> 'carousel',
 									  'columns'=> [
-										  [
-											'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
-											'title'=> 'this is menu',
-											'text'=> 'description',
-											'actions' => [
-																[
-																	'type'=> 'uri',
-																	'label'=> 'View detail',
-																	'uri'=> 'https://www.botbottest.club/rsi30.jpg'
-																]
-																								
-														]
-										  ],
-										  [
-											'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
-											'title'=> 'this is menu',
-											'text'=> 'description',
-											'actions' => [
-																[
-																	'type'=> 'uri',
-																	'label'=> 'View detail',
-																	'uri'=> 'https://www.botbottest.club/rsi30.jpg'
-																]
-																								
-														]
-										  ]
-									  ]
-								  }
+													  [
+														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
+														'title'=> 'this is menu',
+														'text'=> 'description',
+														'actions' => [
+																			[
+																				'type'=> 'uri',
+																				'label'=> 'View detail',
+																				'uri'=> 'https://www.botbottest.club/rsi30.jpg'
+																			]
+																											
+																	]
+													  ],
+													  [
+														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
+														'title'=> 'this is menu',
+														'text'=> 'description',
+														'actions' => [
+																			[
+																				'type'=> 'uri',
+																				'label'=> 'View detail',
+																				'uri'=> 'https://www.botbottest.club/rsi30.jpg'
+																			]
+																											
+																	]
+													  ]
+									  			]
+								  			]
 							];
 				
 		 		//$USERID
