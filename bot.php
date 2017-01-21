@@ -113,7 +113,7 @@ if (!is_null($events['events'])) {
 				$count=0;
 				$count_check_check=0;
 				$text22="";
-				if(preg_match("/^[a-zA-Z0-9.]+$/", $text) != 1)
+				if(preg_match("/^[@]+$/", $text11[0]) == 1)
 				{
 					foreach ($arr1 as $text1) {
 						if(preg_match("/^[a-zA-Z]+$/", $text1) == 1)
