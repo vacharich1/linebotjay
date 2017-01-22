@@ -15,10 +15,71 @@ $events = json_decode($content, true);
 					"type" => "text",
 					"text" => $msg
 				];
+				
+				$messages33 =['type'=> 'template',
+								  'altText'=> 'this is a carousel template',
+								  'template'=> [
+									  'type'=> 'carousel',
+									  'columns'=> [
+													  [
+														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
+														'title'=> 'rsi?',
+														'text'=> 'RSI เป็นเครื่องมือที่นำมาใช้วัดการแกว่งตัวของราคาหุ้น สำหรับการลงทุนในช่วงหนึ่ง อ่านต่อ คลิก view detail',
+														'actions' => [
+																			[
+																				'type'=> 'uri',
+																				'label'=> 'View detail',
+																				'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																			]
+																											
+																	]
+													  ],
+													  [
+														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
+														'title'=> 'rsi<30',
+														'text'=> 'rsi<30 เข้าเขต oversold',
+														'actions' => [
+																			[
+																				'type'=> 'uri',
+																				'label'=> 'View detail',
+																				'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																			]
+																											
+																	]
+													  ],
+													  [
+														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi3035.jpg',
+														'title'=> '35>rsi>30',
+														'text'=> 'rsi<35 กำลังเข้าเขต oversold',
+														'actions' => [
+																			[
+																				'type'=> 'uri',
+																				'label'=> 'View detail',
+																				'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																			]
+																											
+																	]
+													  ],
+													  [
+														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
+														'title'=> 'rsi>70',
+														'text'=> 'rsi>70 เข้าเขต overbought',
+														'actions' => [
+																			[
+																				'type'=> 'uri',
+																				'label'=> 'View detail',
+																				'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																			]
+																											
+																	]
+													  ]
+									  			]
+								  			]
+							];
 		 
 				$post_data = [
-					"to" => $USERID,
-					"messages" => [$format_text]
+					"to" => 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b',
+					"messages" => [$messages33]
 				];
 				
 				$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
