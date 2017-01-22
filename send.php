@@ -159,8 +159,6 @@ echo "aaaaa";
 					"text" => $msg
 				];
 				
-				if($check_rsi_send=="rsi_check")
-				{
 					$messages33 =['type'=> 'template',
 								  'altText'=> 'this is a carousel template',
 								  'template'=> [
@@ -221,7 +219,7 @@ echo "aaaaa";
 									  			]
 								  			]
 							];
-				}
+				
 				
 		 		//$USERID
 				if($check_rsi_send=="rsi_check")
