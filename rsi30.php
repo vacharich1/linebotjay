@@ -30,7 +30,7 @@ else
 }
 
 
-$sql1 = "SELECT * FROM rsi_30 ORDER BY `price` ASC";
+$sql1 = "SELECT * FROM rsi_30";
 $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
