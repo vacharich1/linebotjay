@@ -289,14 +289,14 @@ echo "aaaaa";
 										  'type'=> 'carousel',
 										  'columns'=> [
 														  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
-															'title'=> 'rsi all',
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsiall.jpg',
+															'title'=> 'rsi all นอกจาก <30 <35 เเละ >70',
 															'text'=> 'RSI all',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
 																					'label'=> 'View detail',
-																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																					'uri'=> 'https://www.botbottest.club/rsielse.php'
 																				]
 																												
 																		]
