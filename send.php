@@ -176,7 +176,7 @@ echo "aaaaa";
 															'actions' => [
 																				[
 																					'type'=> 'uri',
-																					'label'=> 'View detail',
+																					'label'=> 'result',
 																					'uri'=> 'https://linebotjay.herokuapp.com/rsi30.php'
 																				]
 																												
@@ -185,11 +185,11 @@ echo "aaaaa";
 														  [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
 															'title'=> 'rsi?',
-															'text'=> 'RSI คืออะไรอ่านคลิก view detail',
+															'text'=> 'RSI คืออะไรอ่านคลิก information',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
-																					'label'=> 'View detail',
+																					'label'=> 'information',
 																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
 																				]
 																												
@@ -216,7 +216,7 @@ echo "aaaaa";
 															'actions' => [
 																				[
 																					'type'=> 'uri',
-																					'label'=> 'View detail',
+																					'label'=> 'result',
 																					'uri'=> 'https://linebotjay.herokuapp.com/rsi70.php'
 																				]
 																												
@@ -225,11 +225,11 @@ echo "aaaaa";
 														  [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
 															'title'=> 'rsi?',
-															'text'=> 'RSI คืออะไรอ่านคลิก view detail',
+															'text'=> 'RSI คืออะไรอ่านคลิก information',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
-																					'label'=> 'View detail',
+																					'label'=> 'information',
 																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
 																				]
 																												
@@ -256,7 +256,7 @@ echo "aaaaa";
 															'actions' => [
 																				[
 																					'type'=> 'uri',
-																					'label'=> 'View detail',
+																					'label'=> 'result',
 																					'uri'=> 'https://linebotjay.herokuapp.com/rsi3035.php'
 																				]
 																												
@@ -265,11 +265,11 @@ echo "aaaaa";
 														  [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
 															'title'=> 'rsi?',
-															'text'=> 'RSI คืออะไรอ่านคลิก view detail',
+															'text'=> 'RSI คืออะไรอ่านคลิก information',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
-																					'label'=> 'View detail',
+																					'label'=> 'information',
 																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
 																				]
 																												
@@ -292,11 +292,11 @@ echo "aaaaa";
 										 					 [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
 															'title'=> 'rsi?',
-															'text'=> 'RSI คืออะไรอ่านคลิก view detail',
+															'text'=> 'RSI คืออะไรอ่านคลิก information',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
-																					'label'=> 'View detail',
+																					'label'=> 'information',
 																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
 																				]
 																												
@@ -309,7 +309,7 @@ echo "aaaaa";
 															'actions' => [
 																				[
 																					'type'=> 'uri',
-																					'label'=> 'View detail',
+																					'label'=> 'result',
 																					'uri'=> 'https://linebotjay.herokuapp.com/rsi30.php'
 																				]
 																												
@@ -322,7 +322,7 @@ echo "aaaaa";
 															'actions' => [
 																				[
 																					'type'=> 'uri',
-																					'label'=> 'View detail',
+																					'label'=> 'result',
 																					'uri'=> 'https://linebotjay.herokuapp.com/rsi3035.php'
 																				]
 																												
@@ -335,7 +335,7 @@ echo "aaaaa";
 															'actions' => [
 																				[
 																					'type'=> 'uri',
-																					'label'=> 'View detail',
+																					'label'=> 'result',
 																					'uri'=> 'https://linebotjay.herokuapp.com/rsi70.php'
 																				]
 																												
@@ -364,7 +364,7 @@ echo "aaaaa";
 															'actions' => [
 																				[
 																					'type'=> 'uri',
-																					'label'=> 'View detail',
+																					'label'=> 'result',
 																					'uri'=> 'https://linebotjay.herokuapp.com/rsielse.php'
 																				]
 																												
@@ -373,11 +373,11 @@ echo "aaaaa";
 														  [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
 															'title'=> 'rsi?',
-															'text'=> 'RSI คืออะไรอ่านคลิก view detail',
+															'text'=> 'RSI คืออะไรอ่านคลิก information',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
-																					'label'=> 'View detail',
+																					'label'=> 'information',
 																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
 																				]
 																												
