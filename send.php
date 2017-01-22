@@ -160,7 +160,7 @@ echo "aaaaa";
 				];
 				if($check_rsi_send=="rsi_check")
 				{
-					if((string)$row["room"]=="30")
+					if($row["room"]=="30")
 					{
 						$messages33 =['type'=> 'template',
 									  'altText'=> 'this is a carousel template',
