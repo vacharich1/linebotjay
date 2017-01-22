@@ -168,6 +168,86 @@ echo "aaaaa";
 									  'template'=> [
 										  'type'=> 'carousel',
 										  'columns'=> [
+										  				  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
+															'title'=> 'rsi<30',
+															'text'=> 'rsi<30 เข้าเขต oversold',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'https://linebotjay.herokuapp.com/rsi30.php'
+																				]
+																												
+																		]
+														  ],
+														  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
+															'title'=> 'rsi?',
+															'text'=> 'RSI คืออะไรอ่านคลิก view detail',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																				]
+																												
+																		]
+														  ]
+														  
+													]
+												]
+								];
+
+						
+					}
+					else if($check_rsi_rsi=='70')
+					{
+						$messages33 =['type'=> 'template',
+									  'altText'=> 'this is a carousel template',
+									  'template'=> [
+										  'type'=> 'carousel',
+										  'columns'=> [
+										  				  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
+															'title'=> 'rsi<30',
+															'text'=> 'rsi<30 เข้าเขต oversold',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'https://linebotjay.herokuapp.com/rsi70.php'
+																				]
+																												
+																		]
+														  ],
+														  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
+															'title'=> 'rsi?',
+															'text'=> 'RSI คืออะไรอ่านคลิก view detail',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																				]
+																												
+																		]
+														  ]
+														  
+													]
+												]
+								];
+
+						
+					}
+					else if($check_rsi_rsi=='35')
+					{
+						$messages33 =['type'=> 'template',
+									  'altText'=> 'this is a carousel template',
+									  'template'=> [
+										  'type'=> 'carousel',
+										  'columns'=> [
 														  [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
 															'title'=> 'rsi?',
@@ -193,7 +273,74 @@ echo "aaaaa";
 																				]
 																												
 																		]
+														  ],
+														  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi3035.jpg',
+															'title'=> 'rsi<30',
+															'text'=> 'rsi<30 เข้าเขต oversold',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'https://linebotjay.herokuapp.com/rsi3035.php'
+																				]
+																												
+																		]
+														  ],
+														  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
+															'title'=> 'rsi<30',
+															'text'=> 'rsi<30 เข้าเขต oversold',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'https://linebotjay.herokuapp.com/rsi70.php'
+																				]
+																												
+																		]
 														  ]
+														  
+													]
+												]
+								];
+
+						
+					}
+					else
+					{
+						$messages33 =['type'=> 'template',
+									  'altText'=> 'this is a carousel template',
+									  'template'=> [
+										  'type'=> 'carousel',
+										  'columns'=> [
+										  				  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
+															'title'=> 'rsi<30',
+															'text'=> 'rsi<30 เข้าเขต oversold',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'https://linebotjay.herokuapp.com/rsi30.php'
+																				]
+																												
+																		]
+														  ],
+														  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
+															'title'=> 'rsi?',
+															'text'=> 'RSI คืออะไรอ่านคลิก view detail',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																				]
+																												
+																		]
+														  ]
+														  
 													]
 												]
 								];
