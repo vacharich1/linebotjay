@@ -169,7 +169,7 @@ echo "aaaaa";
 													  [
 														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
 														'title'=> 'rsi?',
-														'text'=> 'RSI เป็นเครื่องมือที่นำมาใช้วัดการแกว่งตัวของราคาหุ้น สำหรับการลงทุนในช่วงหนึ่ง อ่านต่อ คลิก view detail',
+														'text'=> 'RSI เป็นเครื่องมือที่นำมาใช้วัดการแกว่งตัวของราคาหุ้น อ่านต่อคลิก view detail',
 														'actions' => [
 																			[
 																				'type'=> 'uri',
@@ -187,7 +187,7 @@ echo "aaaaa";
 																			[
 																				'type'=> 'uri',
 																				'label'=> 'View detail',
-																				'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																				'uri'=> 'https://linebotjay.herokuapp.com/rsi30.php'
 																			]
 																											
 																	]
@@ -200,7 +200,7 @@ echo "aaaaa";
 																			[
 																				'type'=> 'uri',
 																				'label'=> 'View detail',
-																				'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																				'uri'=> 'https://linebotjay.herokuapp.com/rsielse.php'
 																			]
 																											
 																	]
@@ -213,7 +213,7 @@ echo "aaaaa";
 																			[
 																				'type'=> 'uri',
 																				'label'=> 'View detail',
-																				'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																				'uri'=> 'https://linebotjay.herokuapp.com/rsi70.php'
 																			]
 																											
 																	]
