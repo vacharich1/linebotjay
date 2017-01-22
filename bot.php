@@ -168,7 +168,7 @@ if (!is_null($events['events'])) {
 						{
 								if($textcut[1]!="rsi")
 								{
-									if(($textcut[2]=="30" && $type=="l") || ($textcut[2]=="70" && $type=="h") || ($textcut[2]=="35" && $type=="l") )
+									if($textcut[2]=="30"|| $textcut[2]=="70" || $textcut[2]=="35" )
 									{
 										echo "aaa";
 									}
