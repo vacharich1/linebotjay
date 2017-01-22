@@ -199,69 +199,7 @@ echo "aaaaa";
 
 						
 					}
-					else
-					{
-						$messages33 =['type'=> 'template',
-									  'altText'=> 'this is a carousel template',
-									  'template'=> [
-										  'type'=> 'carousel',
-										  'columns'=> [
-														  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
-															'title'=> 'rsi?',
-															'text'=> 'RSI คืออะไรอ่านคลิก view detail',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'View detail',
-																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
-																				]
-																												
-																		]
-														  ],
-														  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
-															'title'=> 'rsi<30',
-															'text'=> 'rsi<30 เข้าเขต oversold',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'View detail',
-																					'uri'=> 'https://linebotjay.herokuapp.com/rsi30.php'
-																				]
-																												
-																		]
-														  ],
-														  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi3035.jpg',
-															'title'=> '35>rsi>30',
-															'text'=> 'rsi<35 กำลังเข้าเขต oversold',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'View detail',
-																					'uri'=> 'https://linebotjay.herokuapp.com/rsielse.php'
-																				]
-																												
-																		]
-														  ],
-														  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
-															'title'=> 'rsi>70',
-															'text'=> 'rsi>70 เข้าเขต overbought',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'View detail',
-																					'uri'=> 'https://linebotjay.herokuapp.com/rsi70.php'
-																				]
-																												
-																		]
-														  ]
-													]
-												]
-								];
-					}
+					
 				}
 		 		//$USERID
 				if($check_rsi_send=="rsi_check")
