@@ -30,11 +30,11 @@ else
 }
 
 
-$sql1 = "SELECT * FROM send_alert3 ORDER BY `hoonname` ASC";
+$sql1 = "SELECT * FROM rsi_70 ORDER BY `price` ASC";
 $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
-		echo (string)$row["hoonname"];
+		echo $row["hoonname"]."  ".$row["price"]+"\n";
 	}
 
 }
