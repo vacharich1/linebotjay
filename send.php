@@ -169,7 +169,7 @@ echo "aaaaa";
 													  [
 														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
 														'title'=> 'rsi?',
-														'text'=> 'RSI เป็นเครื่องมือที่นำมาใช้วัดการแกว่งตัวของราคาหุ้น อ่านต่อคลิก view detail',
+														'text'=> 'RSI คืออะไรอ่านคลิก view detail',
 														'actions' => [
 																			[
 																				'type'=> 'uri',
