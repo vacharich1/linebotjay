@@ -248,6 +248,46 @@ echo "aaaaa";
 									  'template'=> [
 										  'type'=> 'carousel',
 										  'columns'=> [
+										  				  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi3035.jpg',
+															'title'=> 'rsi<30',
+															'text'=> 'rsi<30 เข้าเขต oversold',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'https://linebotjay.herokuapp.com/rsi3035.php'
+																				]
+																												
+																		]
+														  ],
+														  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
+															'title'=> 'rsi?',
+															'text'=> 'RSI คืออะไรอ่านคลิก view detail',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																				]
+																												
+																		]
+														  ]
+														  
+													]
+												]
+								];
+
+						
+					}
+					else 
+					{
+						$messages33 =['type'=> 'template',
+									  'altText'=> 'this is a carousel template',
+									  'template'=> [
+										  'type'=> 'carousel',
+										  'columns'=> [
 														  [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
 															'title'=> 'rsi?',
@@ -307,46 +347,7 @@ echo "aaaaa";
 
 						
 					}
-					else
-					{
-						$messages33 =['type'=> 'template',
-									  'altText'=> 'this is a carousel template',
-									  'template'=> [
-										  'type'=> 'carousel',
-										  'columns'=> [
-										  				  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
-															'title'=> 'rsi<30',
-															'text'=> 'rsi<30 เข้าเขต oversold',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'View detail',
-																					'uri'=> 'https://linebotjay.herokuapp.com/rsi30.php'
-																				]
-																												
-																		]
-														  ],
-														  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
-															'title'=> 'rsi?',
-															'text'=> 'RSI คืออะไรอ่านคลิก view detail',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'View detail',
-																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
-																				]
-																												
-																		]
-														  ]
-														  
-													]
-												]
-								];
-
-						
-					}
+					
 					
 				}
 		 		//$USERID
