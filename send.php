@@ -129,6 +129,7 @@ if ($result->num_rows > 0) {
 		{
 			$check_rsi_send="rsi_check";
 			$check_rsi_rsi=(string)$row["room"];
+			$check_type_rsi=(string)$row["price_alert"];
 			$text_alert = $row["hoonname"].$row["price_current"].$row["price_alert"].$row["room"];
 			$USERID =$row["uid"];
 		}
@@ -161,7 +162,7 @@ echo "aaaaa";
 				];
 				if($check_rsi_send=="rsi_check")
 				{
-					if($check_rsi_rsi=='30')
+					if($check_rsi_rsi=='30' and $check_type_rsi=="l")
 					{
 						$messages33 =['type'=> 'template',
 									  'altText'=> 'this is a carousel template',
@@ -201,7 +202,7 @@ echo "aaaaa";
 
 						
 					}
-					else if($check_rsi_rsi=='70')
+					else if($check_rsi_rsi=='70' and $check_type_rsi=="h")
 					{
 						$messages33 =['type'=> 'template',
 									  'altText'=> 'this is a carousel template',
@@ -241,7 +242,7 @@ echo "aaaaa";
 
 						
 					}
-					else if($check_rsi_rsi=='35')
+					else if($check_rsi_rsi=='35' and $check_type_rsi=="l")
 					{
 						$messages33 =['type'=> 'template',
 									  'altText'=> 'this is a carousel template',
