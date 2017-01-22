@@ -236,7 +236,7 @@ if (!is_null($events['events'])) {
 						}
 						// Make a POST Request to Messaging API to reply to sender
 						$text_check_c = strtoupper($textcut[1]);
-						if($text_check_c!="rsi")
+						if($text_check_c !="RSI")
 						{
 							$url = 'https://api.line.me/v2/bot/message/reply';
 							$data = [
