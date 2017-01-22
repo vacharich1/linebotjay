@@ -24,11 +24,11 @@ if (!$link) {
 
 
 
-$sql1 = "SELECT * FROM rsi_30";
+$sql1 = "SELECT * FROM `rsi_30` WHERE 1";
 $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
-		echo '<font size="18"'." face='Arial'>";
+		echo '<font size="30"'." face='Arial'>";
 		echo (string)$row["hoonname"]."  ".(string)$row["price"]+"\n";
 	}
 
