@@ -34,6 +34,7 @@ $sql1 = "SELECT * FROM rsi_70 ORDER BY `price` ASC";
 $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
+		echo '<font size="18"'." face='Arial'>";
 		echo $row["hoonname"]."  ".$row["price"]+"\n";
 	}
 
