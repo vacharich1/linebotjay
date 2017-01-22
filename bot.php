@@ -166,6 +166,18 @@ if (!is_null($events['events'])) {
 						}
 						if($count_check_check>0)
 						{
+								if($textcut[1]!="rsi")
+								{
+									if(($textcut[2]=="30" && $type=="l") || ($textcut[2]=="70" && $type=="h") || ($textcut[2]=="35" && $type=="l") )
+									{
+										echo "aaa";
+									}
+									else
+									{
+										$textcut[2]="all";
+									}
+									
+								}
 								if($textcut[0]=="@>")
 								{
 									$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." > ".$textcut[2]];
@@ -211,6 +223,7 @@ if (!is_null($events['events'])) {
 										echo "Error: " . $sql . "<br>" . mysqli_error($link);
 								}
 								sleep(0.3);
+								
 							
 						}
 						else if($count_check_check==-1)
