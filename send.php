@@ -283,6 +283,7 @@ echo "aaaaa";
 					}
 					else 
 					{
+						$check_rsi_rsi="rsi : ".(string)$row["room"];
 						$messages33 =['type'=> 'template',
 									  'altText'=> 'this is a carousel template',
 									  'template'=> [
@@ -290,8 +291,8 @@ echo "aaaaa";
 										  'columns'=> [
 														  [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsiall.jpg',
-															'title'=> 'rsi all นอกจาก <30 <35 เเละ >70',
-															'text'=> 'RSI all',
+															'title'=> 'rsi all',
+															'text'=> $check_rsi_rsi,
 															'actions' => [
 																				[
 																					'type'=> 'uri',
