@@ -296,7 +296,7 @@ echo "aaaaa";
 																				[
 																					'type'=> 'uri',
 																					'label'=> 'View detail',
-																					'uri'=> 'https://www.botbottest.club/rsielse.php'
+																					'uri'=> 'https://linebotjay.herokuapp.com/rsielse.php'
 																				]
 																												
 																		]
