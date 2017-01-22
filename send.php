@@ -210,8 +210,8 @@ echo "aaaaa";
 										  'columns'=> [
 										  				  [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
-															'title'=> 'rsi<30',
-															'text'=> 'rsi<30 เข้าเขต oversold',
+															'title'=> 'rsi>70',
+															'text'=> 'rsi>70 เข้าเขต overbought',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
@@ -250,8 +250,8 @@ echo "aaaaa";
 										  'columns'=> [
 										  				  [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi3035.jpg',
-															'title'=> 'rsi<30',
-															'text'=> 'rsi<30 เข้าเขต oversold',
+															'title'=> 'rsi<35',
+															'text'=> 'rsi<35 กำลังเข้าเขต oversold',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
@@ -290,8 +290,8 @@ echo "aaaaa";
 										  'columns'=> [
 														  [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
-															'title'=> 'rsi?',
-															'text'=> 'RSI คืออะไรอ่านคลิก view detail',
+															'title'=> 'rsi all',
+															'text'=> 'RSI all',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
