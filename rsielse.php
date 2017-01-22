@@ -30,7 +30,7 @@ else
 }
 
 
-$sql1 = "SELECT * FROM send_alert4 ORDER BY `hoonname` ASC";
+$sql1 = "SELECT * FROM send_alert5 ORDER BY `hoonname` ASC";
 $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {

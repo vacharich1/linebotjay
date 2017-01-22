@@ -1,37 +1,44 @@
 <?php
 
-$access_token = 'J81JqjhEqIJMF6okb9jTNt3HWNZiE1zhZrmhbS3WZ/KTQovd6HzM5B+iQYnlFt7wz1S+UJyFzmGnd/AivBF0v1Lz9jaKAnxNsWxBlLSNWmkn1otG8tlzONrbEx5BOXysEwFX46Zk/AmD7JyKsxy3EQdB04t89/1O/w1cDnyilFU=';
+$host= "sql6.freemysqlhosting.net";
+//$db = "sql6150739";
+$db = "sql6153306";
+$CHAR_SET = "charset=utf8"; 
+ 
+//$username = "sql6150739";    
+//$password = "xiGjqcGnZb";   
+$username = "sql6153306";    
+$password = "4dZFsCXA54";  
+	
 
-// Get POST body content
-$content = file_get_contents('php://input');
+$link = mysqli_connect($host, $username, $password, $db);
+if (!$link) {
+    die('Could not connect: ' . mysqli_connect_errno());
+}
+else
+{
+	echo "connect";
+}
 
-echo "aaaaa";
+$link = mysqli_connect($host, $username, $password, $db);
+if (!$link) {
+    	die('Could not connect: ' . mysqli_connect_errno());
+}
+else
+{
+	echo "connect";
+}
 
-// Parse JSON
-$events = json_decode($content, true);
-				$msg = "GPU TEMP UNDER";
-				$USERID = "Ub5f45b12f0f8f8a3a08e5b52ebbcc96b";
-				$format_text = [
-					"type" => "text",
-					"text" => $msg
-				];
-		 
-				$post_data = [
-					"to" => $USERID,
-					"messages" => [$format_text]
-				];
-				
-				$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-		 
-				$ch = curl_init('https://api.line.me/v2/bot/message/push');
-				curl_setopt($ch, CURLOPT_POST, true);
-				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-				curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
-				curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-		 
-				$result = curl_exec($ch);
-				curl_close($ch);
+
+$sql1 = "SELECT * FROM send_alert4 ORDER BY `hoonname` ASC";
+$result = $link->query($sql1);
+if ($result->num_rows > 0) {
+	while($row = $result->fetch_assoc()) {
+		echo (string)$row["hoonname"];
+	}
+
+}
+
 ?>
 
 
