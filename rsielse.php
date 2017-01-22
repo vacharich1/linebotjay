@@ -15,19 +15,13 @@ $link = mysqli_connect($host, $username, $password, $db);
 if (!$link) {
     die('Could not connect: ' . mysqli_connect_errno());
 }
-else
-{
-	echo "connect";
-}
+
 
 $link = mysqli_connect($host, $username, $password, $db);
 if (!$link) {
     	die('Could not connect: ' . mysqli_connect_errno());
 }
-else
-{
-	echo "connect";
-}
+
 
 
 $sql1 = "SELECT * FROM rsi_all ORDER BY `price` ASC";
