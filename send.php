@@ -242,7 +242,7 @@ echo "aaaaa";
 
 						
 					}
-					else if($check_rsi_rsi=='35' and $check_type_rsi=="l")
+					else if($check_rsi_rsi=='35' and $check_type_rsi=="aaa")
 					{
 						$messages33 =['type'=> 'template',
 									  'altText'=> 'this is a carousel template',
