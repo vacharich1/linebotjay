@@ -303,40 +303,14 @@ echo "aaaaa";
 																		]
 														  ],
 														  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
-															'title'=> 'rsi<30',
-															'text'=> 'rsi<30 เข้าเขต oversold',
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
+															'title'=> 'rsi?',
+															'text'=> 'RSI คืออะไรอ่านคลิก view detail',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
 																					'label'=> 'View detail',
-																					'uri'=> 'https://linebotjay.herokuapp.com/rsi30.php'
-																				]
-																												
-																		]
-														  ],
-														  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi3035.jpg',
-															'title'=> 'rsi<30',
-															'text'=> 'rsi<30 เข้าเขต oversold',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'View detail',
-																					'uri'=> 'https://linebotjay.herokuapp.com/rsi3035.php'
-																				]
-																												
-																		]
-														  ],
-														  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
-															'title'=> 'rsi<30',
-															'text'=> 'rsi<30 เข้าเขต oversold',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'View detail',
-																					'uri'=> 'https://linebotjay.herokuapp.com/rsi70.php'
+																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
 																				]
 																												
 																		]
