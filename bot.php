@@ -235,7 +235,7 @@ if (!is_null($events['events'])) {
 							$messages556 = ['type' => 'text','text' => "โปรดพิมใหม่อีกครั้ง, hoonname ---> @aot>xxx hoonไม่สามารถเป็นเเค่ตัวเลขได้"];
 						}
 						// Make a POST Request to Messaging API to reply to sender
-						if($textcut[1]!="rsi" || $textcut[1]!="Rsi" || $textcut[1]!="rSi" || $textcut[1]!="rsI" || $textcut[1]!="RSI")
+						if($textcut[1]!="rsi" and $textcut[1]!="Rsi" and $textcut[1]!="rSi" and $textcut[1]!="rsI" and $textcut[1]!="RSI")
 						{
 							$url = 'https://api.line.me/v2/bot/message/reply';
 							$data = [
