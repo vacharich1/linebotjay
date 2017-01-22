@@ -24,7 +24,7 @@ $events = json_decode($content, true);
 													  [
 														'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
 														'title'=> 'rsi?',
-														'text'=> 'aaaaaa',
+														'text'=> 'RSI เป็นเครื่องมือที่นำมาใช้วัดการแกว่งตัวของราคาหุ้น อ่านต่อคลิด view detail',
 														'actions' => [
 																			[
 																				'type'=> 'uri',
