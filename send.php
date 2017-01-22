@@ -127,7 +127,7 @@ if ($result->num_rows > 0) {
 		}
 		else if($row["type"]=='rsi_check')
 		{
-			$check_rsi_send='rsi_check';
+			$check_rsi_send="rsi_check";
 			$text_alert = $row["hoonname"].$row["price_current"].$row["price_alert"].$row["room"];
 			$USERID =$row["uid"];
 		}
@@ -159,7 +159,7 @@ echo "aaaaa";
 					"text" => $msg
 				];
 				
-				if($check_rsi_send == 'rsi_check')
+				if($check_rsi_send=="rsi_check")
 				{
 					$messages33 =['type'=> 'template',
 								  'altText'=> 'this is a carousel template',
@@ -224,7 +224,7 @@ echo "aaaaa";
 				}
 				
 		 		//$USERID
-				if($check_rsi_send=='rsi_check')
+				if($check_rsi_send=="rsi_check")
 				{
 					$post_data = [
 						'to' => $USERID,
