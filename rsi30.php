@@ -29,7 +29,8 @@ $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
 		echo '<font size="200"'." face='Arial'>";
-		echo $row["hoonname"]."  ".$row["price"]. "\xA";
+		echo "\n";
+		echo $row["hoonname"]."  ".$row["price"];
 	}
 
 }
