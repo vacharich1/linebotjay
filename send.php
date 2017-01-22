@@ -304,8 +304,8 @@ echo "aaaaa";
 														   ],
 										  				   [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
-															'title'=> 'rsi<35',
-															'text'=> 'rsi<35 กำลังเข้าเขต oversold',
+															'title'=> 'rsi<30',
+															'text'=> 'rsi<30 เข้าเขต oversold',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
@@ -330,26 +330,13 @@ echo "aaaaa";
 														  ],
 										  				  [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
-															'title'=> 'rsi<35',
-															'text'=> 'rsi<35 กำลังเข้าเขต oversold',
+															'title'=> 'rsi>70',
+															'text'=> 'rsi>70 เข้าเขต overbought',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
 																					'label'=> 'View detail',
 																					'uri'=> 'https://linebotjay.herokuapp.com/rsi70.php'
-																				]
-																												
-																		]
-														  ],
-														  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsiall.jpg',
-															'title'=> 'rsi all',
-															'text'=> $text_use,
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'View detail',
-																					'uri'=> 'https://linebotjay.herokuapp.com/rsielse.php'
 																				]
 																												
 																		]
