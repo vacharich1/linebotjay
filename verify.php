@@ -28,7 +28,7 @@ $sql1 = "SELECT * FROM `teach` WHERE 1";
 $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
-		$userid = 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b';
+		$userid = $row["userid"];
 		$access_token = 'J81JqjhEqIJMF6okb9jTNt3HWNZiE1zhZrmhbS3WZ/KTQovd6HzM5B+iQYnlFt7wz1S+UJyFzmGnd/AivBF0v1Lz9jaKAnxNsWxBlLSNWmkn1otG8tlzONrbEx5BOXysEwFX46Zk/AmD7JyKsxy3EQdB04t89/1O/w1cDnyilFU=';
 		// Get POST body content
 		$content = file_get_contents('php://input');
@@ -59,6 +59,92 @@ if ($result->num_rows > 0) {
 		 
 		$result = curl_exec($ch);
 		curl_close($ch);
+		
+		sleep(0.5);
+		$messages55 = ['type' => 'text','text' => "ระบบจะตอบกลับมา\n\n AOT ราคาปัจจุบันคือ 390 by jfourtwins"];	
+												
+		$post_data = [
+						'to' => 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b',
+						'messages' => [$messages55]
+					];
+		$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				
+		echo "ssss";
+		 
+		$ch = curl_init('https://api.line.me/v2/bot/message/push');
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+		 
+		$result = curl_exec($ch);
+		curl_close($ch);
+		
+		sleep(0.5);
+		$messages55 = ['type' => 'text','text' => "หากต้องการเเจ้งเตือนราคาหุ้น aot จะสามารถใช้ได้สามเเบบ > , < , = โดยการพิมคือ\n @aot>390 คือการตั้งเเจ้งเเตือน"];	
+												
+		$post_data = [
+						'to' => 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b',
+						'messages' => [$messages55]
+					];
+		$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				
+		echo "ssss";
+		 
+		$ch = curl_init('https://api.line.me/v2/bot/message/push');
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+		 
+		$result = curl_exec($ch);
+		curl_close($ch);
+		
+		sleep(0.5);
+		$messages55 = ['type' => 'text','text' => "ระบบจะตอบกลับมาคือ [ALERT HOON] aot>390 คือระบบได้ทำการบันทึกเเล้ว"];	
+												
+		$post_data = [
+						'to' => 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b',
+						'messages' => [$messages55]
+					];
+		$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				
+		echo "ssss";
+		 
+		$ch = curl_init('https://api.line.me/v2/bot/message/push');
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+		 
+		$result = curl_exec($ch);
+		curl_close($ch);
+		
+		sleep(0.5);
+		$messages55 = ['type' => 'text','text' => "ต้องการดูว่ามีการเเจ้งเตือนหุ้นตัวไหนบ้างให้พิม @show all คำสั่งเเจ้งเตือนราคาคราวๆเท่านี้ครับ"];	
+												
+		$post_data = [
+						'to' => 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b',
+						'messages' => [$messages55]
+					];
+		$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				
+		echo "ssss";
+		 
+		$ch = curl_init('https://api.line.me/v2/bot/message/push');
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+		 
+		$result = curl_exec($ch);
+		curl_close($ch);
+		
+		
 	}
 }
 		
