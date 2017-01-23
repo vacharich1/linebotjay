@@ -47,149 +47,20 @@ if ($result->num_rows > 0) {
 						'messages' => [$messages55]
 					];
 		$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-		
-		echo "ssss11";
-		
-		$ch = curl_init('https://api.line.me/v2/bot/message/push');
-		curl_setopt($ch, CURLOPT_POST, true);
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
-		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-		
-		
-		sleep(0.5);
-		if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f')
-				$userid = $event['source']['userId'];	
-		else
-				$userid = $event['source']['groupId'];	
 				
-				
-		$messages55 = ['type' => 'text','text' => "ระบบจะตอบกลับมา\n AOT ราคาปัจจุบันคือ 390 by jfourtwins "];	
-				
-		
-		$post_data = [
-										'to' => $userid,
-										'messages' => [$messages55]
-								];
-		$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-		
 		echo "ssss";
-		
+		 
 		$ch = curl_init('https://api.line.me/v2/bot/message/push');
 		curl_setopt($ch, CURLOPT_POST, true);
 		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-		
-		sleep(0.5);
-		if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f')
-				$userid = $event['source']['userId'];	
-		else
-				$userid = $event['source']['groupId'];	
-				
-				
-		$messages55 = ['type' => 'text','text' => "หากต้องการเเจ้งเตือนราคาหุ้น aot จะสามารถใช้ได้สามเเบบ > , < , = โดยการพิมคือ\n @aot>390 คือการตั้งเเจ้งเเตือน"];	
-				
-		$post_data = [
-										'to' => $userid,
-										'messages' => [$messages55]
-								];
-		$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-		
-		echo "ssss";
-		
-		$ch = curl_init('https://api.line.me/v2/bot/message/push');
-		curl_setopt($ch, CURLOPT_POST, true);
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
-		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-		
+		 
 		$result = curl_exec($ch);
 		curl_close($ch);
 		
-		sleep(0.5);
-		if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f')
-				$userid = $event['source']['userId'];	
-		else
-				$userid = $event['source']['groupId'];	
-				
-				
-		$messages55 = ['type' => 'text','text' => "ระบบจะตอบกลับมาคือ [ALERT HOON] aot>390 คือระบบได้ทำการบันทึกเเล้ว"];	
-				
-		$post_data = [
-										'to' => $userid,
-										'messages' => [$messages55]
-								];
-		$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 		
-		echo "ssss";
-		
-		$ch = curl_init('https://api.line.me/v2/bot/message/push');
-		curl_setopt($ch, CURLOPT_POST, true);
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
-		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-		
-		$result = curl_exec($ch);
-		curl_close($ch);
-		
-		sleep(0.5);
-		if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f')
-				$userid = $event['source']['userId'];	
-		else
-				$userid = $event['source']['groupId'];	
-				
-				
-		$messages55 = ['type' => 'text','text' => "หากต้องการดูว่ามีการเเจ้งเตือนหุ้นตัวไหนบ้างให้พิม @show all คำสั่งเเจ้งเตือนราคาคราวๆเท่านี้ครับ"];	
-				
-		$post_data = [
-										'to' => $userid,
-										'messages' => [$messages55]
-								];
-		$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-		
-		echo "ssss";
-		
-		$ch = curl_init('https://api.line.me/v2/bot/message/push');
-		curl_setopt($ch, CURLOPT_POST, true);
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
-		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-		
-		$result = curl_exec($ch);
-		curl_close($ch);
-		
-		sleep(1);
-		if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f')
-				$userid = $event['source']['userId'];	
-		else
-				$userid = $event['source']['groupId'];	
-				
-				
-		$messages55 = ['type' => 'text','text' => "การดูข้อมูลหุ้นพื้นฐานจะมีข้อมูลราวๆ 15 ตัวที่สามารถดูได้"];	
-				
-		$post_data = [
-										'to' => $userid,
-										'messages' => [$messages55]
-								];
-		$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-		
-		echo "ssss";
-		
-		$ch = curl_init('https://api.line.me/v2/bot/message/push');
-		curl_setopt($ch, CURLOPT_POST, true);
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
-		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-		
-		$result = curl_exec($ch);
-		curl_close($ch);
 		
 
 
