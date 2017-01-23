@@ -117,7 +117,7 @@ if ($result->num_rows > 0) {
 		}
 		else if($row["type"]=='feedindex')
 		{
-			$text_alert = "สรุปยอดชื้อขาย\n\n".$row["hoonname"]."\n\n".$row["price_current"];
+			$text_alert = "สรุปยอดชื้อขาย\n\n".$row["hoonname"]."\n\n".$row["price_current"].$row["price_alert"];
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='rsi')
