@@ -124,8 +124,29 @@ if ($result->num_rows > 0) {
 		curl_close($ch);
 		
 		sleep(5);
-		$messages55 = ['type' => 'text','text' => "ต้องการดูว่ามีการเเจ้งเตือนหุ้นตัวไหนบ้างให้พิม @show all คำสั่งเเจ้งเตือนราคาคราวๆเท่านี้ครับ สามารถลบข้อมูลเได้ด้วยนะครับดูจาก คำสั่งได้"];	
+		$messages55 = ['type' => 'text','text' => "ต้องการดูว่ามีการเเจ้งเตือนหุ้นตัวไหนบ้างให้พิม @show all คำสั่งเเจ้งเตือนราคาคราวๆเท่านี้ครับ สามารถลบข้อมูลเได้ด้วยนะครับดูจาก ดูจากคำสั่งได้"];	
 												
+		$post_data = [
+						'to' => $userid,
+						'messages' => [$messages55]
+					];
+		$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				
+		echo "ssss";
+		 
+		$ch = curl_init('https://api.line.me/v2/bot/message/push');
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+		 
+		$result = curl_exec($ch);
+		curl_close($ch);
+		
+		sleep(10);
+		$messages55 = ['type' => 'text','text' => "คำสั่งเเจ้งเตือนราคาทั้งหมด \n\n@show all \nคือเเสดงรายการที่มีการตั้งเเจง้เตือนไว้\n\n@de all\nคือลบข้อมูลรายการเเจ้งเตือนทั้งหมด\n\n@de aot 400\nคือการลบข้อมูลหุ้น aot ที่ตั้งเเจ้งเตือนไว้ที่ราคา 400 บาท\n\n@aot>400\nคือการตั้งเเจ้งเตือนราคาถ้าหุ้นaotเกิน400บาทจะเเจ้งเตือน\n\n@aot<400\nคือเหมือนด้านบนเเต่ราคาน้อยกว่าเเทน\n\n@aot=400\nคือถ้าราคาเท่ากับ400จะเเจ้งเตือน\n\n@p aotคือ เช็คราคาปัจจุบันของหุ้นaot"];
+		
 		$post_data = [
 						'to' => $userid,
 						'messages' => [$messages55]
@@ -164,7 +185,28 @@ if ($result->num_rows > 0) {
 		 
 		$result = curl_exec($ch);
 		curl_close($ch);
-		sleep(3);
+		
+		sleep(13);
+		$messages55 = ['type' => 'text','text' => "พิม @aot as ได้เลยระบบจะส่งรูปกราฟกลับมาให้ครับ"];	
+												
+		$post_data = [
+						'to' => $userid,
+						'messages' => [$messages55]
+					];
+		$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				
+		echo "ssss";
+		 
+		$ch = curl_init('https://api.line.me/v2/bot/message/push');
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+		 
+		$result = curl_exec($ch);
+		curl_close($ch);
+		sleep(5);
 		$messages33 = [	 'type' => 'template',
              'altText' => 'test',
              'template' => [	'type' => 'buttons', 
@@ -205,7 +247,9 @@ if ($result->num_rows > 0) {
 		
 	}
 }
-		
+
+$sql1 = "DELETE * FROM `teach` WHERE 1";
+$result = $link->query($sql1);		
 		
 
 
