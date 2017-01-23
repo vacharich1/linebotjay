@@ -59,7 +59,7 @@ if ($result->num_rows > 0) {
 		 
 		$result = curl_exec($ch);
 		curl_close($ch);
-
+	}
 }
 		
 		
