@@ -60,7 +60,7 @@ if ($result->num_rows > 0) {
 		$result = curl_exec($ch);
 		curl_close($ch);
 		
-		sleep(0.5);
+		sleep(10);
 		$messages55 = ['type' => 'text','text' => "ระบบจะตอบกลับมา\n\n AOT ราคาปัจจุบันคือ 390 by jfourtwins"];	
 												
 		$post_data = [
@@ -102,7 +102,7 @@ if ($result->num_rows > 0) {
 		$result = curl_exec($ch);
 		curl_close($ch);
 		
-		sleep(5);
+		sleep(13);
 		$messages55 = ['type' => 'text','text' => "ระบบจะตอบกลับมาคือ [ALERT HOON] aot>390 คือระบบได้ทำการบันทึกเเล้ว"];	
 												
 		$post_data = [
