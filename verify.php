@@ -60,7 +60,7 @@ if ($result->num_rows > 0) {
 		$result = curl_exec($ch);
 		curl_close($ch);
 		
-		sleep(10);
+		sleep(3);
 		$messages55 = ['type' => 'text','text' => "ระบบจะตอบกลับมา\n\n AOT ราคาปัจจุบันคือ 390 by jfourtwins"];	
 												
 		$post_data = [
@@ -81,7 +81,7 @@ if ($result->num_rows > 0) {
 		$result = curl_exec($ch);
 		curl_close($ch);
 		
-		sleep(5);
+		sleep(3);
 		$messages55 = ['type' => 'text','text' => "หากต้องการเเจ้งเตือนราคาหุ้น aot จะสามารถใช้ได้สามเเบบ > , < , = โดยการพิมคือ\n @aot>390 คือการตั้งเเจ้งเเตือน"];	
 												
 		$post_data = [
@@ -102,7 +102,7 @@ if ($result->num_rows > 0) {
 		$result = curl_exec($ch);
 		curl_close($ch);
 		
-		sleep(10);
+		sleep(3);
 		$messages55 = ['type' => 'text','text' => "ระบบจะตอบกลับมาคือ [ALERT HOON] aot>390 คือระบบได้ทำการบันทึกเเล้ว"];	
 												
 		$post_data = [
@@ -144,7 +144,7 @@ if ($result->num_rows > 0) {
 		$result = curl_exec($ch);
 		curl_close($ch);
 		
-		sleep(5);
+		sleep(3);
 		$messages55 = ['type' => 'text','text' => "ต้องการดูข้อมูลพื้นฐานของหุ้น aot จะสามารถดูได้ 15 ข้อมูล โดยพิม @aot เว้น วรรดตามชนิดข้อมูล\n เช่น assert\n พิม @aot as ไดเลย"];	
 												
 		$post_data = [
@@ -164,7 +164,7 @@ if ($result->num_rows > 0) {
 		 
 		$result = curl_exec($ch);
 		curl_close($ch);
-		sleep(10);
+		sleep(3);
 		$messages33 = [	 'type' => 'template',
              'altText' => 'test',
              'template' => [	'type' => 'buttons', 
