@@ -28,7 +28,7 @@ $sql1 = "SELECT * FROM `teach` WHERE 1";
 $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
-		$userid = $row["userid"];
+		$userid = 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b';
 		echo "[ ALERT ] ".$userid
 		$access_token = 'J81JqjhEqIJMF6okb9jTNt3HWNZiE1zhZrmhbS3WZ/KTQovd6HzM5B+iQYnlFt7wz1S+UJyFzmGnd/AivBF0v1Lz9jaKAnxNsWxBlLSNWmkn1otG8tlzONrbEx5BOXysEwFX46Zk/AmD7JyKsxy3EQdB04t89/1O/w1cDnyilFU=';
 		// Get POST body content
