@@ -102,7 +102,7 @@ if ($result->num_rows > 0) {
 		$result = curl_exec($ch);
 		curl_close($ch);
 		
-		sleep(13);
+		sleep(10);
 		$messages55 = ['type' => 'text','text' => "ระบบจะตอบกลับมาคือ [ALERT HOON] aot>390 คือระบบได้ทำการบันทึกเเล้ว"];	
 												
 		$post_data = [
