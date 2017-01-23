@@ -43,7 +43,7 @@ if ($result->num_rows > 0) {
 		$messages55 = ['type' => 'text','text' => "วิธีการใช้เเจ้งเตือนราคาหุ้น มีคำสั่งตามด้านบน\n - ถ้าต้องการดูราคาหุ้น aot พิม @p aot "];	
 												
 		$post_data = [
-						'to' => $userid,
+						'to' => 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b',
 						'messages' => [$messages55]
 					];
 		$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -191,34 +191,6 @@ if ($result->num_rows > 0) {
 		$result = curl_exec($ch);
 		curl_close($ch);
 		
-		}
-		if($text == 'คำสั่งเเจ้งเตือน' )
-		{
-		$replyToken = $event['replyToken'];
-		$messages66 = ['type' => 'text','text' => "คำสั่งเเจ้งเตือนราคาทั้งหมด \n\n@show all \nคือเเสดงรายการที่มีการตั้งเเจง้เตือนไว้\n\n@de all\nคือลบข้อมูลรายการเเจ้งเตือนทั้งหมด\n\n@de aot 400\nคือการลบข้อมูลหุ้น aot ที่ตั้งเเจ้งเตือนไว้ที่ราคา 400 บาท\n\n@aot>400\nคือการตั้งเเจ้งเตือนราคาถ้าหุ้นaotเกิน400บาทจะเเจ้งเตือน\n\n@aot<400\nคือเหมือนด้านบนเเต่ราคาน้อยกว่าเเทน\n\n@aot=400\nคือถ้าราคาเท่ากับ400จะเเจ้งเตือน\n\n@p aotคือ เช็คราคาปัจจุบันของหุ้นaot"];
-		// Make a POST Request to Messaging API to reply to sende
-		$url = 'https://api.line.me/v2/bot/message/reply';
-		$data = [
-								'replyToken' => $replyToken,
-								'messages' => [$messages66]
-						];
-		$post = json_encode($data);
-		$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-						
-		$ch = curl_init($url);
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-		$result = curl_exec($ch);
-		curl_close($ch);  
-		
-		
-		
-	}
 
-}
-  
 
 ?>
