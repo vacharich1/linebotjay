@@ -595,6 +595,10 @@ EX   @hoon assert/as                                      ----> @aot assets     
 								
 								if($text == 'สอนใช้งาน')
 								{
+										if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f')
+											$userid = $event['source']['userId'];	
+										else
+											$userid = $event['source']['groupId'];	
 										$sql = "INSERT INTO teach (id, userid)
 										VALUES ('', '$userid')";
 										
