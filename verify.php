@@ -81,7 +81,7 @@ if ($result->num_rows > 0) {
 		$result = curl_exec($ch);
 		curl_close($ch);
 		
-		sleep(0.5);
+		sleep(5);
 		$messages55 = ['type' => 'text','text' => "หากต้องการเเจ้งเตือนราคาหุ้น aot จะสามารถใช้ได้สามเเบบ > , < , = โดยการพิมคือ\n @aot>390 คือการตั้งเเจ้งเเตือน"];	
 												
 		$post_data = [
@@ -102,7 +102,7 @@ if ($result->num_rows > 0) {
 		$result = curl_exec($ch);
 		curl_close($ch);
 		
-		sleep(0.5);
+		sleep(5);
 		$messages55 = ['type' => 'text','text' => "ระบบจะตอบกลับมาคือ [ALERT HOON] aot>390 คือระบบได้ทำการบันทึกเเล้ว"];	
 												
 		$post_data = [
@@ -123,7 +123,7 @@ if ($result->num_rows > 0) {
 		$result = curl_exec($ch);
 		curl_close($ch);
 		
-		sleep(0.5);
+		sleep(5);
 		$messages55 = ['type' => 'text','text' => "ต้องการดูว่ามีการเเจ้งเตือนหุ้นตัวไหนบ้างให้พิม @show all คำสั่งเเจ้งเตือนราคาคราวๆเท่านี้ครับ"];	
 												
 		$post_data = [
