@@ -22,6 +22,8 @@ if (!$link) {
     	die('Could not connect: ' . mysqli_connect_errno());
 }
 
+
+
 $sql1 = "SELECT * FROM `teach` WHERE 1";
 $result = $link->query($sql1);
 if ($result->num_rows > 0) {
