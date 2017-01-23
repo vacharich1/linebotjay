@@ -166,18 +166,7 @@ if (!is_null($events['events'])) {
 						}
 						if($count_check_check>0)
 						{
-								#if($textcut[1]=="rsi")
-								#{
-								#	if($textcut[2]=="30"|| $textcut[2]=="70" || $textcut[2]=="35")
-								#	{
-								#		echo "aaa";
-								#	}
-								#	else
-								#	{
-								#		$textcut[2]="all";
-								#	}
-									
-								#}
+								
 								if($textcut[0]=="@>")
 								{
 									$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." > ".$textcut[2]];
