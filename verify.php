@@ -169,8 +169,8 @@ if ($result->num_rows > 0) {
              'altText' => 'test',
              'template' => [	'type' => 'buttons', 
                                                     'thumbnailImageUrl'=> 'https://www.botbottest.club/aoteps.jpg',
-                                                    'title' => $hoonname,
-                                                    'text'  => $timeframe,
+                                                    'title' => 'aot',
+                                                    'text'  => 'assert',
                                                     'actions' => [
                                                                     [
                                                                             'type'=> 'uri',
