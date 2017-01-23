@@ -49,7 +49,7 @@ if ($result->num_rows > 0) {
 								];
 		$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 		
-		echo "ssss";
+		echo "ssss11";
 		
 		$ch = curl_init('https://api.line.me/v2/bot/message/push');
 		curl_setopt($ch, CURLOPT_POST, true);
