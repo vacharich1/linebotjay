@@ -607,21 +607,20 @@ EX   @hoon assert/as                                      ----> @aot assets     
 										
 									$messages55 = ['type' => 'text','text' => "วิธีการใช้เเจ้งเตือนราคาหุ้น มีคำสั่งตามด้านบน\n - ถ้าต้องการดูราคาหุ้น aot พิม @p aot "];	
 										
-									$post_data = [
-													'to' => $userid,
-													'messages' => [$format_text]
-												];
-									$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-				
-									echo "ssss";
-							 
-									$ch = curl_init('https://api.line.me/v2/bot/message/push');
-									curl_setopt($ch, CURLOPT_POST, true);
-									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+									$url = 'https://api.line.me/v2/bot/message/reply';
+									$data = [
+												'replyToken' => $replyToken,
+												'messages' => [$messages55]
+											];
+									$post = json_encode($data);
+									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+											
+									$ch = curl_init($url);
+									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 									curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-									curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
-									curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-							 
+									curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+									curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+									curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 									$result = curl_exec($ch);
 									curl_close($ch);
 									
@@ -635,21 +634,21 @@ EX   @hoon assert/as                                      ----> @aot assets     
 										
 									$messages55 = ['type' => 'text','text' => "ระบบจะตอบกลับมา\n AOT ราคาปัจจุบันคือ 390 by jfourtwins "];	
 										
-									$post_data = [
-													'to' => $userid,
-													'messages' => [$format_text]
-												];
-									$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-				
-									echo "ssss";
-							 
-									$ch = curl_init('https://api.line.me/v2/bot/message/push');
-									curl_setopt($ch, CURLOPT_POST, true);
-									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+									
+									$url = 'https://api.line.me/v2/bot/message/reply';
+									$data = [
+												'replyToken' => $replyToken,
+												'messages' => [$messages55]
+											];
+									$post = json_encode($data);
+									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+											
+									$ch = curl_init($url);
+									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 									curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-									curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
-									curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-							 
+									curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+									curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+									curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 									$result = curl_exec($ch);
 									curl_close($ch);
 									
