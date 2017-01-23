@@ -248,7 +248,7 @@ if ($result->num_rows > 0) {
 	}
 }
 
-$sql1 = "DELETE * FROM `teach` WHERE 1";
+$sql1 = "DELETE FROM `teach` WHERE 1";
 if ($conn->query($sql1) === TRUE) {
     echo "Record deleted successfully";
 } else {
