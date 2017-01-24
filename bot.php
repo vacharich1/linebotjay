@@ -106,6 +106,10 @@ if (!is_null($events['events'])) {
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 				// Get text sent
 				$text = $event['message']['text'];
+				if(preg_match("/^[a-zA-Z0-9]+$/", $text[0]) == 1)
+				{
+					$text="@".$text;
+				}
 				$text11=$text;
 				$arr1 = str_split($text11);
 				print_r($arr1);
@@ -113,10 +117,7 @@ if (!is_null($events['events'])) {
 				$count=0;
 				$count_check_check=0;
 				$text22="";
-				if(preg_match("/^[a-zA-Z0-9]+$/", $text11[0]) == 1)
-				{
-					$text11="@".$text11;
-				}
+				
 				if(preg_match("/^[@]+$/", $text11[0]) == 1)
 				{
 					foreach ($arr1 as $text1) {
