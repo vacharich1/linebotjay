@@ -106,9 +106,10 @@ if (!is_null($events['events'])) {
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 				// Get text sent
 				$text = $event['message']['text'];
+				$test444 = strtolower($text);
 				if(preg_match("/^[a-zA-Z0-9]+$/", $text[0]) == 1)
 				{
-					$text33333="@".$text;
+					$text33333="@".$test444;
 					$text=$text33333;
 				}
 				$text11=$text;
