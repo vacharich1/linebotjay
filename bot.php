@@ -108,7 +108,8 @@ if (!is_null($events['events'])) {
 				$text = $event['message']['text'];
 				if(preg_match("/^[a-zA-Z0-9]+$/", $text[0]) == 1)
 				{
-					$text="@".$text;
+					$text33333="@".$text;
+					$text=$text33333;
 				}
 				$text11=$text;
 				$arr1 = str_split($text11);
