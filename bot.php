@@ -104,9 +104,14 @@ if (!is_null($events['events'])) {
 			//	
 			// Reply only when message sent is in 'text' format
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+				
 				// Get text sent
 				$text = $event['message']['text'];
 				$test444 = strtolower($text);
+				if($test444=="หุ้นที่มีเเจ้งเตือน" || $test444=="หุ้นเเจ้งเตือน")
+				{
+					$text="@show all";
+				}
 				if(preg_match("/^[a-zA-Z0-9]+$/", $text[0]) == 1)
 				{
 					$text33333="@".$test444;
