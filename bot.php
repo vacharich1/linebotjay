@@ -107,6 +107,12 @@ if (!is_null($events['events'])) {
 				
 				// Get text sent
 				$text = $event['message']['text'];
+				$arr2 = str_split($text);
+				if($arr2[0]=="ราคา")
+				{
+					$text="@p ".$arr2[1];
+					sleep(0.2);
+				}
 				$test444 = strtolower($text);
 				if($test444=="หุ้นที่มีเเจ้งเตือน" || $test444=="หุ้นเเจ้งเตือน")
 				{
@@ -124,10 +130,7 @@ if (!is_null($events['events'])) {
 				$count=0;
 				$count_check_check=0;
 				$text22="";
-				if($arr1[0]=="ราคา")
-				{
-					$arr1[0]="@p";
-				}
+				
 				
 				if(preg_match("/^[@]+$/", $text11[0]) == 1)
 				{
