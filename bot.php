@@ -108,7 +108,7 @@ if (!is_null($events['events'])) {
 				// Get text sent
 				$text = $event['message']['text'];
 				$arr2 = str_split($text);
-				if($arr2[0]=="ราคา")
+				if(strtolower($arr2[0])=="ราคา")
 				{
 					$text="@p ".$arr2[1];
 					sleep(0.2);
