@@ -108,10 +108,10 @@ if (!is_null($events['events'])) {
 				// Get text sent
 				$text = $event['message']['text'];
 				$arr2 = str_split($text);
-				foreach ($arr1 as $text33) {
+				foreach ($arr2 as $text33) {
 					if($text33=="ราคา")
 					{
-						$text="@p mint";
+						$text="@p ".$arr2[1];
 						sleep(0.2);
 					}
 				}
