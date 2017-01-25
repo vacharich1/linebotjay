@@ -124,6 +124,10 @@ if (!is_null($events['events'])) {
 				$count=0;
 				$count_check_check=0;
 				$text22="";
+				if($arr1[0]=="ราคา")
+				{
+					$arr1[0]="@p";
+				}
 				
 				if(preg_match("/^[@]+$/", $text11[0]) == 1)
 				{
