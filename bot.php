@@ -5,13 +5,13 @@ echo "bbbbb";
 echo "bbbbb";
     $host= "sql6.freemysqlhosting.net";
 	//$db = "sql6150739";
-	$db = "sql6153306";
+	$db = "sql6155499";
 	$CHAR_SET = "charset=utf8"; 
  
 	//$username = "sql6150739";    
 	//$password = "xiGjqcGnZb";   
-	$username = "sql6153306";    
-	$password = "4dZFsCXA54"; 
+	$username = "sql6155499";    
+	$password = "xwBrDIuGaA"; 
 	
 
 	$link = mysqli_connect($host, $username, $password, $db);
