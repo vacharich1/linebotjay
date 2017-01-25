@@ -108,10 +108,12 @@ if (!is_null($events['events'])) {
 				// Get text sent
 				$text = $event['message']['text'];
 				$arr2 = str_split($text);
-				if(strtolower($arr2[0])=="ราคา")
-				{
-					$text="@p ".$arr2[1];
-					sleep(0.2);
+				foreach ($arr1 as $text33) {
+					if($text33=="ราคา")
+					{
+						$text="@p mint";
+						sleep(0.2);
+					}
 				}
 				$test444 = strtolower($text);
 				if($test444=="หุ้นที่มีเเจ้งเตือน" || $test444=="หุ้นเเจ้งเตือน")
