@@ -97,7 +97,7 @@ if ($result->num_rows > 0) {
 		}
 		else if($row["type"]=='show')
 		{
-			$text_alert = $hoonname1;
+			$text_alert = $hoonname1.$row["room"];
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='pricert')
