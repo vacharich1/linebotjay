@@ -377,11 +377,7 @@ if (!is_null($events['events'])) {
 								sleep(0.1);
 								if($timeframe !="dy" and $timeframe !="yield" and $timeframe !="pbv" and $timeframe !="pe" and $timeframe !="roe" and $timeframe !="roa" and $timeframe !="assets" and $timeframe !="liabilities" and $timeframe !="equity" and $timeframe !="revenue" and $timeframe !="eps"and $timeframe !="expenses" and $timeframe !="gprofit" and $timeframe !="gpmargin" and $timeframe !="nprofit" and $timeframe !="npm" and $timeframe !="as" and $timeframe !="lb" and $timeframe !="eq" and $timeframe !="rv" and $timeframe !="ex" and $timeframe !="gp" and $timeframe !="gpm" and $timeframe !="np" )
 								{
-									$messages3 = ['type' => 'text','text' => "คำสั่งทั้งหมด             @hoon assets/as       @hoon libilities/lb        @hoon equity/eq        @hoon revenue/rv       @hoon eps                  @hoon expenses/ex       @hoon gprofit/gp        @hoon gpmargin/gpm        @hoon nprofit/np           @hoon npm              @hoon roa               @hoon roe             @hoon pe         @hoon pbv             @hoon yield/dy
-									
-					
-									                                  
-EX   @hoon assert/as                                      ----> @aot assets                     or @aot as"];
+									$messages3 = ['type' => 'text','text' => "คำสั่งค้นหาข้อมูลพื้นฐานทั้งหมด\nhoonname xxx โดย xxxคือข้อมูลพื้นฐานที่ต้องการเช่นต้องการ assertของหุ้นaot\n\n พิม aot assert โดยทางเรามีทำตัวย่อไว้คือ as จึงสามารถพิมเป็น \n\n@aot as ก็ได้\nซึ่งได้มีการทำไว้ทั้งหมด 15 ข้อมูล\n1.assert/as\n2.libilities/lb\n3.equity/eq\n4.revenue/rv\n5.eps\n6.expenses/ex\n7.gprofit/gp\n8.gpmargin/gpm\n9.nprofit/np\n10.npm\n11.roa\n12.roe\n13.pe\n14.pbv\n15.yield/dy "];
 						
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
@@ -589,10 +585,10 @@ EX   @hoon assert/as                                      ----> @aot assets     
 								if($text == 'เเสดงคำสั่งทั้งหมด' || $text == 'คำสั่ง' )
 								{
 									$replyToken = $event['replyToken'];
-									$messages55 = ['type' => 'text','text' => "คำสั่งค้นหาข้อมูลพื้นฐานทั้งหมด\n@hoonname xxx โดย xxxคือข้อมูลพื้นฐานที่ต้องการเช่นต้องการ assertของหุ้นaot\n\n พิม @aot assert โดยทางเรามีทำตัวย่อไว้คือ as จึงสามารถพิมเป็น \n\n@aot as ก็ได้\nซึ่งได้มีการทำไว้ทั้งหมด 15 ข้อมูล\n1.assert/as\n2.libilities/lb\n3.equity/eq\n4.revenue/rv\n5.eps\n6.expenses/ex\n7.gprofit/gp\n8.gpmargin/gpm\n9.nprofit/np\n10.npm\n11.roa\n12.roe\n13.pe\n14.pbv\n15.yield/dy "];
+									$messages55 = ['type' => 'text','text' => "คำสั่งค้นหาข้อมูลพื้นฐานทั้งหมด\nhoonname xxx โดย xxxคือข้อมูลพื้นฐานที่ต้องการเช่นต้องการ assertของหุ้นaot\n\n พิม aot assert โดยทางเรามีทำตัวย่อไว้คือ as จึงสามารถพิมเป็น \n\n@aot as ก็ได้\nซึ่งได้มีการทำไว้ทั้งหมด 15 ข้อมูล\n1.assert/as\n2.libilities/lb\n3.equity/eq\n4.revenue/rv\n5.eps\n6.expenses/ex\n7.gprofit/gp\n8.gpmargin/gpm\n9.nprofit/np\n10.npm\n11.roa\n12.roe\n13.pe\n14.pbv\n15.yield/dy "];
 									// Make a POST Request to Messaging API to reply to sende
 									
-									$messages66 = ['type' => 'text','text' => "คำสั่งเเจ้งเตือนราคาทั้งหมด \n\n@show all \nคือเเสดงรายการที่มีการตั้งเเจง้เตือนไว้\n\n@de all\nคือลบข้อมูลรายการเเจ้งเตือนทั้งหมด\n\n@de aot 400\nคือการลบข้อมูลหุ้น aot ที่ตั้งเเจ้งเตือนไว้ที่ราคา 400 บาท\n\n@aot>400\nคือการตั้งเเจ้งเตือนราคาถ้าหุ้นaotเกิน400บาทจะเเจ้งเตือน\n\n@aot<400\nคือเหมือนด้านบนเเต่ราคาน้อยกว่าเเทน\n\n@aot=400\nคือถ้าราคาเท่ากับ400จะเเจ้งเตือน\n\n@p aotคือ เช็คราคาปัจจุบันของหุ้นaot"];
+									$messages66 = ['type' => 'text','text' => "คำสั่งเเจ้งเตือนราคาทั้งหมด \n\nหุ้นเเจ้งเตือน หรือ show all\nคือเเสดงรายการที่มีการตั้งเเจง้เตือนไว้\n\nde all\nคือลบข้อมูลรายการเเจ้งเตือนทั้งหมด\n\nde aot 400\nคือการลบข้อมูลหุ้น aot ที่ตั้งเเจ้งเตือนไว้ที่ราคา 400 บาท\n\naot>400\nคือการตั้งเเจ้งเตือนราคาถ้าหุ้นaotเกิน400บาทจะเเจ้งเตือน\n\naot<400\nคือเหมือนด้านบนเเต่ราคาน้อยกว่าเเทน\n\naot=400\nคือถ้าราคาเท่ากับ400จะเเจ้งเตือน\n\nราคา aot หรือ p aotคือ เช็คราคาปัจจุบันของหุ้นaott"];
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
 												'replyToken' => $replyToken,
