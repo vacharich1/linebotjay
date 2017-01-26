@@ -504,7 +504,7 @@ EX   @hoon assert/as                                      ----> @aot assets     
 									$messages3 = ['type' => 'text','text' => $text_recieve];
 						
 									$messages1 = ['type' => 'text','text' => "Please wait 8s"];
-									sleep(1);
+									sleep(2);
 									$messages2 = ['type' => 'image',
 											 'originalContentUrl' => $link_pic,
 											 'previewImageUrl' => $link_pic
