@@ -380,23 +380,23 @@ if (!is_null($events['events'])) {
 									$messages3 = ['type' => 'text','text' => "คำสั่งค้นหาข้อมูลพื้นฐานทั้งหมด\nhoonname xxx โดย xxxคือข้อมูลพื้นฐานที่ต้องการเช่นต้องการ assertของหุ้นaot\n\n พิม aot assert โดยทางเรามีทำตัวย่อไว้คือ as จึงสามารถพิมเป็น \n\n@aot as ก็ได้\nซึ่งได้มีการทำไว้ทั้งหมด 15 ข้อมูล\n1.assert/as\n2.libilities/lb\n3.equity/eq\n4.revenue/rv\n5.eps\n6.expenses/ex\n7.gprofit/gp\n8.gpmargin/gpm\n9.nprofit/np\n10.npm\n11.roa\n12.roe\n13.pe\n14.pbv\n15.yield/dy "];
 						
 									$url = 'https://api.line.me/v2/bot/message/reply';
-									$data = [
-										'replyToken' => $replyToken,
-										'messages' => [$messages3]
-									];
+									//$data = [
+									//	'replyToken' => $replyToken,
+									//	'messages' => [$messages3]
+									//];
 									
 	
-										$post = json_encode($data);
-										$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+										//$post = json_encode($data);
+										//$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 							
-										$ch = curl_init($url);
-										curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-										curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-										curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-										curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-										curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-										$result = curl_exec($ch);
-										curl_close($ch);
+										//$ch = curl_init($url);
+										//curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+										//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+										//curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+										//curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+										//curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+										//$result = curl_exec($ch);
+										//curl_close($ch);
 								}
 								else
 								{
