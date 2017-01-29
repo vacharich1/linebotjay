@@ -422,6 +422,7 @@ if (!is_null($events['events'])) {
 										$timeframe ="yield";
 										
 									$type="fundamental";
+									$check ="check1";	
 									/*$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
 									VALUES ('', '$hoonname', '$timeframe','$replyToken')";
 									
