@@ -219,14 +219,14 @@ echo "aaaaa";
 						$messages33 = [	 'type' => 'template',
 													 'altText' => 'test',
 													 'template' => [	'type' => 'buttons', 
-																		'thumbnailImageUrl'=> $uuurl,
+																		'thumbnailImageUrl'=> 'https://www.botbottest.club/aoteps.jpg',
 																		'title' => $hoonname,
 																		'text'  => $timeframe,
 																		'actions' => [
 																				[
 																					'type'=> 'uri',
 																					'label'=> 'View detail',
-																					'uri'=> $uuurl
+																					'uri'=> 'https://www.botbottest.club/aoteps.jpg'
 																				]
 																				
 																         ]
