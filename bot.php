@@ -420,6 +420,8 @@ if (!is_null($events['events'])) {
 										$timeframe ="nprofit";
 									else if($timeframe =="dy")
 										$timeframe ="yield";
+									else if($timeframe =="all")
+										$timeframe ="all";
 										
 									$type="fundamental";
 									$check ="check1";
