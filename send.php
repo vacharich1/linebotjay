@@ -149,6 +149,7 @@ if ($result->num_rows > 0) {
 			
 			$hoonn=(string)$row["price_current"];
 			$time22=(string)$row["price_alert"];
+			$urlall = (string)"http://linebotjay.herokuapp.com/show_pic.php";
 			$uuurl = (string)"https://www.botbottest.club/".$hoonn."pe.jpg";
 			$uuurl1 = (string)"https://www.botbottest.club/".$hoonn."eps.jpg";
 			$uuurl2 = (string)"https://www.botbottest.club/".$hoonn."roe.jpg";
@@ -259,52 +260,39 @@ echo "aaaaa";
 										  'columns'=> [
 										 					 [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
-															'title'=> 'rsi?',
-															'text'=> 'RSI คืออะไรอ่านคลิก information',
+															'title'=> $hoonn,
+															'text'=> 'pe pbv roe roa pbv eps profit',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
 																					'label'=> 'information',
-																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																					'uri'=> 'http://linebotjay.herokuapp.com/show_pic.php'
 																				]
 																												
 																		]
 														   ],
 										  				   [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
-															'title'=> 'rsi<30',
-															'text'=> 'rsi<30 เข้าเขต oversold',
+															'thumbnailImageUrl'=> $uuurl,
+															'title'=> $hoonn,
+															'text'=> 'pe',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
 																					'label'=> 'result',
-																					'uri'=> 'https://linebotjay.herokuapp.com/rsi30.php'
+																					'uri'=> $uuurl
 																				]
 																												
 																		]
 														  ],
 										  				  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi3035.jpg',
-															'title'=> 'rsi<35',
-															'text'=> 'rsi<35 กำลังเข้าเขต oversold',
+															'thumbnailImageUrl'=> $uuurl1,
+															'title'=> $hoonn,
+															'text'=> 'eps',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
 																					'label'=> 'result',
-																					'uri'=> 'https://linebotjay.herokuapp.com/rsi3035.php'
-																				]
-																												
-																		]
-														  ],
-										  				  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
-															'title'=> 'rsi>70',
-															'text'=> 'rsi>70 เข้าเขต overbought',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'result',
-																					'uri'=> 'https://linebotjay.herokuapp.com/rsi70.php'
+																					'uri'=> $uuurl1
 																				]
 																												
 																		]
