@@ -421,7 +421,8 @@ if (!is_null($events['events'])) {
 									else if($timeframe =="dy")
 										$timeframe ="yield";
 										
-									$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
+									$type="fundamental";
+									/*$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
 									VALUES ('', '$hoonname', '$timeframe','$replyToken')";
 									
 									if (mysqli_query($link22, $sql)) {
@@ -439,64 +440,30 @@ if (!is_null($events['events'])) {
 									} 
 									else {
 											echo "Error: " . $sql . "<br>" . mysqli_error($link22);
+									}*/
+									
+									
+									$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
+											VALUES ('', '$hoonname', '$timeframe','$replyToken' ,'$userid', '$type')";
+											
+									if (mysqli_query($link, $sql)) {
+												echo "New record created successfully";
+									} 
+									else {
+												echo "Error: " . $sql . "<br>" . mysqli_error($link);
 									}
 									
+									$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
+									if (mysqli_query($link, $sql)) {
+											echo "New record created successfully";
+									} 
+									else {
+											echo "Error: " . $sql . "<br>" . mysqli_error($link);
+									}
+									sleep(0.3);
+									
 									$link_pic ="https://www.botbottest.club/".$hoonname."".$timeframe.".jpg";
-										#echo "work code";
-									// Get replyToken
 									
-									#$hoonname1 = strtoupper($hoonname);
-									#if($hoonname1 == '2S')
-									#	$llll = "https://www.dropbox.com/s/cov1jrkmhe8q81n/2S.png";																																		
-									#else
-									#	$llll = "https://www.dropbox.com/s/j09fwo3536hdkib/pic.png?dl=0";
-									// Build message to reply back
-									#$messages = ['type' => 'text','text' => $event['source']['roomid']];
-									#$messages4 = ['type' => 'text','text' => $event['source']['type']];
-									#
-									#$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
-									#sleep(1);
-									
-									
-									#$text_recieve="aaaaa";
-									
-									
-									
-									
-									#$sql = "SELECT * FROM `data` WHERE 1";
-									#$result = $link22->query($sql);
-									#if ($result->num_rows > 0) {
-										// output data of each row
-									#	while($row = $result->fetch_assoc()) {
-								#			$text_recieve=$row["word"];
-											
-									#	}
-									#} else {
-									#	echo "0 results";
-									#}
-									#$link22->close();
-									#sleep(0.5);
-									
-									#$sql = "DELETE FROM `data` WHERE 1";
-	
-									#if ($link22->query($sql) === TRUE) {
-									#	echo "Record deleted successfully";
-									#} else {
-									#	echo "Error deleting record: " . $link->error;
-									#}
-									
-									#$link22->close();
-									
-									
-									
-									
-									
-									
-									
-									
-									//$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe.".jpg";
-									
-									//$llll ='SORRY, OUT OF SERVICE';
 									$messages3 = ['type' => 'text','text' => $text_recieve];
 						
 									$messages1 = ['type' => 'text','text' => "Please wait 8s"];
