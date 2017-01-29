@@ -468,7 +468,7 @@ if (!is_null($events['events'])) {
 									$messages3 = ['type' => 'text','text' => $text_recieve];
 						
 									$messages1 = ['type' => 'text','text' => "Please wait 8s"];
-									sleep(3.5);
+									sleep(3);
 									$messages2 = ['type' => 'image',
 											 'originalContentUrl' => $link_pic,
 											 'previewImageUrl' => $link_pic
