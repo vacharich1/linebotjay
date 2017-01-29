@@ -137,6 +137,8 @@ if ($result->num_rows > 0) {
 		{
 			$check_rsi_send="rsi_check";
 			$check_rsi_rsi="single_fun";
+			$hoonn=(string)$row["price_current"];
+			$time22=(string)$row["price_alert"];
 			$uuurl = (string)$row["hoonname"];
 			$USERID =$row["uid"];
 		}
@@ -222,8 +224,8 @@ echo "aaaaa";
 													 'altText' => 'test',
 													 'template' => [	'type' => 'buttons', 
 																		'thumbnailImageUrl'=> $uuurl,
-																		'title' => '$uuurl',
-																		'text'  => '$uuurl',
+																		'title' => $hoonn,
+																		'text'  => $time22,
 																		'actions' => [
 																				[
 																					'type'=> 'uri',
