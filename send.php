@@ -220,8 +220,8 @@ echo "aaaaa";
 													 'altText' => 'test',
 													 'template' => [	'type' => 'buttons', 
 																		'thumbnailImageUrl'=> $uuurl,
-																		'title' => $hoonname,
-																		'text'  => $timeframe,
+																		'title' => '$uuurl',
+																		'text'  => '$uuurl',
 																		'actions' => [
 																				[
 																					'type'=> 'uri',
