@@ -133,6 +133,18 @@ if ($result->num_rows > 0) {
 			$text_alert = $row["hoonname"].$row["price_current"].$row["price_alert"].$row["room"];
 			$USERID =$row["uid"];
 		}
+		else if($row["type"]=='single_fun')
+		{
+			$check_rsi_send="single_fun";
+			$uuurl = $row["hoonname"];
+			$USERID =$row["uid"];
+		}
+		else if($row["type"]=='all_fun')
+		{
+			$check_rsi_send="all_fun";
+			$uuurl = $row["hoonname"];
+			$USERID =$row["uid"];
+		}
 		else
 		{
 			$text_alert = "[ ALERT ] ".$hoonname1."\n[ ราคาปัจจุบัน ] ". $row["price_current"]."\n"."......... < .........\n"."[ ราคาทีตั้งเเจ้งเตือน ] ". $row["price_alert"]."\n BY : JFOURTWINS";
@@ -199,6 +211,29 @@ echo "aaaaa";
 													]
 												]
 								];
+
+						
+					}
+					else if($check_rsi_rsi=='single_fun')
+					{
+						$messages33 = [	 'type' => 'template',
+													 'altText' => 'test',
+													 'template' => [	'type' => 'buttons', 
+																		'thumbnailImageUrl'=> $uuurl,
+																		'title' => $hoonname,
+																		'text'  => $timeframe,
+																		'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> $uuurl
+																				]
+																				
+																         ]
+															
+															          ]
+											 
+											 ];
 
 						
 					}
@@ -395,6 +430,13 @@ echo "aaaaa";
 				}
 		 		//$USERID
 				if($check_rsi_send=="rsi_check")
+				{
+					$post_data = [
+						'to' => $USERID,
+						'messages' => [$messages33]
+					];
+				}
+				else if($check_rsi_send=="rsi_check")
 				{
 					$post_data = [
 						'to' => $USERID,
