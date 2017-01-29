@@ -135,14 +135,16 @@ if ($result->num_rows > 0) {
 		}
 		else if($row["type"]=='single_fun')
 		{
-			$check_rsi_send="single_fun";
-			$uuurl = $row["hoonname"];
+			$check_rsi_send="rsi_check";
+			$check_rsi_rsi="single_fun";
+			$uuurl = (string)$row["hoonname"];
 			$USERID =$row["uid"];
 		}
 		else if($row["type"]=='all_fun')
 		{
-			$check_rsi_send="all_fun";
-			$uuurl = $row["hoonname"];
+			$check_rsi_send="rsi_check";
+			$check_rsi_rsi=="all_fun";
+			$uuurl = (string)$row["hoonname"];
 			$USERID =$row["uid"];
 		}
 		else
