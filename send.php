@@ -228,29 +228,6 @@ echo "aaaaa";
 
 						
 					}
-					else if($check_rsi_rsi=='single_fun')
-					{
-						$messages33 = [	 'type' => 'template',
-													 'altText' => 'test',
-													 'template' => [	'type' => 'buttons', 
-																		'thumbnailImageUrl'=> $uuurl,
-																		'title' => $hoonn,
-																		'text'  => $time22,
-																		'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'View detail',
-																					'uri'=> $uuurl
-																				]
-																				
-																         ]
-															
-															          ]
-											 
-											 ];
-
-						
-					}
 					else if($check_rsi_rsi=='fun_all_2')
 					{
 						$messages33 =['type'=> 'template',
@@ -302,6 +279,29 @@ echo "aaaaa";
 													]
 												]
 								];
+
+						
+					}
+					else if($check_rsi_rsi=='single_fun')
+					{
+						$messages33 = [	 'type' => 'template',
+													 'altText' => 'test',
+													 'template' => [	'type' => 'buttons', 
+																		'thumbnailImageUrl'=> $uuurl,
+																		'title' => $hoonn,
+																		'text'  => $time22,
+																		'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> $uuurl
+																				]
+																				
+																         ]
+															
+															          ]
+											 
+											 ];
 
 						
 					}
@@ -498,13 +498,6 @@ echo "aaaaa";
 				}
 		 		//$USERID
 				if($check_rsi_send=="rsi_check")
-				{
-					$post_data = [
-						'to' => $USERID,
-						'messages' => [$messages33]
-					];
-				}
-				else if($check_rsi_send=="rsi_check")
 				{
 					$post_data = [
 						'to' => $USERID,
