@@ -149,6 +149,8 @@ if ($result->num_rows > 0) {
 			
 			$hoonn=(string)$row["price_current"];
 			$time22=(string)$row["price_alert"];
+			$link_pic2 ="https://www.botbottest.club/".$hoonn."eps.jpg";
+			$link_pic1 ="https://www.botbottest.club/".$hoonn."pe.jpg";
 			$urlall = (string)"http://linebotjay.herokuapp.com/show_pic.php";
 			$uuurl = (string)"https://www.botbottest.club/".$hoonn."pe.jpg";
 			$uuurl1 = (string)"https://www.botbottest.club/".$hoonn."eps.jpg";
@@ -260,39 +262,39 @@ echo "aaaaa";
 										  'columns'=> [
 										 					 [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/fun.jpg',
-															'title'=> $hoonn,
+															'title'=> $hoonname,
 															'text'=> 'pe pbv roe roa pbv eps profit',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
 																					'label'=> 'information',
-																					'uri'=> 'http://linebotjay.herokuapp.com/show_pic.php'
+																					'uri'=> 'https://linebotjay.herokuapp.com/show_pic.php'
 																				]
 																												
 																		]
 														   ],
 										  				   [
-															'thumbnailImageUrl'=> $uuurl,
-															'title'=> $hoonn,
+															'thumbnailImageUrl'=> $link_pic1,
+															'title'=> $hoonname,
 															'text'=> 'pe',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
 																					'label'=> 'result',
-																					'uri'=> $uuurl
+																					'uri'=> $link_pic1
 																				]
 																												
 																		]
 														  ],
 										  				  [
-															'thumbnailImageUrl'=> $uuurl1,
-															'title'=> $hoonn,
+															'thumbnailImageUrl'=> $link_pic2,
+															'title'=> $hoonname,
 															'text'=> 'eps',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
 																					'label'=> 'result',
-																					'uri'=> $uuurl1
+																					'uri'=> $link_pic2
 																				]
 																												
 																		]
@@ -301,8 +303,7 @@ echo "aaaaa";
 														  
 													]
 												]
-								];
-
+											];
 						
 					}
 					else if($check_rsi_rsi=='70' and $check_type_rsi=="h")
