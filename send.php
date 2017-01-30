@@ -142,10 +142,10 @@ if ($result->num_rows > 0) {
 			$uuurl = (string)$row["hoonname"];
 			$USERID =$row["uid"];
 		}
-		else if($row["type"]=='fun_all')
+		else if($row["type"]=='fun_all_2')
 		{
 			$check_rsi_send="rsi_check";
-			$check_rsi_rsi=="aaaafun";
+			$check_rsi_rsi=="fun_all_2";
 
 			$USERID =$row["uid"];
 		}
@@ -241,7 +241,7 @@ echo "aaaaa";
 
 						
 					}
-					else if($check_rsi_rsi=='aaaafun')
+					else if($check_rsi_rsi=='fun_all_2')
 					{
 						$messages33 =['type'=> 'template',
 									  'altText'=> 'this is a carousel template',
