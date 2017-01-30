@@ -505,7 +505,7 @@ if (!is_null($events['events'])) {
 									$messages3 = ['type' => 'text','text' => $text_recieve];
 						
 									$messages1 = ['type' => 'text','text' => "Please wait 8s"];
-									sleep(4);
+									
 									$messages2 = ['type' => 'image',
 											 'originalContentUrl' => $link_pic,
 											 'previewImageUrl' => $link_pic
@@ -583,6 +583,7 @@ if (!is_null($events['events'])) {
 											 ];
 									if($timeframe =="all")
 									{
+										sleep(4);
 										// Make a POST Request to Messaging API to reply to sender
 										$url = 'https://api.line.me/v2/bot/message/reply';
 										$data = [
