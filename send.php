@@ -228,7 +228,7 @@ echo "aaaaa";
 
 						
 					}
-					else if($check_rsi_rsi=='fun_all_2')
+					else if($check_rsi_rsi=="fun_all_2")
 					{
 						$messages33 =['type'=> 'template',
 									  'altText'=> 'this is a carousel template',
@@ -282,7 +282,7 @@ echo "aaaaa";
 
 						
 					}
-					else if($check_rsi_rsi=='single_fun')
+					else if($check_rsi_rsi=="single_fun")
 					{
 						$messages33 = [	 'type' => 'template',
 													 'altText' => 'test',
@@ -305,7 +305,7 @@ echo "aaaaa";
 
 						
 					}
-					else if($check_rsi_rsi=='70' and $check_type_rsi=="h")
+					else if($check_rsi_rsi=="70" and $check_type_rsi=="h")
 					{
 						$messages33 =['type'=> 'template',
 									  'altText'=> 'this is a carousel template',
@@ -345,7 +345,7 @@ echo "aaaaa";
 
 						
 					}
-					else if($check_rsi_rsi=='35' and $check_type_rsi=="aaa")
+					else if($check_rsi_rsi=="35" and $check_type_rsi=="aaa")
 					{
 						$messages33 =['type'=> 'template',
 									  'altText'=> 'this is a carousel template',
@@ -385,7 +385,7 @@ echo "aaaaa";
 
 						
 					}
-					else if($check_rsi_rsi=='alert_m')
+					else if($check_rsi_rsi=="alert_m")
 					{
 						$messages33 =['type'=> 'template',
 									  'altText'=> 'this is a carousel template',
