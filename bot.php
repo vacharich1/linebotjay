@@ -499,18 +499,69 @@ if (!is_null($events['events'])) {
 									}
 									sleep(0.3);
 									
-									$link_pic ="https://www.botbottest.club/".$hoonname."".$timeframe.".jpg";
+									$link_pic2 ="https://www.botbottest.club/".$hoonname."eps.jpg";
+									$link_pic1 ="https://www.botbottest.club/".$hoonname."pe.jpg";
 									
 									$messages3 = ['type' => 'text','text' => $text_recieve];
 						
 									$messages1 = ['type' => 'text','text' => "Please wait 8s"];
-									sleep(3);
+									sleep(4);
 									$messages2 = ['type' => 'image',
 											 'originalContentUrl' => $link_pic,
 											 'previewImageUrl' => $link_pic
 									];
 									
 									$messages3 = ['type' => 'text','text' => $link_pic];
+									
+									$messages43 =['type'=> 'template',
+									  'altText'=> 'this is a carousel template',
+									  'template'=> [
+										  'type'=> 'carousel',
+										  'columns'=> [
+										 					 [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/fun.jpg',
+															'title'=> $hoonname,
+															'text'=> 'pe pbv roe roa pbv eps profit',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'information',
+																					'uri'=> 'https://linebotjay.herokuapp.com/show_pic.php'
+																				]
+																												
+																		]
+														   ],
+										  				   [
+															'thumbnailImageUrl'=> $link_pic1,
+															'title'=> $hoonname,
+															'text'=> 'pe',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'result',
+																					'uri'=> $link_pic1
+																				]
+																												
+																		]
+														  ],
+										  				  [
+															'thumbnailImageUrl'=> $link_pic2,
+															'title'=> $hoonname,
+															'text'=> 'eps',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'result',
+																					'uri'=> $link_pic2
+																				]
+																												
+																		]
+														  ]
+														  
+														  
+													]
+												]
+								];
 									
 									$messages33 = [	 'type' => 'template',
 													 'altText' => 'test',
@@ -522,7 +573,7 @@ if (!is_null($events['events'])) {
 																				[
 																					'type'=> 'uri',
 																					'label'=> 'View detail',
-																					'uri'=> $link_pic
+																					'uri'=> 'https://linebotjay.herokuapp.com/show_pic.php'
 																				]
 																				
 																         ]
@@ -530,26 +581,28 @@ if (!is_null($events['events'])) {
 															          ]
 											 
 											 ];
-									
-									// Make a POST Request to Messaging API to reply to sender
-									$url = 'https://api.line.me/v2/bot/message/reply';
-									$data = [
-										'replyToken' => $replyToken,
-										'messages' => [$messages33,$messages3]
-									];
-									
-	
-										/*$post = json_encode($data);
-										$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-							
-										$ch = curl_init($url);
-										curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-										curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-										curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-										curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-										curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-										$result = curl_exec($ch);
-										curl_close($ch);*/
+									if($timeframe =="all")
+									{
+										// Make a POST Request to Messaging API to reply to sender
+										$url = 'https://api.line.me/v2/bot/message/reply';
+										$data = [
+											'replyToken' => $replyToken,
+											'messages' => [$messages43]
+										];
+										
+		
+										    $post = json_encode($data);
+											$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+								
+											$ch = curl_init($url);
+											curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+											curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+											curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+											curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+											curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+											$result = curl_exec($ch);
+											curl_close($ch);
+									}
 									
 							
 									
