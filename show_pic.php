@@ -37,14 +37,13 @@ $check_rsi_send="";
 
 if ($result->num_rows > 0) {
 	 while($row = $result->fetch_assoc()) {
-		$hoonn=(string)$row["price_current"];
+		$hoonn=(string)$row["hoonname"];
 		$uuurl = (string)"https://www.botbottest.club/".$hoonn."pe.jpg";
 		$uuurl2 = (string)"https://www.botbottest.club/".$hoonn."pbv.jpg";
 		$uuurl3 = (string)"https://www.botbottest.club/".$hoonn."roe.jpg";
 		$uuurl4 = (string)"https://www.botbottest.club/".$hoonn."roa.jpg";
 		$uuurl5 = (string)"https://www.botbottest.club/".$hoonn."eps.jpg";
 		$uuurl6 = (string)"https://www.botbottest.club/".$hoonn."gprofit.jpg";
-
 		echo "<img src='".$uuurl."' /><br />";
 		echo "<img src='".$uuurl2."' /><br />";
 		echo "<img src='".$uuurl3."' /><br />";
