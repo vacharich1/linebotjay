@@ -288,7 +288,7 @@ echo "aaaaa";
 														  ],
 										  				  [
 															'thumbnailImageUrl'=> $link_pic2,
-															'title'=> $hoonname,
+															'title'=> $hoonn,
 															'text'=> 'eps',
 															'actions' => [
 																				[
