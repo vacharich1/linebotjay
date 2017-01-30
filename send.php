@@ -146,17 +146,9 @@ if ($result->num_rows > 0) {
 		{
 			$check_rsi_send="rsi_check";
 			$check_rsi_rsi=="fun_all_2";
-			
 			$hoonn=(string)$row["price_current"];
 			$time22=(string)$row["price_alert"];
-			$urlall = (string)"http://linebotjay.herokuapp.com/show_pic.php";
-			$uuurl = (string)"https://www.botbottest.club/".$hoonn."pe.jpg";
-			$uuurl1 = (string)"https://www.botbottest.club/".$hoonn."eps.jpg";
-			$uuurl2 = (string)"https://www.botbottest.club/".$hoonn."roe.jpg";
-			$uuurl3 = (string)"https://www.botbottest.club/".$hoonn."roa.jpg";
-			$uuurl3 = (string)"https://www.botbottest.club/".$hoonn."pbv.jpg";
-			$uuurl3 = (string)"https://www.botbottest.club/".$hoonn."profit.jpg";
-			$uuurl3 = (string)"https://www.botbottest.club/".$hoonn."eps.jpg";
+			$uuurl = (string)$row["hoonname"];
 			$USERID =$row["uid"];
 		}
 		else
@@ -235,73 +227,37 @@ echo "aaaaa";
 									  'template'=> [
 										  'type'=> 'carousel',
 										  'columns'=> [
-										 					 [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/fun.jpg',
-															'title'=> $hoonn,
-															'text'=> 'pe pbv roe roa pbv eps profit',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'information',
-																					'uri'=> 'http://linebotjay.herokuapp.com/show_pic.php'
-																				]
-																												
-																		]
-														   ],
-										  				   [
-															'thumbnailImageUrl'=> $uuurl,
-															'title'=> $hoonn,
-															'text'=> 'pe',
+										  				  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
+															'title'=> 'rsi>70',
+															'text'=> 'rsi>70 เข้าเขต overbought',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
 																					'label'=> 'result',
-																					'uri'=> $uuurl
+																					'uri'=> 'https://linebotjay.herokuapp.com/rsi70.php'
 																				]
 																												
 																		]
 														  ],
-										  				  [
-															'thumbnailImageUrl'=> $uuurl1,
-															'title'=> $hoonn,
-															'text'=> 'eps',
+														  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
+															'title'=> 'rsi?',
+															'text'=> 'RSI คืออะไรอ่านคลิก information',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
-																					'label'=> 'result',
-																					'uri'=> $uuurl1
+																					'label'=> 'information',
+																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
 																				]
 																												
 																		]
 														  ]
 														  
-														  
 													]
 												]
 								];
 
-						
-					}
-					else if($check_rsi_rsi=="single_fun")
-					{
-						$messages33 = [	 'type' => 'template',
-													 'altText' => 'test',
-													 'template' => [	'type' => 'buttons', 
-																		'thumbnailImageUrl'=> $uuurl,
-																		'title' => $hoonn,
-																		'text'  => $time22,
-																		'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'View detail',
-																					'uri'=> $uuurl
-																				]
-																				
-																         ]
-															
-															          ]
-											 
-											 ];
 
 						
 					}
