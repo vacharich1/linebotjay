@@ -1,5 +1,9 @@
 ﻿<?php
 
+session_start();
+$_SESSION["strName"] = $value;
+
+
 echo "aaaaa";
 echo "bbbbb";
 echo "bbbbb";
@@ -429,6 +433,8 @@ if (!is_null($events['events'])) {
 										$userid = $event['source']['userId'];	
 									else
 										$userid = $event['source']['groupId'];		
+										
+									$_SESSION["strName"] = $hoonname
 									/*$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
 									VALUES ('', '$hoonname', '$timeframe','$replyToken')";
 									
