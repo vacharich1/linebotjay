@@ -262,7 +262,7 @@ echo "aaaaa";
 										  'columns'=> [
 										 					 [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/fun.jpg',
-															'title'=> $hoonname,
+															'title'=> $hoonn,
 															'text'=> 'pe pbv roe roa pbv eps profit',
 															'actions' => [
 																				[
@@ -275,7 +275,7 @@ echo "aaaaa";
 														   ],
 										  				   [
 															'thumbnailImageUrl'=> $link_pic1,
-															'title'=> $hoonname,
+															'title'=> $hoonn,
 															'text'=> 'pe',
 															'actions' => [
 																				[
