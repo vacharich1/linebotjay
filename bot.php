@@ -1,7 +1,6 @@
 ﻿<?php
 
-session_start();
-$_SESSION["strName"] = $value;
+
 
 
 echo "aaaaa";
@@ -433,8 +432,19 @@ if (!is_null($events['events'])) {
 										$userid = $event['source']['userId'];	
 									else
 										$userid = $event['source']['groupId'];		
-										
-									$_SESSION["strName"] =(string)$hoonname;
+									session_start();
+									$_SESSION["strName"] = $hoonname;
+									$_SESSION["strSiteName"] = "ThaiCreate.Com";
+									session_write_close();
+									?>
+									<html>
+									<body>
+									Session Created.<br><br>
+									<a href="show_pic.php">Check Session</a>
+									</body>
+									</html>
+                                    <?php
+									
 									/*$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
 									VALUES ('', '$hoonname', '$timeframe','$replyToken')";
 									
