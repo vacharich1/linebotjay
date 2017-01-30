@@ -437,10 +437,11 @@ if (!is_null($events['events'])) {
 									$_SESSION["strSiteName"] = "ThaiCreate.Com";
 									session_write_close();
 									?>
-									<form method="post" action="show_pic.php">
-                                    <input id="cust_id" name="cust_id" type="hidden" value="<?="aot"?>" />
-                                    <input type="submit">
-                                    </form>
+									<html>
+                                    <body>
+                                    <a href="PageGet2.php?Name=Weerachai&SiteName=ThaiCreate.Com">Test  $_GET </a>
+                                    </body>
+                                    </html>
                                     <?php
 									
 									/*$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
