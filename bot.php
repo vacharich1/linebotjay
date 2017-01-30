@@ -378,7 +378,7 @@ if (!is_null($events['events'])) {
 								$room='1';
 								$timeframe = strtolower($timeframe2);
 								sleep(0.1);
-								if($timeframe !="dy" and $timeframe !="yield" and $timeframe !="pbv" and $timeframe !="pe" and $timeframe !="roe" and $timeframe !="roa" and $timeframe !="assets" and $timeframe !="liabilities" and $timeframe !="equity" and $timeframe !="revenue" and $timeframe !="eps"and $timeframe !="expenses" and $timeframe !="gprofit" and $timeframe !="gpmargin" and $timeframe !="nprofit" and $timeframe !="npm" and $timeframe !="as" and $timeframe !="lb" and $timeframe !="eq" and $timeframe !="rv" and $timeframe !="ex" and $timeframe !="gp" and $timeframe !="gpm" and $timeframe !="np")
+								if($timeframe !="dy" and $timeframe !="yield" and $timeframe !="pbv" and $timeframe !="pe" and $timeframe !="roe" and $timeframe !="roa" and $timeframe !="assets" and $timeframe !="liabilities" and $timeframe !="equity" and $timeframe !="revenue" and $timeframe !="eps"and $timeframe !="expenses" and $timeframe !="gprofit" and $timeframe !="gpmargin" and $timeframe !="nprofit" and $timeframe !="npm" and $timeframe !="as" and $timeframe !="lb" and $timeframe !="eq" and $timeframe !="rv" and $timeframe !="ex" and $timeframe !="gp" and $timeframe !="gpm" and $timeframe !="np" and $timeframe !="all")
 								{
 									$messages3 = ['type' => 'text','text' => "คำสั่งค้นหาข้อมูลพื้นฐานทั้งหมด\nhoonname xxx โดย xxxคือข้อมูลพื้นฐานที่ต้องการเช่นต้องการ assertของหุ้นaot\n\n พิม aot assert โดยทางเรามีทำตัวย่อไว้คือ as จึงสามารถพิมเป็น \n\n@aot as ก็ได้\nซึ่งได้มีการทำไว้ทั้งหมด 15 ข้อมูล\n1.assert/as\n2.libilities/lb\n3.equity/eq\n4.revenue/rv\n5.eps\n6.expenses/ex\n7.gprofit/gp\n8.gpmargin/gpm\n9.nprofit/np\n10.npm\n11.roa\n12.roe\n13.pe\n14.pbv\n15.yield/dy "];
 						
@@ -457,23 +457,26 @@ if (!is_null($events['events'])) {
 									// Check connection
 									
 									// sql to delete a record
-									$sql = "DELETE FROM show_all WHERE 1";
-									
-									if ($link->query($sql) === TRUE) {
-										echo "Record deleted successfully";
-									} else {
-										echo "Error deleting record: " . $conn->error;
-									}
-									
-									
-									$sql = "INSERT INTO show_all (id, hoonname)
-											VALUES ('', '$hoonname')";
-											
-									if (mysqli_query($link, $sql)) {
-												echo "New record created successfully";
-									} 
-									else {
-												echo "Error: " . $sql . "<br>" . mysqli_error($link);
+									if($timeframe =="all")
+									{
+										$sql = "DELETE FROM show_all WHERE 1";
+										
+										if ($link->query($sql) === TRUE) {
+											echo "Record deleted successfully";
+										} else {
+											echo "Error deleting record: " . $conn->error;
+										}
+										
+										
+										$sql = "INSERT INTO show_all (id, hoonname)
+												VALUES ('', '$hoonname')";
+												
+										if (mysqli_query($link, $sql)) {
+													echo "New record created successfully";
+										} 
+										else {
+													echo "Error: " . $sql . "<br>" . mysqli_error($link);
+										}
 									}
 									
 									
