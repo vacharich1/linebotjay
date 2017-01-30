@@ -2,6 +2,8 @@
 session_start();
 $strName="aav";
 echo $strName;
+$cust_id = $_POST['cust_id'];
+echo $cust_id;
 $strName = $_SESSION["strName"];
 
 echo $strName;

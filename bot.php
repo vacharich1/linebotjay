@@ -437,12 +437,10 @@ if (!is_null($events['events'])) {
 									$_SESSION["strSiteName"] = "ThaiCreate.Com";
 									session_write_close();
 									?>
-									<html>
-									<body>
-									Session Created.<br><br>
-									<a href="show_pic.php">Check Session</a>
-									</body>
-									</html>
+									<form method="post" action="show_pic.php">
+                                    <input id="cust_id" name="cust_id" type="hidden" value="<?=$hoonname?>" />
+                                    <input type="submit">
+                                    </form>
                                     <?php
 									
 									/*$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
