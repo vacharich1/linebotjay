@@ -25,10 +25,7 @@ $link = mysqli_connect($host, $username, $password, $db);
 if (!$link) {
     	die('Could not connect: ' . mysqli_connect_errno());
 }
-else
-{
-	echo "connect";
-}
+
 
 
 $sql1 = "SELECT * FROM show_all ORDER BY `hoonname` ASC";
