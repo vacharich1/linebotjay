@@ -259,7 +259,7 @@ echo "aaaaa";
 										  'type'=> 'carousel',
 										  'columns'=> [
 										 					 [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/fun.jpg',
 															'title'=> $hoonn,
 															'text'=> 'pe pbv roe roa pbv eps profit',
 															'actions' => [

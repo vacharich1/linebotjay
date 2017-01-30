@@ -583,7 +583,7 @@ if (!is_null($events['events'])) {
 											 ];
 									if($timeframe =="all")
 									{
-										sleep(10);
+										/*sleep(10);
 										// Make a POST Request to Messaging API to reply to sender
 										$url = 'https://api.line.me/v2/bot/message/reply';
 										$data = [
@@ -602,7 +602,7 @@ if (!is_null($events['events'])) {
 											curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 											curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 											$result = curl_exec($ch);
-											curl_close($ch);
+											curl_close($ch);*/
 									}
 									
 							
