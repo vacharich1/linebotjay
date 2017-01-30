@@ -561,7 +561,7 @@ if (!is_null($events['events'])) {
 														  
 													]
 												]
-								];
+											];
 									
 									$messages33 = [	 'type' => 'template',
 													 'altText' => 'test',
@@ -583,7 +583,7 @@ if (!is_null($events['events'])) {
 											 ];
 									if($timeframe =="all")
 									{
-										sleep(4);
+										sleep(5);
 										// Make a POST Request to Messaging API to reply to sender
 										$url = 'https://api.line.me/v2/bot/message/reply';
 										$data = [
