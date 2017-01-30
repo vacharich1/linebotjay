@@ -151,14 +151,7 @@ if ($result->num_rows > 0) {
 			$time22=(string)$row["price_alert"];
 			$link_pic2 ="https://www.botbottest.club/".$hoonn."eps.jpg";
 			$link_pic1 ="https://www.botbottest.club/".$hoonn."pe.jpg";
-			$urlall = (string)"http://linebotjay.herokuapp.com/show_pic.php";
-			$uuurl = (string)"https://www.botbottest.club/".$hoonn."pe.jpg";
-			$uuurl1 = (string)"https://www.botbottest.club/".$hoonn."eps.jpg";
-			$uuurl2 = (string)"https://www.botbottest.club/".$hoonn."roe.jpg";
-			$uuurl3 = (string)"https://www.botbottest.club/".$hoonn."roa.jpg";
-			$uuurl3 = (string)"https://www.botbottest.club/".$hoonn."pbv.jpg";
-			$uuurl3 = (string)"https://www.botbottest.club/".$hoonn."profit.jpg";
-			$uuurl3 = (string)"https://www.botbottest.club/".$hoonn."eps.jpg";
+
 			$USERID =$row["uid"];
 		}
 		else
