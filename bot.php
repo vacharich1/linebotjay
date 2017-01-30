@@ -434,7 +434,7 @@ if (!is_null($events['events'])) {
 									else
 										$userid = $event['source']['groupId'];		
 										
-									$_SESSION["strName"] = $hoonname
+									$_SESSION["strName"] =(string)$hoonname;
 									/*$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
 									VALUES ('', '$hoonname', '$timeframe','$replyToken')";
 									
