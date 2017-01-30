@@ -145,7 +145,7 @@ if ($result->num_rows > 0) {
 		else if($row["type"]=='fun_all_2')
 		{
 			$check_rsi_send="rsi_check";
-			$check_rsi_rsi=="fun_all_2";
+			$check_rsi_rsi="fun_all_2";
 			
 			$hoonn=(string)$row["price_current"];
 			$time22=(string)$row["price_alert"];
