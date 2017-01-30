@@ -1,15 +1,42 @@
 <?php
-session_start();
-$strName="aav";
-echo $strName;
-echo $_GET["Name"]."<br>";
-echo $_GET["SiteName"]."<br>";
-$strName = $_SESSION["strName"];
 
-echo $strName;
+$host= "sql6.freemysqlhosting.net";
+//$db = "sql6150739";
+$db = "sql6155499";
+$CHAR_SET = "charset=utf8"; 
+ 
+//$username = "sql6150739";    
+//$password = "xiGjqcGnZb";   
+$username = "sql6155499";    
+$password = "xwBrDIuGaA";  
+	
 
-$hoonn=$strName;
+$link = mysqli_connect($host, $username, $password, $db);
+if (!$link) {
+    die('Could not connect: ' . mysqli_connect_errno());
+}
 
+	
+$text_alert=""; 
+$USERID ="";
+	
+
+$link = mysqli_connect($host, $username, $password, $db);
+if (!$link) {
+    	die('Could not connect: ' . mysqli_connect_errno());
+}
+else
+{
+	echo "connect";
+}
+
+
+$sql1 = "SELECT * FROM show_all ORDER BY `hoonname` ASC";
+$result = $link->query($sql1);
+$check_rsi_send="";
+
+if ($result->num_rows > 0) {
+	 while($row = $result->fetch_assoc()) {
 		$hoonn=(string)$row["price_current"];
 		$uuurl = (string)"https://www.botbottest.club/".$hoonn."pe.jpg";
 		$uuurl2 = (string)"https://www.botbottest.club/".$hoonn."pbv.jpg";
@@ -24,5 +51,6 @@ $hoonn=$strName;
 		echo "<img src='".$uuurl4."' /><br />";
 		echo "<img src='".$uuurl5."' /><br />";
 		echo "<img src='".$uuurl6."' /><br />";
-
+	 }
+}
 ?>

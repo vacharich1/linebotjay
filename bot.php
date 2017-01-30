@@ -432,17 +432,7 @@ if (!is_null($events['events'])) {
 										$userid = $event['source']['userId'];	
 									else
 										$userid = $event['source']['groupId'];		
-									session_start();
-									$_SESSION["strName"] = $hoonname;
-									$_SESSION["strSiteName"] = "ThaiCreate.Com";
-									session_write_close();
-									?>
-									<html>
-                                    <body>
-                                    <a href="PageGet2.php?Name=Weerachai&SiteName=ThaiCreate.Com">Test  $_GET </a>
-                                    </body>
-                                    </html>
-                                    <?php
+									
 									
 									/*$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
 									VALUES ('', '$hoonname', '$timeframe','$replyToken')";
@@ -463,6 +453,16 @@ if (!is_null($events['events'])) {
 									else {
 											echo "Error: " . $sql . "<br>" . mysqli_error($link22);
 									}*/
+									
+									$sql = "INSERT INTO show_all (id, hoonname)
+											VALUES ('', '$hoonname')";
+											
+									if (mysqli_query($link, $sql)) {
+												echo "New record created successfully";
+									} 
+									else {
+												echo "Error: " . $sql . "<br>" . mysqli_error($link);
+									}
 									
 									
 									$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
