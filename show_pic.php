@@ -1,11 +1,13 @@
 <?php
 session_start();
 $strName="aav";
+echo $strName;
 $strName = $_SESSION["strName"];
 
 echo $strName;
 
 $hoonn=$strName;
+
 		$hoonn=(string)$row["price_current"];
 		$uuurl = (string)"https://www.botbottest.club/".$hoonn."pe.jpg";
 		$uuurl2 = (string)"https://www.botbottest.club/".$hoonn."pbv.jpg";
