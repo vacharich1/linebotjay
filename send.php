@@ -145,7 +145,7 @@ if ($result->num_rows > 0) {
 		else if($row["type"]=='all_fun')
 		{
 			$check_rsi_send="rsi_check";
-			$check_rsi_rsi=="all_fun";
+			$check_rsi_rsi=="allfun";
 			
 			$hoonn=(string)$row["price_current"];
 			$time22=(string)$row["price_alert"];
@@ -251,7 +251,7 @@ echo "aaaaa";
 
 						
 					}
-					else if($check_rsi_rsi=='all_fun')
+					else if($check_rsi_rsi=='allfun')
 					{
 						$messages33 =['type'=> 'template',
 									  'altText'=> 'this is a carousel template',
