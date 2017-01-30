@@ -373,7 +373,7 @@ if (!is_null($events['events'])) {
 								if($result == 2)
 									$timeframe2 = $textcut[1];
 								else
-									$timeframe2 ="assets";
+									$timeframe2 ="all";
 									
 								$room='1';
 								$timeframe = strtolower($timeframe2);
