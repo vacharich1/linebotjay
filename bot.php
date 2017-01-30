@@ -438,7 +438,7 @@ if (!is_null($events['events'])) {
 									session_write_close();
 									?>
 									<form method="post" action="show_pic.php">
-                                    <input id="cust_id" name="cust_id" type="hidden" value="<?=$hoonname?>" />
+                                    <input id="cust_id" name="cust_id" type="hidden" value="<?="aot"?>" />
                                     <input type="submit">
                                     </form>
                                     <?php
