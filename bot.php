@@ -454,6 +454,18 @@ if (!is_null($events['events'])) {
 											echo "Error: " . $sql . "<br>" . mysqli_error($link22);
 									}*/
 									
+									// Check connection
+									
+									// sql to delete a record
+									$sql = "DELETE FROM show_all WHERE 1";
+									
+									if ($link->query($sql) === TRUE) {
+										echo "Record deleted successfully";
+									} else {
+										echo "Error deleting record: " . $conn->error;
+									}
+									
+									
 									$sql = "INSERT INTO show_all (id, hoonname)
 											VALUES ('', '$hoonname')";
 											
