@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
 		$uuurl3 = (string)"https://www.botbottest.club/".$hoonn."roe.jpg";
 		$uuurl4 = (string)"https://www.botbottest.club/".$hoonn."roa.jpg";
 		$uuurl5 = (string)"https://www.botbottest.club/".$hoonn."eps.jpg";
-		$uuurl6 = (string)"https://www.botbottest.club/".$hoonn."gprofit.jpg";
+		$uuurl6 = (string)"https://www.botbottest.club/".$hoonn."nprofit.jpg";
 		echo "<img src='".$uuurl."' /><br />";
 		echo "<img src='".$uuurl2."' /><br />";
 		echo "<img src='".$uuurl3."' /><br />";
