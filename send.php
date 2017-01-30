@@ -142,7 +142,7 @@ if ($result->num_rows > 0) {
 			$uuurl = (string)$row["hoonname"];
 			$USERID =$row["uid"];
 		}
-		else if($row["type"]=='all_fun')
+		else if($row["type"]=='aaaafun')
 		{
 			$check_rsi_send="rsi_check";
 			$check_rsi_rsi=="allfun";
