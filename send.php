@@ -440,19 +440,7 @@ echo "aaaaa";
 									  'template'=> [
 										  'type'=> 'carousel',
 										  'columns'=> [
-										 					 [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
-															'title'=> 'rsi?',
-															'text'=> 'RSI คืออะไรอ่านคลิก information',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'information',
-																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
-																				]
-																												
-																		]
-														   ],
+										 					
 										  				   [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
 															'title'=> 'rsi<30',
@@ -501,19 +489,6 @@ echo "aaaaa";
 																					'type'=> 'uri',
 																					'label'=> 'result',
 																					'uri'=> 'http://linebotjay.herokuapp.com/break_high_30.php'
-																				]
-																												
-																		]
-														  ],
-										  				  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
-															'title'=> 'rsi>70',
-															'text'=> 'rsi>70 เข้าเขต overbought',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'result',
-																					'uri'=> 'https://linebotjay.herokuapp.com/rsi70.php'
 																				]
 																												
 																		]
@@ -599,4 +574,32 @@ echo "aaaaa";
 		 
 				$result = curl_exec($ch);
 				curl_close($ch);
+/*[
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi.jpg',
+															'title'=> 'rsi?',
+															'text'=> 'RSI คืออะไรอ่านคลิก information',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'information',
+																					'uri'=> 'https://www.botbottest.club/rsiis.jpg'
+																				]
+																												
+																		]
+														   ],
+														   ,
+										  				  [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi70.jpg',
+															'title'=> 'rsi>70',
+															'text'=> 'rsi>70 เข้าเขต overbought',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'result',
+																					'uri'=> 'https://linebotjay.herokuapp.com/rsi70.php'
+																				]
+																												
+																		]
+														  ]*/
 ?>
+
