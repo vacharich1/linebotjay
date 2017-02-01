@@ -440,7 +440,32 @@ echo "aaaaa";
 									  'template'=> [
 										  'type'=> 'carousel',
 										  'columns'=> [
-										 					
+										 				   [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/break_high_20.jpg',
+															'title'=> 'hoon break high 20 day',
+															'text'=> 'hoon break high 20 day',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'information',
+																					'uri'=> 'http://linebotjay.herokuapp.com/break_high_20.php'
+																				]
+																												
+																		]
+														   ],
+										  				   [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/break_high_30.jpg',
+															'title'=> 'hoon break high 30 day',
+															'text'=> 'hoon break high 30 day',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'result',
+																					'uri'=> 'http://linebotjay.herokuapp.com/break_high_30.php'
+																				]
+																												
+																		]
+														  ],
 										  				   [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/rsi30.jpg',
 															'title'=> 'rsi<30',
@@ -466,33 +491,8 @@ echo "aaaaa";
 																				]
 																												
 																		]
-														  ],
-														  [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/break_high_20.jpg',
-															'title'=> 'hoon break high 20 day',
-															'text'=> 'hoon break high 20 day',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'information',
-																					'uri'=> 'http://linebotjay.herokuapp.com/break_high_20.php'
-																				]
-																												
-																		]
-														   ],
-										  				   [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/break_high_30.jpg',
-															'title'=> 'hoon break high 30 day',
-															'text'=> 'hoon break high 30 day',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'result',
-																					'uri'=> 'http://linebotjay.herokuapp.com/break_high_30.php'
-																				]
-																												
-																		]
 														  ]
+														  
 														  
 														  
 													]
