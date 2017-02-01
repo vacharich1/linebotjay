@@ -299,7 +299,7 @@ echo "aaaaa";
 										 					 [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/break_high_20.jpg',
 															'title'=> 'hoon break high 20 day',
-															'text'=> '',
+															'text'=> 'hoon break high 20 day',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
@@ -312,7 +312,7 @@ echo "aaaaa";
 										  				   [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/break_high_30.jpg',
 															'title'=> 'hoon break high 30 day',
-															'text'=> '',
+															'text'=> 'hoon break high 30 day',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
