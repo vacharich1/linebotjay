@@ -125,6 +125,13 @@ if ($result->num_rows > 0) {
 			$text_alert = "RSI เป็นเครื่องมือที่นำมาใช้วัดการแกว่งตัวของราคาหุ้น สำหรับการลงทุนในช่วงหนึ่ง ซึ่ง RSIนี้จะวิ่งอยู่ระหว่าง 0 - 100 โดยมีสัญญาณหลักๆคือ\n\nสัญญาณ\nOverbought RSI > 70\n   หมายความว่า ราคาหุ้นได้เพิ่มสูงขึ้นมาก ให้ระวังว่าราคาหุ้นอาจจะมีการพักตัวชั่วคราว หรืออาจจะปรับตัวลดลงในอนาคต แต่ไม่ได้หมายความว่าราคาหุ้นจะต้องปรับตัวลดลงจริง ๆ ในอนาคต\n\nสัญญาณ\nOversold RSI < 30\n    หมายความว่า ราคาหุ้นได้ลดลงมากแล้ว ให้ระวังว่าราคาหุ้นอาจจะมีการเด้งขึ้นชั่วคราว หรืออาจจะปรับตัวสูงขึ้นขึ้นในอนาคต แต่ไม่ได้หมายความว่าราคาหุ้นจะต้องปรับตัวขึ้นจริง ๆ ในอนาคต\n\nวิธีใช้งาน RSI\n\n1) ต่ำกว่าเส้น 30 คืออยู่ในเขต oversold \n2) เหนือกว่าเส้น 70 คืออยู่ในเขต overbought".$row["hoonname"].$row["price_current"].$row["price_alert"].$row["room"];
 			$USERID =$row["uid"];
 		}
+		else if($row["type"]=='breakhigh')
+		{
+			$check_rsi_send="rsi_check";
+			$check_rsi_rsi="breakhigh";
+			$text_alert = "breakhigh";
+			$USERID =$row["uid"];
+		}
 		else if($row["type"]=='rsi_check')
 		{
 			$check_rsi_send="rsi_check";
@@ -270,6 +277,47 @@ echo "aaaaa";
 																					'type'=> 'uri',
 																					'label'=> 'result',
 																					'uri'=> $uuurl1
+																				]
+																												
+																		]
+														  ]
+														  
+														  
+													]
+												]
+								];
+
+						
+					}
+					else if($check_rsi_rsi=="breakhigh")
+					{
+						$messages33 =['type'=> 'template',
+									  'altText'=> 'this is a carousel template',
+									  'template'=> [
+										  'type'=> 'carousel',
+										  'columns'=> [
+										 					 [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/break_high_20.jpg',
+															'title'=> 'hoon break high 20 day',
+															'text'=> '',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'information',
+																					'uri'=> 'http://linebotjay.herokuapp.com/break_high_20.php'
+																				]
+																												
+																		]
+														   ],
+										  				   [
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/break_high_30.jpg',
+															'title'=> 'hoon break high 30 day',
+															'text'=> '',
+															'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'result',
+																					'uri'=> 'http://linebotjay.herokuapp.com/break_high_30.php'
 																				]
 																												
 																		]
