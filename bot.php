@@ -100,9 +100,9 @@ if (!is_null($events['events'])) {
 	//7: ideatrade bot 1 Cb880ba168d17c69174b652045a8f8b90
 	//8: ideatrade bot 2 C1970832b0d5e677dc1498442f8412be7
 	//9:member2 C328035648eddea983ff6b6a3fc7622ec
-	
+	//20:kong portrabort U7fd7eee8c6ab03c5f8c12b51b47a09c8
 	foreach ($events['events'] as $event) {
-		if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f'|| $event['source']['groupId'] =='Cc5000f2d47fa9df8096c866a6f4402e9' || $event['source']['groupId'] =='C85404b458e7caaa96629fa66941c9d93' || $event['source']['groupId'] =='C0773ad778af7cec264763eb058303c53'|| $event['source']['groupId'] == 'C32b0363e6c4d916d880802158268f41f' || $event['source']['groupId'] =='C4c8db0f2c8db0b53bd1c03eb29afabcf' || $event['source']['groupId'] =='Cf19e3061292f289a6bb62c1e46336720'|| $event['source']['groupId'] == 'C51e14facfde2ebe46fc851a592f85f3a' || $event['source']['groupId'] =='Cfa20f505511fff97d66587c652e662fd' || $event['source']['groupId'] == 'Cc7b622649005eacc1f7f9453c571e1d7' || $event['source']['groupId'] == 'C541e7f51634b08117f8eb21a55296cb9'  || $event['source']['groupId'] =='C935d8d390928b6644d2dcca83a75e7d5' || $event['source']['groupId'] =='C8efbbe08a040190abb39730f26eb622b' || $event['source']['groupId'] =='C473a06905d178136680abc00bf54f440' || $event['source']['groupId'] =='C237daf0b6d4d87518ded070aad1870d1' || $event['source']['groupId'] =='C5298abb0e80917da201f774817516046' || $event['source']['groupId'] =='C8dbd04186e455a1b3af3f9384405dc20' || $event['source']['groupId'] =='C9fe78b803761432902f6d506b806b354' || $event['source']['groupId'] =='Cf32c66c3e5edf8d409f195c642187dca' || $event['source']['groupId'] =='C968dab0b5900f8c473906649127d07cf' || $event['source']['groupId'] =='C3993ff859de54c0c4d43a663410c74fe' || $event['source']['groupId'] =='C86e955b1b58a4ed6fb08d2132f500793' || $event['source']['groupId'] =='C1e62fabdf03e3485fb2b6fc24c11eb88' || $event['source']['groupId'] =='C33e7da5de008d8300f9746146bb93b28' || $event['source']['groupId'] =='C63446a31d01311daa0377b0080d064d8' || $event['source']['groupId'] =='Cf9b6aa817208f5b58ffc75b65ed9a630' || $event['source']['groupId'] =='C9d23354be1fb585ec8b131f16a2716de' || $event['source']['groupId'] =='C70fc647662b7c1d71b7263e753cc9a02' || $event['source']['groupId'] =='Cef524b7474a2473cac7d3c1c64a131f9' || $event['source']['groupId'] =='C3891347326afc0d3660d54f90c924dcf' || $event['source']['groupId'] =='C759d0883fd4898516a302d8d4efc88fd' || $event['source']['groupId'] =='C0622db8a88e74fef209c578701b38d5d' || $event['source']['groupId'] =='C4630b617359936a9495c02cd1f62b1fa')
+		if($event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8' ||$event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f'|| $event['source']['groupId'] =='Cc5000f2d47fa9df8096c866a6f4402e9' || $event['source']['groupId'] =='C85404b458e7caaa96629fa66941c9d93' || $event['source']['groupId'] =='C0773ad778af7cec264763eb058303c53'|| $event['source']['groupId'] == 'C32b0363e6c4d916d880802158268f41f' || $event['source']['groupId'] =='C4c8db0f2c8db0b53bd1c03eb29afabcf' || $event['source']['groupId'] =='Cf19e3061292f289a6bb62c1e46336720'|| $event['source']['groupId'] == 'C51e14facfde2ebe46fc851a592f85f3a' || $event['source']['groupId'] =='Cfa20f505511fff97d66587c652e662fd' || $event['source']['groupId'] == 'Cc7b622649005eacc1f7f9453c571e1d7' || $event['source']['groupId'] == 'C541e7f51634b08117f8eb21a55296cb9'  || $event['source']['groupId'] =='C935d8d390928b6644d2dcca83a75e7d5' || $event['source']['groupId'] =='C8efbbe08a040190abb39730f26eb622b' || $event['source']['groupId'] =='C473a06905d178136680abc00bf54f440' || $event['source']['groupId'] =='C237daf0b6d4d87518ded070aad1870d1' || $event['source']['groupId'] =='C5298abb0e80917da201f774817516046' || $event['source']['groupId'] =='C8dbd04186e455a1b3af3f9384405dc20' || $event['source']['groupId'] =='C9fe78b803761432902f6d506b806b354' || $event['source']['groupId'] =='Cf32c66c3e5edf8d409f195c642187dca' || $event['source']['groupId'] =='C968dab0b5900f8c473906649127d07cf' || $event['source']['groupId'] =='C3993ff859de54c0c4d43a663410c74fe' || $event['source']['groupId'] =='C86e955b1b58a4ed6fb08d2132f500793' || $event['source']['groupId'] =='C1e62fabdf03e3485fb2b6fc24c11eb88' || $event['source']['groupId'] =='C33e7da5de008d8300f9746146bb93b28' || $event['source']['groupId'] =='C63446a31d01311daa0377b0080d064d8' || $event['source']['groupId'] =='Cf9b6aa817208f5b58ffc75b65ed9a630' || $event['source']['groupId'] =='C9d23354be1fb585ec8b131f16a2716de' || $event['source']['groupId'] =='C70fc647662b7c1d71b7263e753cc9a02' || $event['source']['groupId'] =='Cef524b7474a2473cac7d3c1c64a131f9' || $event['source']['groupId'] =='C3891347326afc0d3660d54f90c924dcf' || $event['source']['groupId'] =='C759d0883fd4898516a302d8d4efc88fd' || $event['source']['groupId'] =='C0622db8a88e74fef209c578701b38d5d' || $event['source']['groupId'] =='C4630b617359936a9495c02cd1f62b1fa')
 		{
 			//	
 			// Reply only when message sent is in 'text' format
@@ -210,7 +210,7 @@ if (!is_null($events['events'])) {
 									$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." < ".$textcut[2]];
 									$type='l';
 								}
-								if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f')
+								if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
 									$userid = $event['source']['userId'];	
 								else
 									$userid = $event['source']['groupId'];	
@@ -282,7 +282,7 @@ if (!is_null($events['events'])) {
 							if($textcut[0]=="@p")
 							{
 								$check ="check1";
-								if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')
+								if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
 									$userid = $event['source']['userId'];	
 								else
 									$userid = $event['source']['groupId'];		
@@ -313,7 +313,7 @@ if (!is_null($events['events'])) {
 							{
 								$type=$textcut[0];
 								$check ="check1";	
-								if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')
+								if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
 									$userid = $event['source']['userId'];	
 								else
 									$userid = $event['source']['groupId'];		
@@ -428,7 +428,7 @@ if (!is_null($events['events'])) {
 										
 									$type="fundamental";
 									$check ="check1";
-									if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')
+									if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
 										$userid = $event['source']['userId'];	
 									else
 										$userid = $event['source']['groupId'];		
@@ -669,7 +669,7 @@ if (!is_null($events['events'])) {
 								
 								if($text == 'สอนใช้งาน')
 								{
-										if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f')
+										if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
 											$userid = $event['source']['userId'];	
 										else
 											$userid = $event['source']['groupId'];	
