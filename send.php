@@ -442,8 +442,8 @@ echo "aaaaa";
 										  'columns'=> [
 										  				   [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/openclose.jpg',
-															'title'=> 'ytd ,open price = close price',
-															'text'=> 'ytd ,open price = close price',
+															'title'=> 'open price = close price',
+															'text'=> 'open price = close price',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
