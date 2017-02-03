@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
 		echo "<table>";
-		echo $row["hoonname"]."  :  ".$row["pricehigh20"];
+		echo $row["hoonname"]."  : เบรคที่ราคา ".$row["pricehigh20"]." ราคาปิด ".$row["closeprice20"];
 		echo "</table>";
 		echo "</font>";
 		
