@@ -1,12 +1,10 @@
 <?php
 
 $host= "sql6.freemysqlhosting.net";
-//$db = "sql6150739";
+
 $db = "sql6155499";
 $CHAR_SET = "charset=utf8"; 
- 
-//$username = "sql6150739";    
-//$password = "xiGjqcGnZb";   
+
 $username = "sql6155499";    
 $password = "xwBrDIuGaA";
 	
@@ -27,15 +25,19 @@ if (!$link) {
 $sql1 = "SELECT * FROM `break_high_30` WHERE 1";
 $result = $link->query($sql1);
 if ($result->num_rows > 0) {
+	echo "<font size='50' face='Arial'>";
+	echo "Scan By jfourtwins";
 	while($row = $result->fetch_assoc()) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
 		echo "<table>";
-		echo $row["hoonname"]."  :  ".$row["pricehigh30"]." ราคาปิด ".$row["closeprice30"];;
+		echo $row["hoonname"]." : break ".$row["breakhigh30"]."   high ".$row["pricehigh30"]."   close ".$row["closeprice30"];
 		echo "</table>";
 		echo "</font>";
 		
 	}
+	echo "<font size='50' face='Arial'>";
+	echo "Scan By jfourtwins";
 
 }
 

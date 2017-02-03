@@ -27,15 +27,19 @@ if (!$link) {
 $sql1 = "SELECT * FROM `break_high_20` WHERE 1";
 $result = $link->query($sql1);
 if ($result->num_rows > 0) {
+	echo "<font size='50' face='Arial'>";
+	echo "Scan By jfourtwins";
 	while($row = $result->fetch_assoc()) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
 		echo "<table>";
-		echo $row["hoonname"]."  : เบรคที่ราคา ".$row["pricehigh20"]." ราคาปิด ".$row["closeprice20"];
+		echo $row["hoonname"]." : break ".$row["breakhigh20"]."   high ".$row["pricehigh20"]."   close ".$row["closeprice20"];
 		echo "</table>";
 		echo "</font>";
 		
 	}
+	echo "<font size='50' face='Arial'>";
+	echo "Scan By jfourtwins";
 
 }
 
