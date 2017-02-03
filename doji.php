@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
 		echo "<table>";
-		echo $row["hoonname"]." : \nhigh ".$row["yhigh"]."   low ".$row["ylow"]."   open ".$row["yopen"]."   close ".$row["yclose"];
+		echo $row["hoonname"]." : H ".$row["yhigh"]."   L ".$row["ylow"]."   O ".$row["yopen"]."   C ".$row["yclose"];
 		echo "</table>";
 		echo "</font>";
 	}
