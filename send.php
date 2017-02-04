@@ -442,8 +442,8 @@ echo "aaaaa";
 										  'columns'=> [
 										  				   [
 															'thumbnailImageUrl'=> 'https://www.botbottest.club/doji.jpg',
-															'title'=> 'open price = close price',
-															'text'=> 'open price = close price',
+															'title'=> 'Doji เบรก high low',
+															'text'=> 'Doji เบรก high low',
 															'actions' => [
 																				[
 																					'type'=> 'uri',
