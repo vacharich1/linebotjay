@@ -21,6 +21,56 @@ if (!$link) {
 }
 
 
+$sql1 = "SELECT * FROM `doji` WHERE (doji='2last O = C price' AND trand = 'break high ytd')";
+$result = $link->query($sql1);
+if ($result->num_rows > 0) {
+	echo "<font size='50' face='Arial'>";
+	echo "\n                   Scan By jfourtwins\n\n                 ======================================";
+	echo"\n                 doji เมื่อสองวันที่เเล้ว เเมื่อวานบรคราคา high \n";
+	while($row = $result->fetch_assoc()) {
+		echo "<br>";
+		echo "<font size='50' face='Arial'>";
+		echo "<table>";
+		echo $row["hoonname"]." : H ".$row["high"]."   L ".$row["low"]."   O ".$row["open"]."   C ".$row["close"];
+		echo "</table>";
+		echo "</font>";
+	}
+}
+
+$sql1 = "SELECT * FROM `doji` WHERE (doji='2last O = C price' AND trand = 'break low ytd')";
+$result = $link->query($sql1);
+if ($result->num_rows > 0) {
+	echo "<font size='50' face='Arial'>";
+	echo "                   Scan By jfourtwins\n\n                 ======================================";
+	echo"\n                 doji เมื่อสองวันที่เเล้ว เมื่อวานหลุด low\n";
+	while($row = $result->fetch_assoc()) {
+		echo "<br>";
+		echo "<font size='50' face='Arial'>";
+		echo "<table>";
+		echo $row["hoonname"]." : H ".$row["high"]."   L ".$row["low"]."   O ".$row["open"]."   C ".$row["close"];
+		echo "</table>";
+		echo "</font>";
+	}
+}
+
+$sql1 = "SELECT * FROM `doji` WHERE (doji='2last O = C price' AND trand = 'zzzz')";
+$result = $link->query($sql1);
+if ($result->num_rows > 0) {
+	echo "<font size='50' face='Arial'>";
+	echo "                   Scan By jfourtwins\n\n                 ======================================";
+	echo"\n                 doji เมื่อสองวันที่เเล้ว\n";
+	while($row = $result->fetch_assoc()) {
+		echo "<br>";
+		echo "<font size='50' face='Arial'>";
+		echo "<table>";
+		echo $row["hoonname"]." : H ".$row["high"]."   L ".$row["low"]."   O ".$row["open"]."   C ".$row["close"];
+		echo "</table>";
+		echo "</font>";
+	}
+}
+
+
+
 
 $sql1 = "SELECT * FROM `doji` WHERE (doji='2day O = C price' AND trand = 'break high ytd')";
 $result = $link->query($sql1);
