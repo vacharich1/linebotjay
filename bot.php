@@ -110,10 +110,9 @@ if (!is_null($events['events'])) {
 				
 				// Get text sent
 				$text = $event['message']['text'];
-				if($text=="doji")
+				if($text=="doji" || $text=="Doji" || $text=="DOJI")
 				{
 					$text="โดจิ";
-					
 				}
 				$arr2 = explode(" ", $text);
 				if($arr2[0]=="ราคา")
@@ -696,23 +695,24 @@ if (!is_null($events['events'])) {
 									else
 										$userid = $event['source']['groupId'];		
 									$messages33 = [	 'type' => 'template',
-															 'altText' => 'test',
-															 'template' => [	'type' => 'buttons', 
-																				'thumbnailImageUrl'=> 'https://www.botbottest.club/doji.jpg',
-																				'title' => 'Doji ',
-																				'text'  => 'Doji ',
-																				'actions' => [
-																						[
-																							'type'=> 'uri',
-																							'label'=> 'View detail',
-																							'uri'=> 'http://linebotjay.herokuapp.com/doji.php'
-																						]
-																						
-																				 ]
-																	
-																			  ]
-													 
-													 ];
+													 'altText' => 'test',
+													 'template' => [	'type' => 'buttons', 
+																		'thumbnailImageUrl'=> "https://www.botbottest.club/doji.jpg",
+																		'title' => 'Doji',
+																		'text'  => 'Doji',
+																		'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'http://linebotjay.herokuapp.com/doji.php'
+																				]
+																				
+																         ]
+															
+															          ]
+											 
+											 ];
+											 
 									$post_data = [
 										'to' => $USERID,
 										'messages' => [$messages33]
