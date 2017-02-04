@@ -110,7 +110,7 @@ if (!is_null($events['events'])) {
 				
 				// Get text sent
 				$text = $event['message']['text'];
-				if($text=="doji" || $text=="Doji" || $text=="DOJI")
+				if($text=="doji" || $text=="Doji" || $text=="DOJI" || $text=="DOji" || $text=="DOJi" || $text=="DojI" || $text=="DoJi")
 				{
 					$text='สอนสอน';
 				}
