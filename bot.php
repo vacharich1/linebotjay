@@ -274,7 +274,50 @@ if (!is_null($events['events'])) {
 						$count_text_cut = strlen($textcut[0]);
 						$x=0;
 						$arr1 = str_split($textcut[0]);
-						
+						if($textcut[0]=="@doji")
+						{
+							if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
+								$userid = $event['source']['userId'];	
+							else
+								$userid = $event['source']['groupId'];		
+							$messages33 = [	 'type' => 'template',
+													 'altText' => 'test',
+													 'template' => [	'type' => 'buttons', 
+																		'thumbnailImageUrl'=> 'https://www.botbottest.club/doji.jpg',
+																		'title' => 'Doji ',
+																		'text'  => 'Doji ',
+																		'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'http://linebotjay.herokuapp.com/doji.php'
+																				]
+																				
+																         ]
+															
+															          ]
+											 
+											 ];
+							$post_data = [
+								'to' => $USERID,
+								'messages' => [$messages33]
+							];
+							
+							$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				
+							echo "ssss";
+					 
+							$ch = curl_init('https://api.line.me/v2/bot/message/push');
+							curl_setopt($ch, CURLOPT_POST, true);
+							curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+							curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+							curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
+							curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+					 
+							$result = curl_exec($ch);
+							curl_close($ch);
+							
+						}
 						if($textcut[0]=="@show" || $textcut[0]=="@de" || $textcut[0]=="@p")
 						{	
 							$replyToken = $event['replyToken'];
