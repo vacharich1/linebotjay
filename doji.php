@@ -77,7 +77,7 @@ $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	echo "<font size='50' face='Arial'>";
 	echo "\n                   Scan By jfourtwins\n\n                 ======================================";
-	echo"\n                 ราคาเปิดเเละราคาปิดเท่ากัน 2 วัน เบรคราคา high ของเมื่อวาน\n";
+	echo"\n                   doji 2 วัน เบรคราคา high ของเมื่อวาน\n";
 	while($row = $result->fetch_assoc()) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
@@ -93,7 +93,7 @@ $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	echo "<font size='50' face='Arial'>";
 	echo "                   Scan By jfourtwins\n\n                 ======================================";
-	echo"\n                 ราคาเปิดเเละราคาปิดเท่ากัน 2 วัน หลุดราคา low ของเมื่อวาน\n";
+	echo"\n                 doji 2 วัน หลุดราคา low ของเมื่อวาน\n";
 	while($row = $result->fetch_assoc()) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
@@ -109,7 +109,7 @@ $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	echo "<font size='50' face='Arial'>";
 	echo "                   Scan By jfourtwins\n\n                 ======================================";
-	echo"\n                 ราคาเปิดเเละราคาปิดเท่ากัน 2 วัน\n";
+	echo"\n                  doji 2 วัน\n";
 	while($row = $result->fetch_assoc()) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
@@ -125,7 +125,7 @@ $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	echo "<font size='50' face='Arial'>";
 	echo "\n                   Scan By jfourtwins\n\n                 ======================================";
-	echo"\nราคาเปิดเเละราคาปิดเท่ากัน 1 วัน เบรคราคา high ของเมื่อวาน\n";
+	echo"\n                   doji 1 วัน เบรคราคา high ของเมื่อวาน\n";
 	while($row = $result->fetch_assoc()) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
@@ -141,7 +141,7 @@ $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	echo "<font size='50' face='Arial'>";
 	echo "\n                  Scan By jfourtwins\n\n                 ======================================";
-	echo"\n              ราคาเปิดเเละราคาปิดเท่ากัน 1 วัน หลุดราคา low ของเมื่อวาน\n";
+	echo"\n                  doji 1 วัน หลุดราคา low ของเมื่อวาน\n";
 	while($row = $result->fetch_assoc()) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
@@ -157,7 +157,7 @@ $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	echo "<font size='50' face='Arial'>";
 	echo "\n                   Scan By jfourtwins\n\n                 ======================================";
-	echo"\n                ราคาเปิดเเละราคาปิดเท่ากัน 1 วัน \n";
+	echo"\n                        doji  1 วัน \n";
 	while($row = $result->fetch_assoc()) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
