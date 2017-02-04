@@ -274,7 +274,7 @@ if (!is_null($events['events'])) {
 						$count_text_cut = strlen($textcut[0]);
 						$x=0;
 						$arr1 = str_split($textcut[0]);
-						if($textcut[0]=="@doji")
+						if($text=="@doji")
 						{
 							if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
 								$userid = $event['source']['userId'];	
