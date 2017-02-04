@@ -112,7 +112,7 @@ if (!is_null($events['events'])) {
 				$text = $event['message']['text'];
 				if($text=="doji" || $text=="Doji" || $text=="DOJI")
 				{
-					$text="โดจิ";
+					$text='สอนสอน';
 				}
 				$arr2 = explode(" ", $text);
 				if($arr2[0]=="ราคา")
@@ -687,13 +687,8 @@ if (!is_null($events['events'])) {
 														echo "Error: " . $sql . "<br>" . mysqli_error($link);
 											}	
 								}
-								
-								if($text=="โดจิ")
+								if($text=='สอนสอน')
 								{
-									if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
-										$userid = $event['source']['userId'];	
-									else
-										$userid = $event['source']['groupId'];		
 									$messages33 = [	 'type' => 'template',
 													 'altText' => 'test',
 													 'template' => [	'type' => 'buttons', 
@@ -713,22 +708,21 @@ if (!is_null($events['events'])) {
 											 
 											 ];
 											 
-									$post_data = [
-										'to' => $USERID,
+									// Make a POST Request to Messaging API to reply to sender
+									$url = 'https://api.line.me/v2/bot/message/reply';
+									$data = [
+										'replyToken' => $replyToken,
 										'messages' => [$messages33]
 									];
-									
-									$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+									$post = json_encode($data);
+									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 						
-									echo "ssss";
-							 
-									$ch = curl_init('https://api.line.me/v2/bot/message/push');
-									curl_setopt($ch, CURLOPT_POST, true);
-									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+									$ch = curl_init($url);
+									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 									curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-									curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
-									curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-							 
+									curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+									curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+									curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 									$result = curl_exec($ch);
 									curl_close($ch);
 									
