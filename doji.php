@@ -26,13 +26,13 @@ $sql1 = "SELECT * FROM `doji` WHERE (doji='2day O = C price' AND trand = 'break 
 $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	echo "<font size='50' face='Arial'>";
-	echo "                   Scan By jfourtwins\n\n                 ======================================";
-	echo"\n                 2 day open = close price and break high ytd\n";
+	echo "\n                   Scan By jfourtwins\n\n                 ======================================";
+	echo"\n                 ราคาเปิดเเละราคาปิดเท่ากัน 2 วัน เบรคราคา high ของเมื่อวาน\n";
 	while($row = $result->fetch_assoc()) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
 		echo "<table>";
-		echo $row["hoonname"]." : H ".$row["yhigh"]."   L ".$row["ylow"]."   O ".$row["yopen"]."   C ".$row["yclose"];
+		echo $row["hoonname"]." : H ".$row["high"]."   L ".$row["low"]."   O ".$row["open"]."   C ".$row["close"];
 		echo "</table>";
 		echo "</font>";
 	}
@@ -43,12 +43,12 @@ $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	echo "<font size='50' face='Arial'>";
 	echo "                   Scan By jfourtwins\n\n                 ======================================";
-	echo"\n                 2 day open = close price and break low ytd\n";
+	echo"\n                 ราคาเปิดเเละราคาปิดเท่ากัน 2 วัน หลุดราคา low ของเมื่อวาน\n";
 	while($row = $result->fetch_assoc()) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
 		echo "<table>";
-		echo $row["hoonname"]." : H ".$row["yhigh"]."   L ".$row["ylow"]."   O ".$row["yopen"]."   C ".$row["yclose"];
+		echo $row["hoonname"]." : H ".$row["high"]."   L ".$row["low"]."   O ".$row["open"]."   C ".$row["close"];
 		echo "</table>";
 		echo "</font>";
 	}
@@ -59,12 +59,12 @@ $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	echo "<font size='50' face='Arial'>";
 	echo "                   Scan By jfourtwins\n\n                 ======================================";
-	echo"\n                 2 day open = close price\n";
+	echo"\n                 ราคาเปิดเเละราคาปิดเท่ากัน 2 วัน\n";
 	while($row = $result->fetch_assoc()) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
 		echo "<table>";
-		echo $row["hoonname"]." : H ".$row["yhigh"]."   L ".$row["ylow"]."   O ".$row["yopen"]."   C ".$row["yclose"];
+		echo $row["hoonname"]." : H ".$row["high"]."   L ".$row["low"]."   O ".$row["open"]."   C ".$row["close"];
 		echo "</table>";
 		echo "</font>";
 	}
@@ -74,13 +74,13 @@ $sql1 = "SELECT * FROM `doji` WHERE (doji='O = C price' AND trand = 'break high 
 $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	echo "<font size='50' face='Arial'>";
-	echo "                   Scan By jfourtwins\n\n                 ======================================";
-	echo"\n                  open = close price and break high ytd\n";
+	echo "\n                   Scan By jfourtwins\n\n                 ======================================";
+	echo"\nราคาเปิดเเละราคาปิดเท่ากัน 1 วัน เบรคราคา high ของเมื่อวาน\n";
 	while($row = $result->fetch_assoc()) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
 		echo "<table>";
-		echo $row["hoonname"]." : H ".$row["yhigh"]."   L ".$row["ylow"]."   O ".$row["yopen"]."   C ".$row["yclose"];
+		echo $row["hoonname"]." : H ".$row["high"]."   L ".$row["low"]."   O ".$row["open"]."   C ".$row["close"];
 		echo "</table>";
 		echo "</font>";
 	}
@@ -90,13 +90,13 @@ $sql1 = "SELECT * FROM `doji` WHERE (doji='O = C price' AND trand = 'break low y
 $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	echo "<font size='50' face='Arial'>";
-	echo "                   Scan By jfourtwins\n\n                 ======================================";
-	echo"\n                  open = close price and break low ytd\n";
+	echo "\n                  Scan By jfourtwins\n\n                 ======================================";
+	echo"\n              ราคาเปิดเเละราคาปิดเท่ากัน 1 วัน หลุดราคา low ของเมื่อวาน\n";
 	while($row = $result->fetch_assoc()) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
 		echo "<table>";
-		echo $row["hoonname"]." : H ".$row["yhigh"]."   L ".$row["ylow"]."   O ".$row["yopen"]."   C ".$row["yclose"];
+		echo $row["hoonname"]." : H ".$row["high"]."   L ".$row["low"]."   O ".$row["open"]."   C ".$row["close"];
 		echo "</table>";
 		echo "</font>";
 	}
@@ -106,13 +106,13 @@ $sql1 = "SELECT * FROM `doji` WHERE (doji='O = C price' AND trand = 'zzzz')";
 $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	echo "<font size='50' face='Arial'>";
-	echo "                   Scan By jfourtwins\n\n                 ======================================";
-	echo"\n                  open = close price\n";
+	echo "\n                   Scan By jfourtwins\n\n                 ======================================";
+	echo"\n                ราคาเปิดเเละราคาปิดเท่ากัน 1 วัน \n";
 	while($row = $result->fetch_assoc()) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
 		echo "<table>";
-		echo $row["hoonname"]." : H ".$row["yhigh"]."   L ".$row["ylow"]."   O ".$row["yopen"]."   C ".$row["yclose"];
+		echo $row["hoonname"]." : H ".$row["high"]."   L ".$row["low"]."   O ".$row["open"]."   C ".$row["close"];
 		echo "</table>";
 		echo "</font>";
 	}
