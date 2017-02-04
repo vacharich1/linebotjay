@@ -441,7 +441,7 @@ echo "aaaaa";
 										  'type'=> 'carousel',
 										  'columns'=> [
 										  				   [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/openclose.jpg',
+															'thumbnailImageUrl'=> 'https://www.botbottest.club/doji.jpg',
 															'title'=> 'open price = close price',
 															'text'=> 'open price = close price',
 															'actions' => [
