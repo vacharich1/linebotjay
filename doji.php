@@ -26,6 +26,15 @@ $result = $link->query($sql1);
 if ($result->num_rows > 0) {
 	echo "<font size='50' face='Arial'>";
 	echo "\n                   Scan By jfourtwins\n\n                 ======================================";
+	echo "<br>";
+	echo "<br>";
+	echo "\n                   ====================================";
+	echo "\n                   lb คือ หลุด low bh คือ เบรค high\n\n ";
+	echo "\n                   lb คือ หลุด low bh คือ เบรค high\n\n  ";
+	echo "<br>";
+	echo "<br>";
+	echo "\n                   ====================================";
+	echo "<br>";
 	echo"\n                      เมื่อวานเกิด doji 1 วัน \n";
 	while($row = $result->fetch_assoc()) {
 		echo "<br>";
@@ -65,7 +74,7 @@ if ($result->num_rows > 0) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
 		echo "<table>";
-		echo $row["hoonname"]."หลุด low ที่ ".$row["value"]." H ".$row["high"]." L ".$row["low"]." O ".$row["open"]." C ".$row["close"];
+		echo $row["hoonname"]." lb ".$row["value"]." H ".$row["high"]." L ".$row["low"]." O ".$row["open"]." C ".$row["close"];
 		echo "</table>";
 		echo "</font>";
 	}
@@ -82,7 +91,7 @@ if ($result->num_rows > 0) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
 		echo "<table>";
-		echo $row["hoonname"]."เบรค high ที่ ".$row["value"]." H ".$row["high"]." L ".$row["low"]." O ".$row["open"]." C ".$row["close"];
+		echo $row["hoonname"]." bh ".$row["value"]." H ".$row["high"]." L ".$row["low"]." O ".$row["open"]." C ".$row["close"];
 		echo "</table>";
 		echo "</font>";
 	}
@@ -98,7 +107,7 @@ if ($result->num_rows > 0) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
 		echo "<table>";
-		echo $row["hoonname"]."เบรค high ที่ ".$row["value"]." H ".$row["high"]." L ".$row["low"]." O ".$row["open"]." C ".$row["close"];
+		echo $row["hoonname"]." bh ".$row["value"]." H ".$row["high"]." L ".$row["low"]." O ".$row["open"]." C ".$row["close"];
 		echo "</table>";
 		echo "</font>";
 	}
@@ -114,7 +123,7 @@ if ($result->num_rows > 0) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
 		echo "<table>";
-		echo $row["hoonname"]." : H ".$row["high"]."   L ".$row["low"]."   O ".$row["open"]."   C ".$row["close"];
+		echo $row["hoonname"]." lb ".$row["value"]." H ".$row["high"]." L ".$row["low"]." O ".$row["open"]." C ".$row["close"];
 		echo "</table>";
 		echo "</font>";
 	}
@@ -150,7 +159,7 @@ if ($result->num_rows > 0) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
 		echo "<table>";
-		echo $row["hoonname"]."เบรค high ที่ ".$row["value"]." H ".$row["high"]." L ".$row["low"]." O ".$row["open"]."  C ".$row["close"];
+		echo $row["hoonname"]." bh ".$row["value"]." H ".$row["high"]." L ".$row["low"]." O ".$row["open"]."  C ".$row["close"];
 		echo "</table>";
 		echo "</font>";
 	}
@@ -166,7 +175,7 @@ if ($result->num_rows > 0) {
 		echo "<br>";
 		echo "<font size='50' face='Arial'>";
 		echo "<table>";
-		echo $row["hoonname"]."หลุด low ที่ ".$row["value"]." H ".$row["high"]." L ".$row["low"]." O ".$row["open"]." C ".$row["close"];
+		echo $row["hoonname"]." lb ".$row["value"]." H ".$row["high"]." L ".$row["low"]." O ".$row["open"]." C ".$row["close"];
 		echo "</table>";
 		echo "</font>";
 	}
