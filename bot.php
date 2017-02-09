@@ -27,25 +27,7 @@ echo "bbbbb";
 	}
 	
 echo "bbbbb";	
-	$host22= "sql6.freemysqlhosting.net";
-	//$db = "sql6150739";
-	$db22 = "sql6155625";
-	$CHAR_SET = "charset=utf8"; 
- 
-	//$username = "sql6150739";    
-	//$password = "xiGjqcGnZb";   
-	$username22 = "sql6155625";    
-	$password22 = "kD3MA9nEB3"; 
 	
-
-	$link22 = mysqli_connect($host22, $username22, $password22, $db22);
-	if (!$link22) {
-    		die('Could not connect: ' . mysqli_connect_errno());
-	}
-	else
-	{
-		echo "connect";
-	}
  
 	/*try {
 		
