@@ -325,9 +325,7 @@ if (!is_null($events['events'])) {
 							}
 							else#timeframe is number
 							{
-								
 								$timeframe_chart=$textcut[2];
-								
 							}
 							
 							if($check_day_time=="1")
