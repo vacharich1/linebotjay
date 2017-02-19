@@ -375,7 +375,7 @@ if (!is_null($events['events'])) {
 												echo "Error: " . $sql . "<br>" . mysqli_error($link);
 									}
 								}
-								sleep(4);	
+								sleep(7);	
 								
 								
 								
