@@ -261,6 +261,104 @@ if (!is_null($events['events'])) {
 							curl_close($ch);
 						}
 					}
+					if($textcut[0]=="@g")
+					{
+						if(preg_match("/^[a-zA-Z0-9.]+$/", $textcut[2]) == 1)
+						{
+							if(preg_match("/^[a-zA-Z]+$/", $textcut[2]) == 1)#timeframe is day month week
+							{
+								if($textcut[2]=="d" || $textcut[2]=="w" || $textcut[2]=="m")
+								{
+									if($textcut[2]=="d")
+									{
+										$timeframe_chart=".day";
+									}
+									else if($textcut[2]=="w")
+									{
+										$timeframe_chart=".week";
+									}
+									else if($textcut[2]=="m")
+									{
+										$timeframe_chart=".month";
+									}
+								}
+								else#wrong timeframe
+								{
+									$messages556 = ['type' => 'text','text' => "timeframe ไม่ถูกต้อง กรุณากรอกใหม่"];
+									$url = 'https://api.line.me/v2/bot/message/reply';
+									$data = [
+												'replyToken' => $replyToken,
+												'messages' => [$messages556]
+											];
+									$post = json_encode($data);
+									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+								
+									$ch = curl_init($url);
+									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+									curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+									curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+									curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+									curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+									$result = curl_exec($ch);
+									curl_close($ch);
+									
+								}
+							}
+							else#timeframe is number
+							{
+								
+								$timeframe_chart=$textcut[2];
+								
+							}
+							
+							if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
+									$userid = $event['source']['userId'];	
+							else
+									$userid = $event['source']['groupId'];		
+										
+							$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
+									VALUES ('', '$textcut[1]', '$timeframe_chart','' ,'$userid', '@g')";
+										
+							if (mysqli_query($link, $sql)) {
+										echo "New record created successfully";
+							} 
+							else {
+										echo "Error: " . $sql . "<br>" . mysqli_error($link);
+							}
+									
+							$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
+							if (mysqli_query($link, $sql)) {
+									echo "New record created successfully";
+							} 
+							else {
+									echo "Error: " . $sql . "<br>" . mysqli_error($link);
+							}
+							sleep(0.3);	
+							
+						}
+						else#wrong timeframe
+						{
+							$messages556 = ['type' => 'text','text' => "timeframe ไม่ถูกต้อง กรุณากรอกใหม่"];
+							$url = 'https://api.line.me/v2/bot/message/reply';
+							$data = [
+										'replyToken' => $replyToken,
+										'messages' => [$messages556]
+									];
+							$post = json_encode($data);
+							$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+								
+							$ch = curl_init($url);
+							curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+							curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+							curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+							curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+							curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+							$result = curl_exec($ch);
+							curl_close($ch);
+							
+						}
+						
+					}
 				}
 				if($result <= 2)
 				{
