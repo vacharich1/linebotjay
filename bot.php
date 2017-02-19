@@ -341,8 +341,8 @@ if (!is_null($events['events'])) {
 								
 								$link_pic ="https://www.botbottest.club/".$textcut[1]."".$timeframe_chart.".jpg";
 								$messages33 = [	 'type' => 'template',
-													 'altText' => 'test',
-													 'template' => [	'type' => 'buttons', 
+												 'altText' => 'test',
+												 'template' => [	'type' => 'buttons', 
 																		'thumbnailImageUrl'=> $link_pic,
 																		'title' => $hoonname,
 																		'text'  => $timeframe,
@@ -350,7 +350,7 @@ if (!is_null($events['events'])) {
 																				[
 																					'type'=> 'uri',
 																					'label'=> 'View detail',
-																					'uri'=> 'https://linebotjay.herokuapp.com/show_pic.php'
+																					'uri'=> $link_pic
 																				]
 																				
 																         ]
