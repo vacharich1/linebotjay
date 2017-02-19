@@ -170,9 +170,9 @@ if (!is_null($events['events'])) {
 				$result = count($textcut);
 				if($count==1 || $result >2)
 				{
-					$replyToken = $event['replyToken'];
 					if($textcut[0]=="@>" || $textcut[0]=="@<" || $textcut[0]=="@=" || $textcut[0]=="@de")
 					{
+						$replyToken = $event['replyToken'];
 						$arr1 = str_split($textcut[2]);
 						foreach ($arr1 as $text1) {
 							if(preg_match("/^[a-zA-Z]+$/", $text1) == 1)
@@ -264,7 +264,6 @@ if (!is_null($events['events'])) {
 					if($textcut[0]=="@g")
 					{
 						$check_day_time="1";
-						$replyToken = $event['replyToken'];
 						if(preg_match("/^[a-zA-Z0-9.]+$/", $textcut[2]) == 1)
 						{
 							if(preg_match("/^[a-zA-Z]+$/", $textcut[2]) == 1)#timeframe is day month week
@@ -316,7 +315,6 @@ if (!is_null($events['events'])) {
 							
 							if($check_day_time=="1")
 							{
-								
 								if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
 										$userid = $event['source']['userId'];	
 								else
@@ -339,8 +337,30 @@ if (!is_null($events['events'])) {
 								else {
 										echo "Error: " . $sql . "<br>" . mysqli_error($link);
 								}
-								sleep(4);	
+								sleep(0.3);	
+							}
+							
+						}
+						else#wrong timeframe
+						{
+							$messages556 = ['type' => 'text','text' => "timeframe ไม่ถูกต้อง กรุณากรอกใหม่"];
+							$url = 'https://api.line.me/v2/bot/message/reply';
+							$data = [
+										'replyToken' => $replyToken,
+										'messages' => [$messages556]
+									];
+							$post = json_encode($data);
+							$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 								
+							$ch = curl_init($url);
+							curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+							curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+							curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+							curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+							curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+							$result = curl_exec($ch);
+							curl_close($ch);
+							
 						}
 						
 					}
