@@ -348,8 +348,8 @@ if (!is_null($events['events'])) {
 													 'altText' => 'test',
 													 'template' => [	'type' => 'buttons', 
 																		'thumbnailImageUrl'=> $link_pic,
-																		'title' => 'Doji',
-																		'text'  => 'Doji',
+																		'title' => $textcut[1],
+																		'text'  => $textcut[1]." ".$timeframe_chart,
 																		'actions' => [
 																				[
 																					'type'=> 'uri',
