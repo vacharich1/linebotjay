@@ -404,7 +404,7 @@ if (!is_null($events['events'])) {
 																			]
 															   ],
 															   [
-																'thumbnailImageUrl'=> $link_pic60,
+																'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1]."60.jpg",
 																'title'=> 'chart',
 																'text'=> '60 min',
 																'actions' => [
@@ -417,7 +417,7 @@ if (!is_null($events['events'])) {
 																			]
 															   ],
 															   [
-																'thumbnailImageUrl'=> $link_picday,
+																'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1].".day.jpg",
 																'title'=> 'chart',
 																'text'=> 'day',
 																'actions' => [
@@ -430,7 +430,7 @@ if (!is_null($events['events'])) {
 																			]
 															  ],
 															   [
-																'thumbnailImageUrl'=> $link_picweek,
+																'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1].".week.jpg",
 																'title'=> 'chart',
 																'text'=> 'week',
 																'actions' => [
@@ -443,7 +443,7 @@ if (!is_null($events['events'])) {
 																			]
 															  ],
 															  [
-																'thumbnailImageUrl'=> $link_picmonth,
+																'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1].".month.jpg",
 																'title'=> 'chart',
 																'text'=> 'month',
 																'actions' => [
