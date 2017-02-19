@@ -268,17 +268,17 @@ if (!is_null($events['events'])) {
 						{
 							if(preg_match("/^[a-zA-Z]+$/", $textcut[2]) == 1)#timeframe is day month week
 							{
-								if($textcut[2]=="d" || $textcut[2]=="w" || $textcut[2]=="m")
+								if($textcut[2]=="d" || $textcut[2]=="day" || $textcut[2]=="w" || $textcut[2]=="week" || $textcut[2]=="m" || $textcut[2]=="month")
 								{
-									if($textcut[2]=="d")
+									if($textcut[2]=="d" || $textcut[2]=="day")
 									{
 										$timeframe_chart=".day";
 									}
-									else if($textcut[2]=="w")
+									else if($textcut[2]=="w" || $textcut[2]=="week")
 									{
 										$timeframe_chart=".week";
 									}
-									else if($textcut[2]=="m")
+									else if($textcut[2]=="m" || $textcut[2]=="month")
 									{
 										$timeframe_chart=".month";
 									}
