@@ -356,7 +356,7 @@ if (!is_null($events['events'])) {
 								}
 								if($textcut[2]=="all")
 								{
-									$sql = "DELETE FROM chaet_hoon WHERE 1";
+									$sql = "DELETE FROM chart_hoon WHERE 1";
 											
 									if ($link->query($sql) === TRUE) {
 										echo "Record deleted successfully";
@@ -365,7 +365,7 @@ if (!is_null($events['events'])) {
 									}
 									sleep(0.5);		
 											
-									$sql = "INSERT INTO chaet_hoon (id, hoonname)
+									$sql = "INSERT INTO chart_hoon (id, hoonname)
 											VALUES ('', '$textcut[1]')";
 													
 									if (mysqli_query($link, $sql)) {
