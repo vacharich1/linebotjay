@@ -169,9 +169,17 @@ if (!is_null($events['events'])) {
 				}
 				
 				$replyToken = $event['replyToken'];
-				
 				$textcut = explode(" ", $text);
 				$result = count($textcut);
+				
+				if($textcut[0]=="@g" and $result <=2)
+				{
+					$text=$text." all";
+					$textcut = explode(" ", $text);
+					$result = count($textcut);
+					
+				}
+				
 				if($count==1 || $result >2)
 				{
 					if($textcut[0]=="@>" || $textcut[0]=="@<" || $textcut[0]=="@=" || $textcut[0]=="@de")
@@ -273,7 +281,7 @@ if (!is_null($events['events'])) {
 						{
 							if(preg_match("/^[a-zA-Z]+$/", $textcut[2]) == 1)#timeframe is day month week
 							{
-								if($textcut[2]=="d" || $textcut[2]=="day" || $textcut[2]=="w" || $textcut[2]=="week" || $textcut[2]=="m" || $textcut[2]=="month")
+								if($textcut[2]=="d" || $textcut[2]=="day" || $textcut[2]=="w" || $textcut[2]=="week" || $textcut[2]=="m" || $textcut[2]=="month" || $textcut[2]=="all")
 								{
 									if($textcut[2]=="d" || $textcut[2]=="day")
 									{
@@ -286,6 +294,10 @@ if (!is_null($events['events'])) {
 									else if($textcut[2]=="m" || $textcut[2]=="month")
 									{
 										$timeframe_chart=".month";
+									}
+									else if($textcut[2]=="all")
+									{
+										$timeframe_chart="all";
 									}
 								}
 								else#wrong timeframe
@@ -342,44 +354,152 @@ if (!is_null($events['events'])) {
 								else {
 										echo "Error: " . $sql . "<br>" . mysqli_error($link);
 								}
+								if($textcut[2]=="all")
+								{
+									$sql = "DELETE FROM chaet_hoon WHERE 1";
+											
+									if ($link->query($sql) === TRUE) {
+										echo "Record deleted successfully";
+									} else {
+										echo "Error deleting record: " . $conn->error;
+									}
+									sleep(0.5);		
+											
+									$sql = "INSERT INTO chaet_hoon (id, hoonname)
+											VALUES ('', '$textcut[1]')";
+													
+									if (mysqli_query($link, $sql)) {
+												echo "New record created successfully";
+									} 
+									else {
+												echo "Error: " . $sql . "<br>" . mysqli_error($link);
+									}
+								}
 								sleep(4);	
-								$link_pic ="https://www.botbottest.club/".$textcut[1]."".$timeframe_chart.".jpg";
-								$messages33 = [	 'type' => 'template',
-													 'altText' => 'test',
-													 'template' => [	'type' => 'buttons', 
-																		'thumbnailImageUrl'=> $link_pic,
-																		'title' => $textcut[1],
-																		'text'  => $textcut[1]." ".$timeframe_chart,
-																		'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'View detail',
-																					'uri'=> $link_pic
-																				]
-																				
-																         ]
-															
-															          ]
-											 
-											 ];
-											 
-									// Make a POST Request to Messaging API to reply to sender
-									$url = 'https://api.line.me/v2/bot/message/reply';
-									$data = [
-										'replyToken' => $replyToken,
-										'messages' => [$messages33]
+								
+								
+								
+								if($textcut[2]=="all")
+								{
+									$messages33 =['type'=> 'template',
+										  'altText'=> 'this is a carousel template',
+										  'template'=> [
+											  'type'=> 'carousel',
+											  'columns'=> [
+															   [
+																'thumbnailImageUrl'=> 'https://www.botbottest.club/doji.jpg',
+																'title'=> 'Doji เบรก high low',
+																'text'=> 'Doji เบรก high low',
+																'actions' => [
+																					[
+																						'type'=> 'uri',
+																						'label'=> 'information',
+																						'uri'=> 'http://linebotjay.herokuapp.com/show_chart.php'
+																					]
+																													
+																			]
+															   ],
+															   [
+																'thumbnailImageUrl'=> 'https://www.botbottest.club/".$textcut[1]."60.jpg',
+																'title'=> 'symbol break high 20 day',
+																'text'=> 'symbol break high 20 day',
+																'actions' => [
+																					[
+																						'type'=> 'uri',
+																						'label'=> 'information',
+																						'uri'=> 'https://www.botbottest.club/".$textcut[1]."60.jpg'
+																					]
+																													
+																			]
+															   ],
+															   [
+																'thumbnailImageUrl'=> 'https://www.botbottest.club/".$textcut[1].".day.jpg',
+																'title'=> 'symbol break high 30 day',
+																'text'=> 'symbol break high 30 day',
+																'actions' => [
+																					[
+																						'type'=> 'uri',
+																						'label'=> 'result',
+																						'uri'=> 'https://www.botbottest.club/".$textcut[1].".day.jpg'
+																					]
+																													
+																			]
+															  ],
+															   [
+																'thumbnailImageUrl'=> 'https://www.botbottest.club/".$textcut[1].".week.jpg',
+																'title'=> 'rsi<30',
+																'text'=> 'rsi<30 เข้าเขต oversold',
+																'actions' => [
+																					[
+																						'type'=> 'uri',
+																						'label'=> 'result',
+																						'uri'=> 'https://www.botbottest.club/".$textcut[1].".week.jpg'
+																					]
+																													
+																			]
+															  ],
+															  [
+																'thumbnailImageUrl'=> 'https://www.botbottest.club/".$textcut[1].".month.jpg',
+																'title'=> 'rsi<35',
+																'text'=> 'rsi<35 กำลังเข้าเขต oversold',
+																'actions' => [
+																					[
+																						'type'=> 'uri',
+																						'label'=> 'result',
+																						'uri'=> 'https://www.botbottest.club/".$textcut[1].".month.jpg'
+																					]
+																													
+																			]
+															  ]
+															  
+															  
+															  
+														]
+													]
 									];
-									$post = json_encode($data);
-									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+								}
+								else
+								{
+									$link_pic ="https://www.botbottest.club/".$textcut[1]."".$timeframe_chart.".jpg";
+									$messages33 = [	 'type' => 'template',
+														 'altText' => 'test',
+														 'template' => [	'type' => 'buttons', 
+																			'thumbnailImageUrl'=> $link_pic,
+																			'title' => $textcut[1],
+																			'text'  => $textcut[1]." ".$timeframe_chart,
+																			'actions' => [
+																					[
+																						'type'=> 'uri',
+																						'label'=> 'View detail',
+																						'uri'=> $link_pic
+																					]
+																					
+																			 ]
+																
+																		  ]
+												 
+												 ];
+								}
+											 
+											 
+											 
+								// Make a POST Request to Messaging API to reply to sender
+								$url = 'https://api.line.me/v2/bot/message/reply';
+								$data = [
+									'replyToken' => $replyToken,
+									'messages' => [$messages33]
+								];
+								$post = json_encode($data);
+								$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 						
-									$ch = curl_init($url);
-									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-									curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-									curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-									curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-									curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-									$result = curl_exec($ch);
-									curl_close($ch);
+								$ch = curl_init($url);
+								curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+								curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+								curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+								curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+								curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+								$result = curl_exec($ch);
+								curl_close($ch);
 							}
 							
 						}
