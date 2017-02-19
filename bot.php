@@ -27,6 +27,7 @@ echo "bbbbb";
 	}
 	
 echo "bbbbb";	
+$check_g="0";
  
 	/*try {
 		
@@ -267,6 +268,7 @@ if (!is_null($events['events'])) {
 					if($textcut[0]=="@g")
 					{
 						$check_day_time="1";
+						$check_g="1";
 						if(preg_match("/^[a-zA-Z0-9.]+$/", $textcut[2]) == 1)
 						{
 							if(preg_match("/^[a-zA-Z]+$/", $textcut[2]) == 1)#timeframe is day month week
@@ -457,7 +459,7 @@ if (!is_null($events['events'])) {
 							}
 							
 						}
-						else if($arr1[0] == "@")
+						else if($arr1[0] == "@" and $check_g=="0")
 						{
 							$hoonname = substr($textcut[0], 1); // cut@
 							if(preg_match("/^[a-zA-Z]+$/", $hoonname[0]) != 1) 
