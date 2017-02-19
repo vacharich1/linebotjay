@@ -391,9 +391,9 @@ if (!is_null($events['events'])) {
 											  'type'=> 'carousel',
 											  'columns'=> [
 															   [
-																'thumbnailImageUrl'=> 'https://www.botbottest.club/doji.jpg',
-																'title'=> 'Doji เบรก high low',
-																'text'=> 'Doji เบรก high low',
+																'thumbnailImageUrl'=> 'http://www.botbottest.club/graph.jpg',
+																'title'=> 'chart',
+																'text'=> '60 day week month',
 																'actions' => [
 																					[
 																						'type'=> 'uri',
