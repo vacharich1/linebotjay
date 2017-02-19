@@ -28,17 +28,17 @@ if (!$link) {
 
 
 
-$sql1 = "SELECT * FROM show_all ORDER BY `hoonname` ASC";
+$sql1 = "SELECT * FROM chart_hoon ORDER BY `hoonname` ASC";
 $result = $link->query($sql1);
 $check_rsi_send="";
 
 if ($result->num_rows > 0) {
 	 while($row = $result->fetch_assoc()) {
 		$hoonn=(string)$row["hoonname"];
-		$uuurl = (string)"https://www.botbottest.club/".$textcut[1]."60.jpg";
-		$uuurl2 = (string)"https://www.botbottest.club/".$textcut[1].".day.jpg";
-		$uuurl3 = (string)"https://www.botbottest.club/".$textcut[1].".week.jpg";
-		$uuurl4 = (string)"https://www.botbottest.club/".$textcut[1].".month.jpg";
+		$uuurl = (string)"https://www.botbottest.club/".$hoonn."60.jpg";
+		$uuurl2 = (string)"https://www.botbottest.club/".$hoonn.".day.jpg";
+		$uuurl3 = (string)"https://www.botbottest.club/".$hoonn.".week.jpg";
+		$uuurl4 = (string)"https://www.botbottest.club/".$hoonn.".month.jpg";
 		echo "<img src='".$uuurl."' /><br />";
 		echo "<img src='".$uuurl2."' /><br />";
 		echo "<img src='".$uuurl3."' /><br />";
