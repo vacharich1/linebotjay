@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
 		$uuurl = (string)"https://www.botbottest.club/".$hoonn."60.jpg";
 		$uuurl2 = (string)"https://www.botbottest.club/".$hoonn.".day.jpg";
 		$uuurl3 = (string)"https://www.botbottest.club/".$hoonn.".week.jpg";
-		$uuurl4 = (string)"https://www.botbottest.club/".$hoonn.".month.jpg";
+		$uuurl4 = (string)"https://www.botbottest.club/".$hoonn."mmm.jpg";
 		echo "<img src='".$uuurl."' /><br />";
 		echo "<br />";
 		echo "<br />";

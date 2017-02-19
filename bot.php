@@ -384,7 +384,7 @@ if (!is_null($events['events'])) {
 									$link_pic60 ="https://www.botbottest.club/".$textcut[1]."60.jpg";
 									$link_picday ="https://www.botbottest.club/".$textcut[1].".day.jpg";
 									$link_picweek ="https://www.botbottest.club/".$textcut[1].".week.jpg";
-									$link_picmonth ="https://www.botbottest.club/".$textcut[1].".month.jpg";
+									$link_picmonth ="https://www.botbottest.club/".$textcut[1]."mmm.jpg";
 									$messages33 =['type'=> 'template',
 										  'altText'=> 'this is a carousel template',
 										  'template'=> [
@@ -464,6 +464,10 @@ if (!is_null($events['events'])) {
 								}
 								else
 								{
+									if($timeframe_chart==".month")
+									{
+											$timeframe_chart="mmm"	;
+									}
 									$link_pic ="https://www.botbottest.club/".$textcut[1]."".$timeframe_chart.".jpg";
 									$messages33 = [	 'type' => 'template',
 														 'altText' => 'test',
