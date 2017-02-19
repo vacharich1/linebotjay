@@ -373,12 +373,13 @@ if (!is_null($events['events'])) {
 												echo "Error: " . $sql . "<br>" . mysqli_error($link);
 									}
 								}
-								sleep(11);	
+									
 								
 								
 								
 								if($textcut[2]=="all")
 								{
+									sleep(13.5);
 									$link_pic60 ="https://www.botbottest.club/".$textcut[1]."60.jpg";
 									$link_picday ="https://www.botbottest.club/".$textcut[1].".day.jpg";
 									$link_picweek ="https://www.botbottest.club/".$textcut[1].".week.jpg";
@@ -462,6 +463,7 @@ if (!is_null($events['events'])) {
 								}
 								else
 								{
+									sleep(3);
 									if($timeframe_chart==".month")
 									{
 											$timeframe_chart="mmm"	;
