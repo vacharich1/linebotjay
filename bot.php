@@ -443,7 +443,7 @@ if (!is_null($events['events'])) {
 																			]
 															  ],
 															  [
-																'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1].".month.jpg",
+																'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1]."mmm.jpg",
 																'title'=> 'chart',
 																'text'=> 'month',
 																'actions' => [
