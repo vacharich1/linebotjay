@@ -263,6 +263,7 @@ if (!is_null($events['events'])) {
 					}
 					if($textcut[0]=="@g")
 					{
+						$check_day_time="1";
 						if(preg_match("/^[a-zA-Z0-9.]+$/", $textcut[2]) == 1)
 						{
 							if(preg_match("/^[a-zA-Z]+$/", $textcut[2]) == 1)#timeframe is day month week
@@ -284,6 +285,7 @@ if (!is_null($events['events'])) {
 								}
 								else#wrong timeframe
 								{
+									$check_day_time="0";
 									$messages556 = ['type' => 'text','text' => "timeframe ไม่ถูกต้อง กรุณากรอกใหม่"];
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
@@ -311,29 +313,32 @@ if (!is_null($events['events'])) {
 								
 							}
 							
-							if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
-									$userid = $event['source']['userId'];	
-							else
-									$userid = $event['source']['groupId'];		
+							if($check_day_time=="1")
+							{
+								if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
+										$userid = $event['source']['userId'];	
+								else
+										$userid = $event['source']['groupId'];		
+											
+								$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
+										VALUES ('', '$textcut[1]', '$timeframe_chart','' ,'$userid', '@g')";
+											
+								if (mysqli_query($link, $sql)) {
+											echo "New record created successfully";
+								} 
+								else {
+											echo "Error: " . $sql . "<br>" . mysqli_error($link);
+								}
 										
-							$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
-									VALUES ('', '$textcut[1]', '$timeframe_chart','' ,'$userid', '@g')";
-										
-							if (mysqli_query($link, $sql)) {
+								$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','check1')";
+								if (mysqli_query($link, $sql)) {
 										echo "New record created successfully";
-							} 
-							else {
+								} 
+								else {
 										echo "Error: " . $sql . "<br>" . mysqli_error($link);
+								}
+								sleep(0.3);	
 							}
-									
-							$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','check1')";
-							if (mysqli_query($link, $sql)) {
-									echo "New record created successfully";
-							} 
-							else {
-									echo "Error: " . $sql . "<br>" . mysqli_error($link);
-							}
-							sleep(0.3);	
 							
 						}
 						else#wrong timeframe
