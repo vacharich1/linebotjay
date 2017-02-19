@@ -128,7 +128,7 @@ if (!is_null($events['events'])) {
 				$count_check_check=0;
 				$text22="";
 				
-				if($text11[0]!="@g")
+				if($arr1[0]!="@g")
 				{
 					if(preg_match("/^[@]+$/", $text11[0]) == 1)
 					{
