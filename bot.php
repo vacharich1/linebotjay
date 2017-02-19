@@ -457,133 +457,147 @@ if (!is_null($events['events'])) {
 						else if($arr1[0] == "@")
 						{
 							$hoonname = substr($textcut[0], 1); // cut@
-							if(preg_match("/^[a-zA-Z]+$/", $hoonname[0]) != 1) 
+							if($textcut[0]!="@g")
 							{
-								$replyToken = $event['replyToken'];
-								$messages556 = ['type' => 'text','text' => "รบกวนพิมอีกครั้งจ๊ะ ต้องไม่มีช่องว่าง ในชื่อหุ้น  @ aot ----> @aot type with no space"];
-								// Make a POST Request to Messaging API to reply to sender
-								#$url = 'https://api.line.me/v2/bot/message/reply';
-								#$data = [
-								#	'replyToken' => $replyToken,
-								#	'messages' => [$messages556]
-								#];
-								#$post = json_encode($data);
-								#$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-					
-								#$ch = curl_init($url);
-								#curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-								#curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-								#curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-								#curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-								#curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-								#$result = curl_exec($ch);
-								#curl_close($ch);	
-							}
-							else
-							{
-								//echo $count_text_cut;
-								
-								$timeframe2="";
-								if($result == 2)
-									$timeframe2 = $textcut[1];
-								else
-									$timeframe2 ="all";
-									
-								$room='1';
-								$timeframe = strtolower($timeframe2);
-								sleep(0.1);
-								if($timeframe !="dy" and $timeframe !="yield" and $timeframe !="pbv" and $timeframe !="pe" and $timeframe !="roe" and $timeframe !="roa" and $timeframe !="assets" and $timeframe !="liabilities" and $timeframe !="equity" and $timeframe !="revenue" and $timeframe !="eps"and $timeframe !="expenses" and $timeframe !="gprofit" and $timeframe !="gpmargin" and $timeframe !="nprofit" and $timeframe !="npm" and $timeframe !="as" and $timeframe !="lb" and $timeframe !="eq" and $timeframe !="rv" and $timeframe !="ex" and $timeframe !="gp" and $timeframe !="gpm" and $timeframe !="np" and $timeframe !="all")
+								if(preg_match("/^[a-zA-Z]+$/", $hoonname[0]) != 1) 
 								{
-									$messages3 = ['type' => 'text','text' => "คำสั่งค้นหาข้อมูลพื้นฐานทั้งหมด\nhoonname xxx โดย xxxคือข้อมูลพื้นฐานที่ต้องการเช่นต้องการ assertของหุ้นaot\n\n พิม aot assert โดยทางเรามีทำตัวย่อไว้คือ as จึงสามารถพิมเป็น \n\n@aot as ก็ได้\nซึ่งได้มีการทำไว้ทั้งหมด 15 ข้อมูล\n1.assets/as\n2.libilities/lb\n3.equity/eq\n4.revenue/rv\n5.eps\n6.expenses/ex\n7.gprofit/gp\n8.gpmargin/gpm\n9.nprofit/np\n10.npm\n11.roa\n12.roe\n13.pe\n14.pbv\n15.yield/dy "];
+									$replyToken = $event['replyToken'];
+									$messages556 = ['type' => 'text','text' => "รบกวนพิมอีกครั้งจ๊ะ ต้องไม่มีช่องว่าง ในชื่อหุ้น  @ aot ----> @aot type with no space"];
+									// Make a POST Request to Messaging API to reply to sender
+									#$url = 'https://api.line.me/v2/bot/message/reply';
+									#$data = [
+									#	'replyToken' => $replyToken,
+									#	'messages' => [$messages556]
+									#];
+									#$post = json_encode($data);
+									#$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 						
-									$url = 'https://api.line.me/v2/bot/message/reply';
-									//$data = [
-									//	'replyToken' => $replyToken,
-									//	'messages' => [$messages3]
-									//];
-									
-	
-										//$post = json_encode($data);
-										//$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-							
-										//$ch = curl_init($url);
-										//curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-										//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-										//curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-										//curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-										//curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-										//$result = curl_exec($ch);
-										//curl_close($ch);
+									#$ch = curl_init($url);
+									#curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+									#curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+									#curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+									#curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+									#curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+									#$result = curl_exec($ch);
+									#curl_close($ch);	
 								}
 								else
 								{
-									if($timeframe =="as")
-									{
-										$timeframe ="assets";
-									}
-									else if($timeframe =="lb")
-										$timeframe ="liabilities";
-									else if($timeframe =="eq")
-										$timeframe ="equity";
-									else if($timeframe =="rv")
-										$timeframe ="revenue";
-									else if($timeframe =="ex")
-										$timeframe ="expenses";
-									else if($timeframe =="gp")
-										$timeframe ="gprofit";
-									else if($timeframe =="gpmargin")
-										$timeframe ="gpm";
-									else if($timeframe =="np")
-										$timeframe ="nprofit";
-									else if($timeframe =="dy")
-										$timeframe ="yield";
-									else if($timeframe =="all")
-										$timeframe ="all";
-										
-									$type="fundamental";
-									$check ="check1";
-									if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
-										$userid = $event['source']['userId'];	
+									//echo $count_text_cut;
+									
+									$timeframe2="";
+									if($result == 2)
+										$timeframe2 = $textcut[1];
 									else
-										$userid = $event['source']['groupId'];		
-									
-									
-									/*$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
-									VALUES ('', '$hoonname', '$timeframe','$replyToken')";
-									
-									if (mysqli_query($link22, $sql)) {
-											echo "New record created successfully";
-									} 
-									else {
-											echo "Error: " . $sql . "<br>" . mysqli_error($link22);
-									}
-									sleep(0.3);
-									$check ="check1";
-									#echo "work code";
-									$sql = "INSERT INTO `check_capture`(`id`, `check1`) VALUES ('','$check')";
-									if (mysqli_query($link22, $sql)) {
-											echo "New record created successfully";
-									} 
-									else {
-											echo "Error: " . $sql . "<br>" . mysqli_error($link22);
-									}*/
-									
-									// Check connection
-									
-									// sql to delete a record
-									if($timeframe =="all")
-									{
-										$sql = "DELETE FROM show_all WHERE 1";
+										$timeframe2 ="all";
 										
-										if ($link->query($sql) === TRUE) {
-											echo "Record deleted successfully";
-										} else {
-											echo "Error deleting record: " . $conn->error;
+									$room='1';
+									$timeframe = strtolower($timeframe2);
+									sleep(0.1);
+									if($timeframe !="dy" and $timeframe !="yield" and $timeframe !="pbv" and $timeframe !="pe" and $timeframe !="roe" and $timeframe !="roa" and $timeframe !="assets" and $timeframe !="liabilities" and $timeframe !="equity" and $timeframe !="revenue" and $timeframe !="eps"and $timeframe !="expenses" and $timeframe !="gprofit" and $timeframe !="gpmargin" and $timeframe !="nprofit" and $timeframe !="npm" and $timeframe !="as" and $timeframe !="lb" and $timeframe !="eq" and $timeframe !="rv" and $timeframe !="ex" and $timeframe !="gp" and $timeframe !="gpm" and $timeframe !="np" and $timeframe !="all")
+									{
+										$messages3 = ['type' => 'text','text' => "คำสั่งค้นหาข้อมูลพื้นฐานทั้งหมด\nhoonname xxx โดย xxxคือข้อมูลพื้นฐานที่ต้องการเช่นต้องการ assertของหุ้นaot\n\n พิม aot assert โดยทางเรามีทำตัวย่อไว้คือ as จึงสามารถพิมเป็น \n\n@aot as ก็ได้\nซึ่งได้มีการทำไว้ทั้งหมด 15 ข้อมูล\n1.assets/as\n2.libilities/lb\n3.equity/eq\n4.revenue/rv\n5.eps\n6.expenses/ex\n7.gprofit/gp\n8.gpmargin/gpm\n9.nprofit/np\n10.npm\n11.roa\n12.roe\n13.pe\n14.pbv\n15.yield/dy "];
+							
+										$url = 'https://api.line.me/v2/bot/message/reply';
+										//$data = [
+										//	'replyToken' => $replyToken,
+										//	'messages' => [$messages3]
+										//];
+										
+		
+											//$post = json_encode($data);
+											//$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+								
+											//$ch = curl_init($url);
+											//curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+											//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+											//curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+											//curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+											//curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+											//$result = curl_exec($ch);
+											//curl_close($ch);
+									}
+									else
+									{
+										if($timeframe =="as")
+										{
+											$timeframe ="assets";
+										}
+										else if($timeframe =="lb")
+											$timeframe ="liabilities";
+										else if($timeframe =="eq")
+											$timeframe ="equity";
+										else if($timeframe =="rv")
+											$timeframe ="revenue";
+										else if($timeframe =="ex")
+											$timeframe ="expenses";
+										else if($timeframe =="gp")
+											$timeframe ="gprofit";
+										else if($timeframe =="gpmargin")
+											$timeframe ="gpm";
+										else if($timeframe =="np")
+											$timeframe ="nprofit";
+										else if($timeframe =="dy")
+											$timeframe ="yield";
+										else if($timeframe =="all")
+											$timeframe ="all";
+											
+										$type="fundamental";
+										$check ="check1";
+										if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
+											$userid = $event['source']['userId'];	
+										else
+											$userid = $event['source']['groupId'];		
+										
+										
+										/*$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
+										VALUES ('', '$hoonname', '$timeframe','$replyToken')";
+										
+										if (mysqli_query($link22, $sql)) {
+												echo "New record created successfully";
+										} 
+										else {
+												echo "Error: " . $sql . "<br>" . mysqli_error($link22);
+										}
+										sleep(0.3);
+										$check ="check1";
+										#echo "work code";
+										$sql = "INSERT INTO `check_capture`(`id`, `check1`) VALUES ('','$check')";
+										if (mysqli_query($link22, $sql)) {
+												echo "New record created successfully";
+										} 
+										else {
+												echo "Error: " . $sql . "<br>" . mysqli_error($link22);
+										}*/
+										
+										// Check connection
+										
+										// sql to delete a record
+										if($timeframe =="all")
+										{
+											$sql = "DELETE FROM show_all WHERE 1";
+											
+											if ($link->query($sql) === TRUE) {
+												echo "Record deleted successfully";
+											} else {
+												echo "Error deleting record: " . $conn->error;
+											}
+											
+											
+											$sql = "INSERT INTO show_all (id, hoonname)
+													VALUES ('', '$hoonname')";
+													
+											if (mysqli_query($link, $sql)) {
+														echo "New record created successfully";
+											} 
+											else {
+														echo "Error: " . $sql . "<br>" . mysqli_error($link);
+											}
 										}
 										
 										
-										$sql = "INSERT INTO show_all (id, hoonname)
-												VALUES ('', '$hoonname')";
+										$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
+												VALUES ('', '$hoonname', '$timeframe','$replyToken' ,'$userid', '$type')";
 												
 										if (mysqli_query($link, $sql)) {
 													echo "New record created successfully";
@@ -591,142 +605,131 @@ if (!is_null($events['events'])) {
 										else {
 													echo "Error: " . $sql . "<br>" . mysqli_error($link);
 										}
-									}
-									
-									
-									$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
-											VALUES ('', '$hoonname', '$timeframe','$replyToken' ,'$userid', '$type')";
-											
-									if (mysqli_query($link, $sql)) {
+										
+										$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
+										if (mysqli_query($link, $sql)) {
 												echo "New record created successfully";
-									} 
-									else {
+										} 
+										else {
 												echo "Error: " . $sql . "<br>" . mysqli_error($link);
-									}
-									
-									$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
-									if (mysqli_query($link, $sql)) {
-											echo "New record created successfully";
-									} 
-									else {
-											echo "Error: " . $sql . "<br>" . mysqli_error($link);
-									}
-									sleep(0.3);
-									
-									$link_pic2 ="https://www.botbottest.club/".$hoonname."eps.jpg";
-									$link_pic1 ="https://www.botbottest.club/".$hoonname."pe.jpg";
-									
-									$messages3 = ['type' => 'text','text' => $text_recieve];
-						
-									$messages1 = ['type' => 'text','text' => "Please wait 8s"];
-									
-									$messages2 = ['type' => 'image',
-											 'originalContentUrl' => $link_pic,
-											 'previewImageUrl' => $link_pic
-									];
-									
-									$messages3 = ['type' => 'text','text' => $link_pic];
-									
-									$messages43 =['type'=> 'template',
-									  'altText'=> 'this is a carousel template',
-									  'template'=> [
-										  'type'=> 'carousel',
-										  'columns'=> [
-										 					 [
-															'thumbnailImageUrl'=> 'https://www.botbottest.club/fun.jpg',
-															'title'=> $hoonname,
-															'text'=> 'pe pbv roe roa pbv eps profit',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'information',
-																					'uri'=> 'https://linebotjay.herokuapp.com/show_pic.php'
-																				]
-																												
-																		]
-														   ],
-										  				   [
-															'thumbnailImageUrl'=> $link_pic1,
-															'title'=> $hoonname,
-															'text'=> 'pe',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'result',
-																					'uri'=> $link_pic1
-																				]
-																												
-																		]
-														  ],
-										  				  [
-															'thumbnailImageUrl'=> $link_pic2,
-															'title'=> $hoonname,
-															'text'=> 'eps',
-															'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'result',
-																					'uri'=> $link_pic2
-																				]
-																												
-																		]
-														  ]
-														  
-														  
-													]
-												]
-											];
-									
-									$messages33 = [	 'type' => 'template',
-													 'altText' => 'test',
-													 'template' => [	'type' => 'buttons', 
-																		'thumbnailImageUrl'=> $link_pic,
-																		'title' => $hoonname,
-																		'text'  => $timeframe,
-																		'actions' => [
-																				[
-																					'type'=> 'uri',
-																					'label'=> 'View detail',
-																					'uri'=> 'https://linebotjay.herokuapp.com/show_pic.php'
-																				]
-																				
-																         ]
-															
-															          ]
-											 
-											 ];
-									if($timeframe =="all")
-									{
-										/*sleep(10);
-										// Make a POST Request to Messaging API to reply to sender
-										$url = 'https://api.line.me/v2/bot/message/reply';
-										$data = [
-											'replyToken' => $replyToken,
-											'messages' => [$messages43]
+										}
+										sleep(0.3);
+										
+										$link_pic2 ="https://www.botbottest.club/".$hoonname."eps.jpg";
+										$link_pic1 ="https://www.botbottest.club/".$hoonname."pe.jpg";
+										
+										$messages3 = ['type' => 'text','text' => $text_recieve];
+							
+										$messages1 = ['type' => 'text','text' => "Please wait 8s"];
+										
+										$messages2 = ['type' => 'image',
+												 'originalContentUrl' => $link_pic,
+												 'previewImageUrl' => $link_pic
 										];
 										
-		
-										    $post = json_encode($data);
-											$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+										$messages3 = ['type' => 'text','text' => $link_pic];
+										
+										$messages43 =['type'=> 'template',
+										  'altText'=> 'this is a carousel template',
+										  'template'=> [
+											  'type'=> 'carousel',
+											  'columns'=> [
+																 [
+																'thumbnailImageUrl'=> 'https://www.botbottest.club/fun.jpg',
+																'title'=> $hoonname,
+																'text'=> 'pe pbv roe roa pbv eps profit',
+																'actions' => [
+																					[
+																						'type'=> 'uri',
+																						'label'=> 'information',
+																						'uri'=> 'https://linebotjay.herokuapp.com/show_pic.php'
+																					]
+																													
+																			]
+															   ],
+															   [
+																'thumbnailImageUrl'=> $link_pic1,
+																'title'=> $hoonname,
+																'text'=> 'pe',
+																'actions' => [
+																					[
+																						'type'=> 'uri',
+																						'label'=> 'result',
+																						'uri'=> $link_pic1
+																					]
+																													
+																			]
+															  ],
+															  [
+																'thumbnailImageUrl'=> $link_pic2,
+																'title'=> $hoonname,
+																'text'=> 'eps',
+																'actions' => [
+																					[
+																						'type'=> 'uri',
+																						'label'=> 'result',
+																						'uri'=> $link_pic2
+																					]
+																													
+																			]
+															  ]
+															  
+															  
+														]
+													]
+												];
+										
+										$messages33 = [	 'type' => 'template',
+														 'altText' => 'test',
+														 'template' => [	'type' => 'buttons', 
+																			'thumbnailImageUrl'=> $link_pic,
+																			'title' => $hoonname,
+																			'text'  => $timeframe,
+																			'actions' => [
+																					[
+																						'type'=> 'uri',
+																						'label'=> 'View detail',
+																						'uri'=> 'https://linebotjay.herokuapp.com/show_pic.php'
+																					]
+																					
+																			 ]
+																
+																		  ]
+												 
+												 ];
+										if($timeframe =="all")
+										{
+											/*sleep(10);
+											// Make a POST Request to Messaging API to reply to sender
+											$url = 'https://api.line.me/v2/bot/message/reply';
+											$data = [
+												'replyToken' => $replyToken,
+												'messages' => [$messages43]
+											];
+											
+			
+												$post = json_encode($data);
+												$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+									
+												$ch = curl_init($url);
+												curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+												curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+												curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+												curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+												curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+												$result = curl_exec($ch);
+												curl_close($ch);*/
+										}
+										
 								
-											$ch = curl_init($url);
-											curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-											curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-											curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-											curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-											curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-											$result = curl_exec($ch);
-											curl_close($ch);*/
-									}
-									
-							
-									
-									
-									
-									#echo "check1";
-									#sleep(10);
-									#echo $result . "\r\n";
-								}#elseloop
+										
+										
+										
+										#echo "check1";
+										#sleep(10);
+										#echo $result . "\r\n";
+									}#elseloop
+								}
 							}
 						}
 						else
