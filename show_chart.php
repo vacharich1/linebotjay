@@ -40,8 +40,14 @@ if ($result->num_rows > 0) {
 		$uuurl3 = (string)"https://www.botbottest.club/".$hoonn.".week.jpg";
 		$uuurl4 = (string)"https://www.botbottest.club/".$hoonn.".month.jpg";
 		echo "<img src='".$uuurl."' /><br />";
+		echo "<br />";
+		echo "<br />";
 		echo "<img src='".$uuurl2."' /><br />";
+		echo "<br />";
+		echo "<br />";
 		echo "<img src='".$uuurl3."' /><br />";
+		echo "<br />";
+		echo "<br />";
 		echo "<img src='".$uuurl4."' /><br />";
 	 }
 }
