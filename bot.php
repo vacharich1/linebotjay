@@ -391,7 +391,7 @@ if (!is_null($events['events'])) {
 											  'type'=> 'carousel',
 											  'columns'=> [
 															   [
-																'thumbnailImageUrl'=> 'https://www.botbottest.club/doji.jpg',
+																'thumbnailImageUrl'=> 'https://www.botbottest.club/graph.jpg',
 																'title'=> 'chart',
 																'text'=> '60 day week month',
 																'actions' => [
