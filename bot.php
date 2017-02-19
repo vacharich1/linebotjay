@@ -342,7 +342,7 @@ if (!is_null($events['events'])) {
 								else {
 										echo "Error: " . $sql . "<br>" . mysqli_error($link);
 								}
-								sleep(3);	
+								sleep(4);	
 								$link_pic ="https://www.botbottest.club/".$textcut[1]."".$timeframe_chart.".jpg";
 								$messages33 = [	 'type' => 'template',
 													 'altText' => 'test',
