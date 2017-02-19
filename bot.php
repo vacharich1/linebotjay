@@ -338,6 +338,24 @@ if (!is_null($events['events'])) {
 										echo "Error: " . $sql . "<br>" . mysqli_error($link);
 								}
 								sleep(0.3);	
+								
+								$messages556 = ['type' => 'text','text' => "coming soon..."];
+								$url = 'https://api.line.me/v2/bot/message/reply';
+								$data = [
+											'replyToken' => $replyToken,
+											'messages' => [$messages556]
+										];
+								$post = json_encode($data);
+								$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+									
+								$ch = curl_init($url);
+								curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+								curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+								curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+								curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+								curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+								$result = curl_exec($ch);
+								curl_close($ch);
 							}
 							
 						}
