@@ -170,9 +170,9 @@ if (!is_null($events['events'])) {
 				$result = count($textcut);
 				if($count==1 || $result >2)
 				{
+					$replyToken = $event['replyToken'];
 					if($textcut[0]=="@>" || $textcut[0]=="@<" || $textcut[0]=="@=" || $textcut[0]=="@de")
 					{
-						$replyToken = $event['replyToken'];
 						$arr1 = str_split($textcut[2]);
 						foreach ($arr1 as $text1) {
 							if(preg_match("/^[a-zA-Z]+$/", $text1) == 1)
@@ -337,7 +337,43 @@ if (!is_null($events['events'])) {
 								else {
 										echo "Error: " . $sql . "<br>" . mysqli_error($link);
 								}
-								sleep(0.3);	
+								sleep(4);	
+								
+								$link_pic ="https://www.botbottest.club/".$textcut[1]."".$timeframe_chart.".jpg";
+								$messages33 = [	 'type' => 'template',
+													 'altText' => 'test',
+													 'template' => [	'type' => 'buttons', 
+																		'thumbnailImageUrl'=> $link_pic,
+																		'title' => $hoonname,
+																		'text'  => $timeframe,
+																		'actions' => [
+																				[
+																					'type'=> 'uri',
+																					'label'=> 'View detail',
+																					'uri'=> 'https://linebotjay.herokuapp.com/show_pic.php'
+																				]
+																				
+																         ]
+															
+															          ]
+											 
+											 ];
+								$url = 'https://api.line.me/v2/bot/message/reply';
+								$data = [
+									'replyToken' => $replyToken,
+									'messages' => [$messages33]
+								];
+								$post = json_encode($data);
+								$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+						
+								$ch = curl_init($url);
+								curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+								curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+								curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+								curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+								curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+								$result = curl_exec($ch);
+								curl_close($ch);
 							}
 							
 						}
