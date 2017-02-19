@@ -381,6 +381,10 @@ if (!is_null($events['events'])) {
 								
 								if($textcut[2]=="all")
 								{
+									$link_pic60 ="https://www.botbottest.club/".$textcut[1]."60.jpg";
+									$link_picday ="https://www.botbottest.club/".$textcut[1].".day.jpg";
+									$link_picweek ="https://www.botbottest.club/".$textcut[1].".week.jpg";
+									$link_picmonth ="https://www.botbottest.club/".$textcut[1].".month.jpg";
 									$messages33 =['type'=> 'template',
 										  'altText'=> 'this is a carousel template',
 										  'template'=> [
@@ -400,53 +404,53 @@ if (!is_null($events['events'])) {
 																			]
 															   ],
 															   [
-																'thumbnailImageUrl'=> 'https://www.botbottest.club/".$textcut[1]."60.jpg',
-																'title'=> 'symbol break high 20 day',
-																'text'=> 'symbol break high 20 day',
+																'thumbnailImageUrl'=> $link_pic60,
+																'title'=> 'chart',
+																'text'=> '60 min',
 																'actions' => [
 																					[
 																						'type'=> 'uri',
 																						'label'=> 'information',
-																						'uri'=> 'https://www.botbottest.club/".$textcut[1]."60.jpg'
+																						'uri'=> $link_pic60
 																					]
 																													
 																			]
 															   ],
 															   [
-																'thumbnailImageUrl'=> 'https://www.botbottest.club/".$textcut[1].".day.jpg',
-																'title'=> 'symbol break high 30 day',
-																'text'=> 'symbol break high 30 day',
+																'thumbnailImageUrl'=> $link_picday,
+																'title'=> 'chart',
+																'text'=> 'day',
 																'actions' => [
 																					[
 																						'type'=> 'uri',
 																						'label'=> 'result',
-																						'uri'=> 'https://www.botbottest.club/".$textcut[1].".day.jpg'
+																						'uri'=> $link_picday
 																					]
 																													
 																			]
 															  ],
 															   [
-																'thumbnailImageUrl'=> 'https://www.botbottest.club/".$textcut[1].".week.jpg',
-																'title'=> 'rsi<30',
-																'text'=> 'rsi<30 เข้าเขต oversold',
+																'thumbnailImageUrl'=> $link_picweek,
+																'title'=> 'chart',
+																'text'=> 'week',
 																'actions' => [
 																					[
 																						'type'=> 'uri',
 																						'label'=> 'result',
-																						'uri'=> 'https://www.botbottest.club/".$textcut[1].".week.jpg'
+																						'uri'=> $link_picweek
 																					]
 																													
 																			]
 															  ],
 															  [
-																'thumbnailImageUrl'=> 'https://www.botbottest.club/".$textcut[1].".month.jpg',
-																'title'=> 'rsi<35',
-																'text'=> 'rsi<35 กำลังเข้าเขต oversold',
+																'thumbnailImageUrl'=> $link_picmonth,
+																'title'=> 'chart',
+																'text'=> 'month',
 																'actions' => [
 																					[
 																						'type'=> 'uri',
 																						'label'=> 'result',
-																						'uri'=> 'https://www.botbottest.club/".$textcut[1].".month.jpg'
+																						'uri'=> $link_picmonth
 																					]
 																													
 																			]
