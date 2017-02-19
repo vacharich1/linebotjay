@@ -343,18 +343,18 @@ if (!is_null($events['events'])) {
 										echo "Error: " . $sql . "<br>" . mysqli_error($link);
 								}
 								sleep(3);	
-								
+								$link_pic ="https://www.botbottest.club/".$textcut[1]."".$textcut[2].".jpg";
 								$messages33 = [	 'type' => 'template',
 													 'altText' => 'test',
 													 'template' => [	'type' => 'buttons', 
-																		'thumbnailImageUrl'=> "https://www.botbottest.club/doji.jpg",
+																		'thumbnailImageUrl'=> $link_pic,
 																		'title' => 'Doji',
 																		'text'  => 'Doji',
 																		'actions' => [
 																				[
 																					'type'=> 'uri',
 																					'label'=> 'View detail',
-																					'uri'=> 'http://linebotjay.herokuapp.com/doji.php'
+																					'uri'=> $link_pic
 																				]
 																				
 																         ]
