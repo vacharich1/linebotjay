@@ -588,6 +588,7 @@ if (!is_null($events['events'])) {
 									$link_picday ="https://www.botbottest.club/".$textcut[1].".day.jpg";
 									$link_picweek ="https://www.botbottest.club/".$textcut[1].".week.jpg";
 									$link_picmonth ="https://www.botbottest.club/".$textcut[1]."mmm.jpg";
+									$name=$textcut[1];
 									$messages33 =['type'=> 'template',
 										  'altText'=> 'this is a carousel template',
 										  'template'=> [
@@ -595,7 +596,7 @@ if (!is_null($events['events'])) {
 											  'columns'=> [
 															   [
 																'thumbnailImageUrl'=> 'https://www.botbottest.club/graph.jpg',
-																'title'=> 'chart',
+																'title'=> $name,
 																'text'=> '60 day week month',
 																'actions' => [
 																					[
@@ -608,7 +609,7 @@ if (!is_null($events['events'])) {
 															   ],
 															   [
 																'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1]."60.jpg",
-																'title'=> 'chart',
+																'title'=> $name,
 																'text'=> '60 min',
 																'actions' => [
 																					[
@@ -621,7 +622,7 @@ if (!is_null($events['events'])) {
 															   ],
 															   [
 																'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1].".day.jpg",
-																'title'=> 'chart',
+																'title'=> $name,
 																'text'=> 'day',
 																'actions' => [
 																					[
@@ -634,7 +635,7 @@ if (!is_null($events['events'])) {
 															  ],
 															   [
 																'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1].".week.jpg",
-																'title'=> 'chart',
+																'title'=> $name,
 																'text'=> 'week',
 																'actions' => [
 																					[
@@ -647,7 +648,7 @@ if (!is_null($events['events'])) {
 															  ],
 															  [
 																'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1]."mmm.jpg",
-																'title'=> 'chart',
+																'title'=> $name,
 																'text'=> 'month',
 																'actions' => [
 																					[
