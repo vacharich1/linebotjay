@@ -439,7 +439,7 @@ if (!is_null($events['events'])) {
 										sleep(0.5);		
 												
 										$sql = "INSERT INTO check_graph (id, database_choose)
-												VALUES ('', '0')";
+												VALUES ('', '2')";
 														
 										if (mysqli_query($link, $sql)) {
 													echo "New record created successfully";
@@ -448,6 +448,132 @@ if (!is_null($events['events'])) {
 													echo "Error: " . $sql . "<br>" . mysqli_error($link);
 										}
 										$link_picall ='http://linebotjay.herokuapp.com/show_chart1.php';
+										
+									}
+									else if($chart_choose=="2")
+									{
+										$sql = "DELETE FROM chart_hoon2 WHERE 1";
+												
+										if ($link->query($sql) === TRUE) {
+											echo "Record deleted successfully";
+										} else {
+											echo "Error deleting record: " . $conn->error;
+										}
+										sleep(0.5);		
+												
+										$sql = "INSERT INTO chart_hoon2 (id, hoonname)
+												VALUES ('', '$textcut[1]')";
+														
+										if (mysqli_query($link, $sql)) {
+													echo "New record created successfully";
+										} 
+										else {
+													echo "Error: " . $sql . "<br>" . mysqli_error($link);
+										}
+										
+										$sql = "DELETE FROM check_graph WHERE 1";
+												
+										if ($link->query($sql) === TRUE) {
+											echo "Record deleted successfully";
+										} else {
+											echo "Error deleting record: " . $conn->error;
+										}
+										sleep(0.5);		
+												
+										$sql = "INSERT INTO check_graph (id, database_choose)
+												VALUES ('', '3')";
+														
+										if (mysqli_query($link, $sql)) {
+													echo "New record created successfully";
+										} 
+										else {
+													echo "Error: " . $sql . "<br>" . mysqli_error($link);
+										}
+										$link_picall ='http://linebotjay.herokuapp.com/show_chart2.php';
+										
+									}
+									else if($chart_choose=="3")
+									{
+										$sql = "DELETE FROM chart_hoon3 WHERE 1";
+												
+										if ($link->query($sql) === TRUE) {
+											echo "Record deleted successfully";
+										} else {
+											echo "Error deleting record: " . $conn->error;
+										}
+										sleep(0.5);		
+												
+										$sql = "INSERT INTO chart_hoon3 (id, hoonname)
+												VALUES ('', '$textcut[1]')";
+														
+										if (mysqli_query($link, $sql)) {
+													echo "New record created successfully";
+										} 
+										else {
+													echo "Error: " . $sql . "<br>" . mysqli_error($link);
+										}
+										
+										$sql = "DELETE FROM check_graph WHERE 1";
+												
+										if ($link->query($sql) === TRUE) {
+											echo "Record deleted successfully";
+										} else {
+											echo "Error deleting record: " . $conn->error;
+										}
+										sleep(0.5);		
+												
+										$sql = "INSERT INTO check_graph (id, database_choose)
+												VALUES ('', '4')";
+														
+										if (mysqli_query($link, $sql)) {
+													echo "New record created successfully";
+										} 
+										else {
+													echo "Error: " . $sql . "<br>" . mysqli_error($link);
+										}
+										$link_picall ='http://linebotjay.herokuapp.com/show_chart3.php';
+										
+									}
+									else if($chart_choose=="4")
+									{
+										$sql = "DELETE FROM chart_hoon4 WHERE 1";
+												
+										if ($link->query($sql) === TRUE) {
+											echo "Record deleted successfully";
+										} else {
+											echo "Error deleting record: " . $conn->error;
+										}
+										sleep(0.5);		
+												
+										$sql = "INSERT INTO chart_hoon4 (id, hoonname)
+												VALUES ('', '$textcut[1]')";
+														
+										if (mysqli_query($link, $sql)) {
+													echo "New record created successfully";
+										} 
+										else {
+													echo "Error: " . $sql . "<br>" . mysqli_error($link);
+										}
+										
+										$sql = "DELETE FROM check_graph WHERE 1";
+												
+										if ($link->query($sql) === TRUE) {
+											echo "Record deleted successfully";
+										} else {
+											echo "Error deleting record: " . $conn->error;
+										}
+										sleep(0.5);		
+												
+										$sql = "INSERT INTO check_graph (id, database_choose)
+												VALUES ('', '0')";
+														
+										if (mysqli_query($link, $sql)) {
+													echo "New record created successfully";
+										} 
+										else {
+													echo "Error: " . $sql . "<br>" . mysqli_error($link);
+										}
+										$link_picall ='http://linebotjay.herokuapp.com/show_chart4.php';
 										
 									}
 								}
