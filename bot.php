@@ -275,43 +275,438 @@ if (!is_null($events['events'])) {
 					}
 					if($textcut[0]=="@g")
 					{
-						$check_day_time="1";
-						$check_g="1";
-						if(preg_match("/^[a-zA-Z0-9.]+$/", $textcut[2]) == 1)
+						if($event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
 						{
-							if(preg_match("/^[a-zA-Z]+$/", $textcut[2]) == 1)#timeframe is day month week
+							$check_day_time="1";
+							$check_g="1";
+							if(preg_match("/^[a-zA-Z0-9.]+$/", $textcut[2]) == 1)
 							{
-								if($textcut[2]=="d" || $textcut[2]=="day" || $textcut[2]=="w" || $textcut[2]=="week" || $textcut[2]=="m" || $textcut[2]=="month" || $textcut[2]=="all")
+								if(preg_match("/^[a-zA-Z]+$/", $textcut[2]) == 1)#timeframe is day month week
 								{
-									if($textcut[2]=="d" || $textcut[2]=="day")
+									if($textcut[2]=="d" || $textcut[2]=="day" || $textcut[2]=="w" || $textcut[2]=="week" || $textcut[2]=="m" || $textcut[2]=="month" || $textcut[2]=="all")
 									{
-										$timeframe_chart=".day";
+										if($textcut[2]=="d" || $textcut[2]=="day")
+										{
+											$timeframe_chart=".day";
+										}
+										else if($textcut[2]=="w" || $textcut[2]=="week")
+										{
+											$timeframe_chart=".week";
+										}
+										else if($textcut[2]=="m" || $textcut[2]=="month")
+										{
+											$timeframe_chart=".month";
+										}
+										else if($textcut[2]=="all")
+										{
+											$timeframe_chart="all";
+										}
 									}
-									else if($textcut[2]=="w" || $textcut[2]=="week")
+									else#wrong timeframe
 									{
-										$timeframe_chart=".week";
-									}
-									else if($textcut[2]=="m" || $textcut[2]=="month")
-									{
-										$timeframe_chart=".month";
-									}
-									else if($textcut[2]=="all")
-									{
-										$timeframe_chart="all";
+										$check_day_time="0";
+										$messages556 = ['type' => 'text','text' => "timeframe ไม่ถูกต้อง กรุณากรอกใหม่"];
+										$url = 'https://api.line.me/v2/bot/message/reply';
+										$data = [
+													'replyToken' => $replyToken,
+													'messages' => [$messages556]
+												];
+										$post = json_encode($data);
+										$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+									
+										$ch = curl_init($url);
+										curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+										curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+										curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+										curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+										curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+										$result = curl_exec($ch);
+										curl_close($ch);
+										
 									}
 								}
-								else#wrong timeframe
+								else#timeframe is number
 								{
-									$check_day_time="0";
-									$messages556 = ['type' => 'text','text' => "timeframe ไม่ถูกต้อง กรุณากรอกใหม่"];
+									$timeframe_chart=$textcut[2];
+								}
+								
+								if($check_day_time=="1")
+								{
+									$link_picall ='http://linebotjay.herokuapp.com/show_chart.php';
+									if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
+											$userid = $event['source']['userId'];	
+									else
+											$userid = $event['source']['groupId'];	
+											
+											
+									$sql1 = "SELECT * FROM check_graph WHERE 1";
+									$result = $link->query($sql1);
+									$check_rsi_send="";
+									$chart_choose="0";
+									if ($result->num_rows > 0) {
+										 while($row = $result->fetch_assoc()) {
+											$chart_choose=(string)$row["database_choose"];
+											
+										 }
+									}	
+												
+									$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
+											VALUES ('', '$textcut[1]', '$timeframe_chart','' ,'$userid', '@g')";
+												
+									if (mysqli_query($link, $sql)) {
+												echo "New record created successfully";
+									} 
+									else {
+												echo "Error: " . $sql . "<br>" . mysqli_error($link);
+									}
+											
+									$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','check1')";
+									if (mysqli_query($link, $sql)) {
+											echo "New record created successfully";
+									} 
+									else {
+											echo "Error: " . $sql . "<br>" . mysqli_error($link);
+									}
+									if($textcut[2]=="all")
+									{
+										if($chart_choose=="0")
+										{
+											$sql = "DELETE FROM chart_hoon WHERE 1";
+													
+											if ($link->query($sql) === TRUE) {
+												echo "Record deleted successfully";
+											} else {
+												echo "Error deleting record: " . $conn->error;
+											}
+											sleep(0.5);		
+													
+											$sql = "INSERT INTO chart_hoon (id, hoonname)
+													VALUES ('', '$textcut[1]')";
+															
+											if (mysqli_query($link, $sql)) {
+														echo "New record created successfully";
+											} 
+											else {
+														echo "Error: " . $sql . "<br>" . mysqli_error($link);
+											}
+											
+											$sql = "DELETE FROM check_graph WHERE 1";
+													
+											if ($link->query($sql) === TRUE) {
+												echo "Record deleted successfully";
+											} else {
+												echo "Error deleting record: " . $conn->error;
+											}
+											sleep(0.5);		
+													
+											$sql = "INSERT INTO check_graph (id, database_choose)
+													VALUES ('', '1')";
+															
+											if (mysqli_query($link, $sql)) {
+														echo "New record created successfully";
+											} 
+											else {
+														echo "Error: " . $sql . "<br>" . mysqli_error($link);
+											}
+											$link_picall ='http://linebotjay.herokuapp.com/show_chart.php';
+										}
+										else if($chart_choose=="1")
+										{
+											$sql = "DELETE FROM chart_hoon1 WHERE 1";
+													
+											if ($link->query($sql) === TRUE) {
+												echo "Record deleted successfully";
+											} else {
+												echo "Error deleting record: " . $conn->error;
+											}
+											sleep(0.5);		
+													
+											$sql = "INSERT INTO chart_hoon1 (id, hoonname)
+													VALUES ('', '$textcut[1]')";
+															
+											if (mysqli_query($link, $sql)) {
+														echo "New record created successfully";
+											} 
+											else {
+														echo "Error: " . $sql . "<br>" . mysqli_error($link);
+											}
+											
+											$sql = "DELETE FROM check_graph WHERE 1";
+													
+											if ($link->query($sql) === TRUE) {
+												echo "Record deleted successfully";
+											} else {
+												echo "Error deleting record: " . $conn->error;
+											}
+											sleep(0.5);		
+													
+											$sql = "INSERT INTO check_graph (id, database_choose)
+													VALUES ('', '2')";
+															
+											if (mysqli_query($link, $sql)) {
+														echo "New record created successfully";
+											} 
+											else {
+														echo "Error: " . $sql . "<br>" . mysqli_error($link);
+											}
+											$link_picall ='http://linebotjay.herokuapp.com/show_chart1.php';
+											
+										}
+										else if($chart_choose=="2")
+										{
+											$sql = "DELETE FROM chart_hoon2 WHERE 1";
+													
+											if ($link->query($sql) === TRUE) {
+												echo "Record deleted successfully";
+											} else {
+												echo "Error deleting record: " . $conn->error;
+											}
+											sleep(0.5);		
+													
+											$sql = "INSERT INTO chart_hoon2 (id, hoonname)
+													VALUES ('', '$textcut[1]')";
+															
+											if (mysqli_query($link, $sql)) {
+														echo "New record created successfully";
+											} 
+											else {
+														echo "Error: " . $sql . "<br>" . mysqli_error($link);
+											}
+											
+											$sql = "DELETE FROM check_graph WHERE 1";
+													
+											if ($link->query($sql) === TRUE) {
+												echo "Record deleted successfully";
+											} else {
+												echo "Error deleting record: " . $conn->error;
+											}
+											sleep(0.5);		
+													
+											$sql = "INSERT INTO check_graph (id, database_choose)
+													VALUES ('', '3')";
+															
+											if (mysqli_query($link, $sql)) {
+														echo "New record created successfully";
+											} 
+											else {
+														echo "Error: " . $sql . "<br>" . mysqli_error($link);
+											}
+											$link_picall ='http://linebotjay.herokuapp.com/show_chart2.php';
+											
+										}
+										else if($chart_choose=="3")
+										{
+											$sql = "DELETE FROM chart_hoon3 WHERE 1";
+													
+											if ($link->query($sql) === TRUE) {
+												echo "Record deleted successfully";
+											} else {
+												echo "Error deleting record: " . $conn->error;
+											}
+											sleep(0.5);		
+													
+											$sql = "INSERT INTO chart_hoon3 (id, hoonname)
+													VALUES ('', '$textcut[1]')";
+															
+											if (mysqli_query($link, $sql)) {
+														echo "New record created successfully";
+											} 
+											else {
+														echo "Error: " . $sql . "<br>" . mysqli_error($link);
+											}
+											
+											$sql = "DELETE FROM check_graph WHERE 1";
+													
+											if ($link->query($sql) === TRUE) {
+												echo "Record deleted successfully";
+											} else {
+												echo "Error deleting record: " . $conn->error;
+											}
+											sleep(0.5);		
+													
+											$sql = "INSERT INTO check_graph (id, database_choose)
+													VALUES ('', '4')";
+															
+											if (mysqli_query($link, $sql)) {
+														echo "New record created successfully";
+											} 
+											else {
+														echo "Error: " . $sql . "<br>" . mysqli_error($link);
+											}
+											$link_picall ='http://linebotjay.herokuapp.com/show_chart3.php';
+											
+										}
+										else if($chart_choose=="4")
+										{
+											$sql = "DELETE FROM chart_hoon4 WHERE 1";
+													
+											if ($link->query($sql) === TRUE) {
+												echo "Record deleted successfully";
+											} else {
+												echo "Error deleting record: " . $conn->error;
+											}
+											sleep(0.5);		
+													
+											$sql = "INSERT INTO chart_hoon4 (id, hoonname)
+													VALUES ('', '$textcut[1]')";
+															
+											if (mysqli_query($link, $sql)) {
+														echo "New record created successfully";
+											} 
+											else {
+														echo "Error: " . $sql . "<br>" . mysqli_error($link);
+											}
+											
+											$sql = "DELETE FROM check_graph WHERE 1";
+													
+											if ($link->query($sql) === TRUE) {
+												echo "Record deleted successfully";
+											} else {
+												echo "Error deleting record: " . $conn->error;
+											}
+											sleep(0.5);		
+													
+											$sql = "INSERT INTO check_graph (id, database_choose)
+													VALUES ('', '0')";
+															
+											if (mysqli_query($link, $sql)) {
+														echo "New record created successfully";
+											} 
+											else {
+														echo "Error: " . $sql . "<br>" . mysqli_error($link);
+											}
+											$link_picall ='http://linebotjay.herokuapp.com/show_chart4.php';
+											
+										}
+									}
+										
+									
+									
+									
+									if($textcut[2]=="all")
+									{
+										sleep(13.5);
+										$link_pic60 ="https://www.botbottest.club/".$textcut[1]."60.jpg";
+										$link_picday ="https://www.botbottest.club/".$textcut[1].".day.jpg";
+										$link_picweek ="https://www.botbottest.club/".$textcut[1].".week.jpg";
+										$link_picmonth ="https://www.botbottest.club/".$textcut[1]."mmm.jpg";
+										$name=$textcut[1];
+										$messages33 =['type'=> 'template',
+											  'altText'=> 'this is a carousel template',
+											  'template'=> [
+												  'type'=> 'carousel',
+												  'columns'=> [
+																   [
+																	'thumbnailImageUrl'=> 'https://www.botbottest.club/graph.jpg',
+																	'title'=> $name,
+																	'text'=> '60 day week month',
+																	'actions' => [
+																						[
+																							'type'=> 'uri',
+																							'label'=> 'information',
+																							'uri'=> $link_picall
+																						]
+																														
+																				]
+																   ],
+																   [
+																	'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1]."60.jpg",
+																	'title'=> $name,
+																	'text'=> '60 min',
+																	'actions' => [
+																						[
+																							'type'=> 'uri',
+																							'label'=> 'information',
+																							'uri'=> $link_pic60
+																						]
+																														
+																				]
+																   ],
+																   [
+																	'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1].".day.jpg",
+																	'title'=> $name,
+																	'text'=> 'day',
+																	'actions' => [
+																						[
+																							'type'=> 'uri',
+																							'label'=> 'result',
+																							'uri'=> $link_picday
+																						]
+																														
+																				]
+																  ],
+																   [
+																	'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1].".week.jpg",
+																	'title'=> $name,
+																	'text'=> 'week',
+																	'actions' => [
+																						[
+																							'type'=> 'uri',
+																							'label'=> 'result',
+																							'uri'=> $link_picweek
+																						]
+																														
+																				]
+																  ],
+																  [
+																	'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1]."mmm.jpg",
+																	'title'=> $name,
+																	'text'=> 'month',
+																	'actions' => [
+																						[
+																							'type'=> 'uri',
+																							'label'=> 'result',
+																							'uri'=> $link_picmonth
+																						]
+																														
+																				]
+																  ]
+																  
+																  
+																  
+															]
+														]
+										];
+									}
+									else
+									{
+										sleep(3);
+										if($timeframe_chart==".month")
+										{
+												$timeframe_chart="mmm"	;
+										}
+										$link_pic ="https://www.botbottest.club/".$textcut[1]."".$timeframe_chart.".jpg";
+										$messages33 = [	 'type' => 'template',
+															 'altText' => 'test',
+															 'template' => [	'type' => 'buttons', 
+																				'thumbnailImageUrl'=> $link_pic,
+																				'title' => $textcut[1],
+																				'text'  => $textcut[1]." ".$timeframe_chart,
+																				'actions' => [
+																						[
+																							'type'=> 'uri',
+																							'label'=> 'View detail',
+																							'uri'=> $link_pic
+																						]
+																						
+																				 ]
+																	
+																			  ]
+													 
+													 ];
+									}
+												 
+												 
+												 
+									// Make a POST Request to Messaging API to reply to sender
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
-												'replyToken' => $replyToken,
-												'messages' => [$messages556]
-											];
+										'replyToken' => $replyToken,
+										'messages' => [$messages33]
+									];
 									$post = json_encode($data);
 									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-								
+							
 									$ch = curl_init($url);
 									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 									curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -320,399 +715,7 @@ if (!is_null($events['events'])) {
 									curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 									$result = curl_exec($ch);
 									curl_close($ch);
-									
 								}
-							}
-							else#timeframe is number
-							{
-								$timeframe_chart=$textcut[2];
-							}
-							
-							if($check_day_time=="1")
-							{
-								$link_picall ='http://linebotjay.herokuapp.com/show_chart.php';
-								if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
-										$userid = $event['source']['userId'];	
-								else
-										$userid = $event['source']['groupId'];	
-										
-										
-								$sql1 = "SELECT * FROM check_graph WHERE 1";
-								$result = $link->query($sql1);
-								$check_rsi_send="";
-								$chart_choose="0";
-								if ($result->num_rows > 0) {
-									 while($row = $result->fetch_assoc()) {
-										$chart_choose=(string)$row["database_choose"];
-										
-									 }
-								}	
-											
-								$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
-										VALUES ('', '$textcut[1]', '$timeframe_chart','' ,'$userid', '@g')";
-											
-								if (mysqli_query($link, $sql)) {
-											echo "New record created successfully";
-								} 
-								else {
-											echo "Error: " . $sql . "<br>" . mysqli_error($link);
-								}
-										
-								$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','check1')";
-								if (mysqli_query($link, $sql)) {
-										echo "New record created successfully";
-								} 
-								else {
-										echo "Error: " . $sql . "<br>" . mysqli_error($link);
-								}
-								if($textcut[2]=="all")
-								{
-									if($chart_choose=="0")
-									{
-										$sql = "DELETE FROM chart_hoon WHERE 1";
-												
-										if ($link->query($sql) === TRUE) {
-											echo "Record deleted successfully";
-										} else {
-											echo "Error deleting record: " . $conn->error;
-										}
-										sleep(0.5);		
-												
-										$sql = "INSERT INTO chart_hoon (id, hoonname)
-												VALUES ('', '$textcut[1]')";
-														
-										if (mysqli_query($link, $sql)) {
-													echo "New record created successfully";
-										} 
-										else {
-													echo "Error: " . $sql . "<br>" . mysqli_error($link);
-										}
-										
-										$sql = "DELETE FROM check_graph WHERE 1";
-												
-										if ($link->query($sql) === TRUE) {
-											echo "Record deleted successfully";
-										} else {
-											echo "Error deleting record: " . $conn->error;
-										}
-										sleep(0.5);		
-												
-										$sql = "INSERT INTO check_graph (id, database_choose)
-												VALUES ('', '1')";
-														
-										if (mysqli_query($link, $sql)) {
-													echo "New record created successfully";
-										} 
-										else {
-													echo "Error: " . $sql . "<br>" . mysqli_error($link);
-										}
-										$link_picall ='http://linebotjay.herokuapp.com/show_chart.php';
-									}
-									else if($chart_choose=="1")
-									{
-										$sql = "DELETE FROM chart_hoon1 WHERE 1";
-												
-										if ($link->query($sql) === TRUE) {
-											echo "Record deleted successfully";
-										} else {
-											echo "Error deleting record: " . $conn->error;
-										}
-										sleep(0.5);		
-												
-										$sql = "INSERT INTO chart_hoon1 (id, hoonname)
-												VALUES ('', '$textcut[1]')";
-														
-										if (mysqli_query($link, $sql)) {
-													echo "New record created successfully";
-										} 
-										else {
-													echo "Error: " . $sql . "<br>" . mysqli_error($link);
-										}
-										
-										$sql = "DELETE FROM check_graph WHERE 1";
-												
-										if ($link->query($sql) === TRUE) {
-											echo "Record deleted successfully";
-										} else {
-											echo "Error deleting record: " . $conn->error;
-										}
-										sleep(0.5);		
-												
-										$sql = "INSERT INTO check_graph (id, database_choose)
-												VALUES ('', '2')";
-														
-										if (mysqli_query($link, $sql)) {
-													echo "New record created successfully";
-										} 
-										else {
-													echo "Error: " . $sql . "<br>" . mysqli_error($link);
-										}
-										$link_picall ='http://linebotjay.herokuapp.com/show_chart1.php';
-										
-									}
-									else if($chart_choose=="2")
-									{
-										$sql = "DELETE FROM chart_hoon2 WHERE 1";
-												
-										if ($link->query($sql) === TRUE) {
-											echo "Record deleted successfully";
-										} else {
-											echo "Error deleting record: " . $conn->error;
-										}
-										sleep(0.5);		
-												
-										$sql = "INSERT INTO chart_hoon2 (id, hoonname)
-												VALUES ('', '$textcut[1]')";
-														
-										if (mysqli_query($link, $sql)) {
-													echo "New record created successfully";
-										} 
-										else {
-													echo "Error: " . $sql . "<br>" . mysqli_error($link);
-										}
-										
-										$sql = "DELETE FROM check_graph WHERE 1";
-												
-										if ($link->query($sql) === TRUE) {
-											echo "Record deleted successfully";
-										} else {
-											echo "Error deleting record: " . $conn->error;
-										}
-										sleep(0.5);		
-												
-										$sql = "INSERT INTO check_graph (id, database_choose)
-												VALUES ('', '3')";
-														
-										if (mysqli_query($link, $sql)) {
-													echo "New record created successfully";
-										} 
-										else {
-													echo "Error: " . $sql . "<br>" . mysqli_error($link);
-										}
-										$link_picall ='http://linebotjay.herokuapp.com/show_chart2.php';
-										
-									}
-									else if($chart_choose=="3")
-									{
-										$sql = "DELETE FROM chart_hoon3 WHERE 1";
-												
-										if ($link->query($sql) === TRUE) {
-											echo "Record deleted successfully";
-										} else {
-											echo "Error deleting record: " . $conn->error;
-										}
-										sleep(0.5);		
-												
-										$sql = "INSERT INTO chart_hoon3 (id, hoonname)
-												VALUES ('', '$textcut[1]')";
-														
-										if (mysqli_query($link, $sql)) {
-													echo "New record created successfully";
-										} 
-										else {
-													echo "Error: " . $sql . "<br>" . mysqli_error($link);
-										}
-										
-										$sql = "DELETE FROM check_graph WHERE 1";
-												
-										if ($link->query($sql) === TRUE) {
-											echo "Record deleted successfully";
-										} else {
-											echo "Error deleting record: " . $conn->error;
-										}
-										sleep(0.5);		
-												
-										$sql = "INSERT INTO check_graph (id, database_choose)
-												VALUES ('', '4')";
-														
-										if (mysqli_query($link, $sql)) {
-													echo "New record created successfully";
-										} 
-										else {
-													echo "Error: " . $sql . "<br>" . mysqli_error($link);
-										}
-										$link_picall ='http://linebotjay.herokuapp.com/show_chart3.php';
-										
-									}
-									else if($chart_choose=="4")
-									{
-										$sql = "DELETE FROM chart_hoon4 WHERE 1";
-												
-										if ($link->query($sql) === TRUE) {
-											echo "Record deleted successfully";
-										} else {
-											echo "Error deleting record: " . $conn->error;
-										}
-										sleep(0.5);		
-												
-										$sql = "INSERT INTO chart_hoon4 (id, hoonname)
-												VALUES ('', '$textcut[1]')";
-														
-										if (mysqli_query($link, $sql)) {
-													echo "New record created successfully";
-										} 
-										else {
-													echo "Error: " . $sql . "<br>" . mysqli_error($link);
-										}
-										
-										$sql = "DELETE FROM check_graph WHERE 1";
-												
-										if ($link->query($sql) === TRUE) {
-											echo "Record deleted successfully";
-										} else {
-											echo "Error deleting record: " . $conn->error;
-										}
-										sleep(0.5);		
-												
-										$sql = "INSERT INTO check_graph (id, database_choose)
-												VALUES ('', '0')";
-														
-										if (mysqli_query($link, $sql)) {
-													echo "New record created successfully";
-										} 
-										else {
-													echo "Error: " . $sql . "<br>" . mysqli_error($link);
-										}
-										$link_picall ='http://linebotjay.herokuapp.com/show_chart4.php';
-										
-									}
-								}
-									
-								
-								
-								
-								if($textcut[2]=="all")
-								{
-									sleep(13.5);
-									$link_pic60 ="https://www.botbottest.club/".$textcut[1]."60.jpg";
-									$link_picday ="https://www.botbottest.club/".$textcut[1].".day.jpg";
-									$link_picweek ="https://www.botbottest.club/".$textcut[1].".week.jpg";
-									$link_picmonth ="https://www.botbottest.club/".$textcut[1]."mmm.jpg";
-									$name=$textcut[1];
-									$messages33 =['type'=> 'template',
-										  'altText'=> 'this is a carousel template',
-										  'template'=> [
-											  'type'=> 'carousel',
-											  'columns'=> [
-															   [
-																'thumbnailImageUrl'=> 'https://www.botbottest.club/graph.jpg',
-																'title'=> $name,
-																'text'=> '60 day week month',
-																'actions' => [
-																					[
-																						'type'=> 'uri',
-																						'label'=> 'information',
-																						'uri'=> $link_picall
-																					]
-																													
-																			]
-															   ],
-															   [
-																'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1]."60.jpg",
-																'title'=> $name,
-																'text'=> '60 min',
-																'actions' => [
-																					[
-																						'type'=> 'uri',
-																						'label'=> 'information',
-																						'uri'=> $link_pic60
-																					]
-																													
-																			]
-															   ],
-															   [
-																'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1].".day.jpg",
-																'title'=> $name,
-																'text'=> 'day',
-																'actions' => [
-																					[
-																						'type'=> 'uri',
-																						'label'=> 'result',
-																						'uri'=> $link_picday
-																					]
-																													
-																			]
-															  ],
-															   [
-																'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1].".week.jpg",
-																'title'=> $name,
-																'text'=> 'week',
-																'actions' => [
-																					[
-																						'type'=> 'uri',
-																						'label'=> 'result',
-																						'uri'=> $link_picweek
-																					]
-																													
-																			]
-															  ],
-															  [
-																'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1]."mmm.jpg",
-																'title'=> $name,
-																'text'=> 'month',
-																'actions' => [
-																					[
-																						'type'=> 'uri',
-																						'label'=> 'result',
-																						'uri'=> $link_picmonth
-																					]
-																													
-																			]
-															  ]
-															  
-															  
-															  
-														]
-													]
-									];
-								}
-								else
-								{
-									sleep(3);
-									if($timeframe_chart==".month")
-									{
-											$timeframe_chart="mmm"	;
-									}
-									$link_pic ="https://www.botbottest.club/".$textcut[1]."".$timeframe_chart.".jpg";
-									$messages33 = [	 'type' => 'template',
-														 'altText' => 'test',
-														 'template' => [	'type' => 'buttons', 
-																			'thumbnailImageUrl'=> $link_pic,
-																			'title' => $textcut[1],
-																			'text'  => $textcut[1]." ".$timeframe_chart,
-																			'actions' => [
-																					[
-																						'type'=> 'uri',
-																						'label'=> 'View detail',
-																						'uri'=> $link_pic
-																					]
-																					
-																			 ]
-																
-																		  ]
-												 
-												 ];
-								}
-											 
-											 
-											 
-								// Make a POST Request to Messaging API to reply to sender
-								$url = 'https://api.line.me/v2/bot/message/reply';
-								$data = [
-									'replyToken' => $replyToken,
-									'messages' => [$messages33]
-								];
-								$post = json_encode($data);
-								$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-						
-								$ch = curl_init($url);
-								curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-								curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-								curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-								curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-								curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-								$result = curl_exec($ch);
-								curl_close($ch);
 							}
 							
 						}
