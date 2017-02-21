@@ -275,7 +275,7 @@ if (!is_null($events['events'])) {
 					}
 					if($textcut[0]=="@g")
 					{
-						if($event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8')
+						if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')
 						{
 							$check_day_time="1";
 							$check_g="1";
