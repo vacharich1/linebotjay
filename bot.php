@@ -670,7 +670,7 @@ if (!is_null($events['events'])) {
 									}
 									else
 									{
-										sleep(4);
+										sleep(6);
 										if($timeframe_chart==".month")
 										{
 												$timeframe_chart="mmm"	;
