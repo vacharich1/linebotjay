@@ -675,12 +675,12 @@ if (!is_null($events['events'])) {
 										{
 												$timeframe_chart="mmm"	;
 										}
-										//$link_pic ="https://www.botbottest.club/".$textcut[1]."".$timeframe_chart.".jpg";
-										$link_pic ="https://www.botbottest.club/graph1.jpg";
+										$link_pic ="https://www.botbottest.club/".$textcut[1]."".$timeframe_chart.".jpg";
+										//$link_pic ="https://www.botbottest.club/graph1.jpg";
 										$messages33 = [	 'type' => 'template',
 															 'altText' => 'test',
 															 'template' => [	'type' => 'buttons', 
-																				'thumbnailImageUrl'=> $link_pic,
+																				'thumbnailImageUrl'=> "https://www.botbottest.club/graph1.jpg",
 																				'title' => $textcut[1],
 																				'text'  => $textcut[1]." ".$timeframe_chart,
 																				'actions' => [
