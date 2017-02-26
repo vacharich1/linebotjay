@@ -680,7 +680,7 @@ if (!is_null($events['events'])) {
 										$messages33 = [	 'type' => 'template',
 															 'altText' => 'test',
 															 'template' => [	'type' => 'buttons', 
-																				'thumbnailImageUrl'=> "https://www.botbottest.club/graph1.jpg",
+																				'thumbnailImageUrl'=> $link_pic,
 																				'title' => $textcut[1],
 																				'text'  => $textcut[1]." ".$timeframe_chart,
 																				'actions' => [
