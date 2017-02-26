@@ -610,7 +610,7 @@ if (!is_null($events['events'])) {
 																				]
 																   ],
 																   [
-																	'thumbnailImageUrl'=> 'https://www.botbottest.club/graph60.jpg',
+																	'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1]."60.jpg",
 																	'title'=> $name,
 																	'text'=> '60 min',
 																	'actions' => [
@@ -623,7 +623,7 @@ if (!is_null($events['events'])) {
 																				]
 																   ],
 																   [
-																	'thumbnailImageUrl'=> 'https://www.botbottest.club/graphday.jpg',
+																	'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1].".day.jpg",
 																	'title'=> $name,
 																	'text'=> 'day',
 																	'actions' => [
@@ -636,7 +636,7 @@ if (!is_null($events['events'])) {
 																				]
 																  ],
 																   [
-																	'thumbnailImageUrl'=> 'https://www.botbottest.club/graphweek.jpg',
+																	'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1].".week.jpg",
 																	'title'=> $name,
 																	'text'=> 'week',
 																	'actions' => [
@@ -649,7 +649,7 @@ if (!is_null($events['events'])) {
 																				]
 																  ],
 																  [
-																	'thumbnailImageUrl'=> 'https://www.botbottest.club/graphmonth.jpg',
+																	'thumbnailImageUrl'=> "https://www.botbottest.club/".$textcut[1]."mmm.jpg",
 																	'title'=> $name,
 																	'text'=> 'month',
 																	'actions' => [
