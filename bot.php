@@ -670,12 +670,13 @@ if (!is_null($events['events'])) {
 									}
 									else
 									{
-										sleep(7.5);
+										sleep(6);
 										if($timeframe_chart==".month")
 										{
 												$timeframe_chart="mmm"	;
 										}
-										$link_pic ="https://www.botbottest.club/".$textcut[1]."".$timeframe_chart.".jpg";
+										//$link_pic ="https://www.botbottest.club/".$textcut[1]."".$timeframe_chart.".jpg";
+										$link_pic ="https://www.botbottest.club/graph1.jpg";
 										$messages33 = [	 'type' => 'template',
 															 'altText' => 'test',
 															 'template' => [	'type' => 'buttons', 
