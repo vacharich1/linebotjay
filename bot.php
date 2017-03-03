@@ -1288,7 +1288,7 @@ if (!is_null($events['events'])) {
 					if($text == '@@@')
 					{		//$event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b'
 							$replyToken = $event['replyToken'];
-							$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
+							$messages55 = ['type' => 'text','text' => $event['source']['userId']];
 							// Make a POST Request to Messaging API to reply to sender
 							
 							$post_data = [
