@@ -106,7 +106,7 @@ if (!is_null($events['events'])) {
 				if($text == '@@@@')
 					{
 							$replyToken = $event['replyToken'];
-							$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
+							$messages55 = ['type' => 'text','text' => $event['source']['userId']];
 							// Make a POST Request to Messaging API to reply to sender
 							$url = 'https://api.line.me/v2/bot/message/reply';
 							$data = [
