@@ -136,7 +136,20 @@ if (!is_null($events['events'])) {
 				if($arr2[0]=="ราคา")
 				{
 					$text="@p ".$arr2[1];
-					sleep(0.2);
+					
+				}
+				
+				if($arr2[0]=="ลบ")
+				{
+					if($arr2[1]=="ทั้งหมด")
+					{
+						$text="@de all"	;
+					}
+					else
+					{
+						$text="@de ".$arr2[1];
+					}
+					
 				}
 				
 				$test444 = strtolower($text);
