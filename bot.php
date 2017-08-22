@@ -152,10 +152,15 @@ if (!is_null($events['events'])) {
 					
 				}
 				
+				
 				$test444 = strtolower($text);
 				if($test444=="หุ้นที่มีเเจ้งเตือน" || $test444=="หุ้นเเจ้งเตือน")
 				{
 					$text="@show all";
+				}
+				if($test444=="ลบทั้งหมด")
+				{
+					$text="@de all";
 				}
 				if(preg_match("/^[a-zA-Z0-9]+$/", $text[0]) == 1)
 				{
