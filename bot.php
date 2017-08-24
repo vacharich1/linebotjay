@@ -221,8 +221,12 @@ if (!is_null($events['events'])) {
 				
 				if($textcut[0]=="@g" and $result <=3)
 				{
-					$check ="check1";	
-					$text=$text." all";
+					$check ="check1";
+					if($result<3)
+					{	
+						$text=$text." D";
+					}
+					
 					$hoon_low = strtolower($textcut[1]);
 					$textcut = explode(" ", $text);
 					$result = count($textcut);
@@ -270,7 +274,7 @@ if (!is_null($events['events'])) {
 					
 					$timeframe=$textcut[2];		
 				    
-					$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$hoon_low', 11,'$timeframe' ,'$userid', '$type')";
+					$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$hoon_low', 11,'$room' ,'$timeframe', '$type')";
 											
 					if (mysqli_query($link, $sql)) {
 							echo "New record created successfully";
