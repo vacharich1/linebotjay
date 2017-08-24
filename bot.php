@@ -221,6 +221,7 @@ if (!is_null($events['events'])) {
 				
 				if($textcut[0]=="@g" and $result <=3)
 				{
+					$check ="check1";	
 					$text=$text." all";
 					$hoon_low = strtolower($textcut[1]);
 					$textcut = explode(" ", $text);
