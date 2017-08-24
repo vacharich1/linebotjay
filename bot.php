@@ -270,7 +270,7 @@ if (!is_null($events['events'])) {
 					
 					$timeframe=$textcut[2];		
 				    
-					$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$hoon_low', '$timeframe','$room' ,'$userid', '$type')";
+					$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$hoon_low', 11,'$timeframe' ,'$userid', '$type')";
 											
 					if (mysqli_query($link, $sql)) {
 							echo "New record created successfully";
