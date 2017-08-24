@@ -97,34 +97,7 @@ if (!is_null($events['events'])) {
 	//31.deedy ktbs $event['source']['userId'] == 'U041c1d5d39e47932485dcb31ed11f266' ||
     //31.jay ktbs $event['source']['userId'] == 'U509014d018d7b14f1fee0f4942a97bb3' ||
 	foreach ($events['events'] as $event) {
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-				
-				// Get text sent
-				$text = $event['message']['text'];
-				
-				if($text == '@@@@')
-					{
-							$replyToken = $event['replyToken'];
-							$messages55 = ['type' => 'text','text' => $event['source']['userId'];
-							// Make a POST Request to Messaging API to reply to sender
-							$url = 'https://api.line.me/v2/bot/message/reply';
-							$data = [
-										'replyToken' => $replyToken,
-										'messages' => [$messages55]
-									];
-							$post = json_encode($data);
-							$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-									
-							$ch = curl_init($url);
-							curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-							curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-							curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-							curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-							curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-							$result = curl_exec($ch);
-							curl_close($ch);
-					}
-		}
+		
 		if($event['source']['userId'] == 'U509014d018d7b14f1fee0f4942a97bb3' || $event['source']['userId'] == 'U041c1d5d39e47932485dcb31ed11f266' || $event['source']['userId'] == 'Ub6bf6c9b02422caa946c98d863df91be' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8' ||$event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' ||$event['source']['userId'] == 'Uf50e1aecdaadd0c9beb3e7b55e71b88c' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f'|| $event['source']['groupId'] =='Cc5000f2d47fa9df8096c866a6f4402e9' || $event['source']['groupId'] =='C85404b458e7caaa96629fa66941c9d93' || $event['source']['groupId'] =='C0773ad778af7cec264763eb058303c53'|| $event['source']['groupId'] == 'C32b0363e6c4d916d880802158268f41f' || $event['source']['groupId'] =='C4c8db0f2c8db0b53bd1c03eb29afabcf' || $event['source']['groupId'] =='Cf19e3061292f289a6bb62c1e46336720'|| $event['source']['groupId'] == 'C51e14facfde2ebe46fc851a592f85f3a' || $event['source']['groupId'] =='Cfa20f505511fff97d66587c652e662fd' || $event['source']['groupId'] == 'Cc7b622649005eacc1f7f9453c571e1d7' || $event['source']['groupId'] == 'C541e7f51634b08117f8eb21a55296cb9'  || $event['source']['groupId'] =='C935d8d390928b6644d2dcca83a75e7d5' || $event['source']['groupId'] =='C8efbbe08a040190abb39730f26eb622b' || $event['source']['groupId'] =='C473a06905d178136680abc00bf54f440' || $event['source']['groupId'] =='C237daf0b6d4d87518ded070aad1870d1' || $event['source']['groupId'] =='C5298abb0e80917da201f774817516046' || $event['source']['groupId'] =='C8dbd04186e455a1b3af3f9384405dc20' || $event['source']['groupId'] =='C9fe78b803761432902f6d506b806b354' || $event['source']['groupId'] =='Cf32c66c3e5edf8d409f195c642187dca' || $event['source']['groupId'] =='C968dab0b5900f8c473906649127d07cf' || $event['source']['groupId'] =='C3993ff859de54c0c4d43a663410c74fe' || $event['source']['groupId'] =='C86e955b1b58a4ed6fb08d2132f500793' || $event['source']['groupId'] =='C1e62fabdf03e3485fb2b6fc24c11eb88' || $event['source']['groupId'] =='C33e7da5de008d8300f9746146bb93b28' || $event['source']['groupId'] =='C63446a31d01311daa0377b0080d064d8' || $event['source']['groupId'] =='Cf9b6aa817208f5b58ffc75b65ed9a630' || $event['source']['groupId'] =='C9d23354be1fb585ec8b131f16a2716de' || $event['source']['groupId'] =='C70fc647662b7c1d71b7263e753cc9a02' || $event['source']['groupId'] =='Cef524b7474a2473cac7d3c1c64a131f9' || $event['source']['groupId'] =='C3891347326afc0d3660d54f90c924dcf' || $event['source']['groupId'] =='C759d0883fd4898516a302d8d4efc88fd' || $event['source']['groupId'] =='C0622db8a88e74fef209c578701b38d5d' || $event['source']['groupId'] =='C4630b617359936a9495c02cd1f62b1fa' || $event['source']['groupId'] =='Ce0b403e04c0d9382ebfad651f49edb4d' || $event['source']['groupId'] =='C10c8b07501a03b533ad1d6ef2eb1d796' || $event['source']['groupId'] =='C38175a4518412c04d7c3d6ca9658e48e' || $event['source']['groupId'] =='C7223df793f44a88acd6199812ca5e684' || $event['source']['groupId'] =='C10040e1fac3ffbac67fde46ec67990db' || $event['source']['groupId'] =='Cfcb7acee947b6f0c60aae2309f262e52' || $event['source']['groupId'] =='C5c710b322fb13653c6be2fdb974bc3bf' || $event['source']['groupId'] =='C08225c330573130c678d2cd6fa60dda3' || $event['source']['groupId'] =='C324db09c3c6c5d2c7ba61493adecb778' || $event['source']['userId'] =='U00787737427143dedc0621eb52479222' || $event['source']['groupId'] =='C7594e6debc1f0a9682457210be4f8174')
 		{
 			//	
@@ -137,7 +110,7 @@ if (!is_null($events['events'])) {
 				if($text == '@@@@')
 					{
 							$replyToken = $event['replyToken'];
-							$messages55 = ['type' => 'text','text' => $event['source']['groupId'];
+							$messages55 = ['type' => 'text','text' => $event['source']['userId'];
 							// Make a POST Request to Messaging API to reply to sender
 							$url = 'https://api.line.me/v2/bot/message/reply';
 							$data = [
