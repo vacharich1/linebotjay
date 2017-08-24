@@ -224,7 +224,7 @@ if (!is_null($events['events'])) {
 					$check ="check1";
 					if($result<3)
 					{	
-						$text=$text." D";
+						$text=$text." d";
 					}
 					
 					$hoon_low = strtolower($textcut[1]);
@@ -440,7 +440,7 @@ if (!is_null($events['events'])) {
 							{
 								if(preg_match("/^[a-zA-Z]+$/", $textcut[2]) == 1)#timeframe is day month week
 								{
-									if($textcut[2]=="d" || $textcut[2]=="day" || $textcut[2]=="w" || $textcut[2]=="week" || $textcut[2]=="m" || $textcut[2]=="month" || $textcut[2]=="all")
+									/*if($textcut[2]=="d" || $textcut[2]=="day" || $textcut[2]=="w" || $textcut[2]=="week" || $textcut[2]=="m" || $textcut[2]=="month" || $textcut[2]=="all")
 									{
 										if($textcut[2]=="d" || $textcut[2]=="day")
 										{
@@ -480,7 +480,7 @@ if (!is_null($events['events'])) {
 										$result = curl_exec($ch);
 										curl_close($ch);
 										
-									}
+									}*/
 								}
 								else#timeframe is number
 								{
