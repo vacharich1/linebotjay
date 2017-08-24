@@ -880,7 +880,7 @@ if (!is_null($events['events'])) {
 						else#wrong timeframe
 						{
 							$messages556 = ['type' => 'text','text' => "timeframe ไม่ถูกต้อง กรุณากรอกใหม่"];
-							$url = 'https://api.line.me/v2/bot/message/reply';
+							/*$url = 'https://api.line.me/v2/bot/message/reply';
 							$data = [
 										'replyToken' => $replyToken,
 										'messages' => [$messages556]
@@ -895,7 +895,7 @@ if (!is_null($events['events'])) {
 							curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 							curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 							$result = curl_exec($ch);
-							curl_close($ch);
+							curl_close($ch);*/
 							
 						}
 						
