@@ -312,9 +312,9 @@ if (!is_null($events['events'])) {
 									$room="111";
 								}
 								
-								
+								$price = number_format((float)$textcut[2], 2, '.', '');
 								$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type)
-											VALUES ('', '$hoon_low', '$textcut[2]','$room' ,'$userid', '$type')";
+											VALUES ('', '$hoon_low', '$price','$room' ,'$userid', '$type')";
 											
 								if (mysqli_query($link, $sql)) {
 											echo "New record created successfully";
