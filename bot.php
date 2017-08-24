@@ -1278,11 +1278,11 @@ if (!is_null($events['events'])) {
 									$messages55 = ['type' => 'text','text' => "คำสั่งค้นหาข้อมูลพื้นฐานทั้งหมด\nhoonname xxx โดย xxxคือข้อมูลพื้นฐานที่ต้องการเช่นต้องการ assetsของหุ้นaot\n\n พิม aot assets โดยทางเรามีทำตัวย่อไว้คือ as จึงสามารถพิมเป็น \n\naot as ก็ได้\nซึ่งได้มีการทำไว้ทั้งหมด 15 ข้อมูล\n1.assets/as\n2.libilities/lb\n3.equity/eq\n4.revenue/rv\n5.eps\n6.expenses/ex\n7.gprofit/gp\n8.gpmargin/gpm\n9.nprofit/np\n10.npm\n11.roa\n12.roe\n13.pe\n14.pbv\n15.yield/dy "];
 						// Make a POST Request to Messaging API to reply to sende
 									
-									$messages66 = ['type' => 'text','text' => "คำสั่งเเจ้งเตือนราคาทั้งหมด \n\nหุ้นเเจ้งเตือน หรือ show all\nคือเเสดงรายการที่มีการตั้งเเจง้เตือนไว้\n\nde all\nคือลบข้อมูลรายการเเจ้งเตือนทั้งหมด\n\nde aot 400\nคือการลบข้อมูลหุ้น aot ที่ตั้งเเจ้งเตือนไว้ที่ราคา 400 บาท\n\naot>400\nคือการตั้งเเจ้งเตือนราคาถ้าหุ้นaotเกิน400บาทจะเเจ้งเตือน\n\naot<400\nคือเหมือนด้านบนเเต่ราคาน้อยกว่าเเทน\n\naot=400\nคือถ้าราคาเท่ากับ400จะเเจ้งเตือน\n\nราคา aot หรือ p aotคือ เช็คราคาปัจจุบันของหุ้นaot"];
+									$messages66 = ['type' => 'text','text' => "คำสั่งเเจ้งเตือนราคาทั้งหมด \n\nหุ้นเเจ้งเตือน หรือ show all\nคือเเสดงรายการที่มีการตั้งเเจง้เตือนไว้\n\nde all หรือ ลบทั้งหมด\nคือลบข้อมูลรายการเเจ้งเตือนทั้งหมด\n\nde aot 400\nคือการลบข้อมูลหุ้น aot ที่ตั้งเเจ้งเตือนไว้ที่ราคา 400 บาท\n\naot>400\nคือการตั้งเเจ้งเตือนราคาถ้าหุ้นaotเกิน400บาทจะเเจ้งเตือน\n\naot<400\nคือเหมือนด้านบนเเต่ราคาน้อยกว่าเเทน\n\naot=400\nคือถ้าราคาเท่ากับ400จะเเจ้งเตือน\n\nราคา aot หรือ p aotคือ เช็คราคาปัจจุบันของหุ้นaot\n"];
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
 												'replyToken' => $replyToken,
-												'messages' => [$messages55,$messages66]
+												'messages' => [$messages66]
 											];
 									$post = json_encode($data);
 									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
