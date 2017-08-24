@@ -221,7 +221,67 @@ if (!is_null($events['events'])) {
 				
 				if($textcut[0]=="@g" and $result <=3)
 				{
-
+					$text=$text." all";
+					$hoon_low = strtolower($textcut[1]);
+					$textcut = explode(" ", $text);
+					$result = count($textcut);
+					$timeframe="0";
+					$type="gg";
+					
+					$room='1';
+					if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')//graph black
+					{
+						if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386')
+							$room='21';
+						if($event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')
+							$room='22';
+						}
+				    }
+					else if($event['source']['groupId'] =='Cd8a849509b94f8e164461420ff9c69cd')
+					{
+							$room='99';	 	
+					}
+					else if($event['source']['groupId'] == 'C9f2b93574be7434e6e7180a7d7503601' || $event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' || $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5' || $event['source']['groupId'] == 'C328035648eddea983ff6b6a3fc7622ec' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f' || $event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')//graph 1
+					{
+							$room='15';
+							if($event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f' || $event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')
+								$room='15';
+					}
+					else if($event['source']['groupId'] == 'C50bdba4e60f90ced6002458b6fb1aa5b')
+					{
+						$room='41';
+					}
+					else if($event['source']['groupId'] == 'C2debaa5f387f1d99d495ee1f62f25d27')#member 300
+					{
+						$room='51';
+					}
+					else if($event['source']['groupId'] == 'C9fe78b803761432902f6d506b806b354')#group ideatrade
+					{
+						$room="66";	
+					}
+					else
+					{
+						$room="111";
+					}
+					
+					$timeframe=$textcut[2];		
+				    
+					$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$hoon_low', '$timeframe','$room' ,'$userid', '$type')";
+											
+					if (mysqli_query($link, $sql)) {
+							echo "New record created successfully";
+					} 
+					else {
+							echo "Error: " . $sql . "<br>" . mysqli_error($link);
+					}
+					$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
+					if (mysqli_query($link, $sql)) {
+						echo "New record created successfully";
+					} 
+					else {
+						echo "Error: " . $sql . "<br>" . mysqli_error($link);
+					}
+					sleep(0.3);
 					
 				}
 				
