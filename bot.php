@@ -96,7 +96,7 @@ if (!is_null($events['events'])) {
 	//31.pon $event['source']['userId'] == 'Ub6bf6c9b02422caa946c98d863df91be' ||
 	//31.deedy ktbs $event['source']['userId'] == 'U041c1d5d39e47932485dcb31ed11f266' ||
     //31.jay ktbs $event['source']['userId'] == 'U509014d018d7b14f1fee0f4942a97bb3' ||
-	 //33.Z test room $event['source']['userId'] == 'Cd8a849509b94f8e164461420ff9c69cd' ||
+	 //99 Z test room $event['source']['userId'] == 'Cd8a849509b94f8e164461420ff9c69cd' ||
 	 //34 p dear Uf120d9606f0eaa9bd32e18f8c85ea58f
 	 
 //133BlOCK K'GIFT Cbb1b9c9dab76eef8e5ed8c9800f594b5
@@ -255,58 +255,58 @@ if (!is_null($events['events'])) {
 					if($event['source']['groupId'] =='C767f906dfb84091344207472c237b081' || $event['source']['groupId'] =='Cbb1b9c9dab76eef8e5ed8c9800f594b5' || $event['source']['groupId'] =='Cf008e45b3560032d1eb5fbdb6ddc2c43' || $event['source']['groupId'] =='C2d1387af7f2adcc0cd58032d86efd5ed' || $event['source']['groupId'] =='Cd1535b9da2590c65e5da8968e3770acc' || $event['source']['groupId'] =='C1b711548d509a34653aaa29195c071f0' || $event['source']['groupId'] =='C0b785cd566665fcc1552fc5058675979' || $event['source']['groupId'] =='C8b5c7927ff48cf17a843225d49b1db15' || $event['source']['groupId'] =='C9f0ef2857de08b6f4b76093a02bcf5de' || $event['source']['groupId'] =='Caa434359d1c557a84b6ceee7ab537fd7' || $event['source']['groupId'] =='C4a548105883e306fc832b1187ef4544e' || $event['source']['groupId'] =='Ce2c5c0d07c8ac2097308d24f16231d37')
 					{
 						if($event['source']['groupId'] =='Cbb1b9c9dab76eef8e5ed8c9800f594b5')
-							$room='133';
+							$room="133";
 						if($event['source']['groupId'] =='Cf008e45b3560032d1eb5fbdb6ddc2c43')
-							$room='134';
+							$room="134";
 						if($event['source']['groupId'] =='C2d1387af7f2adcc0cd58032d86efd5ed')
-							$room='135';
+							$room="135";
 						if($event['source']['groupId'] =='Cd1535b9da2590c65e5da8968e3770acc')
-							$room='136';
+							$room="136";
 						if($event['source']['groupId'] =='C1b711548d509a34653aaa29195c071f0')
-							$room='137';
+							$room="137";
 						if($event['source']['groupId'] =='C0b785cd566665fcc1552fc5058675979')
-							$room='138';
+							$room="138";
 						if($event['source']['groupId'] =='C8b5c7927ff48cf17a843225d49b1db15')
-							$room='139';
+							$room="139";
 						if($event['source']['groupId'] =='C9f0ef2857de08b6f4b76093a02bcf5de')
-							$room='140';	
+							$room="140";	
 						if($event['source']['groupId'] =='Caa434359d1c557a84b6ceee7ab537fd7')
-							$room='141';
+							$room="141";
 						if($event['source']['groupId'] =='C4a548105883e306fc832b1187ef4544e')
-							$room='142';
+							$room="142";
 						if($event['source']['groupId'] =='Ce2c5c0d07c8ac2097308d24f16231d37')
-							$room='143';
+							$room="143";
 						if($event['source']['groupId'] =='C767f906dfb84091344207472c237b081')
-							$room='144';
+							$room="144";
 					}
-					if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')//graph black
+					else if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')//graph black
 					{
 						if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386')
 						{
-							$room='21';
+							$room="21";
 						}
 						if($event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')
 						{
-							$room='22';
+							$room="22";
 						}
 				    }
 					else if($event['source']['groupId'] =='Cd8a849509b94f8e164461420ff9c69cd')
 					{
-							$room='99';	 	
+							$room="99";	 	
 					}
 					else if($event['source']['groupId'] == 'C9f2b93574be7434e6e7180a7d7503601' || $event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' || $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5' || $event['source']['groupId'] == 'C328035648eddea983ff6b6a3fc7622ec' || $event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')//graph 1
 					{
-							$room='15';
+							$room="15";
 							if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')
-								$room='15';
+								$room="15";
 					}
 					else if($event['source']['groupId'] == 'C50bdba4e60f90ced6002458b6fb1aa5b')
 					{
-						$room='41';
+						$room="41";
 					}
 					else if($event['source']['groupId'] == 'C2debaa5f387f1d99d495ee1f62f25d27')#member 300
 					{
-						$room='51';
+						$room="51";
 					}
 					else if($event['source']['groupId'] == 'C9fe78b803761432902f6d506b806b354')#group ideatrade
 					{
@@ -379,17 +379,19 @@ if (!is_null($events['events'])) {
 									$userid = $event['source']['groupId'];	
 								$check ="check1";	
 								$hoon_low = strtolower($textcut[1]);
-							
+								//jay black graph C26d889d89b336a786c06358c1e2df27c
+								//3:member_line_bot C7ab92191511e47ff839c174e7f2104c5
+								//4:bot 3g 3r C941fb2b8a40f9d0f400969fa848c3386
 							
 								$room='1';
 								if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')//graph black
 								{
-									if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386')
+									if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386')//bot 3g 3r
 										$room='21';
-									if($event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')
+									if($event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')//jay graph black
 										$room='22';
 								}
-								else if($event['source']['groupId'] =='Cd8a849509b94f8e164461420ff9c69cd')
+								else if($event['source']['groupId'] =='Cd8a849509b94f8e164461420ff9c69cd')//z test
 								{
 									$room='99';	 	
 								}
@@ -403,7 +405,7 @@ if (!is_null($events['events'])) {
 									#	$room='14';
 									#if($event['source']['groupId'] == 'C328035648eddea983ff6b6a3fc7622ec')
 									$room='15';
-									if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')
+									if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')//jay
 										$room='15';
 								}
 								else if($event['source']['groupId'] == 'C50bdba4e60f90ced6002458b6fb1aa5b')
