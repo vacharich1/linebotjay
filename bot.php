@@ -123,7 +123,7 @@ if (!is_null($events['events'])) {
 			// Reply only when message sent is in 'text' format
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 				$text = $event['message']['text'];
-				if($text == 'addgroupbyjaybotroom')
+				if($text == '@@@@')
 					{
 							$replyToken = $event['replyToken'];
 							$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
