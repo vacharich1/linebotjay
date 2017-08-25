@@ -2592,6 +2592,7 @@ if (!is_null($events['events'])) {
 									#$messages556 = ['type' => 'text','text' => "[ALERT HOON]\n".$textcut[1]." < ".$textcut[2]];
 									$type='l';
 								}
+								
 								if($event['source']['userId'] == 'U509014d018d7b14f1fee0f4942a97bb3' || $event['source']['userId'] == 'U041c1d5d39e47932485dcb31ed11f266' || $event['source']['userId'] == 'Ub6bf6c9b02422caa946c98d863df91be' || $event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' ||$event['source']['userId'] == 'Uf50e1aecdaadd0c9beb3e7b55e71b88c' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8'|| $event['source']['userId'] =='U00787737427143dedc0621eb52479222')
 									$userid = $event['source']['userId'];	
 								else
@@ -2603,7 +2604,34 @@ if (!is_null($events['events'])) {
 								//4:bot 3g 3r C941fb2b8a40f9d0f400969fa848c3386
 							
 								$room='1';
-								if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')//graph black
+								if($event['source']['groupId'] =='C767f906dfb84091344207472c237b081' || $event['source']['groupId'] =='Cbb1b9c9dab76eef8e5ed8c9800f594b5' || $event['source']['groupId'] =='Cf008e45b3560032d1eb5fbdb6ddc2c43' || $event['source']['groupId'] =='C2d1387af7f2adcc0cd58032d86efd5ed' || $event['source']['groupId'] =='Cd1535b9da2590c65e5da8968e3770acc' || $event['source']['groupId'] =='C1b711548d509a34653aaa29195c071f0' || $event['source']['groupId'] =='C0b785cd566665fcc1552fc5058675979' || $event['source']['groupId'] =='C8b5c7927ff48cf17a843225d49b1db15' || $event['source']['groupId'] =='C9f0ef2857de08b6f4b76093a02bcf5de' || $event['source']['groupId'] =='Caa434359d1c557a84b6ceee7ab537fd7' || $event['source']['groupId'] =='C4a548105883e306fc832b1187ef4544e' || $event['source']['groupId'] =='Ce2c5c0d07c8ac2097308d24f16231d37')
+								{
+									if($event['source']['groupId'] =='Cbb1b9c9dab76eef8e5ed8c9800f594b5')
+										$room="133";
+									if($event['source']['groupId'] =='Cf008e45b3560032d1eb5fbdb6ddc2c43')
+										$room="134";
+									if($event['source']['groupId'] =='C2d1387af7f2adcc0cd58032d86efd5ed')
+										$room="135";
+									if($event['source']['groupId'] =='Cd1535b9da2590c65e5da8968e3770acc')
+										$room="136";
+									if($event['source']['groupId'] =='C1b711548d509a34653aaa29195c071f0')
+										$room="137";
+									if($event['source']['groupId'] =='C0b785cd566665fcc1552fc5058675979')
+										$room="138";
+									if($event['source']['groupId'] =='C8b5c7927ff48cf17a843225d49b1db15')
+										$room="139";
+									if($event['source']['groupId'] =='C9f0ef2857de08b6f4b76093a02bcf5de')
+										$room="140";	
+									if($event['source']['groupId'] =='Caa434359d1c557a84b6ceee7ab537fd7')
+										$room="141";
+									if($event['source']['groupId'] =='C4a548105883e306fc832b1187ef4544e')
+										$room="142";
+									if($event['source']['groupId'] =='Ce2c5c0d07c8ac2097308d24f16231d37')
+										$room="143";
+									if($event['source']['groupId'] =='C767f906dfb84091344207472c237b081')
+										$room="144";
+								}
+								else if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')//graph black
 								{
 									if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386')//bot 3g 3r
 										$room='21';
