@@ -122,7 +122,7 @@ if (!is_null($events['events'])) {
 		{
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 				$text = $event['message']['text'];
-						$arr = array('Ce0b403e04c0d9382ebfad651f49edb4d', 'C10c8b07501a03b533ad1d6ef2eb1d796', 'C38175a4518412c04d7c3d6ca9658e48e');
+						$arr = array('Ce0b403e04c0d9382ebfad651f49edb4d', 'C10c8b07501a03b533ad1d6ef2eb1d796', 'C38175a4518412c04d7c3d6ca9658e48e','Cd8a849509b94f8e164461420ff9c69cd');
 						reset($arr);
 						foreach ($arr as $USERID) {
 							$format_text = [
