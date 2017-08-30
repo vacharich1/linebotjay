@@ -118,7 +118,34 @@ if (!is_null($events['events'])) {
 
 	foreach ($events['events'] as $event) {
 		
-		
+		if($event['source']['groupId'] == 'C08ed601df0ae440832b09b496cb0c83a')
+		{
+						$arr = array('Ce0b403e04c0d9382ebfad651f49edb4d', 'C10c8b07501a03b533ad1d6ef2eb1d796', 'C38175a4518412c04d7c3d6ca9658e48e');
+						reset($arr);
+						foreach ($arr as $USERID) {
+							$format_text = [
+								"type" => "text",
+								"text" => $text
+							];
+							$post_data = [
+									'to' => $USERID,
+									'messages' => [$format_text]
+							];
+							$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+							echo "ssss";
+					 
+							$ch = curl_init('https://api.line.me/v2/bot/message/push');
+							curl_setopt($ch, CURLOPT_POST, true);
+							curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+							curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+							curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
+							curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+					 
+							$result = curl_exec($ch);
+							curl_close($ch);
+						}
+						
+		}
 		if($event['source']['groupId'] == 'C328035648eddea983ff6b6a3fc7622ec' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c' || $event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386')
 		{
 			// Reply only when message sent is in 'text' format
