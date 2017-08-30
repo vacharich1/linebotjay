@@ -120,6 +120,8 @@ if (!is_null($events['events'])) {
 		
 		if($event['source']['groupId'] == 'C08ed601df0ae440832b09b496cb0c83a')
 		{
+			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+				$text = $event['message']['text'];
 						$arr = array('Ce0b403e04c0d9382ebfad651f49edb4d', 'C10c8b07501a03b533ad1d6ef2eb1d796', 'C38175a4518412c04d7c3d6ca9658e48e');
 						reset($arr);
 						foreach ($arr as $USERID) {
@@ -144,6 +146,7 @@ if (!is_null($events['events'])) {
 							$result = curl_exec($ch);
 							curl_close($ch);
 						}
+			}
 						
 		}
 		if($event['source']['groupId'] == 'C328035648eddea983ff6b6a3fc7622ec' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c' || $event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386')
