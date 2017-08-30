@@ -122,7 +122,7 @@ if (!is_null($events['events'])) {
 		{
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 				$text = $event['message']['text'];
-						$arr = array('Cbb1b9c9dab76eef8e5ed8c9800f594b5', 'Cf008e45b3560032d1eb5fbdb6ddc2c43', 'C2d1387af7f2adcc0cd58032d86efd5ed','Cd1535b9da2590c65e5da8968e3770acc','C1b711548d509a34653aaa29195c071f0', 'C0b785cd566665fcc1552fc5058675979', 'C8b5c7927ff48cf17a843225d49b1db15','C9f0ef2857de08b6f4b76093a02bcf5de','Caa434359d1c557a84b6ceee7ab537fd7','C4a548105883e306fc832b1187ef4544e','Ce2c5c0d07c8ac2097308d24f16231d37','Cdac8cdceb9108be04281c4ad2e537312');
+						$arr = array('Cbb1b9c9dab76eef8e5ed8c9800f594b5', 'Cf008e45b3560032d1eb5fbdb6ddc2c43', 'C2d1387af7f2adcc0cd58032d86efd5ed','Cd1535b9da2590c65e5da8968e3770acc','C1b711548d509a34653aaa29195c071f0', 'C0b785cd566665fcc1552fc5058675979', 'C8b5c7927ff48cf17a843225d49b1db15','C9f0ef2857de08b6f4b76093a02bcf5de','Caa434359d1c557a84b6ceee7ab537fd7','C4a548105883e306fc832b1187ef4544e','Ce2c5c0d07c8ac2097308d24f16231d37','Cdac8cdceb9108be04281c4ad2e537312','C767f906dfb84091344207472c237b081');
 						reset($arr);
 						foreach ($arr as $USERID) {
 							$format_text = [
