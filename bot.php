@@ -121,7 +121,8 @@ if (!is_null($events['events'])) {
 //302 kprairoj Ce381889d3d2381757866a28931f6fdeb
 //155 k'kamphol C2d138fa3520426eb9f46ffb6dce72d0
 //156 K'pb Cac276250bae968b7dd3416f35dadac
-
+//145 k'kamphol C2d138fa3520426eb9f46ffb6dce72d08
+//146 K'pb Cac276250bae968b7dd3416f35dadac92
 
 	foreach ($events['events'] as $event) {
 		
@@ -129,7 +130,7 @@ if (!is_null($events['events'])) {
 		{
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 				$text = $event['message']['text'];
-						$arr = array('Cbb1b9c9dab76eef8e5ed8c9800f594b5', 'Cf008e45b3560032d1eb5fbdb6ddc2c43', 'C2d1387af7f2adcc0cd58032d86efd5ed','Cd1535b9da2590c65e5da8968e3770acc','C1b711548d509a34653aaa29195c071f0', 'C0b785cd566665fcc1552fc5058675979', 'C8b5c7927ff48cf17a843225d49b1db15','C9f0ef2857de08b6f4b76093a02bcf5de','Caa434359d1c557a84b6ceee7ab537fd7','C4a548105883e306fc832b1187ef4544e','Ce2c5c0d07c8ac2097308d24f16231d37','Cdac8cdceb9108be04281c4ad2e537312','C767f906dfb84091344207472c237b081','C790dd32ae8e0d99b827e0288b01a0704','C72411396da7fdf56d55fba94313865e3' ,'Ce381889d3d2381757866a28931f6fdeb', 'Ccef7269485facbaa8bd7480fc089f798','C2d138fa3520426eb9f46ffb6dce72d0','Cac276250bae968b7dd3416f35dadac');
+						$arr = array('Cbb1b9c9dab76eef8e5ed8c9800f594b5', 'Cf008e45b3560032d1eb5fbdb6ddc2c43', 'C2d1387af7f2adcc0cd58032d86efd5ed','Cd1535b9da2590c65e5da8968e3770acc','C1b711548d509a34653aaa29195c071f0', 'C0b785cd566665fcc1552fc5058675979', 'C8b5c7927ff48cf17a843225d49b1db15','C9f0ef2857de08b6f4b76093a02bcf5de','Caa434359d1c557a84b6ceee7ab537fd7','C4a548105883e306fc832b1187ef4544e','Ce2c5c0d07c8ac2097308d24f16231d37','Cdac8cdceb9108be04281c4ad2e537312','C767f906dfb84091344207472c237b081','C790dd32ae8e0d99b827e0288b01a0704','C72411396da7fdf56d55fba94313865e3' ,'Ce381889d3d2381757866a28931f6fdeb', 'Ccef7269485facbaa8bd7480fc089f798','C2d138fa3520426eb9f46ffb6dce72d08','Cac276250bae968b7dd3416f35dadac92');
 						reset($arr);
 						foreach ($arr as $USERID) {
 							$format_text = [
@@ -2516,7 +2517,7 @@ if (!is_null($events['events'])) {
 //302 kprairoj Ce381889d3d2381757866a28931f6fdeb	
 //155 k'kamphol C2d138fa3520426eb9f46ffb6dce72d08
 //156 K'pb Cac276250bae968b7dd3416f35dadac92
-					if($event['source']['groupId'] =='C2d138fa3520426eb9f46ffb6dce72d08' || $event['source']['groupId'] =='Cac276250bae968b7dd3416f35dadac92' || $event['source']['groupId'] =='Ccef7269485facbaa8bd7480fc089f798' || $event['source']['groupId'] =='Ce381889d3d2381757866a28931f6fdeb' || $event['source']['groupId'] =='C790dd32ae8e0d99b827e0288b01a0704' || $event['source']['groupId'] =='C72411396da7fdf56d55fba94313865e3' || $event['source']['groupId'] =='Cdac8cdceb9108be04281c4ad2e537312' || $event['source']['groupId'] =='C767f906dfb84091344207472c237b081' || $event['source']['groupId'] =='Cbb1b9c9dab76eef8e5ed8c9800f594b5' || $event['source']['groupId'] =='Cf008e45b3560032d1eb5fbdb6ddc2c43' || $event['source']['groupId'] =='C2d1387af7f2adcc0cd58032d86efd5ed' || $event['source']['groupId'] =='Cd1535b9da2590c65e5da8968e3770acc' || $event['source']['groupId'] =='C1b711548d509a34653aaa29195c071f0' || $event['source']['groupId'] =='C0b785cd566665fcc1552fc5058675979' || $event['source']['groupId'] =='C8b5c7927ff48cf17a843225d49b1db15' || $event['source']['groupId'] =='C9f0ef2857de08b6f4b76093a02bcf5de' || $event['source']['groupId'] =='Caa434359d1c557a84b6ceee7ab537fd7' || $event['source']['groupId'] =='C4a548105883e306fc832b1187ef4544e' || $event['source']['groupId'] =='Ce2c5c0d07c8ac2097308d24f16231d37')
+					if($event['source']['groupId'] == 'C2d138fa3520426eb9f46ffb6dce72d08' || $event['source']['groupId'] == 'Cac276250bae968b7dd3416f35dadac92' || $event['source']['groupId'] =='Ccef7269485facbaa8bd7480fc089f798' || $event['source']['groupId'] =='Ce381889d3d2381757866a28931f6fdeb' || $event['source']['groupId'] =='C790dd32ae8e0d99b827e0288b01a0704' || $event['source']['groupId'] =='C72411396da7fdf56d55fba94313865e3' || $event['source']['groupId'] =='Cdac8cdceb9108be04281c4ad2e537312' || $event['source']['groupId'] =='C767f906dfb84091344207472c237b081' || $event['source']['groupId'] =='Cbb1b9c9dab76eef8e5ed8c9800f594b5' || $event['source']['groupId'] =='Cf008e45b3560032d1eb5fbdb6ddc2c43' || $event['source']['groupId'] =='C2d1387af7f2adcc0cd58032d86efd5ed' || $event['source']['groupId'] =='Cd1535b9da2590c65e5da8968e3770acc' || $event['source']['groupId'] =='C1b711548d509a34653aaa29195c071f0' || $event['source']['groupId'] =='C0b785cd566665fcc1552fc5058675979' || $event['source']['groupId'] =='C8b5c7927ff48cf17a843225d49b1db15' || $event['source']['groupId'] =='C9f0ef2857de08b6f4b76093a02bcf5de' || $event['source']['groupId'] =='Caa434359d1c557a84b6ceee7ab537fd7' || $event['source']['groupId'] =='C4a548105883e306fc832b1187ef4544e' || $event['source']['groupId'] =='Ce2c5c0d07c8ac2097308d24f16231d37')
 					{
 						if($event['source']['groupId'] =='C2d138fa3520426eb9f46ffb6dce72d08')
 							$room="145";
