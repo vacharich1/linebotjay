@@ -3277,7 +3277,7 @@ if (!is_null($events['events'])) {
 							if($textcut[0]=="@p")
 							{
 								$check ="check1";
-								if($event['source']['userId'] == 'U509014d018d7b14f1fee0f4942a97bb3' || $event['source']['userId'] == 'U041c1d5d39e47932485dcb31ed11f266' || $event['source']['userId'] == 'Ub6bf6c9b02422caa946c98d863df91be' || $event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8'|| $event['source']['userId'] =='U00787737427143dedc0621eb52479222')
+								if($event['source']['userId'] == 'Ue1f0e93f7eba0bc026c7eb6d561de64b' || $event['source']['userId'] == 'U509014d018d7b14f1fee0f4942a97bb3' || $event['source']['userId'] == 'U041c1d5d39e47932485dcb31ed11f266' || $event['source']['userId'] == 'Ub6bf6c9b02422caa946c98d863df91be' || $event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8'|| $event['source']['userId'] =='U00787737427143dedc0621eb52479222')
 									$userid = $event['source']['userId'];	
 								else
 									$userid = $event['source']['groupId'];		
@@ -3308,7 +3308,7 @@ if (!is_null($events['events'])) {
 							{
 								$type=$textcut[0];
 								$check ="check1";	
-								if($event['source']['userId'] == 'U509014d018d7b14f1fee0f4942a97bb3' || $event['source']['userId'] == 'U041c1d5d39e47932485dcb31ed11f266' || $event['source']['userId'] == 'Ub6bf6c9b02422caa946c98d863df91be' || $event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8'|| $event['source']['userId'] =='U00787737427143dedc0621eb52479222')
+								if($event['source']['userId'] == 'Ue1f0e93f7eba0bc026c7eb6d561de64b' || $event['source']['userId'] == 'U509014d018d7b14f1fee0f4942a97bb3' || $event['source']['userId'] == 'U041c1d5d39e47932485dcb31ed11f266' || $event['source']['userId'] == 'Ub6bf6c9b02422caa946c98d863df91be' || $event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8'|| $event['source']['userId'] =='U00787737427143dedc0621eb52479222')
 									$userid = $event['source']['userId'];	
 								else
 									$userid = $event['source']['groupId'];		
