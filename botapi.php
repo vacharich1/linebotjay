@@ -500,7 +500,7 @@ if (!is_null($events['events'])) {
 						curl_close($ch);	
 						
 						
-						$link_pic ="https://kumishabu.com/pic/picture2.jpg";
+						$link_pic ="https://kumishabu.com/pic/picture2.JPG";
 						$messages2 = ['type' => 'image',
 											 'originalContentUrl' => $link_pic,
 											 'previewImageUrl' => $link_pic
