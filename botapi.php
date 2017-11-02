@@ -506,7 +506,7 @@ if (!is_null($events['events'])) {
 											 'previewImageUrl' => $link_pic
 						];
 						
-						$post = json_encode($data);
+						$post = json_encode($messages2);
 						$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 					
 						$ch = curl_init($url);
