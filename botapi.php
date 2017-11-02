@@ -481,7 +481,7 @@ if (!is_null($events['events'])) {
 				{
 					if($room="15" or $room="111")
 					{
-						$messages556 = ['type' => 'text','text' => "คำสั่งเรียกกราฟ ไม่สามารถเรียกในกลุ่มทดลองได้ โปรติดต่อ line : vacharich หรือ line : @jfourtwins\n\n ตัวอย่าง กราฟด้านล่าง aot 60 นาที"];
+						$messages556 = ['type' => 'text','text' => "คำสั่งเรียกกราฟ ไม่สามารถเรียกในกลุ่มทดลอง โปรติดต่อ line : vacharich หรือ line : @jfourtwins\n\n ตัวอย่าง กราฟด้านล่าง aot 60 นาที"];
 						$url = 'https://api.line.me/v2/bot/message/reply';
 						$data = [
 									'replyToken' => $replyToken,
@@ -506,17 +506,23 @@ if (!is_null($events['events'])) {
 											 'previewImageUrl' => $link_pic
 						];
 						
-						$post = json_encode($messages2);
-						$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-					
-						$ch = curl_init($url);
-						curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-						curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-						curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-						curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-						curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-						$result = curl_exec($ch);
-						curl_close($ch);
+						// Make a POST Request to Messaging API to reply to sender
+									$url = 'https://api.line.me/v2/bot/message/reply';
+									$data = [
+										'replyToken' => $replyToken,
+										'messages' => [$messages2]
+									];
+									$post = json_encode($data);
+									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+						
+									$ch = curl_init($url);
+									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+									curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+									curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+									curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+									curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+									$result = curl_exec($ch);
+									curl_close($ch);
 					}
 					else
 					{
