@@ -500,21 +500,20 @@ if (!is_null($events['events'])) {
 						curl_close($ch);	
 						
 						
-						$link_pic ="https://kumishabu.com/pic/picture2.JPG";
-						$messages2 = ['type' => 'image',
-											 'originalContentUrl' => $link_pic,
-											 'previewImageUrl' => $link_pic
-						];
+						$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://kumishabu.com/pic/picture2.JPG',
+												 'previewImageUrl' => 'https://kumishabu.com/pic/picture2.JPG'
+									  ];
 						
+						$replyToken = $event['replyToken'];
 						// Make a POST Request to Messaging API to reply to sender
 						$url = 'https://api.line.me/v2/bot/message/reply';
 						$data = [
-										'replyToken' => $replyToken,
-										'messages' => [$messages2]
-						];
+									'replyToken' => $replyToken,
+									'messages' => [$messages55]
+								];
 						$post = json_encode($data);
 						$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-						
 						$ch = curl_init($url);
 						curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 						curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
