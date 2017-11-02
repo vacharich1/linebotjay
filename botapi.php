@@ -148,7 +148,7 @@ if (!is_null($events['events'])) {
 			$userid = $event['source']['userId'];	
 		else
 			$userid = $event['source']['groupId'];
-
+  
 		//SEND ALL ROOM
 		///////////////////////////////////////////////
 		if($event['source']['groupId'] == 'C08ed601df0ae440832b09b496cb0c83a')
@@ -258,7 +258,7 @@ if (!is_null($events['events'])) {
 										$hoon_low = strtolower($hoonname);
 										$type="gg";	
 				    					$check ="check1";
-										$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$hoon_low', 11,'$room' ,'$userid', '$type')";
+										$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$hoon_low', 6666,'$room' ,'$timeframe', '$userid')";
 											
 										if (mysqli_query($link, $sql)) {
 											echo "New record created successfully";
@@ -501,7 +501,7 @@ if (!is_null($events['events'])) {
 					
 					$timeframe=$textcut[2];		
 				    
-					$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$hoon_low', 11,'$room' ,'$userid', '$type')";
+					$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$hoon_low', 6666,'$room' ,'$timeframe', '$userid')";
 											
 					if (mysqli_query($link, $sql)) {
 							echo "New record created successfully";
