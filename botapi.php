@@ -479,6 +479,26 @@ if (!is_null($events['events'])) {
 				//send graph
 				if($textcut[0]=="@g" and $result <=3)
 				{
+					if($room="15" or $room="111")
+					{
+						$messages556 = ['type' => 'text','text' => "คำสั่งเรียกกราฟ ไม่ได้อยูู่ในกลุ่มทดลอง โปรติดต่อ line : vacharich หรือ line : @jfourtwins"];
+						$url = 'https://api.line.me/v2/bot/message/reply';
+						$data = [
+									'replyToken' => $replyToken,
+									'messages' => [$messages556]
+								];
+						$post = json_encode($data);
+						$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+					
+						$ch = curl_init($url);
+						curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+						curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+						curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+						curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+						curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+						$result = curl_exec($ch);
+						curl_close($ch);	
+					}
 					$check ="check1";
 					if($result<3)
 					{	
@@ -491,7 +511,6 @@ if (!is_null($events['events'])) {
 					$timeframe="0";
 					$type="gg";
 					
-					$room='1';
 //301 kpom Ccef7269485facbaa8bd7480fc089f798
 //302 kprairoj Ce381889d3d2381757866a28931f6fdeb	
 //155 k'kamphol C2d138fa3520426eb9f46ffb6dce72d08
