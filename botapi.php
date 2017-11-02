@@ -154,6 +154,14 @@ if (!is_null($events['events'])) {
 		if($event['source']['groupId'] == 'C08ed601df0ae440832b09b496cb0c83a')
 		{
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+				if($text =="หุ้นที่มีเเจ้งเตือน" || $text =="หุ้นเเจ้งเตือน" || $text =="หุ้นแจ้งเตือน" || $text =="ลบทั้งหมด")	
+				{
+					//188 K Prasit C790dd32ae8e0d99b827e0288b01a0704
+					//199 K kratae C72411396da7fdf56d55fba94313865e3	
+				}
+				else
+				{
+						
 						$arr11 = array('C58e6deb47eb0c6eea4be1b36ee0c123d','C58b35d7a1c3b1026eabb5c3d309423f2','C661ec27c458cbcb0c73fdb3814182b09','C4c12c9d3c50ffa9355ab4ace9b5a410e','Ca9f38fce7ceaaf1b70effdf0368f8085','C1d43b6ff06f14ac10f5d41026bb7b0f3','Cc754ab90adf7432312426035ea1bd2f9' ,'C22e8a22dbe2173281e10d2d66128d5a5' ,'Ca91c9e8a2a08c8c757dafdcd2f9d2e69','C7bfe74990aeecaca1f37a2b030ad1b1e' ,'C86d9a41a47402063e99d59732f4d0f8b','Cbb1b9c9dab76eef8e5ed8c9800f594b5', 'Cf008e45b3560032d1eb5fbdb6ddc2c43', 'C2d1387af7f2adcc0cd58032d86efd5ed','Cd1535b9da2590c65e5da8968e3770acc','C1b711548d509a34653aaa29195c071f0', 'C0b785cd566665fcc1552fc5058675979', 'C8b5c7927ff48cf17a843225d49b1db15','C9f0ef2857de08b6f4b76093a02bcf5de','Caa434359d1c557a84b6ceee7ab537fd7','C4a548105883e306fc832b1187ef4544e','Ce2c5c0d07c8ac2097308d24f16231d37','Cdac8cdceb9108be04281c4ad2e537312','C767f906dfb84091344207472c237b081','C790dd32ae8e0d99b827e0288b01a0704','C72411396da7fdf56d55fba94313865e3' ,'Ce381889d3d2381757866a28931f6fdeb', 'Ccef7269485facbaa8bd7480fc089f798','C2d138fa3520426eb9f46ffb6dce72d08','Cac276250bae968b7dd3416f35dadac92');
 						
 						$arr = array('C58e6deb47eb0c6eea4be1b36ee0c123d','C58b35d7a1c3b1026eabb5c3d309423f2');
@@ -180,6 +188,7 @@ if (!is_null($events['events'])) {
 							$result = curl_exec($ch);
 							curl_close($ch);
 						}
+				}//else
 			}
 						
 		}
@@ -374,7 +383,7 @@ if (!is_null($events['events'])) {
 					
 				}
 				$test444 = strtolower($text);
-				if($test444=="หุ้นที่มีเเจ้งเตือน" || $test444=="หุ้นเเจ้งเตือน")
+				if($test444=="หุ้นที่มีเเจ้งเตือน" || $test444=="หุ้นเเจ้งเตือน" || $test444=="หุ้นแจ้งเตือน")
 				{
 					$text="@show all";
 				}
