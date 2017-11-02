@@ -481,7 +481,7 @@ if (!is_null($events['events'])) {
 				{
 					if($room="15" or $room="111")
 					{
-						$messages556 = ['type' => 'text','text' => "คำสั่งเรียกกราฟ ไม่ได้อยูู่ในกลุ่มทดลอง โปรติดต่อ line : vacharich หรือ line : @jfourtwins"];
+						$messages556 = ['type' => 'text','text' => "คำสั่งเรียกกราฟ ไม่สามารถเรียกในกลุ่มทดลองได้ โปรติดต่อ line : vacharich หรือ line : @jfourtwins\n\n ตัวอย่าง กราฟด้านล่าง aot 60 นาที"];
 						$url = 'https://api.line.me/v2/bot/message/reply';
 						$data = [
 									'replyToken' => $replyToken,
@@ -498,44 +498,66 @@ if (!is_null($events['events'])) {
 						curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 						$result = curl_exec($ch);
 						curl_close($ch);	
+						
+						
+						$link_pic ="https://kumishabu.com/pic/picture2.png";
+						$messages2 = ['type' => 'image',
+											 'originalContentUrl' => $link_pic,
+											 'previewImageUrl' => $link_pic
+						];
+						
+						$post = json_encode($data);
+						$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+					
+						$ch = curl_init($url);
+						curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+						curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+						curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+						curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+						curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+						$result = curl_exec($ch);
+						curl_close($ch);
 					}
-					$check ="check1";
-					if($result<3)
-					{	
-						$text=$text." d";
-					}
-					
-					$hoon_low = strtolower($textcut[1]);
-					$textcut = explode(" ", $text);
-					$result = count($textcut);
-					$timeframe="0";
-					$type="gg";
-					
-//301 kpom Ccef7269485facbaa8bd7480fc089f798
-//302 kprairoj Ce381889d3d2381757866a28931f6fdeb	
-//155 k'kamphol C2d138fa3520426eb9f46ffb6dce72d08
-//156 K'pb Cac276250bae968b7dd3416f35dadac92
-
-					
-					
-					$timeframe=$textcut[2];		
-				    
-					$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$hoon_low', 6666,'$room' ,'$timeframe', '$userid')";
-											
-					if (mysqli_query($link, $sql)) {
+					else
+					{
+						$check ="check1";
+						if($result<3)
+						{	
+							$text=$text." d";
+						}
+						
+						$hoon_low = strtolower($textcut[1]);
+						$textcut = explode(" ", $text);
+						$result = count($textcut);
+						$timeframe="0";
+						$type="gg";
+						
+	//301 kpom Ccef7269485facbaa8bd7480fc089f798
+	//302 kprairoj Ce381889d3d2381757866a28931f6fdeb	
+	//155 k'kamphol C2d138fa3520426eb9f46ffb6dce72d08
+	//156 K'pb Cac276250bae968b7dd3416f35dadac92
+	
+						
+						
+						$timeframe=$textcut[2];		
+						
+						$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$hoon_low', 6666,'$room' ,'$timeframe', '$userid')";
+												
+						if (mysqli_query($link, $sql)) {
+								echo "New record created successfully";
+						} 
+						else {
+								echo "Error: " . $sql . "<br>" . mysqli_error($link);
+						}
+						$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
+						if (mysqli_query($link, $sql)) {
 							echo "New record created successfully";
-					} 
-					else {
+						} 
+						else {
 							echo "Error: " . $sql . "<br>" . mysqli_error($link);
+						}
+						sleep(0.3);
 					}
-					$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
-					if (mysqli_query($link, $sql)) {
-						echo "New record created successfully";
-					} 
-					else {
-						echo "Error: " . $sql . "<br>" . mysqli_error($link);
-					}
-					sleep(0.3);
 					
 				}
 				
