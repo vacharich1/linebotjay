@@ -176,7 +176,7 @@ if (!is_null($events['events'])) {
   
 		//SEND ALL ROOM
 		///////////////////////////////////////////////
-		if($event['source']['groupId'] == 'C08ed601df0ae440832b09b496cb0c83a')
+		if($event['source']['groupId'] == 'C877d5aaeeb523122482b7e0580450cd7')
 		{
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 				if($text =="หุ้นที่มีเเจ้งเตือน" || $text =="หุ้นเเจ้งเตือน" || $text =="หุ้นแจ้งเตือน" || $text =="ลบทั้งหมด")	
