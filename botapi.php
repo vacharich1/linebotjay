@@ -167,7 +167,7 @@ if (!is_null($events['events'])) {
 						$arr1 = array('C58e6deb47eb0c6eea4be1b36ee0c123d','C58b35d7a1c3b1026eabb5c3d309423f2');
 						reset($arr1);
 						if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-							foreach ($arr as $USERID) {
+							foreach ($arr1 as $USERID) {
 								$format_text = [
 									"type" => "text",
 									"text" => $text
