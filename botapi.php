@@ -151,7 +151,7 @@ if (!is_null($events['events'])) {
 			
 		if($event['source']['groupId'] == 'C877d5aaeeb523122482b7e0580450cd7')
 		{
-			if ($event['type'] == 'image' && $event['message']['type'] == 'image') {
+			if ($event['type'] == 'image') {
 							$replyToken = $event['replyToken'];
 							$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
 							// Make a POST Request to Messaging API to reply to sender
