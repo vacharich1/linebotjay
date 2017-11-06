@@ -148,6 +148,31 @@ if (!is_null($events['events'])) {
 			$userid = $event['source']['userId'];	
 		else
 			$userid = $event['source']['groupId'];
+			
+		if($event['source']['groupId'] == 'C08ed601df0ae440832b09b496cb0c83a')
+		{
+			if ($event['type'] == 'image' && $event['message']['type'] == 'image') {
+							$replyToken = $event['replyToken'];
+							$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
+							// Make a POST Request to Messaging API to reply to sender
+							$url = 'https://api.line.me/v2/bot/message/reply';
+							$data = [
+										'replyToken' => $replyToken,
+										'messages' => [$messages55]
+									];
+							$post = json_encode($data);
+							$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+									
+							$ch = curl_init($url);
+							curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+							curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+							curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+							curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+							curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+							$result = curl_exec($ch);
+							curl_close($ch);	
+						}	
+		}
   
 		//SEND ALL ROOM
 		///////////////////////////////////////////////
@@ -164,10 +189,10 @@ if (!is_null($events['events'])) {
 						
 						$arr = array('C877d5aaeeb523122482b7e0580450cd7','Ce89f80c9c5a8f4fcb851e40be6b1ed5b','C2d49a85fb094bc90ff9570ff1490e046','Cd75232998108234664488e166f6c2313','C9fb7c4dfc9f7b2ea94196f07a62d2fc4','C9814aacf68dfee433e01449758ef91a1','Cb25406646b510fafa0b45ebeaea19737','C58e6deb47eb0c6eea4be1b36ee0c123d','C58b35d7a1c3b1026eabb5c3d309423f2','C661ec27c458cbcb0c73fdb3814182b09','C4c12c9d3c50ffa9355ab4ace9b5a410e','Ca9f38fce7ceaaf1b70effdf0368f8085','C1d43b6ff06f14ac10f5d41026bb7b0f3','Cc754ab90adf7432312426035ea1bd2f9' ,'C22e8a22dbe2173281e10d2d66128d5a5' ,'Ca91c9e8a2a08c8c757dafdcd2f9d2e69','C7bfe74990aeecaca1f37a2b030ad1b1e' ,'C86d9a41a47402063e99d59732f4d0f8b','Cbb1b9c9dab76eef8e5ed8c9800f594b5', 'Cf008e45b3560032d1eb5fbdb6ddc2c43', 'C2d1387af7f2adcc0cd58032d86efd5ed','Cd1535b9da2590c65e5da8968e3770acc','C1b711548d509a34653aaa29195c071f0', 'C0b785cd566665fcc1552fc5058675979', 'C8b5c7927ff48cf17a843225d49b1db15','C9f0ef2857de08b6f4b76093a02bcf5de','Caa434359d1c557a84b6ceee7ab537fd7','C4a548105883e306fc832b1187ef4544e','Ce2c5c0d07c8ac2097308d24f16231d37','Cdac8cdceb9108be04281c4ad2e537312','C767f906dfb84091344207472c237b081','C790dd32ae8e0d99b827e0288b01a0704','C72411396da7fdf56d55fba94313865e3' ,'Ce381889d3d2381757866a28931f6fdeb', 'Ccef7269485facbaa8bd7480fc089f798','C2d138fa3520426eb9f46ffb6dce72d08','Cac276250bae968b7dd3416f35dadac92');
 						
-						$arr1 = array('C58e6deb47eb0c6eea4be1b36ee0c123d','C58b35d7a1c3b1026eabb5c3d309423f2');
-						reset($arr1);
+						$arr = array('C58e6deb47eb0c6eea4be1b36ee0c123d','C58b35d7a1c3b1026eabb5c3d309423f2');
+						reset($arr);
 						if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-							foreach ($arr1 as $USERID) {
+							foreach ($arr as $USERID) {
 								$format_text = [
 									"type" => "text",
 									"text" => $text
