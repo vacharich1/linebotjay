@@ -195,30 +195,27 @@ if (!is_null($events['events'])) {
 						$arr1 = array('C58e6deb47eb0c6eea4be1b36ee0c123d','C58b35d7a1c3b1026eabb5c3d309423f2');
 						reset($arr);
 						if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-							if($text != "@bs")
-							{
-								foreach ($arr as $USERID) {
-									$format_text = [
-										"type" => "text",
-										"text" => $text
-									];
-									$post_data = [
-											'to' => $USERID,
-											'messages' => [$format_text]
-									];
-									$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-									echo "ssss";
-							 
-									$ch = curl_init('https://api.line.me/v2/bot/message/push');
-									curl_setopt($ch, CURLOPT_POST, true);
-									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-									curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-									curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
-									curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-							 
-									$result = curl_exec($ch);
-									curl_close($ch);
-								}
+							foreach ($arr as $USERID) {
+								$format_text = [
+									"type" => "text",
+									"text" => $text
+								];
+								$post_data = [
+										'to' => $USERID,
+										'messages' => [$format_text]
+								];
+								$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+								echo "ssss";
+						 
+								$ch = curl_init('https://api.line.me/v2/bot/message/push');
+								curl_setopt($ch, CURLOPT_POST, true);
+								curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+								curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+								curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
+								curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+						 
+								$result = curl_exec($ch);
+								curl_close($ch);
 							}
 						}
 						if ($event['type'] == 'image' && $event['message']['type'] == 'image') {
