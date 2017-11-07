@@ -546,7 +546,7 @@ if (!is_null($events['events'])) {
 					$timeframe="0";
 					$type="bs";	
 					
-					$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$type', 6666,'$room' ,'$timeframe', '$userid')";
+					$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$type', '','$room' ,'$timeframe', '$userid')";
 											
 					if (mysqli_query($link, $sql)) {
 							echo "New record created successfully";
