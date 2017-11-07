@@ -535,6 +535,34 @@ if (!is_null($events['events'])) {
 					$userid = $event['source']['userId'];	
 				else
 					$userid = $event['source']['groupId'];	
+					
+				//send graph
+				if($textcut[0]=="@bs" or $textcut[0]=="@buysell" and $result <=2)
+				{
+					$check ="check1";
+					$hoon_low = strtolower($textcut[1]);
+					$textcut = explode(" ", $text);
+					$result = count($textcut);
+					$timeframe="0";
+					$type="bs";	
+					
+					$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$type', 6666,'$room' ,'$timeframe', '$userid')";
+											
+					if (mysqli_query($link, $sql)) {
+							echo "New record created successfully";
+					} 
+					else {
+							echo "Error: " . $sql . "<br>" . mysqli_error($link);
+					}
+					$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
+					if (mysqli_query($link, $sql)) {
+						echo "New record created successfully";
+					} 
+					else {
+						echo "Error: " . $sql . "<br>" . mysqli_error($link);
+					}
+					
+				}
 				
 				
 				
