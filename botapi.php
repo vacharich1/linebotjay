@@ -536,24 +536,18 @@ if (!is_null($events['events'])) {
 				else
 					$userid = $event['source']['groupId'];	
 					
-				//send graph
-				if($textcut[0]=="@im" or $textcut[0]=="@bs" or $textcut[0]=="@buysell" and $result <=2)
+				//send pic floder s
+				if($result <=1)
 				{
 					$check ="check1";
 					$hoon_low = strtolower($textcut[1]);
 					$textcut = explode(" ", $text);
 					$result = count($textcut);
 					$timeframe="0";
-					if($textcut[0]=="@im")
-					{
-						$type="im";		
-					}
-					if($textcut[0]=="@bs")
-					{
-						$type="bs";	
-					}
+					$picturename = substr($textcut[0], 1); // cut@
+					$type = "pic";
 					
-					$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '', '$type','$room' ,'$timeframe', '$userid')";
+					$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '', '$type','$room' ,'$picturename', '$userid')";
 											
 					if (mysqli_query($link, $sql)) {
 							echo "New record created successfully";
