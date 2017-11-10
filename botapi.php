@@ -545,9 +545,10 @@ if (!is_null($events['events'])) {
 					$result = count($textcut);
 					$timeframe="0";
 					$picturename = substr($textcut[0], 1); // cut@
+					$picturename_low = strtolower($picturename);
 					$type = "pic";
 					
-					$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '', '$type','$room' ,'$picturename', '$userid')";
+					$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '', '$type','$room' ,'$picturename_low', '$userid')";
 											
 					if (mysqli_query($link, $sql)) {
 							echo "New record created successfully";
