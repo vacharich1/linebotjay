@@ -320,7 +320,7 @@ if (!is_null($events['events'])) {
 										$hoon_low = strtolower($hoonname);
 										$type="6666";	
 				    					$check ="check1";
-										$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$hoon_low', '$type','$room' ,'$timeframe', '$userid')";
+										$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$hoon_low', 6666,'$room' ,'$timeframe', '$userid')";
 											
 										if (mysqli_query($link, $sql)) {
 											echo "New record created successfully";
