@@ -93,7 +93,7 @@ if (!is_null($events['events'])) {
 //145 k'kamphol C2d138fa3520426eb9f46ffb6dce72d08
 //146 K'pb Cac276250bae968b7dd3416f35dadac92
 //1001 K'KOR C86d9a41a47402063e99d59732f4d0f8b
-
+	sleep(2);
 	foreach ($events['events'] as $event) {
 		$text = $event['message']['text'];
 		if($text == '@@@@')
