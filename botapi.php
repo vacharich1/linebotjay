@@ -197,7 +197,7 @@ if (!is_null($events['events'])) {
 						reset($arr);
 						if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 							foreach ($arr as $USERID) {
-								sleep(1)
+								sleep(1);
 								$format_text = [
 									"type" => "text",
 									"text" => $text
