@@ -143,9 +143,35 @@ if (!is_null($events['events'])) {
 				curl_close($ch);
 		}
 		
+		if($text == 'test222')
+		{
+				$replyToken = $event['replyToken'];
+				$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
+				// Make a POST Request to Messaging API to reply to sender
+				$userid = 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b';
+				$post_data = [
+							'to' => $userid,
+							'messages' => [$messages55]
+				];
+				$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				echo "ssss";
+			 
+				$ch = curl_init('https://api.line.me/v2/bot/message/push');
+				curl_setopt($ch, CURLOPT_POST, true);
+				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
+				curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+			 
+				$result = curl_exec($ch);
+				curl_close($ch);
+		}
+		
+		
+		
 		//user id group or induvidule
 		///////////////////////////////////////////////
-		if($event['source']['userId']==' U15c1ba16d211edf68f01ed74943602c4' || $event['source']['userId'] =='Ue1f0e93f7eba0bc026c7eb6d561de64b' || $event['source']['userId'] == 'U96419d67276450fe71ac0009b84072e1' || $event['source']['userId'] == 'U509014d018d7b14f1fee0f4942a97bb3' || $event['source']['userId'] == 'U041c1d5d39e47932485dcb31ed11f266' || $event['source']['userId'] == 'Ub6bf6c9b02422caa946c98d863df91be' || $event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' ||$event['source']['userId'] == 'Uf50e1aecdaadd0c9beb3e7b55e71b88c' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8'|| $event['source']['userId'] =='U00787737427143dedc0621eb52479222')
+		if($event['source']['userId']=='U15c1ba16d211edf68f01ed74943602c4' || $event['source']['userId'] =='Ue1f0e93f7eba0bc026c7eb6d561de64b' || $event['source']['userId'] == 'U96419d67276450fe71ac0009b84072e1' || $event['source']['userId'] == 'U509014d018d7b14f1fee0f4942a97bb3' || $event['source']['userId'] == 'U041c1d5d39e47932485dcb31ed11f266' || $event['source']['userId'] == 'Ub6bf6c9b02422caa946c98d863df91be' || $event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' ||$event['source']['userId'] == 'Uf50e1aecdaadd0c9beb3e7b55e71b88c' || $event['source']['userId'] == 'U7fd7eee8c6ab03c5f8c12b51b47a09c8'|| $event['source']['userId'] =='U00787737427143dedc0621eb52479222')
 			$userid = $event['source']['userId'];	
 		else
 			$userid = $event['source']['groupId'];
