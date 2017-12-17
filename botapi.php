@@ -143,7 +143,7 @@ if (!is_null($events['events'])) {
 				curl_close($ch);
 		}
 		
-		if($text == 'test222')
+		if($text == 'kce')
 		{
 				$replyToken = $event['replyToken'];
 				$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
