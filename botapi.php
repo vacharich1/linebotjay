@@ -95,7 +95,6 @@ if (!is_null($events['events'])) {
 //1001 K'KOR C86d9a41a47402063e99d59732f4d0f8b
 	
 	foreach ($events['events'] as $event) {
-		sleep(2);
 		$text = $event['message']['text'];
 		if($text == '@@@@')
 		{
