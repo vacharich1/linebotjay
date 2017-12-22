@@ -95,6 +95,7 @@ if (!is_null($events['events'])) {
 //1001 K'KOR C86d9a41a47402063e99d59732f4d0f8b
 	
 	foreach ($events['events'] as $event) {
+
 		$text = $event['message']['text'];
 		if($text == '@@@@')
 		{
@@ -572,7 +573,8 @@ if (!is_null($events['events'])) {
 					$userid = $event['source']['userId'];	
 				else
 					$userid = $event['source']['groupId'];	
-					
+				$textcut = explode(" ", $text);
+				$result = count($textcut);	
 				//send pic floder s
 				if($result <1)
 				{
