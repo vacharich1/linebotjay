@@ -6,15 +6,15 @@
 echo "aaaaa";
 echo "bbbbb";
 echo "bbbbb";
-    $host= "sql6.freemysqlhosting.net";
+    $host= "sql12.freemysqlhosting.net";
 	//$db = "sql6150739";
-	$db = "sql6155499";
+	$db = "sql12212093";
 	$CHAR_SET = "charset=utf8"; 
  
 	//$username = "sql6150739";    
 	//$password = "xiGjqcGnZb";   
-	$username = "sql6155499";    
-	$password = "xwBrDIuGaA"; 
+	$username = "sql12212093";    
+	$password = "ThZs8rjn3v"; 
 	
 
 	$link = mysqli_connect($host, $username, $password, $db);
