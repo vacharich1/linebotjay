@@ -639,6 +639,37 @@ if (!is_null($events['events'])) {
 							sleep(0.3);
 						}
 					}
+					if($textcut[0]=="bid" || $textcut[0]=="BID" || $textcut[0]=="Bid" || $textcut[0]=="@bid" || $textcut[0]=="@Bid" || $textcut[0]=="@BID")
+					{
+						if($result >1)
+						{	
+							$check ="check1";
+							$hoon_low = strtoupper($textcut[1]);
+							$textcut = explode(" ", $text);
+							$result = count($textcut);
+							$timeframe="0";
+							$type="gg";
+							
+							$timeframe=$textcut[2];		
+							
+							$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$hoon_low', 'bidonly','$room' ,'$timeframe', '$userid')";
+													
+							if (mysqli_query($link, $sql)) {
+									echo "New record created successfully";
+							} 
+							else {
+									echo "Error: " . $sql . "<br>" . mysqli_error($link);
+							}
+							$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
+							if (mysqli_query($link, $sql)) {
+								echo "New record created successfully";
+							} 
+							else {
+								echo "Error: " . $sql . "<br>" . mysqli_error($link);
+							}
+							sleep(0.3);
+						}
+					}
 				}
 				
 				
