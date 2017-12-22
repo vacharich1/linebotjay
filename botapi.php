@@ -604,6 +604,42 @@ if (!is_null($events['events'])) {
 					
 				}
 				
+				//Im excel
+				if($event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')
+				{
+					if($textcut[0]=="im" || $textcut[0]=="IM" || $textcut[0]=="Im" || $textcut[0]=="@im" || $textcut[0]=="@Im" || $textcut[0]=="@IM")
+					{
+						if($result >1)
+						{	
+							$check ="check1";
+							$hoon_low = strtoupper($textcut[1]);
+							$textcut = explode(" ", $text);
+							$result = count($textcut);
+							$timeframe="0";
+							$type="gg";
+							
+							$timeframe=$textcut[2];		
+							
+							$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '$hoon_low', 'imonly','$room' ,'$timeframe', '$userid')";
+													
+							if (mysqli_query($link, $sql)) {
+									echo "New record created successfully";
+							} 
+							else {
+									echo "Error: " . $sql . "<br>" . mysqli_error($link);
+							}
+							$sql = "INSERT INTO `check_capture2`(`id`, `check1`) VALUES ('','$check')";
+							if (mysqli_query($link, $sql)) {
+								echo "New record created successfully";
+							} 
+							else {
+								echo "Error: " . $sql . "<br>" . mysqli_error($link);
+							}
+							sleep(0.3);
+						}
+					}
+				}
+				
 				
 				
 				//send graph
