@@ -576,7 +576,7 @@ if (!is_null($events['events'])) {
 				$textcut = explode(" ", $text);
 				$result = count($textcut);	
 				//send pic floder s
-				if($result <1)
+				if($result <2)
 				{
 					$check ="check1";
 					$hoon_low = strtolower($textcut[1]);
