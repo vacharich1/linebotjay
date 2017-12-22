@@ -575,7 +575,7 @@ if (!is_null($events['events'])) {
 					$userid = $event['source']['groupId'];	
 					
 				//send pic floder s
-				if($result <=1)
+				if($result <1)
 				{
 					$check ="check1";
 					$hoon_low = strtolower($textcut[1]);
