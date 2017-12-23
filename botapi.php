@@ -678,6 +678,7 @@ if (!is_null($events['events'])) {
 				//send graph
 				if($textcut[0]=="@g" and $result <=3)
 				{
+					sleep(3);
 					if($room == "33" or $room == "333")//close 15 111
 					{
 						$messages556 = ['type' => 'text','text' => "คำสั่งเรียกกราฟ ไม่สามารถเรียกในกลุ่มทดลอง โปรติดต่อ line : vacharich หรือ line : @jfourtwins\n\n ตัวอย่าง กราฟด้านล่าง aot 60 นาที"];
