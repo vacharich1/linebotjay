@@ -586,7 +586,6 @@ if (!is_null($events['events'])) {
 					$picturename = substr($textcut[0], 1); // cut@
 					$picturename_low = strtolower($picturename);
 					$type = "pic";
-					sleep(3);
 					
 					$sql = "INSERT INTO hoon_check2 (id, hoonname, price, room, uid, type) VALUES ('', '', '$type','$room' ,'$picturename_low', '$userid')";
 											
